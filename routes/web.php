@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserManagementController;
-use App\Http\Controllers\SettingController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LockScreen;
 use App\Http\Controllers\PayrollController;
@@ -44,15 +45,19 @@ Route::group(['middleware'=>'auth'],function()
 Auth::routes();
 
 // ----------------------------- main dashboard ------------------------------//
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('em/dashboard', [App\Http\Controllers\HomeController::class, 'emDashboard'])->name('em/dashboard');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/home', 'index')->name('home');
+    Route::get('em/dashboard', 'emDashboard')->name('em/dashboard');
+});
 
 // -----------------------------settings----------------------------------------//
-Route::get('company/settings/page', [App\Http\Controllers\SettingController::class, 'companySettings'])->middleware('auth')->name('company/settings/page');
-Route::get('roles/permissions/page', [App\Http\Controllers\SettingController::class, 'rolesPermissions'])->middleware('auth')->name('roles/permissions/page');
-Route::post('roles/permissions/save', [App\Http\Controllers\SettingController::class, 'addRecord'])->middleware('auth')->name('roles/permissions/save');
-Route::post('roles/permissions/update', [App\Http\Controllers\SettingController::class, 'editRolesPermissions'])->middleware('auth')->name('roles/permissions/update');
-Route::post('roles/permissions/delete', [App\Http\Controllers\SettingController::class, 'deleteRolesPermissions'])->middleware('auth')->name('roles/permissions/delete');
+Route::controller(SettingController::class)->group(function () {
+    Route::get('company/settings/page', 'companySettings')->middleware('auth')->name('company/settings/page');
+    Route::get('roles/permissions/page', 'rolesPermissions')->middleware('auth')->name('roles/permissions/page');
+    Route::post('roles/permissions/save', 'addRecord')->middleware('auth')->name('roles/permissions/save');
+    Route::post('roles/permissions/update', 'editRolesPermissions')->middleware('auth')->name('roles/permissions/update');
+    Route::post('roles/permissions/delete', 'deleteRolesPermissions')->middleware('auth')->name('roles/permissions/delete');
+});
 
 // -----------------------------login----------------------------------------//
 Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
