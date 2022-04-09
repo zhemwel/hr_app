@@ -346,4 +346,9 @@ class EmployeeController extends Controller
         $user = DB::table('users')->where('rec_id',$rec_id)->get();
         return view('form.employeeprofile',compact('user','users'));
     }
+    /** page departments */
+    public function index()
+    {
+        return view('form.departments');
+    }
 }

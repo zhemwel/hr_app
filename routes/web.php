@@ -140,6 +140,7 @@ Route::controller(EmployeeController::class)->group(function () {
     Route::get('all/employee/delete/{employee_id}', 'deleteRecord')->middleware('auth');
     Route::post('all/employee/search', 'employeeSearch')->name('all/employee/search');
     Route::post('all/employee/list/search', 'employeeListSearch')->name('all/employee/list/search');    
+    Route::get('form/departments/page', 'index')->middleware('auth')->name('form/departments/page');    
 });
 
 // ----------------------------- profile employee ------------------------------//
