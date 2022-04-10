@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Models\Employee;
+use App\Models\department;
 use App\Models\User;
 use App\Models\module_permission;
 
@@ -350,5 +351,37 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('form.departments');
+    }
+
+    /** save record department */
+    public function saveRecordDepartment(Request $request)
+    {
+        $request->validate([
+            'department'        => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try{
+
+            $department = department::where('department',$request->department)->first();
+            if ($department === null)
+            {
+                $department = new department;
+                $department->department = $request->department;
+                $department->save();
+    
+                DB::commit();
+                Toastr::success('Add new department successfully :)','Success');
+                return redirect()->route('form/departments/page');
+            } else {
+                DB::rollback();
+                Toastr::error('Add new department exits :)','Error');
+                return redirect()->back();
+            }
+        }catch(\Exception $e){
+            DB::rollback();
+            Toastr::error('Add new department fail :)','Error');
+            return redirect()->back();
+        }
     }
 }

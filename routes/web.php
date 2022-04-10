@@ -141,6 +141,7 @@ Route::controller(EmployeeController::class)->group(function () {
     Route::post('all/employee/search', 'employeeSearch')->name('all/employee/search');
     Route::post('all/employee/list/search', 'employeeListSearch')->name('all/employee/list/search');    
     Route::get('form/departments/page', 'index')->middleware('auth')->name('form/departments/page');    
+    Route::post('form/departments/save', 'saveRecordDepartment')->middleware('auth')->name('form/departments/save');    
 });
 
 // ----------------------------- profile employee ------------------------------//

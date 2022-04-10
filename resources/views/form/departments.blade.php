@@ -165,8 +165,9 @@
                     </div>
                 </div>
             </div>
+
             <!-- /Page Header -->
-            
+            {!! Toastr::message() !!}
             <div class="row">
                 <div class="col-md-12">
                     <div>
@@ -276,13 +277,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('form/departments/save') }}" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label>Department Name <span class="text-danger">*</span></label>
-                                <input class="form-control" type="text">
+                                <input class="form-control @error('department') is-invalid @enderror" type="text" id="department" name="department">
+                                @error('department')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="submit-section">
-                                <button class="btn btn-primary submit-btn">Submit</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                             </div>
                         </form>
                     </div>
