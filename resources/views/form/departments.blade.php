@@ -180,84 +180,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($departments as $key=>$items )
                                 <tr>
-                                    <td>1</td>
-                                    <td>Web Development</td>
+                                    <td>{{ ++$key }}</td>
+                                    <td hidden class="id">{{ $items->id }}</td>
+                                    <td class="department">{{ $items->department }}</td>
                                     <td class="text-right">
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                            <a class="dropdown-item  edit_department" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_department"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                         </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Application Development</td>
-                                    <td class="text-right">
-                                    <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_department"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                        </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>IT Management</td>
-                                    <td class="text-right">
-                                    <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_department"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                        </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Accounts Management</td>
-                                    <td class="text-right">
-                                    <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_department"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                        </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Support Management</td>
-                                    <td class="text-right">
-                                    <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_department"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                        </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Marketing</td>
-                                    <td class="text-right">
-                                    <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_department"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_department"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                        </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -309,13 +247,15 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('form/department/update') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" id="e_id" value="">
                             <div class="form-group">
                                 <label>Department Name <span class="text-danger">*</span></label>
-                                <input class="form-control" value="IT Management" type="text">
+                                <input type="text" class="form-control" id="department_edit" name="department" value="">
                             </div>
                             <div class="submit-section">
-                                <button class="btn btn-primary submit-btn">Save</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Save</button>
                             </div>
                         </form>
                     </div>
@@ -352,23 +292,13 @@
 
     <!-- /Page Wrapper -->
     @section('script')
-    <script>
-        document.getElementById("year").innerHTML = new Date().getFullYear();
-    </script>
     {{-- update js --}}
     <script>
-        $(document).on('click','.leaveUpdate',function()
+        $(document).on('click','.edit_department',function()
         {
             var _this = $(this).parents('tr');
             $('#e_id').val(_this.find('.id').text());
-            $('#e_number_of_days').val(_this.find('.day').text());
-            $('#e_from_date').val(_this.find('.from_date').text());  
-            $('#e_to_date').val(_this.find('.to_date').text());  
-            $('#e_leave_reason').val(_this.find('.leave_reason').text());
-
-            var leave_type = (_this.find(".leave_type").text());
-            var _option = '<option selected value="' + leave_type+ '">' + _this.find('.leave_type').text() + '</option>'
-            $( _option).appendTo("#e_leave_type");
+            $('#department_edit').val(_this.find('.department').text());
         });
     </script>
     {{-- delete model --}}

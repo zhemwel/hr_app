@@ -350,7 +350,8 @@ class EmployeeController extends Controller
     /** page departments */
     public function index()
     {
-        return view('form.departments');
+        $departments = DB::table('departments')->get();
+        return view('form.departments',compact('departments'));
     }
 
     /** save record department */
