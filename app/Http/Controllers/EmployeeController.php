@@ -385,4 +385,26 @@ class EmployeeController extends Controller
             return redirect()->back();
         }
     }
+
+    /** update record department */
+    public function updateRecordDepartment( Request $request)
+    {
+        DB::beginTransaction();
+        try{
+            // update table departments
+            $department = [
+                'id'=>$request->id,
+                'department'=>$request->department,
+            ];
+            department::where('id',$request->id)->update($department);
+        
+            DB::commit();
+            Toastr::success('updated record successfully :)','Success');
+            return redirect()->route('form/departments/page');
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('updated record fail :)','Error');
+            return redirect()->back();
+        }
+    }
 }
