@@ -387,7 +387,7 @@ class EmployeeController extends Controller
     }
 
     /** update record department */
-    public function updateRecordDepartment( Request $request)
+    public function updateRecordDepartment(Request $request)
     {
         DB::beginTransaction();
         try{
@@ -404,6 +404,23 @@ class EmployeeController extends Controller
         } catch(\Exception $e) {
             DB::rollback();
             Toastr::error('updated record fail :)','Error');
+            return redirect()->back();
+        }
+    }
+
+    /** delete record department */
+    public function deleteRecordDepartment(Request $request) 
+    {
+        try {
+
+            department::destroy($request->id);
+            Toastr::success('Department deleted successfully :)','Success');
+            return redirect()->back();
+        
+        } catch(\Exception $e) {
+
+            DB::rollback();
+            Toastr::error('Department delete fail :)','Error');
             return redirect()->back();
         }
     }

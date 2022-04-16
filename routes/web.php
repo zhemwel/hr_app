@@ -143,6 +143,7 @@ Route::controller(EmployeeController::class)->group(function () {
     Route::get('form/departments/page', 'index')->middleware('auth')->name('form/departments/page');    
     Route::post('form/departments/save', 'saveRecordDepartment')->middleware('auth')->name('form/departments/save');    
     Route::post('form/department/update', 'updateRecordDepartment')->middleware('auth')->name('form/department/update');    
+    Route::post('form/department/delete', 'deleteRecordDepartment')->middleware('auth')->name('form/department/delete');    
 });
 
 // ----------------------------- profile employee ------------------------------//
