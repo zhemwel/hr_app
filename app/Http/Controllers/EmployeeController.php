@@ -424,4 +424,10 @@ class EmployeeController extends Controller
             return redirect()->back();
         }
     }
+
+    /** page designations */
+    public function designationsIndex()
+    {
+        return view('form.designations');
+    }
 }

@@ -20,6 +20,8 @@ use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\TrainersController;
 use App\Http\Controllers\TrainingTypeController;
+use App\Http\Controllers\SalesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -139,11 +141,17 @@ Route::controller(EmployeeController::class)->group(function () {
     Route::post('all/employee/update', 'updateRecord')->middleware('auth')->name('all/employee/update');
     Route::get('all/employee/delete/{employee_id}', 'deleteRecord')->middleware('auth');
     Route::post('all/employee/search', 'employeeSearch')->name('all/employee/search');
-    Route::post('all/employee/list/search', 'employeeListSearch')->name('all/employee/list/search');    
+    Route::post('all/employee/list/search', 'employeeListSearch')->name('all/employee/list/search');
+
     Route::get('form/departments/page', 'index')->middleware('auth')->name('form/departments/page');    
     Route::post('form/departments/save', 'saveRecordDepartment')->middleware('auth')->name('form/departments/save');    
     Route::post('form/department/update', 'updateRecordDepartment')->middleware('auth')->name('form/department/update');    
-    Route::post('form/department/delete', 'deleteRecordDepartment')->middleware('auth')->name('form/department/delete');    
+    Route::post('form/department/delete', 'deleteRecordDepartment')->middleware('auth')->name('form/department/delete');  
+    
+    Route::get('form/designations/page', 'designationsIndex')->middleware('auth')->name('form/designations/page');    
+    Route::post('form/designations/save', 'saveRecordDesignations')->middleware('auth')->name('form/designations/save');    
+    Route::post('form/designations/update', 'updateRecordDesignations')->middleware('auth')->name('form/designations/update');    
+    Route::post('form/designations/delete', 'deleteRecordDesignations')->middleware('auth')->name('form/designations/delete');    
 });
 
 // ----------------------------- profile employee ------------------------------//
@@ -230,5 +238,10 @@ Route::controller(TrainingTypeController::class)->group(function () {
     Route::post('form/training/type/save', 'saveRecord')->middleware('auth')->name('form/training/type/save');
     Route::post('form//training/type/update', 'updateRecord')->middleware('auth')->name('form//training/type/update');
     Route::post('form//training/type/delete', 'deleteTrainingType')->middleware('auth')->name('form//training/type/delete');    
+});
+
+// ----------------------------- sales  ------------------------------//
+Route::controller(SalesController::class)->group(function () {
+    Route::get('form/estimates/page', 'estimatesIndex')->middleware('auth')->name('form/estimates/page');
 });
 
