@@ -163,7 +163,7 @@
                         </ul>
                     </div>
                     <div class="col-auto float-right ml-auto">
-                        <a href="create-estimate.html" class="btn add-btn"><i class="fa fa-plus"></i> Create Estimate</a>
+                        <a href="{{ route('create/estimate/page') }}" class="btn add-btn"><i class="fa fa-plus"></i> Create Estimate</a>
                     </div>
                 </div>
             </div>

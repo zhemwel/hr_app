@@ -11,4 +11,10 @@ class SalesController extends Controller
     {
         return view('sales.estimates');
     }
+
+    /** page create estimates */
+    public function createEstimateIndex()
+    {
+        return view('sales.createestimate');
+    }
 }
