@@ -244,5 +244,6 @@ Route::controller(TrainingTypeController::class)->group(function () {
 Route::controller(SalesController::class)->group(function () {
     Route::get('form/estimates/page', 'estimatesIndex')->middleware('auth')->name('form/estimates/page');
     Route::get('create/estimate/page', 'createEstimateIndex')->middleware('auth')->name('create/estimate/page');
+    Route::get('edit/estimate/page', 'editEstimateIndex')->middleware('auth')->name('edit/estimate/page');
 });
 
