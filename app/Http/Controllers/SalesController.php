@@ -23,4 +23,10 @@ class SalesController extends Controller
     {
         return view('sales.editestimate');
     }
+
+    /** view page estimate */
+    public function viewEstimateIndex()
+    {
+        return view('sales.estimateview');
+    }
 }

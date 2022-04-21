@@ -147,171 +147,152 @@
     <!-- /Sidebar -->
 
     <!-- Page Wrapper -->
-    <div class="page-wrapper">
-
+    <div class="page-wrapper">  
         <!-- Page Content -->
         <div class="content container-fluid">
-        
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title">Estimates</h3>
+                        <h3 class="page-title">Estimate</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Estimates</li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Estimate</li>
                         </ul>
                     </div>
                     <div class="col-auto float-right ml-auto">
-                        <a href="{{ route('create/estimate/page') }}" class="btn add-btn"><i class="fa fa-plus"></i> Create Estimate</a>
+                        <div class="btn-group btn-group-sm">
+                            <button class="btn btn-white">CSV</button>
+                            <button class="btn btn-white">PDF</button>
+                            <button class="btn btn-white"><i class="fa fa-print fa-lg"></i> Print</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- /Page Header -->
             
-            <!-- Search Filter -->
-            <div class="row filter-row">
-                <div class="col-sm-6 col-md-3">  
-                    <div class="form-group form-focus">
-                        <div class="cal-icon">
-                            <input class="form-control floating datetimepicker" type="text">
-                        </div>
-                        <label class="focus-label">From</label>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">  
-                    <div class="form-group form-focus">
-                        <div class="cal-icon">
-                            <input class="form-control floating datetimepicker" type="text">
-                        </div>
-                        <label class="focus-label">To</label>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3"> 
-                    <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
-                            <option>Select Status</option>
-                            <option>Accepted</option>
-                            <option>Declined</option>
-                            <option>Expired</option>
-                        </select>
-                        <label class="focus-label">Status</label>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
-            </div>
-            <!-- /Search Filter -->
-            
             <div class="row">
                 <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-striped custom-table mb-0">
-                            <thead>
-                                <tr>
-                                    <th>Estimate Number</th>
-                                    <th>Client</th>
-                                    <th>Estimate Date</th>
-                                    <th>Expiry Date</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th class="text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0001</a></td>
-                                    <td>Global Technologies</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-success">Accepted</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0002</a></td>
-                                    <td>Delta Infotech</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-danger">Declined</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0003</a></td>
-                                    <td>Cream Inc</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-info">Sent</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0004</a></td>
-                                    <td>International Software Inc</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-warning">Expired</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Page Content -->
-        
-        <!-- Delete Estimate Modal -->
-        <div class="modal custom-modal fade" id="delete_estimate" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="form-header">
-                            <h3>Delete Estimate</h3>
-                            <p>Are you sure want to delete?</p>
-                        </div>
-                        <div class="modal-btn delete-action">
+                    <div class="card">
+                        <div class="card-body">
                             <div class="row">
-                                <div class="col-6">
-                                    <a href="javascript:void(0);" class="btn btn-primary continue-btn">Delete</a>
+                                <div class="col-sm-6 m-b-20">
+                                    <img src="{{ URL::to('assets/img/logo2.png') }}" class="inv-logo" alt="">
+                                    <ul class="list-unstyled">
+                                        <li>Admin</li>
+                                        <li>3864 Quiet Valley Lane,</li>
+                                        <li>Sherman Oaks, CA, 91403</li>
+                                        <li>GST No:</li>
+                                    </ul>
                                 </div>
-                                <div class="col-6">
-                                    <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                                <div class="col-sm-6 m-b-20">
+                                    <div class="invoice-details">
+                                        <h3 class="text-uppercase">Estimate #49029</h3>
+                                        <ul class="list-unstyled">
+                                            <li>Create Date: <span>March 12, 2019</span></li>
+                                            <li>Expiry date: <span>May 25, 2019</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-12 m-b-20">
+                                    <h5>Estimate to:</h5>
+                                    <ul class="list-unstyled">
+                                        <li><h5><strong>Barry Cuda</strong></h5></li>
+                                        <li>Global Technologies</li>
+                                        <li>5754 Airport Rd</li>
+                                        <li>Coosada, AL, 36020</li>
+                                        <li>United States</li>
+                                        <li>888-777-6655</li>
+                                        <li><a href="#">barrycuda@example.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ITEM</th>
+                                    <th class="d-none d-sm-table-cell">DESCRIPTION</th>
+                                        <th>UNIT COST</th>
+                                        <th>QUANTITY</th>
+                                        <th class="text-right">TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Android Application</td>
+                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                        <td>$1000</td>
+                                        <td>2</td>
+                                        <td class="text-right">$2000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Ios Application</td>
+                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                        <td>$1750</td>
+                                        <td>1</td>
+                                        <td class="text-right">$1750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Codeigniter Project</td>
+                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                        <td>$90</td>
+                                        <td>3</td>
+                                        <td class="text-right">$270</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Phonegap Project</td>
+                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                        <td>$1200</td>
+                                        <td>2</td>
+                                        <td class="text-right">$2400</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Website Optimization</td>
+                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                        <td>$200</td>
+                                        <td>2</td>
+                                        <td class="text-right">$400</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                                <div class="row invoice-payment">
+                                    <div class="col-sm-7">
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="m-b-20">
+                                            <div class="table-responsive no-border">
+                                                <table class="table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Subtotal:</th>
+                                                            <td class="text-right">$7,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tax: <span class="text-regular">(25%)</span></th>
+                                                            <td class="text-right">$1,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Total:</th>
+                                                            <td class="text-right text-primary"><h5>$8,750</h5></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invoice-info">
+                                    <h5>Other information</h5>
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed dictum ligula, cursus blandit risus. Maecenas eget metus non tellus dignissim aliquam ut a ex. Maecenas sed vehicula dui, ac suscipit lacus. Sed finibus leo vitae lorem interdum, eu scelerisque tellus fermentum. Curabitur sit amet lacinia lorem. Nullam finibus pellentesque libero, eu finibus sapien interdum vel</p>
                                 </div>
                             </div>
                         </div>
@@ -319,8 +300,7 @@
                 </div>
             </div>
         </div>
-        <!-- /Delete Estimate Modal -->
-    
+        <!-- /Page Content -->
     </div>
     <!-- /Page Wrapper -->
  
