@@ -237,7 +237,7 @@
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-white">
+                                    <table class="table table-hover table-white" id="tableEstimate">
                                         <thead>
                                             <tr>
                                                 <th style="width: 20px">#</th>
@@ -267,27 +267,9 @@
                                             <td>
                                                 <input class="form-control" readonly style="width:120px" type="text">
                                             </td>
-                                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add"><i class="fa fa-plus"></i></a></td>
+                                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>
-                                                <input class="form-control" type="text" style="min-width:150px">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" type="text" style="min-width:150px">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" style="width:100px" type="text">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" style="width:80px" type="text">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" readonly style="width:120px" type="text">
-                                            </td>
-                                            <td><a href="javascript:void(0)" class="text-danger font-18" title="Remove"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
+                                       
                                         </tbody>
                                     </table>
                                 </div>
@@ -350,6 +332,52 @@
     <!-- /Page Wrapper -->
  
     @section('script')
-   
+        <script>
+            var rowIdx = 1;
+            $("#addBtn").on("click", function ()
+            {
+                // Adding a row inside the tbody.
+                $("#tableEstimate tbody").append(`
+                <tr id="R${++rowIdx}">
+                    <td class="row-index text-center"><p> ${rowIdx}</p></td>
+                    <td><input class="form-control" type="text" style="min-width:150px"></td>
+                    <td><input class="form-control" type="text" style="min-width:150px"></td>
+                    <td><input class="form-control" style="width:100px" type="text"></td>
+                    <td><input class="form-control" style="width:80px" type="text"></td>
+                    <td><input class="form-control" readonly style="width:120px" type="text"></td>
+                    <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                </tr>`);
+            });
+            $("#tableEstimate tbody").on("click", ".remove", function ()
+            {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <p> inside the .row-index class.
+                var idx = $(this).children(".row-index").children("p");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(1));
+
+                // Modifying row index.
+                idx.html(`${dig - 1}`);
+
+                // Modifying row id.
+                $(this).attr("id", `R${dig - 1}`);
+            });
+        
+                // Removing the current row.
+                $(this).closest("tr").remove();
+        
+                // Decreasing total number of rows by 1.
+                rowIdx--;
+            });
+        </script>
     @endsection
 @endsection
