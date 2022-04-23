@@ -53,10 +53,10 @@
                             <li><a href="{{ route('attendance/page') }}">Attendance (Admin)</a></li>
                             <li><a class="active" href="{{ route('attendance/employee/page') }}">Attendance (Employee)</a></li>
                             <li><a href="{{ route('form/departments/page') }}">Departments</a></li>
-                            <li><a href="designations.html">Designations</a></li>
-                            <li><a href="timesheet.html">Timesheet</a></li>
-                            <li><a href="shift-scheduling.html">Shift & Schedule</a></li>
-                            <li><a href="overtime.html">Overtime</a></li>
+                            <li><a href="{{ route('form/designations/page') }}">Designations</a></li>
+                            <li><a href="{{ route('form/timesheet/page') }}">Timesheet</a></li>
+                            <li><a href="{{ route('form/shiftscheduling/page') }}">Shift & Schedule</a></li>
+                            <li><a href="{{ route('form/overtime/page') }}">Overtime</a></li>
                         </ul>
                     </li>
                     <li class="menu-title"> <span>HR</span> </li>

@@ -151,7 +151,17 @@ Route::controller(EmployeeController::class)->group(function () {
     Route::get('form/designations/page', 'designationsIndex')->middleware('auth')->name('form/designations/page');    
     Route::post('form/designations/save', 'saveRecordDesignations')->middleware('auth')->name('form/designations/save');    
     Route::post('form/designations/update', 'updateRecordDesignations')->middleware('auth')->name('form/designations/update');    
-    Route::post('form/designations/delete', 'deleteRecordDesignations')->middleware('auth')->name('form/designations/delete');    
+    Route::post('form/designations/delete', 'deleteRecordDesignations')->middleware('auth')->name('form/designations/delete');
+    
+    Route::get('form/timesheet/page', 'timeSheetIndex')->middleware('auth')->name('form/timesheet/page');    
+    Route::post('form/timesheet/save', 'saveRecordTimeSheets')->middleware('auth')->name('form/timesheet/save');    
+    Route::post('form/timesheet/update', 'updateRecordTimeSheets')->middleware('auth')->name('form/timesheet/update');    
+    Route::post('form/timesheet/delete', 'deleteRecordTimeSheets')->middleware('auth')->name('form/timesheet/delete');
+    
+    Route::get('form/overtime/page', 'overTimeIndex')->middleware('auth')->name('form/overtime/page');    
+    Route::post('form/overtime/save', 'saveRecordOverTime')->middleware('auth')->name('form/overtime/save');    
+    Route::post('form/overtime/update', 'updateRecordOverTime')->middleware('auth')->name('form/overtime/update');    
+    Route::post('form/overtime/delete', 'deleteRecordOverTime')->middleware('auth')->name('form/overtime/delete');  
 });
 
 // ----------------------------- profile employee ------------------------------//

@@ -1,8 +1,6 @@
 
 @extends('layouts.master')
 @section('content')
-    {{-- message --}}
-    {!! Toastr::message() !!}
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-inner slimscroll">
@@ -39,7 +37,7 @@
                         <span>Employees</span>
                     </li>
                     <li class="submenu">
-                        <a href="#">
+                        <a href="#" class="noti-dot">
                             <i class="la la-user"></i>
                             <span> Employees</span>
                             <span class="menu-arrow"></span>
@@ -58,7 +56,7 @@
                             <li><a href="{{ route('form/designations/page') }}">Designations</a></li>
                             <li><a href="{{ route('form/timesheet/page') }}">Timesheet</a></li>
                             <li><a href="{{ route('form/shiftscheduling/page') }}">Shift & Schedule</a></li>
-                            <li><a href="{{ route('form/overtime/page') }}">Overtime</a></li>
+                            <li><a class="active" href="{{ route('form/overtime/page') }}">Overtime</a></li>
                         </ul>
                     </li>
                     <li class="menu-title"> <span>HR</span> </li>
@@ -70,33 +68,25 @@
                         </a>
                         <ul style="display: none;">
                             <li><a href="{{ route('form/estimates/page') }}">Estimates</a></li>
-                            <li><a class="active" href="{{ route('form/invoice/view/page') }}">Invoices</a></li>
+                            <li><a href="{{ route('form/invoice/view/page') }}">Invoices</a></li>
                             <li><a href="payments.html">Payments</a></li>
                             <li><a href="expenses.html">Expenses</a></li>
                             <li><a href="provident-fund.html">Provident Fund</a></li>
                             <li><a href="taxes.html">Taxes</a></li>
                         </ul>
                     </li>
-                    <li class="submenu">
-                        <a href="#">
-                            <i class="la la-user"></i>
-                            <span> Payroll</span>
-                            <span class="menu-arrow"></span>
-                        </a>
+                    <li class="submenu"> <a href="#"><i class="la la-money"></i>
+                        <span> Payroll </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="{{ route('form/salary/page') }}"> Employee Salary </a></li>
                             <li><a href="{{ url('form/salary/view') }}"> Payslip </a></li>
                             <li><a href="{{ route('form/payroll/items') }}"> Payroll Items </a></li>
                         </ul>
                     </li>
-                    <li class="submenu">
-                        <a href="#" class="noti-dot">
-                            <i class="la la-pie-chart"></i>
-                            <span> Reports </span>
-                            <span class="menu-arrow"></span>
-                        </a>
+                    <li class="submenu"> <a href="#"><i class="la la-pie-chart"></i>
+                        <span> Reports </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
-                            <li><a class="active" href="{{ route('form/expense/reports/page') }}"> Expense Report </a></li>
+                            <li><a href="{{ route('form/expense/reports/page') }}"> Expense Report </a></li>
                             <li><a href="{{ route('form/invoice/reports/page') }}"> Invoice Report </a></li>
                             <li><a href="payments-reports.html"> Payments Report </a></li>
                             <li><a href="employee-reports.html"> Employee Report </a></li>
@@ -111,8 +101,8 @@
                         <span> Performance </span> <span class="menu-arrow"></span></a>
                         <ul style="display: none;">
                             <li><a href="{{ route('form/performance/indicator/page') }}"> Performance Indicator </a></li>
-                            <li><a href="performance.html"> Performance Review </a></li>
-                            <li><a href="performance-appraisal.html"> Performance Appraisal </a></li>
+                            <li><a href="{{ route('form/performance/page') }}"> Performance Review </a></li>
+                            <li><a href="{{ route('form/performance/appraisal/page') }}"> Performance Appraisal </a></li>
                         </ul>
                     </li>
                     <li class="submenu"> <a href="#"><i class="la la-edit"></i>
@@ -155,58 +145,58 @@
         </div>
     </div>
     <!-- /Sidebar -->
-
+    
     <!-- Page Wrapper -->
     <div class="page-wrapper">
+                
         <!-- Page Content -->
         <div class="content container-fluid">
+        
             <!-- Page Header -->
             <div class="page-header">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3 class="page-title">Expense Report</h3>
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="page-title">Overtime</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Expense Report</li>
+                            <li class="breadcrumb-item active">Overtime</li>
                         </ul>
+                    </div>
+                    <div class="col-auto float-right ml-auto">
+                        <a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_overtime"><i class="fa fa-plus"></i> Add Overtime</a>
                     </div>
                 </div>
             </div>
             <!-- /Page Header -->
             
-            <!-- Search Filter -->
-            <div class="row filter-row">
-                <div class="col-sm-6 col-md-3"> 
-                    <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
-                            <option>Select buyer</option>
-                            <option>Loren Gatlin</option>
-                            <option>Tarah Shropshire</option>
-                        </select>
-                        <label class="focus-label">Purchased By</label>
+            <!-- Overtime Statistics -->
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="stats-info">
+                        <h6>Overtime Employee</h6>
+                        <h4>12 <span>this month</span></h4>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <div class="form-group form-focus">
-                        <div class="cal-icon">
-                            <input class="form-control floating datetimepicker" type="text">
-                        </div>
-                        <label class="focus-label">From</label>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="stats-info">
+                        <h6>Overtime Hours</h6>
+                        <h4>118 <span>this month</span></h4>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <div class="form-group form-focus">
-                        <div class="cal-icon">
-                            <input class="form-control floating datetimepicker" type="text">
-                        </div>
-                        <label class="focus-label">To</label>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="stats-info">
+                        <h6>Pending Request</h6>
+                        <h4>23</h4>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="stats-info">
+                        <h6>Rejected</h6>
+                        <h4>5</h4>
+                    </div>
+                </div>
             </div>
-            <!-- /Search Filter -->
+            <!-- /Overtime Statistics -->
             
             <div class="row">
                 <div class="col-md-12">
@@ -214,83 +204,49 @@
                         <table class="table table-striped custom-table mb-0 datatable">
                             <thead>
                                 <tr>
-                                    <th>Item</th>
-                                    <th>Purchase From</th>
-                                    <th>Purchase Date</th>
-                                    <th>Purchased By</th>
-                                    <th>Amount</th>
-                                    <th>Paid By</th>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>OT Date</th>
+                                    <th class="text-center">OT Hours</th>
+                                    <th>OT Type</th>
+                                    <th>Description</th>
                                     <th class="text-center">Status</th>
+                                    <th>Approved by</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>1</td>
                                     <td>
-                                        <strong>Dell Laptop</strong>
+                                        <h2 class="table-avatar blue-link">
+                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                            <a href="profile.html">John Doe</a>
+                                        </h2>
                                     </td>
-                                    <td>Amazon</td>
-                                    <td>5 Jan 2019</td>
-                                    <td>
-                                        <a href="profile.html" class="avatar avatar-xs">
-                                            <img src="{{URL::to('assets/img/profiles/avatar-04.jpg')}}" alt="">
-                                        </a>
-                                        <h2><a href="profile.html">Loren Gatlin</a></h2>
-                                    </td>
-                                    <td>$ 1215</td>
-                                    <td>Cash</td>
+                                    <td>8 Mar 2019</td>
+                                    <td class="text-center">2</td>
+                                    <td>Normal day OT 1.5x</td>
+                                    <td>Lorem ipsum dollar</td>
                                     <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-danger"></i> Pending
+                                        <div class="action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
+                                                <i class="fa fa-dot-circle-o text-purple"></i> New
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Pending</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
-                                            </div>
                                         </div>
+                                    </td>
+                                    <td>
+                                        <h2 class="table-avatar">
+                                            <a href="profile.html" class="avatar avatar-xs"><img src="assets/img/profiles/avatar-09.jpg" alt=""></a>
+                                            <a href="#">Richard Miles</a>
+                                        </h2>
                                     </td>
                                     <td class="text-right">
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_leave"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>Mac System</strong>
-                                    </td>
-                                    <td>Amazon</td>
-                                    <td>5 Jan 2019</td>
-                                    <td>
-                                        <a href="profile.html" class="avatar avatar-xs">
-                                            <img src="{{URL::to('assets/img/profiles/avatar-03.jpg')}}" alt="">
-                                        </a>
-                                        <h2><a href="profile.html">Tarah Shropshire</a></h2>
-                                    </td>
-                                    <td>$ 1215</td>
-                                    <td>Cheque</td>
-                                    <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-success"></i> Approved
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Pending</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_leave"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_approve"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_overtime"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_overtime"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>
@@ -303,7 +259,125 @@
         </div>
         <!-- /Page Content -->
         
+        <!-- Add Overtime Modal -->
+        <div id="add_overtime" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Overtime</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Select Employee <span class="text-danger">*</span></label>
+                                <select class="select">
+                                    <option>-</option>
+                                    <option>John Doe</option>
+                                    <option>Richard Miles</option>
+                                    <option>John Smith</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Overtime Date <span class="text-danger">*</span></label>
+                                <div class="cal-icon">
+                                    <input class="form-control datetimepicker" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Overtime Hours <span class="text-danger">*</span></label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Description <span class="text-danger">*</span></label>
+                                <textarea rows="4" class="form-control"></textarea>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Overtime Modal -->
+        
+        <!-- Edit Overtime Modal -->
+        <div id="edit_overtime" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Overtime</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label>Select Employee <span class="text-danger">*</span></label>
+                                <select class="select">
+                                    <option>-</option>
+                                    <option>John Doe</option>
+                                    <option>Richard Miles</option>
+                                    <option>John Smith</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Overtime Date <span class="text-danger">*</span></label>
+                                <div class="cal-icon">
+                                    <input class="form-control datetimepicker" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Overtime Hours <span class="text-danger">*</span></label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Description <span class="text-danger">*</span></label>
+                                <textarea rows="4" class="form-control"></textarea>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Edit Overtime Modal -->
+        
+        <!-- Delete Overtime Modal -->
+        <div class="modal custom-modal fade" id="delete_overtime" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-header">
+                            <h3>Delete Overtime</h3>
+                            <p>Are you sure want to Cancel this?</p>
+                        </div>
+                        <div class="modal-btn delete-action">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" class="btn btn-primary continue-btn">Delete</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Delete Overtime Modal -->
+        
     </div>
     <!-- /Page Wrapper -->
-
+  
+    @section('script')
+    
+    @endsection
 @endsection

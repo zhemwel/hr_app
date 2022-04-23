@@ -430,4 +430,17 @@ class EmployeeController extends Controller
     {
         return view('form.designations');
     }
+
+    /** page time sheet */
+    public function timeSheetIndex()
+    {
+        return view('form.timesheet');
+    }
+
+    /** page overtime */
+    public function overTimeIndex()
+    {
+        return view('form.overtime');
+    }
+
 }
