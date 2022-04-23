@@ -170,10 +170,10 @@
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Client <span class="text-danger">*</span></label>
-                                    <select class="select">
-                                        <option>Please Select</option>
-                                        <option selected>Barry Cuda</option>
-                                        <option>Tressa Wexler</option>
+                                    <select class="select" id="" name="">
+                                        <option> --Please Select-- </option>
+                                        <option value="">Barry Cuda</option>
+                                        <option value="">Tressa Wexler</option>
                                     </select>
                                 </div>
                             </div>
@@ -182,8 +182,8 @@
                                     <label>Project <span class="text-danger">*</span></label>
                                     <select class="select">
                                         <option>Select Project</option>
-                                        <option selected>Office Management</option>
-                                        <option>Project Management</option>
+                                        <option value="">Office Management</option>
+                                        <option value="">Project Management</option>
                                     </select>
                                 </div>
                             </div>
@@ -191,37 +191,37 @@
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input class="form-control" type="email">
+                                    <input class="form-control" type="email" id="" name="">
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Tax</label>
                                     <select class="select">
-                                        <option>Select Tax</option>
-                                        <option>VAT</option>
-                                        <option>GST</option>
-                                        <option>No Tax</option>
+                                        <option>--Select Tax--</option>
+                                        <option value="">VAT</option>
+                                        <option value="">GST</option>
+                                        <option value="">No Tax</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Client Address</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" id="" name="" rows="2"></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Billing Address</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" id="" name="" rows="2"></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Estimate Date <span class="text-danger">*</span></label>
                                     <div class="cal-icon">
-                                        <input class="form-control datetimepicker" type="text">
+                                        <input class="form-control datetimepicker" type="text" id="" name="">
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +229,7 @@
                                 <div class="form-group">
                                     <label>Expiry Date <span class="text-danger">*</span></label>
                                     <div class="cal-icon">
-                                        <input class="form-control datetimepicker" type="text">
+                                        <input class="form-control datetimepicker" type="text" id="" name="">
                                     </div>
                                 </div>
                             </div>
@@ -253,19 +253,19 @@
                                         <tr>
                                             <td>1</td>
                                             <td>
-                                                <input class="form-control" type="text" style="min-width:150px">
+                                                <input class="form-control" type="text"id="" name="" style="min-width:150px">
                                             </td>
                                             <td>
-                                                <input class="form-control" type="text" style="min-width:150px">
+                                                <input class="form-control" type="text" id="" name="" style="min-width:150px">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:100px" type="text">
+                                                <input class="form-control" style="width:100px" id="" name="" type="text">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:80px" type="text">
+                                                <input class="form-control" style="width:80px" type="text" id="" name="">
                                             </td>
                                             <td>
-                                                <input class="form-control" readonly style="width:120px" type="text">
+                                                <input class="form-control" readonly style="width:120px" type="text" id="" name="">
                                             </td>
                                             <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
                                         </tr>
@@ -287,7 +287,7 @@
                                             <tr>
                                                 <td colspan="5" class="text-right">Tax</td>
                                                 <td style="text-align: right; padding-right: 30px;width: 230px">
-                                                    <input class="form-control text-right" value="0" readonly type="text">
+                                                    <input class="form-control text-right" value="0" readonly type="text" id="" name="">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -295,7 +295,7 @@
                                                     Discount %
                                                 </td>
                                                 <td style="text-align: right; padding-right: 30px;width: 230px">
-                                                    <input class="form-control text-right" type="text">
+                                                    <input class="form-control text-right" type="text" id="" name="">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -313,15 +313,15 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Other Information</label>
-                                            <textarea class="form-control" rows="4"></textarea>
+                                            <textarea class="form-control" rows="4" id="" name=""></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="submit-section">
-                            <button class="btn btn-primary submit-btn m-r-10">Save & Send</button>
-                            <button class="btn btn-primary submit-btn">Save</button>
+                            <button type="submit" class="btn btn-primary submit-btn m-r-10">Save & Send</button>
+                            <button type="submit" class="btn btn-primary submit-btn">Save</button>
                         </div>
                     </form>
                 </div>
