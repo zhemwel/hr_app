@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('estimates', function (Blueprint $table) {
             $table->id();
-            $table->string('estimate_number')->nullable();
-            $table->string('id_user')->nullable();
+            $table->string('estimate_number');
             $table->string('project')->nullable();
             $table->string('email')->nullable();
             $table->string('tax')->nullable();
