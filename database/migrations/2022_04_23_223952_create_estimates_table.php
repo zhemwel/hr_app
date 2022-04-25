@@ -23,11 +23,6 @@ return new class extends Migration
             $table->string('billing_address')->nullable();
             $table->string('estimate_date')->nullable();
             $table->string('expiry_date')->nullable();
-            $table->string('item')->nullable();
-            $table->string('description')->nullable();
-            $table->string('unit_cost')->nullable();
-            $table->string('qty')->nullable();
-            $table->string('amount')->nullable();
             $table->string('total')->nullable();
             $table->string('tax_1')->nullable();
             $table->string('discount')->nullable();

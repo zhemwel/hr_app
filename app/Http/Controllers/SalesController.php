@@ -29,4 +29,10 @@ class SalesController extends Controller
     {
         return view('sales.estimateview');
     }
+
+    /** save record create estimate */
+    public function createEstimateSaveRecord(Request $request)
+    {
+        return dd('OK');
+    }
 }

@@ -256,5 +256,7 @@ Route::controller(SalesController::class)->group(function () {
     Route::get('create/estimate/page', 'createEstimateIndex')->middleware('auth')->name('create/estimate/page');
     Route::get('edit/estimate/page', 'editEstimateIndex')->middleware('auth')->name('edit/estimate/page');
     Route::get('estimate/view', 'viewEstimateIndex')->middleware('auth')->name('estimate/view');
+
+    Route::post('create/estimate/save', 'createEstimateSaveRecord')->middleware('auth')->name('create/estimate/save');
 });
 

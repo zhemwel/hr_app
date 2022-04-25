@@ -165,7 +165,8 @@
             <!-- /Page Header -->
             <div class="row">
                 <div class="col-sm-12">
-                    <form>
+                    <form action="{{ route('create/estimate/save') }}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
@@ -252,24 +253,13 @@
                                         <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>
-                                                <input class="form-control" type="text"id="" name="" style="min-width:150px">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" type="text" id="" name="" style="min-width:150px">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" style="width:100px" id="" name="" type="text">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" style="width:80px" type="text" id="" name="">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" readonly style="width:120px" type="text" id="" name="">
-                                            </td>
+                                            <td><input class="form-control" style="min-width:150px" type="text" id="item" name="item[]"></td>
+                                            <td><input class="form-control"style="min-width:150px" type="text" id="description" name="description[]"></td>
+                                            <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
+                                            <td><input class="form-control" style="width:80px" type="text" id="qty" name="qty[]"></td>
+                                            <td><input class="form-control" readonly style="width:120px" type="text" id="amount" name="amount[]"></td>
                                             <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
                                         </tr>
-                                       
                                         </tbody>
                                     </table>
                                 </div>
@@ -340,11 +330,11 @@
                 $("#tableEstimate tbody").append(`
                 <tr id="R${++rowIdx}">
                     <td class="row-index text-center"><p> ${rowIdx}</p></td>
-                    <td><input class="form-control" type="text" style="min-width:150px"></td>
-                    <td><input class="form-control" type="text" style="min-width:150px"></td>
-                    <td><input class="form-control" style="width:100px" type="text"></td>
-                    <td><input class="form-control" style="width:80px" type="text"></td>
-                    <td><input class="form-control" readonly style="width:120px" type="text"></td>
+                    <td><input class="form-control" type="text" style="min-width:150px" id="item" name="item[]"></td>
+                    <td><input class="form-control" type="text" style="min-width:150px" id="description" name="description[]"></td>
+                    <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
+                    <td><input class="form-control" style="width:80px" type="text" id="amount" name="amount[]"></td>
+                    <td><input class="form-control" readonly style="width:120px" type="text" id="amount" name="amount[]"></td>
                     <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
             });
