@@ -10,6 +10,18 @@ class Estimates extends Model
     use HasFactory;
 
     protected $fillable = [
-        'rec_id',
+        'client',
+        'project',
+        'email',
+        'tax',
+        'client_address',
+        'billing_address',
+        'estimate_date',
+        'expiry_date',
+        'total',
+        'tax_1',
+        'discount',
+        'grand_total',
+        'other_information',
     ];
 }

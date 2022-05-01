@@ -16,12 +16,11 @@ return new class extends Migration
         DB::unprepared('
             CREATE TRIGGER id_estimate BEFORE INSERT ON estimates FOR EACH ROW
             BEGIN
-                INSERT INTO sequence_estimate_number_tbls VALUES (NULL);
+                INSERT INTO sequence_tbls VALUES (NULL);
                 SET NEW.estimate_number = CONCAT("EST_", LPAD(LAST_INSERT_ID(), 6, "0"));
             END
         ');
     }
-
     /**
      * Reverse the migrations.
      *
