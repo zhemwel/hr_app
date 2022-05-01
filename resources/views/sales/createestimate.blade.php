@@ -337,8 +337,8 @@
                     <td><input class="form-control" type="text" style="min-width:150px" id="item" name="item[]"></td>
                     <td><input class="form-control" type="text" style="min-width:150px" id="description" name="description[]"></td>
                     <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
-                    <td><input class="form-control" style="width:80px" type="text" id="amount" name="amount[]"></td>
-                    <td><input class="form-control" readonly style="width:120px" type="text" id="amount" name="amount[]"></td>
+                    <td><input class="form-control" style="width:80px" type="text" id="qty" name="qty[]"></td>
+                    <td><input class="form-control" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
                     <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
             });

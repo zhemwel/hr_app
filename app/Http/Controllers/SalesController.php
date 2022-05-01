@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Estimates;
+use App\Models\EstimatesAdd;
 use Brian2694\Toastr\Facades\Toastr;
 use DB;
 
@@ -58,6 +59,21 @@ class SalesController extends Controller
             $estimates->grand_total = $request->grand_total;
             $estimates->other_information = $request->other_information;
             $estimates->save();
+
+            $estimate_number = DB::table('estimates')->orderBy('estimate_number','DESC')->select('estimate_number')->first();
+            $estimate_number = $estimate_number->estimate_number;
+
+            foreach($request->item as $key => $items)
+            {
+                $estimatesAdd['item']            = $items;
+                $estimatesAdd['estimate_number'] = $estimate_number;
+                $estimatesAdd['description']     = $request->description[$key];
+                $estimatesAdd['unit_cost']       = $request->unit_cost[$key];
+                $estimatesAdd['qty']             = $request->qty[$key];
+                $estimatesAdd['amount']          = $request->amount[$key];
+
+                EstimatesAdd::create($estimatesAdd);
+            }
 
             DB::commit();
             Toastr::success('Create new Estimates successfully :)','Success');

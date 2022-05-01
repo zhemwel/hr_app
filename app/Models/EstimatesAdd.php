@@ -9,6 +9,11 @@ class EstimatesAdd extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'rec_id',
+        'item',
+        'estimate_number',
+        'description',
+        'unit_cost',
+        'qty',
+        'amount',
     ];
 }
