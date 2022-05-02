@@ -13,7 +13,13 @@ class SalesController extends Controller
     /** page estimates */
     public function estimatesIndex()
     {
-        return view('sales.estimates');
+        $estimates     = DB::table('estimates')->get();
+        $estimatesJoin = DB::table('estimates')
+            ->join('estimates_adds', 'estimates.estimate_number', '=', 'estimates_adds.estimate_number')
+            ->select('estimates.*', 'estimates_adds.*')
+            ->get();
+
+        return view('sales.estimates',compact('estimates','estimatesJoin'));
     }
 
     /** page create estimates */
@@ -77,7 +83,7 @@ class SalesController extends Controller
 
             DB::commit();
             Toastr::success('Create new Estimates successfully :)','Success');
-            return redirect()->back();
+            return redirect()->route('form/estimates/page');
         } catch(\Exception $e) {
             DB::rollback();
             Toastr::error('Add Estimates fail :)','Error');
