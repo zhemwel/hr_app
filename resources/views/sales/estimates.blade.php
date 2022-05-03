@@ -222,7 +222,7 @@
                             <tbody>
                                 @foreach ($estimates as $item )
                                 <tr>
-                                    <td><a href="{{ route('estimate/view') }}">{{ $item->estimate_number }}</a></td>
+                                    <td><a href="{{ url('estimate/view/'.$item->estimate_number) }}">{{ $item->estimate_number }}</a></td>
                                     <td>{{ $item->client }}</td>
                                     <td>{{date('d F, Y',strtotime($item->estimate_date)) }}</td>
                                     <td>{{date('d F, Y',strtotime($item->expiry_date)) }}</td>
@@ -239,74 +239,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0001</a></td>
-                                    <td>Global Technologies</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-success">Accepted</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0002</a></td>
-                                    <td>Delta Infotech</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-danger">Declined</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0003</a></td>
-                                    <td>Cream Inc</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-info">Sent</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="{{ route('estimate/view') }}">EST-0004</a></td>
-                                    <td>International Software Inc</td>
-                                    <td>11 Mar 2019</td>
-                                    <td>17 Mar 2019</td>
-                                    <td>$2099</td>
-                                    <td><span class="badge bg-inverse-warning">Expired</span></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('edit/estimate/page') }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>

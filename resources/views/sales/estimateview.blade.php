@@ -179,33 +179,27 @@
                                 <div class="col-sm-6 m-b-20">
                                     <img src="{{ URL::to('assets/img/logo2.png') }}" class="inv-logo" alt="">
                                     <ul class="list-unstyled">
-                                        <li>Admin</li>
-                                        <li>3864 Quiet Valley Lane,</li>
-                                        <li>Sherman Oaks, CA, 91403</li>
-                                        <li>GST No:</li>
+                                        <li>{{$estimatesJoin[0]->client }}</li>
+                                        <li>{{$estimatesJoin[0]->client_address }}</li>
+                                        <li>{{$estimatesJoin[0]->billing_address }}</li>
+                                        <li>{{$estimatesJoin[0]->tax }}</li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-6 m-b-20">
                                     <div class="invoice-details">
-                                        <h3 class="text-uppercase">Estimate #49029</h3>
+                                        <h3 class="text-uppercase">Estimate #{{$estimatesJoin[0]->estimate_number }}</h3>
                                         <ul class="list-unstyled">
-                                            <li>Create Date: <span>March 12, 2019</span></li>
-                                            <li>Expiry date: <span>May 25, 2019</span></li>
+                                            <li>Create Date: <span>{{date('d F, Y',strtotime($estimatesJoin[0]->estimate_date)) }}</span></li>
+                                            <li>Expiry date: <span>{{date('d F, Y',strtotime($estimatesJoin[0]->expiry_date)) }}</span></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-lg-12 m-b-20">
-                                    <h5>Estimate to:</h5>
+                                    <h5>Estimate to: {{$estimatesJoin[0]->client }}</h5>
                                     <ul class="list-unstyled">
-                                        <li><h5><strong>Barry Cuda</strong></h5></li>
-                                        <li>Global Technologies</li>
-                                        <li>5754 Airport Rd</li>
-                                        <li>Coosada, AL, 36020</li>
-                                        <li>United States</li>
-                                        <li>888-777-6655</li>
-                                        <li><a href="#">barrycuda@example.com</a></li>
+                                        <li><a href="#">{{$estimatesJoin[0]->email }}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -214,53 +208,23 @@
                                     <tr>
                                         <th>#</th>
                                         <th>ITEM</th>
-                                    <th class="d-none d-sm-table-cell">DESCRIPTION</th>
+                                        <th class="d-none d-sm-table-cell">DESCRIPTION</th>
                                         <th>UNIT COST</th>
                                         <th>QUANTITY</th>
-                                        <th class="text-right">TOTAL</th>
+                                        <th class="text-right">AMOUNT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($estimatesJoin as $key=>$item )
                                     <tr>
-                                        <td>1</td>
-                                        <td>Android Application</td>
-                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-                                        <td>$1000</td>
-                                        <td>2</td>
-                                        <td class="text-right">$2000</td>
+                                        <td>{{ ++$key }}</td>
+                                        <td>{{ $item->item }}</td>
+                                        <td class="d-none d-sm-table-cell">{{ $item->description }}</td>
+                                        <td>${{ $item->unit_cost }}</td>
+                                        <td>{{ $item->qty }}</td>
+                                        <td class="text-right">${{ $item->amount }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Ios Application</td>
-                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-                                        <td>$1750</td>
-                                        <td>1</td>
-                                        <td class="text-right">$1750</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Codeigniter Project</td>
-                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-                                        <td>$90</td>
-                                        <td>3</td>
-                                        <td class="text-right">$270</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Phonegap Project</td>
-                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-                                        <td>$1200</td>
-                                        <td>2</td>
-                                        <td class="text-right">$2400</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Website Optimization</td>
-                                    <td class="d-none d-sm-table-cell">Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-                                        <td>$200</td>
-                                        <td>2</td>
-                                        <td class="text-right">$400</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <div>
@@ -292,7 +256,7 @@
                                 </div>
                                 <div class="invoice-info">
                                     <h5>Other information</h5>
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed dictum ligula, cursus blandit risus. Maecenas eget metus non tellus dignissim aliquam ut a ex. Maecenas sed vehicula dui, ac suscipit lacus. Sed finibus leo vitae lorem interdum, eu scelerisque tellus fermentum. Curabitur sit amet lacinia lorem. Nullam finibus pellentesque libero, eu finibus sapien interdum vel</p>
+                                    <p class="text-muted">{{$estimatesJoin[0]->other_information }}</p>
                                 </div>
                             </div>
                         </div>
