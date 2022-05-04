@@ -194,7 +194,7 @@
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input class="form-control" type="email" value="barrycuda@example.com">
+                                    <input class="form-control" type="email" value="{{$estimatesJoin[0]->email }}">
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
@@ -211,20 +211,20 @@
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Client Address</label>
-                                    <textarea class="form-control" rows="3">5754 Airport Rd, Coosada, AL, 36020</textarea>
+                                    <textarea class="form-control" rows="2">{{$estimatesJoin[0]->client_address }}</textarea>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Billing Address</label>
-                                    <textarea class="form-control" rows="3">5754 Airport Rd, Coosada, AL, 36020</textarea>
+                                    <textarea class="form-control" rows="2">{{$estimatesJoin[0]->billing_address }}</textarea>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Estimate Date <span class="text-danger">*</span></label>
                                     <div class="cal-icon">
-                                        <input class="form-control datetimepicker" type="text" value="2019/05/20">
+                                        <input class="form-control datetimepicker" type="text" value="{{$estimatesJoin[0]->estimate_date }}">
                                     </div>
                                 </div>
                             </div>
@@ -232,7 +232,7 @@
                                 <div class="form-group">
                                     <label>Expiry Date <span class="text-danger">*</span></label>
                                     <div class="cal-icon">
-                                        <input class="form-control datetimepicker" type="text" value="2019/05/27">
+                                        <input class="form-control datetimepicker" type="text" value="{{$estimatesJoin[0]->expiry_date }}">
                                     </div>
                                 </div>
                             </div>
@@ -240,7 +240,7 @@
                         <div class="row">
                             <div class="col-md-12 col-sm-12">
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-white">
+                                    <table class="table table-hover table-white" id="tableEstimate">
                                         <thead>
                                             <tr>
                                                 <th style="width: 20px">#</th>
@@ -248,49 +248,35 @@
                                                 <th class="col-md-6">Description</th>
                                                 <th style="width:100px;">Unit Cost</th>
                                                 <th style="width:80px;">Qty</th>
-                                                <th>Amount</th>
+                                                <th>Total</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($estimatesJoin as $key=>$item )
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{ ++$key }}</td>
                                             <td>
-                                                <input class="form-control" type="text" value="Vehicle Module" style="min-width:150px">
+                                                <input class="form-control" type="text" value="{{ $item->item }}" style="min-width:150px">
                                             </td>
                                             <td>
-                                                <input class="form-control" type="text" value="Create, edit delete functionlity" style="min-width:150px">
+                                                <input class="form-control" type="text" value="{{ $item->description }}" style="min-width:150px">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:100px" type="text" value="112">
+                                                <input class="form-control" style="width:100px" type="text" value="{{ $item->unit_cost }}">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:80px" type="text" value="1">
+                                                <input class="form-control" style="width:80px" type="text" value="{{ $item->qty }}">
                                             </td>
                                             <td>
-                                                <input class="form-control" readonly style="width:120px" type="text" value="112">
+                                                <input class="form-control" readonly style="width:120px" type="text" value="{{ $item->amount }}">
                                             </td>
-                                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add"><i class="fa fa-plus"></i></a></td>
+                                            @if($key =='1')
+                                            <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
+                                            @endif
+                                            <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>
-                                                <input class="form-control" type="text" value="Vehicle Module" style="min-width:150px">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" type="text" value="Create, edit delete functionlity" style="min-width:150px">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" style="width:100px" type="text" value="112">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" style="width:80px" type="text" value="1">
-                                            </td>
-                                            <td>
-                                                <input class="form-control" readonly style="width:120px" type="text" value="112">
-                                            </td>
-                                            <td><a href="javascript:void(0)" class="text-danger font-18" title="Remove"><i class="fa fa-trash-o"></i></a></td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -334,7 +320,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Other Information</label>
-                                            <textarea class="form-control" rows="4"></textarea>
+                                            <textarea class="form-control" rows="2">{{$estimatesJoin[0]->other_information }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -354,6 +340,52 @@
     <!-- /Page Wrapper -->
 
     @section('script')
-   
+        <script>
+            var rowIdx = 1;
+            $("#addBtn").on("click", function ()
+            {
+                // Adding a row inside the tbody.
+                $("#tableEstimate tbody").append(`
+                <tr id="R${++rowIdx}">
+                    <td class="row-index text-center"><p> ${rowIdx}</p></td>
+                    <td><input class="form-control" type="text" style="min-width:150px" id="item" name="item[]"></td>
+                    <td><input class="form-control" type="text" style="min-width:150px" id="description" name="description[]"></td>
+                    <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
+                    <td><input class="form-control" style="width:80px" type="text" id="qty" name="qty[]"></td>
+                    <td><input class="form-control" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
+                    <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                </tr>`);
+            });
+            $("#tableEstimate tbody").on("click", ".remove", function ()
+            {
+                // Getting all the rows next to the row
+                // containing the clicked button
+                var child = $(this).closest("tr").nextAll();
+                // Iterating across all the rows
+                // obtained to change the index
+                child.each(function () {
+                // Getting <tr> id.
+                var id = $(this).attr("id");
+
+                // Getting the <p> inside the .row-index class.
+                var idx = $(this).children(".row-index").children("p");
+
+                // Gets the row number from <tr> id.
+                var dig = parseInt(id.substring(1));
+
+                // Modifying row index.
+                idx.html(`${dig - 1}`);
+
+                // Modifying row id.
+                $(this).attr("id", `R${dig - 1}`);
+            });
+        
+                // Removing the current row.
+                $(this).closest("tr").remove();
+        
+                // Decreasing total number of rows by 1.
+                rowIdx--;
+            });
+        </script>
     @endsection
 @endsection

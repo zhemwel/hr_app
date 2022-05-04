@@ -29,9 +29,14 @@ class SalesController extends Controller
     }
 
     /** page edit estimates */
-    public function editEstimateIndex()
+    public function editEstimateIndex($estimate_number)
     {
-        return view('sales.editestimate');
+        $estimatesJoin = DB::table('estimates')
+            ->join('estimates_adds', 'estimates.estimate_number', '=', 'estimates_adds.estimate_number')
+            ->select('estimates.*', 'estimates_adds.*')
+            ->where('estimates_adds.estimate_number',$estimate_number)
+            ->get();
+        return view('sales.editestimate',compact('estimatesJoin'));
     }
 
     /** view page estimate */
