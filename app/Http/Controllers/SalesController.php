@@ -31,12 +31,13 @@ class SalesController extends Controller
     /** page edit estimates */
     public function editEstimateIndex($estimate_number)
     {
+        $estimates     = DB::table('estimates') ->where('estimate_number',$estimate_number)->first();
         $estimatesJoin = DB::table('estimates')
             ->join('estimates_adds', 'estimates.estimate_number', '=', 'estimates_adds.estimate_number')
             ->select('estimates.*', 'estimates_adds.*')
             ->where('estimates_adds.estimate_number',$estimate_number)
             ->get();
-        return view('sales.editestimate',compact('estimatesJoin'));
+        return view('sales.editestimate',compact('estimates','estimatesJoin'));
     }
 
     /** view page estimate */
@@ -99,5 +100,39 @@ class SalesController extends Controller
             Toastr::error('Add Estimates fail :)','Error');
             return redirect()->back();
         }
+    }
+
+    /** update record estimate */
+    public function EstimateUpdateRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+           
+            $update = [
+                'id'                => $request->id,
+                'client'            => $request->client,
+                'project'           => $request->project,
+                'email'             => $request->email,
+                'tax'               => $request->tax,
+                'client_address'    => $request->client_address,
+                'billing_address'   => $request->billing_address,
+                'estimate_date'     => $request->estimate_date,
+                'expiry_date'       => $request->expiry_date,
+                'total'             => $request->total,
+                'tax_1'             => $request->tax_1,
+                'discount'          => $request->discount,
+                'grand_total'       => $request->grand_total,
+                'other_information' => $request->other_information,
+            ];
+           
+            Estimates::where('id',$request->id)->update($update);
+            DB::commit();
+            Toastr::success('Updated Estimates successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Update Estimates fail :)','Error');
+            return redirect()->back();
+        } 
     }
 }

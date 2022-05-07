@@ -258,5 +258,6 @@ Route::controller(SalesController::class)->group(function () {
     Route::get('estimate/view/{estimate_number}', 'viewEstimateIndex')->middleware('auth');
 
     Route::post('create/estimate/save', 'createEstimateSaveRecord')->middleware('auth')->name('create/estimate/save');
+    Route::post('create/estimate/update', 'EstimateUpdateRecord')->middleware('auth')->name('create/estimate/update');
 });
 

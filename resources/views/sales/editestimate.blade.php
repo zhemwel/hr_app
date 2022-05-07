@@ -168,7 +168,9 @@
             
             <div class="row">
                 <div class="col-md-12">
-                    <form>
+                    <form action="{{ route('create/estimate/update') }}" method="POST">
+                        @csrf
+                        <input class="form-control" type="hidden" id="id" name="id" value="{{$estimates->id }}">
                         <div class="row">
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
@@ -304,7 +306,7 @@
                                                     Discount %
                                                 </td>
                                                 <td style="text-align: right; width: 230px">
-                                                    <input class="form-control text-right" type="text" id="discount" name="discount" value="0">
+                                                    <input class="form-control text-right" type="text" id="discount" name="discount" value="{{$estimatesJoin[0]->discount }}">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -330,7 +332,7 @@
                         </div>
                         <div class="submit-section">
                             <button class="btn btn-primary submit-btn m-r-10">Save & Send</button>
-                            <button class="btn btn-primary submit-btn">Save</button>
+                            <button type="submit" class="btn btn-primary submit-btn">Save</button>
                         </div>
                     </form>
                 </div>

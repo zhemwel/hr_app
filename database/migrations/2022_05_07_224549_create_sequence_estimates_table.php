@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        DB::unprepared('
-            CREATE TRIGGER id_estimate BEFORE INSERT ON estimates FOR EACH ROW
-            BEGIN
-                INSERT INTO sequence_estimates VALUES (NULL);
-                SET NEW.estimate_number = CONCAT("EST_", LPAD(LAST_INSERT_ID(), 6, "0"));
-            END
-        ');
+        Schema::create('sequence_estimates', function (Blueprint $table) {
+            $table->id();
+        });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        DB::unprepared('DROP TRIGGER "id_estimate"');
+        Schema::dropIfExists('sequence_estimates');
     }
 };
