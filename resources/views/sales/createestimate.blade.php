@@ -289,7 +289,7 @@
                                                     Discount %
                                                 </td>
                                                 <td>
-                                                    <input class="form-control text-right" type="text" id="discount" name="discount" value="0" readonly>
+                                                    <input class="form-control text-right" type="text" id="discount" name="discount">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -326,6 +326,23 @@
     <!-- /Page Wrapper -->
  
     @section('script')
+        <script>
+            $(document).ready(function()
+            {
+                var amounts = 2;
+                var tax     = 100;
+                $("#qty").keyup(function()
+                {
+                    var qty = $("#qty").val();
+                    var discount = $("#discount").val();
+                    $("#amount").val(amounts * qty);
+                    $("#total").val(amounts * qty);
+                    $("#tax_1").val((amounts * qty)/tax);
+                    $("#grand_total").val((amounts * qty)+ discount);
+                }); 
+            });
+        </script>
+        {{-- add multiple row --}}
         <script>
             var rowIdx = 1;
             $("#addBtn").on("click", function ()

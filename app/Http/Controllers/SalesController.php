@@ -31,7 +31,7 @@ class SalesController extends Controller
     /** page edit estimates */
     public function editEstimateIndex($estimate_number)
     {
-        $estimates     = DB::table('estimates') ->where('estimate_number',$estimate_number)->first();
+        $estimates          = DB::table('estimates') ->where('estimate_number',$estimate_number)->first();
         $estimatesJoin = DB::table('estimates')
             ->join('estimates_adds', 'estimates.estimate_number', '=', 'estimates_adds.estimate_number')
             ->select('estimates.*', 'estimates_adds.*')
@@ -124,8 +124,24 @@ class SalesController extends Controller
                 'grand_total'       => $request->grand_total,
                 'other_information' => $request->other_information,
             ];
-           
             Estimates::where('id',$request->id)->update($update);
+            /** delete record */
+            foreach ($request->estimates_adds as $key => $items) {
+                DB::table('estimates_adds')->where('id', $request->estimates_adds[$key])->delete();
+            }
+            /** insert new record */
+            foreach($request->item as $key => $item)
+            {
+                $estimatesAdd['estimate_number'] = $request->estimate_number;
+                $estimatesAdd['item']            = $request->item[$key];
+                $estimatesAdd['description']     = $request->description[$key];
+                $estimatesAdd['unit_cost']       = $request->unit_cost[$key];
+                $estimatesAdd['qty']             = $request->qty[$key];
+                $estimatesAdd['amount']          = $request->amount[$key];
+
+                EstimatesAdd::create($estimatesAdd);
+            }
+           
             DB::commit();
             Toastr::success('Updated Estimates successfully :)','Success');
             return redirect()->back();

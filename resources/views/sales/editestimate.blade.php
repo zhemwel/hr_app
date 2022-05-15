@@ -171,6 +171,7 @@
                     <form action="{{ route('create/estimate/update') }}" method="POST">
                         @csrf
                         <input class="form-control" type="hidden" id="id" name="id" value="{{$estimates->id }}">
+                        <input class="form-control" type="hidden" id="estimate_number" name="estimate_number" value="{{$estimates->estimate_number }}">
                         <div class="row">
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
@@ -257,6 +258,7 @@
                                         <tbody>
                                         @foreach ($estimatesJoin as $key=>$item )
                                         <tr>
+                                            <input class="form-control" type="hidden" name="estimates_adds[]" value="{{$item->id }}">
                                             <td>{{ ++$key }}</td>
                                             <td>
                                                 <input class="form-control" type="text" id="item" name="item[]" value="{{ $item->item }}" style="min-width:150px">
