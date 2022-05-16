@@ -258,7 +258,8 @@
                                         <tbody>
                                         @foreach ($estimatesJoin as $key=>$item )
                                         <tr>
-                                            <input class="form-control" type="hidden" name="estimates_adds[]" value="{{$item->id }}">
+                                            <input type="hidden" name="estimates_adds[]" value="{{$item->id }}">
+                                            <td hidden class="ids">{{ $item->id }}</td>
                                             <td>{{ ++$key }}</td>
                                             <td>
                                                 <input class="form-control" type="text" id="item" name="item[]" value="{{ $item->item }}" style="min-width:150px">
@@ -278,7 +279,11 @@
                                             @if($key =='1')
                                             <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
                                             @endif
-                                            <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
+                                            @if($item->id ==!null)
+                                                <td><a class="text-danger font-18 delete_estimate" href="#" data-toggle="modal" data-target="#delete_estimate" title="Remove"><i class="fa fa-trash-o"></i></a></td> 
+                                            @else
+                                            <td><a class="text-danger font-18 remove" href="#" title="Remove"><i class="fa fa-trash-o"></i></a></td> 
+                                            @endif
                                         </tr>
                                         @endforeach
                                         </tbody>
@@ -341,11 +346,47 @@
             </div>
         </div>
         <!-- /Page Content -->
+
+        <!-- Delete Estimate Modal -->
+        <div class="modal custom-modal fade" id="delete_estimate" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-header">
+                            <h3>Delete Estimate</h3>
+                            <p>Are you sure want to remove column?</p>
+                        </div>
+                        <form action="{{ route('estimate_add/delete') }}" method="POST">
+                            @csrf
+                            <input type="text" name="id" class="e_id" value="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>
+                                </div>
+                                <div class="col-6">
+                                    <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Delete Estimate Modal -->
         
     </div>
     <!-- /Page Wrapper -->
 
     @section('script')
+        {{-- delete model --}}
+        <script>
+            $(document).on('click','.delete_estimate',function()
+            {
+                var _this = $(this).parents('tr');
+                $('.e_id').val(_this.find('.ids').text());
+            });
+        </script>
+
         <script>
             var rowIdx = 1;
             $("#addBtn").on("click", function ()
