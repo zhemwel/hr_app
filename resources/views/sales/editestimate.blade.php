@@ -358,7 +358,7 @@
                         </div>
                         <form action="{{ route('estimate_add/delete') }}" method="POST">
                             @csrf
-                            <input type="text" name="id" class="e_id" value="">
+                            <input type="hidden" name="id" class="e_id" value="">
                             <div class="row">
                                 <div class="col-6">
                                     <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>

@@ -151,4 +151,23 @@ class SalesController extends Controller
             return redirect()->back();
         } 
     }
+
+    /** delete record estimate add */
+    public function EstimateAddDeleteRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            EstimatesAdd::destroy($request->id);
+
+            DB::commit();
+            Toastr::success('Estimates deleted successfully :)','Success');
+            return redirect()->back();
+            
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Estimates deleted fail :)','Error');
+            return redirect()->back();
+        }
+    }
 }
