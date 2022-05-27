@@ -145,7 +145,8 @@
         </div>
     </div>
     <!-- /Sidebar -->
-
+    {{-- message --}}
+    {!! Toastr::message() !!}
     <!-- Page Wrapper -->
     <div class="page-wrapper">
 
@@ -222,6 +223,8 @@
                             <tbody>
                                 @foreach ($estimates as $item )
                                 <tr>
+                                    <td hidden class="ids">{{ $item->id }}</td>
+                                    <td hidden class="estimate_number">{{ $item->estimate_number }}</td>
                                     <td><a href="{{ url('estimate/view/'.$item->estimate_number) }}">{{ $item->estimate_number }}</a></td>
                                     <td>{{ $item->client }}</td>
                                     <td>{{date('d F, Y',strtotime($item->estimate_date)) }}</td>
@@ -233,7 +236,7 @@
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item" href="{{ url('edit/estimate/'.$item->estimate_number) }}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                <a class="dropdown-item delete_estimate" href="#" data-toggle="modal" data-target="#delete_estimate"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>
@@ -256,16 +259,19 @@
                             <h3>Delete Estimate</h3>
                             <p>Are you sure want to delete?</p>
                         </div>
-                        <div class="modal-btn delete-action">
+                        <form action="{{ route('estimate/delete') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" class="e_id" value="">
+                            <input type="hidden" name="estimate_number" class="estimate_number" value="">
                             <div class="row">
                                 <div class="col-6">
-                                    <a href="javascript:void(0);" class="btn btn-primary continue-btn">Delete</a>
+                                    <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>
                                 </div>
                                 <div class="col-6">
                                     <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -276,6 +282,14 @@
     <!-- /Page Wrapper -->
  
     @section('script')
-   
+         {{-- delete model --}}
+         <script>
+            $(document).on('click','.delete_estimate',function()
+            {
+                var _this = $(this).parents('tr');
+                $('.e_id').val(_this.find('.ids').text());
+                $('.estimate_number').val(_this.find('.estimate_number').text());
+            });
+        </script>
     @endsection
 @endsection

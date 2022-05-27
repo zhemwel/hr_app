@@ -170,4 +170,30 @@ class SalesController extends Controller
             return redirect()->back();
         }
     }
+    
+    /** delete record estimate */
+    public function EstimateDeleteRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+
+            /** delete record table estimates_adds */
+            $estimate_number = DB::table('estimates_adds')->where('estimate_number',$request->estimate_number)->get();
+            foreach ($estimate_number as $key => $id_estimate_number) {
+                DB::table('estimates_adds')->where('id', $id_estimate_number->id)->delete();
+            }
+
+            /** delete record table estimates */
+            Estimates::destroy($request->id);
+
+            DB::commit();
+            Toastr::success('Estimates deleted successfully :)','Success');
+            return redirect()->back();
+            
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Estimates deleted fail :)','Error');
+            return redirect()->back();
+        }
+    }
 }
