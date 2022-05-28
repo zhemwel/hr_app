@@ -257,9 +257,9 @@
                                             <td>1</td>
                                             <td><input class="form-control" style="min-width:150px" type="text" id="item" name="item[]"></td>
                                             <td><input class="form-control"style="min-width:150px" type="text" id="description" name="description[]"></td>
-                                            <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
-                                            <td><input class="form-control" style="width:80px" type="text" id="qty" name="qty[]"></td>
-                                            <td><input class="form-control" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
+                                            <td><input class="form-control unit_price" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
+                                            <td><input class="form-control qty" style="width:80px" type="text" id="qty" name="qty[]"></td>
+                                            <td><input class="form-control total" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
                                             <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
                                         </tr>
                                         </tbody>
@@ -275,7 +275,7 @@
                                                 <td></td>
                                                 <td class="text-right">Total</td>
                                                 <td>
-                                                    <input class="form-control text-right" type="text" id="total" name="total" value="0" readonly>
+                                                    <input class="form-control text-right total" type="text" id="sum_total" name="total" value="0" readonly>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -289,7 +289,7 @@
                                                     Discount %
                                                 </td>
                                                 <td>
-                                                    <input class="form-control text-right" type="text" id="discount" name="discount">
+                                                    <input class="form-control text-right discount" type="text" id="discount" name="discount" value="10">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -326,22 +326,6 @@
     <!-- /Page Wrapper -->
  
     @section('script')
-        <script>
-            $(document).ready(function()
-            {
-                var amounts = 2;
-                var tax     = 100;
-                $("#qty").keyup(function()
-                {
-                    var qty = $("#qty").val();
-                    var discount = $("#discount").val();
-                    $("#amount").val(amounts * qty);
-                    $("#total").val(amounts * qty);
-                    $("#tax_1").val((amounts * qty)/tax);
-                    $("#grand_total").val((amounts * qty)+ discount);
-                }); 
-            });
-        </script>
         {{-- add multiple row --}}
         <script>
             var rowIdx = 1;
@@ -353,9 +337,9 @@
                     <td class="row-index text-center"><p> ${rowIdx}</p></td>
                     <td><input class="form-control" type="text" style="min-width:150px" id="item" name="item[]"></td>
                     <td><input class="form-control" type="text" style="min-width:150px" id="description" name="description[]"></td>
-                    <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
-                    <td><input class="form-control" style="width:80px" type="text" id="qty" name="qty[]"></td>
-                    <td><input class="form-control" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
+                    <td><input class="form-control unit_price" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
+                    <td><input class="form-control qty" style="width:80px" type="text" id="qty" name="qty[]"></td>
+                    <td><input class="form-control total" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
                     <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
             });
@@ -382,13 +366,50 @@
                 // Modifying row id.
                 $(this).attr("id", `R${dig - 1}`);
             });
-        
+    
                 // Removing the current row.
                 $(this).closest("tr").remove();
-        
+    
                 // Decreasing total number of rows by 1.
                 rowIdx--;
             });
+
+            $("#tableEstimate tbody").on("input", ".unit_price", function () {
+                var unit_price = parseFloat($(this).val());
+                var qty = parseFloat($(this).closest("tr").find(".qty").val());
+                var total = $(this).closest("tr").find(".total");
+                total.val(unit_price * qty);
+
+                calc_total();
+            });
+
+            $("#tableEstimate tbody").on("input", ".qty", function () {
+                var qty = parseFloat($(this).val());
+                var unit_price = parseFloat($(this).closest("tr").find(".unit_price").val());
+                var total = $(this).closest("tr").find(".total");
+                total.val(unit_price * qty);
+                calc_total();
+            });
+            function calc_total() {
+                var sum = 0;
+                $(".total").each(function () {
+                sum += parseFloat($(this).val());
+                });
+                $(".subtotal").text(sum);
+                
+                var amounts = sum;
+                var tax     = 100;
+                $(document).on("change keyup blur", "#qty", function() 
+                {
+                    var qty = $("#qty").val();
+                    var discount = $(".discount").val();
+                    $(".total").val(amounts * qty);
+                    $("#sum_total").val(amounts * qty);
+                    $("#tax_1").val((amounts * qty)/tax);
+                    $("#grand_total").val((parseInt(amounts)) - (parseInt(discount)));
+                }); 
+            }
+
         </script>
     @endsection
 @endsection

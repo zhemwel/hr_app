@@ -268,13 +268,13 @@
                                                 <input class="form-control" type="text" id="description" name="description[]" value="{{ $item->description }}" style="min-width:150px">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:100px" type="text"id="unit_cost" name="unit_cost[]" value="{{ $item->unit_cost }}">
+                                                <input class="form-control unit_price" style="width:100px" type="text"id="unit_cost" name="unit_cost[]" value="{{ $item->unit_cost }}">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:80px" type="text" id="qty" name="qty[]" value="{{ $item->qty }}">
+                                                <input class="form-control qty" style="width:80px" type="text" id="qty" name="qty[]" value="{{ $item->qty }}">
                                             </td>
                                             <td>
-                                                <input class="form-control" style="width:120px" id="amount" name="amount[]" type="text" value="{{ $item->amount }}" readonly>
+                                                <input class="form-control total" style="width:120px" id="amount" name="amount[]" type="text" value="{{ $item->amount }}" readonly>
                                             </td>
                                             @if($key =='1')
                                             <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
@@ -299,13 +299,13 @@
                                                 <td></td>
                                                 <td class="text-right">Total</td>
                                                 <td>
-                                                    <input class="form-control text-right" type="text" id="total" name="total" value="0" readonly>
+                                                    <input class="form-control text-right" type="text" id="sum_total" name="total" value="{{$estimatesJoin[0]->total }}" readonly>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="5" style="text-align: right">Tax</td>
                                                 <td style="text-align: right;width: 230px">
-                                                    <input class="form-control text-right" type="text"id="tax_1" name="tax_1" value="0" readonly>
+                                                    <input class="form-control text-right" type="text"id="tax_1" name="tax_1" value="{{$estimatesJoin[0]->tax_1 }}" readonly>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -313,7 +313,7 @@
                                                     Discount %
                                                 </td>
                                                 <td style="text-align: right; width: 230px">
-                                                    <input class="form-control text-right" type="text" id="discount" name="discount" value="{{$estimatesJoin[0]->discount }}">
+                                                    <input class="form-control text-right discount" type="text" id="discount" name="discount" value="{{$estimatesJoin[0]->discount }}">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -321,7 +321,7 @@
                                                     Grand Total
                                                 </td>
                                                 <td style="text-align: right; font-weight: bold; font-size: 16px;width: 230px">
-                                                    <input class="form-control text-right" type="text" id="grand_total" name="grand_total" value="$ 0.00" readonly>
+                                                    <input class="form-control text-right" type="text" id="grand_total" name="grand_total" value="{{$estimatesJoin[0]->grand_total }}" readonly>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -358,7 +358,7 @@
                         </div>
                         <form action="{{ route('estimate_add/delete') }}" method="POST">
                             @csrf
-                            <input type="test" name="id" class="e_id" value="">
+                            <input type="hidden" name="id" class="e_id" value="">
                             <div class="row">
                                 <div class="col-6">
                                     <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>
@@ -397,9 +397,9 @@
                     <td class="row-index text-center"><p> ${rowIdx}</p></td>
                     <td><input class="form-control" type="text" style="min-width:150px" id="item" name="item[]"></td>
                     <td><input class="form-control" type="text" style="min-width:150px" id="description" name="description[]"></td>
-                    <td><input class="form-control" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
-                    <td><input class="form-control" style="width:80px" type="text" id="qty" name="qty[]"></td>
-                    <td><input class="form-control" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
+                    <td><input class="form-control unit_price" style="width:100px" type="text" id="unit_cost" name="unit_cost[]"></td>
+                    <td><input class="form-control qty" style="width:80px" type="text" id="qty" name="qty[]"></td>
+                    <td><input class="form-control total" style="width:120px" type="text" id="amount" name="amount[]" value="0" readonly></td>
                     <td><a href="javascript:void(0)" class="text-danger font-18 remove" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                 </tr>`);
             });
@@ -433,6 +433,42 @@
                 // Decreasing total number of rows by 1.
                 rowIdx--;
             });
+
+            $("#tableEstimate tbody").on("input", ".unit_price", function () {
+                var unit_price = parseFloat($(this).val());
+                var qty = parseFloat($(this).closest("tr").find(".qty").val());
+                var total = $(this).closest("tr").find(".total");
+                total.val(unit_price * qty);
+
+                calc_total();
+            });
+
+            $("#tableEstimate tbody").on("input", ".qty", function () {
+                var qty = parseFloat($(this).val());
+                var unit_price = parseFloat($(this).closest("tr").find(".unit_price").val());
+                var total = $(this).closest("tr").find(".total");
+                total.val(unit_price * qty);
+                calc_total();
+            });
+            function calc_total() {
+                var sum = 0;
+                $(".total").each(function () {
+                sum += parseFloat($(this).val());
+                });
+                $(".subtotal").text(sum);
+                
+                var amounts = sum;
+                var tax     = 100;
+                $(document).on("change keyup blur", "#qty", function() 
+                {
+                    var qty = $("#qty").val();
+                    var discount = $(".discount").val();
+                    $(".total").val(amounts * qty);
+                    $("#sum_total").val(amounts * qty);
+                    $("#tax_1").val((amounts * qty)/tax);
+                    $("#grand_total").val((parseInt(amounts)) - (parseInt(discount)));
+                }); 
+            }
         </script>
     @endsection
 @endsection

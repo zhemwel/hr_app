@@ -238,15 +238,15 @@
                                                     <tbody>
                                                         <tr>
                                                             <th>Subtotal:</th>
-                                                            <td class="text-right">$7,000</td>
+                                                            <td class="text-right">{{$estimatesJoin[0]->total }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Tax: <span class="text-regular">(25%)</span></th>
-                                                            <td class="text-right">$1,750</td>
+                                                            <td class="text-right">{{$estimatesJoin[0]->tax_1 }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Total:</th>
-                                                            <td class="text-right text-primary"><h5>$8,750</h5></td>
+                                                            <td class="text-right text-primary"><h5>{{$estimatesJoin[0]->total }}</h5></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
