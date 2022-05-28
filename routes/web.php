@@ -252,6 +252,8 @@ Route::controller(TrainingTypeController::class)->group(function () {
 
 // ----------------------------- sales  ------------------------------//
 Route::controller(SalesController::class)->group(function () {
+
+    // -------------------- estimate  -------------------//
     Route::get('form/estimates/page', 'estimatesIndex')->middleware('auth')->name('form/estimates/page');
     Route::get('create/estimate/page', 'createEstimateIndex')->middleware('auth')->name('create/estimate/page');
     Route::get('edit/estimate/{estimate_number}', 'editEstimateIndex')->middleware('auth');
@@ -261,5 +263,8 @@ Route::controller(SalesController::class)->group(function () {
     Route::post('create/estimate/update', 'EstimateUpdateRecord')->middleware('auth')->name('create/estimate/update');
     Route::post('estimate_add/delete', 'EstimateAddDeleteRecord')->middleware('auth')->name('estimate_add/delete');
     Route::post('estimate/delete', 'EstimateDeleteRecord')->middleware('auth')->name('estimate/delete');
+    // ---------------------- payments  ---------------//
+    Route::get('payments', 'Payments')->middleware('auth')->name('payments');
+
 });
 

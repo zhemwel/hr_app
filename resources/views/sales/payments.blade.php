@@ -53,10 +53,10 @@
                             <li><a href="{{ route('attendance/page') }}">Attendance (Admin)</a></li>
                             <li><a href="{{ route('attendance/employee/page') }}">Attendance (Employee)</a></li>
                             <li><a href="{{ route('form/departments/page') }}">Departments</a></li>
-                            <li><a href="designations.html">Designations</a></li>
-                            <li><a href="timesheet.html">Timesheet</a></li>
-                            <li><a href="shift-scheduling.html">Shift & Schedule</a></li>
-                            <li><a href="overtime.html">Overtime</a></li>
+                            <li><a href="{{ route('form/designations/page') }}">Designations</a></li>
+                            <li><a href="{{ route('form/timesheet/page') }}">Timesheet</a></li>
+                            <li><a href="{{ route('form/shiftscheduling/page') }}">Shift & Schedule</a></li>
+                            <li><a href="{{ route('form/overtime/page') }}">Overtime</a></li>
                         </ul>
                     </li>
                     <li class="menu-title"> <span>HR</span> </li>
@@ -67,9 +67,9 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul style="display: none;">
-                            <li><a class="active" href="{{ route('form/estimates/page') }}">Estimates</a></li>
+                            <li><a href="{{ route('form/estimates/page') }}">Estimates</a></li>
                             <li><a href="{{ route('form/invoice/view/page') }}">Invoices</a></li>
-                            <li><a href="{{ route('payments') }}">Payments</a></li>
+                            <li><a class="active" href="{{ route('payments') }}">Payments</a></li>
                             <li><a href="expenses.html">Expenses</a></li>
                             <li><a href="provident-fund.html">Provident Fund</a></li>
                             <li><a href="taxes.html">Taxes</a></li>
@@ -145,27 +145,23 @@
         </div>
     </div>
     <!-- /Sidebar -->
-
+    {{-- message --}}
+    {!! Toastr::message() !!}
     <!-- Page Wrapper -->
-    <div class="page-wrapper">  
+    <div class="page-wrapper">
+			
         <!-- Page Content -->
         <div class="content container-fluid">
+        
             <!-- Page Header -->
             <div class="page-header">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h3 class="page-title">Estimate</h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="page-title">Payments</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Estimate</li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Payments</li>
                         </ul>
-                    </div>
-                    <div class="col-auto float-right ml-auto">
-                        <div class="btn-group btn-group-sm">
-                            <button class="btn btn-white">CSV</button>
-                            <button class="btn btn-white">PDF</button>
-                            <button class="btn btn-white"><i class="fa fa-print fa-lg"></i> Print</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -173,93 +169,47 @@
             
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6 m-b-20">
-                                    <img src="{{ URL::to('assets/img/logo2.png') }}" class="inv-logo" alt="">
-                                    <ul class="list-unstyled">
-                                        <li>{{$estimatesJoin[0]->client }}</li>
-                                        <li>{{$estimatesJoin[0]->client_address }}</li>
-                                        <li>{{$estimatesJoin[0]->billing_address }}</li>
-                                        <li>{{$estimatesJoin[0]->tax }}</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6 m-b-20">
-                                    <div class="invoice-details">
-                                        <h3 class="text-uppercase">Estimate #{{$estimatesJoin[0]->estimate_number }}</h3>
-                                        <ul class="list-unstyled">
-                                            <li>Create Date: <span>{{date('d F, Y',strtotime($estimatesJoin[0]->estimate_date)) }}</span></li>
-                                            <li>Expiry date: <span>{{date('d F, Y',strtotime($estimatesJoin[0]->expiry_date)) }}</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-12 m-b-20">
-                                    <h5>Estimate to: {{$estimatesJoin[0]->client }}</h5>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">{{$estimatesJoin[0]->email }}</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>ITEM</th>
-                                        <th class="d-none d-sm-table-cell">DESCRIPTION</th>
-                                        <th>UNIT COST</th>
-                                        <th>QUANTITY</th>
-                                        <th class="text-right">AMOUNT</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($estimatesJoin as $key=>$item )
-                                    <tr>
-                                        <td>{{ ++$key }}</td>
-                                        <td>{{ $item->item }}</td>
-                                        <td class="d-none d-sm-table-cell">{{ $item->description }}</td>
-                                        <td>${{ $item->unit_cost }}</td>
-                                        <td>{{ $item->qty }}</td>
-                                        <td class="text-right">${{ $item->amount }}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            <div>
-                                <div class="row invoice-payment">
-                                    <div class="col-sm-7">
-                                    </div>
-                                    <div class="col-sm-5">
-                                        <div class="m-b-20">
-                                            <div class="table-responsive no-border">
-                                                <table class="table">
-                                                    <tbody>
-                                                        <tr>
-                                                            <th>Subtotal:</th>
-                                                            <td class="text-right">{{$estimatesJoin[0]->total }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Tax: <span class="text-regular">(25%)</span></th>
-                                                            <td class="text-right">{{$estimatesJoin[0]->tax_1 }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Total:</th>
-                                                            <td class="text-right text-primary"><h5>{{$estimatesJoin[0]->total }}</h5></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="invoice-info">
-                                    <h5>Other information</h5>
-                                    <p class="text-muted">{{$estimatesJoin[0]->other_information }}</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="table-responsive">	
+                        <table class="table table-striped custom-table datatable mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Client</th>
+                                    <th>Payment Type</th>
+                                    <th>Paid Date</th>
+                                    <th>Paid Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="invoice-view.html">#INV-0001</a></td>
+                                    <td>
+                                        <h2><a href="#">Global Technologies</a></h2>
+                                    </td>
+                                    <td>Paypal</td>
+                                    <td>8 Feb 2019</td>
+                                    <td>$500</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="invoice-view.html">#INV-0002</a></td>
+                                    <td>
+                                        <h2><a href="#">Delta Infotech</a></h2>
+                                    </td>
+                                    <td>Paypal</td>
+                                    <td>8 Feb 2019</td>
+                                    <td>$500</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="invoice-view.html">#INV-0003</a></td>
+                                    <td>
+                                        <h2><a href="#">Cream Inc</a></h2>
+                                    </td>
+                                    <td>Paypal</td>
+                                    <td>8 Feb 2019</td>
+                                    <td>$500</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -269,6 +219,5 @@
     <!-- /Page Wrapper -->
  
     @section('script')
-   
     @endsection
 @endsection

@@ -196,4 +196,10 @@ class SalesController extends Controller
             return redirect()->back();
         }
     }
+
+    /** view payments page */
+    public function Payments()
+    {
+       return view('sales.payments');
+    }
 }
