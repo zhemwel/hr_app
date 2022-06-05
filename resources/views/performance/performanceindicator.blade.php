@@ -69,8 +69,7 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <ul style="display: none;">
-                            <li><a href="{{ route('form/estimates/page') }}>Estimates</a></li>
-                            <li><a class="active" href="{{ route('form/invoice/view/page') }}">Invoices</a></li>
+                            <li><a href="{{ route('form/estimates/page') }}">Estimates</a></li>
                             <li><a href="{{ route('payments') }}">Payments</a></li>
                             <li><a href="expenses.html">Expenses</a></li>
                             <li><a href="provident-fund.html">Provident Fund</a></li>

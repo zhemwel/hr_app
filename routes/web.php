@@ -208,7 +208,6 @@ Route::controller(PayrollController::class)->group(function () {
 Route::controller(ExpenseReportsController::class)->group(function () {
     Route::get('form/expense/reports/page', 'index')->middleware('auth')->name('form/expense/reports/page');
     Route::get('form/invoice/reports/page', 'invoiceReports')->middleware('auth')->name('form/invoice/reports/page');
-    Route::get('form/invoice/view/page', 'invoiceView')->middleware('auth')->name('form/invoice/view/page');
     Route::get('form/daily/reports/page', 'dailyReport')->middleware('auth')->name('form/daily/reports/page');
     Route::get('form/leave/reports/page','leaveReport')->middleware('auth')->name('form/leave/reports/page');
 });
