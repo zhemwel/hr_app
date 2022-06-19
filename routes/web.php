@@ -264,6 +264,7 @@ Route::controller(SalesController::class)->group(function () {
     Route::post('estimate/delete', 'EstimateDeleteRecord')->middleware('auth')->name('estimate/delete');
     // ---------------------- payments  ---------------//
     Route::get('payments', 'Payments')->middleware('auth')->name('payments');
-
+    Route::get('expenses/page', 'Expenses')->middleware('auth')->name('expenses/page');
+    
 });
 

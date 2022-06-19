@@ -202,4 +202,10 @@ class SalesController extends Controller
     {
        return view('sales.payments');
     }
+
+    /** expenses page index */
+    public function Expenses()
+    {
+        return view('sales.expenses');
+    }
 }
