@@ -327,13 +327,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Item Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="item_name">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Purchase From</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="purchase_from">
                                     </div>
                                 </div>
                             </div>
@@ -341,15 +341,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Purchase Date</label>
-                                        <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                                        <div class="cal-icon"><input class="form-control datetimepicker" type="text" name="purchase_date"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Purchased By </label>
-                                        <select class="select">
-                                            <option>Daniel Porter</option>
-                                            <option>Roger Dixon</option>
+                                        <select class="select" name="purchased_by">
+                                            <option value="Daniel Porter">Daniel Porter</option>
+                                            <option value="Roger Dixon">Roger Dixon</option>
                                         </select>
                                     </div>
                                 </div>
@@ -358,15 +358,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Amount</label>
-                                        <input placeholder="$50" class="form-control" type="text">
+                                        <input placeholder="$50" class="form-control" type="text" name="amount">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Paid By</label>
-                                        <select class="select">
-                                            <option>Cash</option>
-                                            <option>Cheque</option>
+                                        <select class="select" name="paid_by">
+                                            <option value="Cash">Cash</option>
+                                            <option value="Cheque">Cheque</option>
                                         </select>
                                     </div>
                                 </div>
@@ -375,16 +375,16 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select class="select">
-                                            <option>Pending</option>
-                                            <option>Approved</option>
+                                        <select class="select" name="status">
+                                            <option value="Pending">Pending</option>
+                                            <option value="Approved">Approved</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Attachments</label>
-                                        <input class="form-control" type="file">
+                                        <input class="form-control" type="file" name="attachments">
                                     </div>
                                 </div>
                             </div>
@@ -401,7 +401,7 @@
                                 </ul>
                             </div>
                             <div class="submit-section">
-                                <button class="btn btn-primary submit-btn">Submit</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                             </div>
                         </form>
                     </div>
