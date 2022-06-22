@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Estimates;
 use App\Models\EstimatesAdd;
+use App\Models\Expense;
 use Brian2694\Toastr\Facades\Toastr;
 use DB;
 
@@ -207,5 +208,46 @@ class SalesController extends Controller
     public function Expenses()
     {
         return view('sales.expenses');
+    }
+
+    // save record
+    public function saveRecord(Request $request)
+    {
+        $request->validate([
+            'item_name'    => 'required|string|max:255',
+            'purchase_from'=> 'required|string|max:255',
+            'purchase_date'=> 'required|string|max:255',
+            'purchased_by' => 'required|string|max:255',
+            'amount'       => 'required|string|max:255',
+            'paid_by'      => 'required|string|max:255',
+            'status'       => 'required|string|max:255',
+            'attachments'  => 'required',
+        ]);
+
+        DB::beginTransaction();
+        try {
+
+            $attachments = time().'.'.$request->attachments->extension();  
+            $request->attachments->move(public_path('assets/images'), $attachments);
+
+            $expense = new Expense;
+            $expense->item_name  = $request->item_name;
+            $expense->purchase_from = $request->purchase_from;
+            $expense->purchase_date = $request->purchase_date;
+            $expense->purchased_by  = $request->purchased_by;
+            $expense->amount  = $request->amount;
+            $expense->paid_by = $request->paid_by;
+            $expense->status  = $request->status;
+            $expense->attachments  = $attachments;
+            $expense->save();
+            
+            DB::commit();
+            Toastr::success('Create new Leaves successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Add Leaves fail :)','Error');
+            return redirect()->back();
+        }
     }
 }
