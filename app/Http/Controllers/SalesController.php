@@ -207,7 +207,9 @@ class SalesController extends Controller
     /** expenses page index */
     public function Expenses()
     {
-        return view('sales.expenses');
+        /** get data show data on table page expenses */
+        $data = DB::table('expenses')->get();
+        return view('sales.expenses',compact('data'));
     }
 
     // save record
@@ -242,11 +244,11 @@ class SalesController extends Controller
             $expense->save();
             
             DB::commit();
-            Toastr::success('Create new Leaves successfully :)','Success');
+            Toastr::success('Create new Expense successfully :)','Success');
             return redirect()->back();
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Add Leaves fail :)','Error');
+            Toastr::error('Add Expense fail :)','Error');
             return redirect()->back();
         }
     }

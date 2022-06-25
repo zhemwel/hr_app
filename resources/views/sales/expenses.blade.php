@@ -234,25 +234,33 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data as $key=>$item)
                                 <tr>
                                     <td>
-                                        <strong>Dell Laptop</strong>
+                                        <strong>{{ $item->item_name }}</strong>
                                     </td>
-                                    <td>Amazon</td>
-                                    <td>5 Jan 2019</td>
+                                    <td>{{ $item->purchase_from }}</td>
+                                    <td>{{date('d F, Y',strtotime($item->purchase_date)) }}</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar avatar-xs"><img src="{{ URL::to('assets/img/profiles/avatar-04.jpg') }}" alt=""></a>
-                                            <a href="profile.html">Loren Gatlin</a>
+                                            <a href="profile.html" class="avatar avatar-xs"><img src="{{ URL::to('/assets/images/'.$item->attachments) }}" alt=""></a>
+                                            <a href="profile.html">{{ $item->purchased_by }}</a>
                                         </h2>
                                     </td>
-                                    <td>$1215</td>
-                                    <td>Cash</td>
+                                    <td>${{ $item->amount }}</td>
+                                    <td>{{ $item->paid_by }}</td>
                                     <td class="text-center">
                                         <div class="dropdown action-label">
+                                            @if($item->status == 'Pending')
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-danger"></i> Pending
+                                                <i class="fa fa-dot-circle-o text-danger"></i> {{ $item->status }}
                                             </a>
+                                            @endif
+                                            @if($item->status == 'Approved')
+                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-dot-circle-o text-success"></i> {{ $item->status }}
+                                            </a>
+                                            @endif
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Pending</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
@@ -269,41 +277,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <strong>Mac System</strong>
-                                    </td>
-                                    <td>Amazon</td>
-                                    <td>5 Jan 2019</td>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar avatar-xs"><img src="{{ URL::to('assets/img/profiles/avatar-03.jpg') }}" alt=""></a>
-                                            <a href="profile.html">Tarah Shropshire</a>
-                                        </h2>
-                                    </td>
-                                    <td>$1215</td>
-                                    <td>Cheque</td>
-                                    <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-success"></i> Approved
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Pending</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Approved</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_expense"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_expense"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
