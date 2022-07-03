@@ -266,6 +266,7 @@ Route::controller(SalesController::class)->group(function () {
     Route::get('payments', 'Payments')->middleware('auth')->name('payments');
     Route::get('expenses/page', 'Expenses')->middleware('auth')->name('expenses/page');
     Route::post('expenses/save', 'saveRecord')->middleware('auth')->name('expenses/save');
+    Route::post('expenses/update', 'updateRecord')->middleware('auth')->name('expenses/update');
     
 });
 

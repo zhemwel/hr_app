@@ -252,4 +252,32 @@ class SalesController extends Controller
             return redirect()->back();
         }
     }
+
+    // update
+    public function updateRecord( Request $request)
+    {
+        DB::beginTransaction();
+        try{
+            $id           = $request->id;
+            $holidayName  = $request->holidayName;
+            $holidayDate  = $request->holidayDate;
+
+            $update = [
+
+                'id'           => $id,
+                'name_holiday' => $holidayName,
+                'date_holiday' => $holidayDate,
+            ];
+
+            Holiday::where('id',$request->id)->update($update);
+            DB::commit();
+            Toastr::success('Holiday updated successfully :)','Success');
+            return redirect()->back();
+
+        }catch(\Exception $e){
+            DB::rollback();
+            Toastr::error('Holiday update fail :)','Error');
+            return redirect()->back();
+        }
+    }
 }

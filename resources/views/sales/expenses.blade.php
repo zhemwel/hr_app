@@ -223,12 +223,13 @@
                         <table class="table table-striped custom-table mb-0 datatable">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Item</th>
-                                    <th>Purchase From</th>
-                                    <th>Purchase Date</th>
-                                    <th>Purchased By</th>
-                                    <th>Amount</th>
-                                    <th>Paid By</th>
+                                    <th class="purchase_from">Purchase From</th>
+                                    <th class="purchase_date">Purchase Date</th>
+                                    <th class="purchased_by">Purchased By</th>
+                                    <th class="amount">Amount</th>
+                                    <th class="paid_by">Paid By</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
@@ -236,19 +237,22 @@
                             <tbody>
                                 @foreach ($data as $key=>$item)
                                 <tr>
-                                    <td>
-                                        <strong>{{ $item->item_name }}</strong>
-                                    </td>
-                                    <td>{{ $item->purchase_from }}</td>
-                                    <td>{{date('d F, Y',strtotime($item->purchase_date)) }}</td>
+                                    <td>{{ ++$key }}</td>
+                                    <td hidden class="id">{{ $item->id }}</td>
+                                    <td class="item_name">{{ $item->item_name }}</td>
+                                    <td class="purchase_from">{{ $item->purchase_from }}</td>
+                                    <td class="purchase_date">{{date('d F, Y',strtotime($item->purchase_date)) }}</td>
                                     <td>
                                         <h2 class="table-avatar">
                                             <a href="profile.html" class="avatar avatar-xs"><img src="{{ URL::to('/assets/images/'.$item->attachments) }}" alt=""></a>
                                             <a href="profile.html">{{ $item->purchased_by }}</a>
+                                            <td hidden class="purchased_by">{{ $item->purchased_by }}</td>
                                         </h2>
                                     </td>
-                                    <td>${{ $item->amount }}</td>
-                                    <td>{{ $item->paid_by }}</td>
+                                    <td class="amount">${{ $item->amount }}</td>
+                                    <td class="paid_by">{{ $item->paid_by }}</td>
+                                    <td hidden class="status">{{ $item->status }}</td>
+                                    <td hidden class="attachments">{{ $item->attachments }}</td>
                                     <td class="text-center">
                                         <div class="dropdown action-label">
                                             @if($item->status == 'Pending')
@@ -271,7 +275,7 @@
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_expense"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a class="dropdown-item edit_expense" href="#" data-toggle="modal" data-target="#edit_expense"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_expense"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                             </div>
                                         </div>
@@ -397,18 +401,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('expenses/update') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="id" id="e_id" value="">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Item Name</label>
-                                        <input class="form-control" value="Dell Laptop" type="text">
+                                        <input class="form-control" type="text" name="item_name" id="e_item_name" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Purchase From</label>
-                                        <input class="form-control" value="Amazon" type="text">
+                                        <input class="form-control" type="text" name="purchase_from" id="e_purchase_from" value="">
                                     </div>
                                 </div>
                             </div>
@@ -416,13 +422,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Purchase Date</label>
-                                        <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                                        <div class="cal-icon">
+                                            <input class="form-control datetimepicker" type="text" name="purchase_date" id="e_purchase_date" value="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Purchased By </label>
-                                        <select class="select">
+                                        <label>Purchased By</label>
+                                        <select class="select" name="purchased_by" id="e_purchased_by">
                                             <option>Daniel Porter</option>
                                             <option>Roger Dixon</option>
                                         </select>
@@ -433,13 +441,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Amount</label>
-                                        <input placeholder="$50" class="form-control" value="$10000" type="text">
+                                        <input class="form-control" type="text" name="amount" id="e_amount" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Paid By</label>
-                                        <select class="select">
+                                        <select class="select" name="paid_by" id="e_paid_by">
                                             <option>Cash</option>
                                             <option>Cheque</option>
                                         </select>
@@ -450,7 +458,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select class="select">
+                                        <select class="select" name="status" id="e_status">
                                             <option>Pending</option>
                                             <option>Approved</option>
                                         </select>
@@ -459,21 +467,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Attachments</label>
-                                        <input class="form-control" type="file">
+                                        <input class="form-control" type="file" name="attachments" value="">
+                                        <input class="form-control" type="hidden" name="hiiden_attachments" id="e_attachments" value="">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="attach-files">
-                                <ul>
-                                    <li>
-                                        <img src="{{ URL::to('assets/img/placeholder.jpg') }}" alt="">
-                                        <a href="#" class="fa fa-close file-remove"></a>
-                                    </li>
-                                    <li>
-                                        <img src="{{ URL::to('assets/img/placeholder.jpg') }}" alt="">
-                                        <a href="#" class="fa fa-close file-remove"></a>
-                                    </li>
-                                </ul>
                             </div>
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Save</button>
@@ -514,6 +511,30 @@
     <!-- /Page Wrapper -->
 
     @section('script')
-       
+        {{-- update js --}}
+        <script>
+            $(document).on('click','.edit_expense',function()
+            {
+                var _this = $(this).parents('tr');
+                $('#e_id').val(_this.find('.id').text());
+                $('#e_item_name').val(_this.find('.item_name').text());
+                $('#e_purchase_from').val(_this.find('.purchase_from').text());  
+                $('#e_purchase_date').val(_this.find('.purchase_date').text());  
+                $('#e_amount').val(_this.find('.amount').text());
+                $('#e_attachments').val(_this.find('.attachments').text());
+
+                var purchased_by = (_this.find(".purchased_by").text());
+                var _option = '<option selected value="' + purchased_by+ '">' + _this.find('.purchased_by').text() + '</option>'
+                $( _option).appendTo("#e_purchased_by");
+
+                var paid_by = (_this.find(".paid_by").text());
+                var _option = '<option selected value="' + paid_by+ '">' + _this.find('.paid_by').text() + '</option>'
+                $( _option).appendTo("#e_paid_by");
+
+                var status = (_this.find(".status").text());
+                var _option = '<option selected value="' + status+ '">' + _this.find('.status').text() + '</option>'
+                $( _option).appendTo("#e_status");
+            });
+        </script>
     @endsection
 @endsection
