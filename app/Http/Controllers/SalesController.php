@@ -258,25 +258,38 @@ class SalesController extends Controller
     {
         DB::beginTransaction();
         try{
-            $id           = $request->id;
-            $holidayName  = $request->holidayName;
-            $holidayDate  = $request->holidayDate;
-
+           
+            $attachments = $request->hidden_attachments;
+            $attachment = $request->file('attachments');
+            if($attachment != '')
+            {
+                $attachments = time().'.'.$attachment->getClientOriginalExtension();  
+                $attachment->move(public_path('assets/images'), $attachments);
+            } else {
+                $attachments;
+            }
+            
             $update = [
 
-                'id'           => $id,
-                'name_holiday' => $holidayName,
-                'date_holiday' => $holidayDate,
+                'id'           => $request->id,
+                'item_name'    => $request->item_name,
+                'purchase_from'=> $request->purchase_from,
+                'purchase_date'=> $request->purchase_date,
+                'purchased_by' => $request->purchased_by,
+                'amount'       => $request->amount,
+                'paid_by'      => $request->paid_by,
+                'status'       => $request->status,
+                'attachments'  => $attachments,
             ];
 
-            Holiday::where('id',$request->id)->update($update);
+            Expense::where('id',$request->id)->update($update);
             DB::commit();
-            Toastr::success('Holiday updated successfully :)','Success');
+            Toastr::success('Expense updated successfully :)','Success');
             return redirect()->back();
 
         }catch(\Exception $e){
             DB::rollback();
-            Toastr::error('Holiday update fail :)','Error');
+            Toastr::error('Expense update fail :)','Error');
             return redirect()->back();
         }
     }

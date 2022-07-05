@@ -249,7 +249,7 @@
                                             <td hidden class="purchased_by">{{ $item->purchased_by }}</td>
                                         </h2>
                                     </td>
-                                    <td class="amount">${{ $item->amount }}</td>
+                                    <td class="amount">{{ $item->amount }}</td>
                                     <td class="paid_by">{{ $item->paid_by }}</td>
                                     <td hidden class="status">{{ $item->status }}</td>
                                     <td hidden class="attachments">{{ $item->attachments }}</td>
@@ -467,8 +467,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Attachments</label>
-                                        <input class="form-control" type="file" name="attachments" value="">
-                                        <input class="form-control" type="hidden" name="hiiden_attachments" id="e_attachments" value="">
+                                        <input class="form-control" type="file" id="attachments" name="attachments">
+                                        <input type="hidden" name="hidden_attachments" id="e_attachments" value="">
                                     </div>
                                 </div>
                             </div>
