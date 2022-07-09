@@ -293,4 +293,23 @@ class SalesController extends Controller
             return redirect()->back();
         }
     }
+
+    // delete
+    public function deleteRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try{
+
+            Expense::destroy($request->id);
+            unlink('assets/images/'.$request->attachments);
+            DB::commit();
+            Toastr::success('Expense deleted successfully :)','Success');
+            return redirect()->back();
+            
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Expense deleted fail :)','Error');
+            return redirect()->back();
+        }
+    }
 }
