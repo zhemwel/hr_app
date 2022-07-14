@@ -72,8 +72,6 @@
                             <li><a href="estimates.html">Estimates</a></li>
                             <li><a href="{{ route('payments') }}">Payments</a></li>
                             <li><a href="{{ route('expenses/page') }}">Expenses</a></li>
-                            <li><a href="provident-fund.html">Provident Fund</a></li>
-                            <li><a href="taxes.html">Taxes</a></li>
                         </ul>
                     </li>
                     <li class="submenu">

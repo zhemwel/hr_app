@@ -70,8 +70,6 @@
                             <li><a href="{{ route('form/estimates/page') }}">Estimates</a></li>
                             <li><a href="{{ route('payments') }}">Payments</a></li>
                             <li><a href="{{ route('expenses/page') }}">Expenses</a></li>
-                            <li><a href="provident-fund.html">Provident Fund</a></li>
-                            <li><a href="taxes.html">Taxes</a></li>
                         </ul>
                     </li>
                     <li class="submenu"> <a href="#"><i class="la la-money"></i>
@@ -192,54 +190,55 @@
                 </div>
             </div>
             <!-- /Leave Statistics -->
+
             <!-- Search Filter -->
             <div class="row filter-row">
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                        <div class="form-group form-focus">
-                            <input type="text" class="form-control floating">
-                            <label class="focus-label">Employee Name</label>
-                        </div>
+                    <div class="form-group form-focus">
+                        <input type="text" class="form-control floating">
+                        <label class="focus-label">Employee Name</label>
+                    </div>
                 </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                        <div class="form-group form-focus select-focus">
-                            <select class="select floating"> 
-                                <option> -- Select -- </option>
-                                <option>Casual Leave</option>
-                                <option>Medical Leave</option>
-                                <option>Loss of Pay</option>
-                            </select>
-                            <label class="focus-label">Leave Type</label>
-                        </div>
+                    <div class="form-group form-focus select-focus">
+                        <select class="select floating"> 
+                            <option> -- Select -- </option>
+                            <option>Casual Leave</option>
+                            <option>Medical Leave</option>
+                            <option>Loss of Pay</option>
+                        </select>
+                        <label class="focus-label">Leave Type</label>
+                    </div>
                 </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12"> 
-                        <div class="form-group form-focus select-focus">
-                            <select class="select floating"> 
-                                <option> -- Select -- </option>
-                                <option> Pending </option>
-                                <option> Approved </option>
-                                <option> Rejected </option>
-                            </select>
-                            <label class="focus-label">Leave Status</label>
-                        </div>
+                    <div class="form-group form-focus select-focus">
+                        <select class="select floating"> 
+                            <option> -- Select -- </option>
+                            <option> Pending </option>
+                            <option> Approved </option>
+                            <option> Rejected </option>
+                        </select>
+                        <label class="focus-label">Leave Status</label>
+                    </div>
                 </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                        <div class="form-group form-focus">
-                            <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
-                            </div>
-                            <label class="focus-label">From</label>
+                    <div class="form-group form-focus">
+                        <div class="cal-icon">
+                            <input class="form-control floating datetimepicker" type="text">
                         </div>
+                        <label class="focus-label">From</label>
                     </div>
+                </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                        <div class="form-group form-focus">
-                            <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
-                            </div>
-                            <label class="focus-label">To</label>
+                    <div class="form-group form-focus">
+                        <div class="cal-icon">
+                            <input class="form-control floating datetimepicker" type="text">
                         </div>
+                        <label class="focus-label">To</label>
                     </div>
+                </div>
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                        <a href="#" class="btn btn-success btn-block"> Search </a>  
+                    <a href="#" class="btn btn-success btn-block"> Search </a>  
                 </div>     
             </div>
             <!-- /Search Filter -->

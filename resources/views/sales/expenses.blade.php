@@ -70,8 +70,6 @@
                             <li><a href="{{ route('form/estimates/page') }}">Estimates</a></li>
                             <li><a href="{{ route('payments') }}">Payments</a></li>
                             <li><a class="active" href="{{ route('expenses/page') }}">Expenses</a></li>
-                            <li><a href="provident-fund.html">Provident Fund</a></li>
-                            <li><a href="taxes.html">Taxes</a></li>
                         </ul>
                     </li>
                     <li class="submenu"> <a href="#"><i class="la la-money"></i>
@@ -168,53 +166,56 @@
             <!-- /Page Header -->
             
             <!-- Search Filter -->
-            <div class="row filter-row">
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                    <div class="form-group form-focus">
-                        <input type="text" class="form-control floating">
-                        <label class="focus-label">Item Name</label>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                    <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
-                            <option> -- Select -- </option>
-                            <option>Loren Gatlin</option>
-                            <option>Tarah Shropshire</option>
-                        </select>
-                        <label class="focus-label">Purchased By</label>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12"> 
-                    <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
-                            <option> -- Select -- </option>
-                            <option> Cash </option>
-                            <option> Cheque </option>
-                        </select>
-                        <label class="focus-label">Paid By</label>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                    <div class="form-group form-focus">
-                        <div class="cal-icon">
-                            <input class="form-control floating datetimepicker" type="text">
+            <form action="">
+                <div class="row filter-row">
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                        <div class="form-group form-focus">
+                            <input type="text" class="form-control floating">
+                            <label class="focus-label">Item Name</label>
                         </div>
-                        <label class="focus-label">From</label>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                    <div class="form-group form-focus">
-                        <div class="cal-icon">
-                            <input class="form-control floating datetimepicker" type="text">
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                        <div class="form-group form-focus select-focus">
+                            <select class="select floating"> 
+                                <option> -- Select -- </option>
+                                <option>Loren Gatlin</option>
+                                <option>Tarah Shropshire</option>
+                            </select>
+                            <label class="focus-label">Purchased By</label>
                         </div>
-                        <label class="focus-label">To</label>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12"> 
+                        <div class="form-group form-focus select-focus">
+                            <select class="select floating"> 
+                                <option> -- Select -- </option>
+                                <option> Cash </option>
+                                <option> Cheque </option>
+                            </select>
+                            <label class="focus-label">Paid By</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                        <div class="form-group form-focus">
+                            <div class="cal-icon">
+                                <input class="form-control floating datetimepicker" type="text">
+                            </div>
+                            <label class="focus-label">From</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                        <div class="form-group form-focus">
+                            <div class="cal-icon">
+                                <input class="form-control floating datetimepicker" type="text">
+                            </div>
+                            <label class="focus-label">To</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
+                        <button type="submit" class="btn btn-success btn-block">Search</button>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
-            </div>
+            </form>     
+
             <!-- /Search Filter -->
             
             <div class="row">

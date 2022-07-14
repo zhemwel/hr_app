@@ -70,8 +70,6 @@
                             <li><a href="{{ route('form/estimates/page') }}">Estimates</a></li>
                             <li><a href="{{ route('payments') }}">Payments</a></li>
                             <li><a href="{{ route('expenses/page') }}">Expenses</a></li>
-                            <li><a href="provident-fund.html">Provident Fund</a></li>
-                            <li><a href="taxes.html">Taxes</a></li>
                         </ul>
                     </li>
                     <li class="submenu"> <a href="#"><i class="la la-money"></i>
