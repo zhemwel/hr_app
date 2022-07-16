@@ -166,38 +166,20 @@
             <!-- /Page Header -->
             
             <!-- Search Filter -->
-            <form action="">
+            <form action="{{ route('expenses/search') }}" method="POST">
+                @csrf
                 <div class="row filter-row">
                     <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
                         <div class="form-group form-focus">
-                            <input type="text" class="form-control floating">
+                            <input type="text" class="form-control floating" name="item_name">
                             <label class="focus-label">Item Name</label>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                        <div class="form-group form-focus select-focus">
-                            <select class="select floating"> 
-                                <option> -- Select -- </option>
-                                <option>Loren Gatlin</option>
-                                <option>Tarah Shropshire</option>
-                            </select>
-                            <label class="focus-label">Purchased By</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12"> 
-                        <div class="form-group form-focus select-focus">
-                            <select class="select floating"> 
-                                <option> -- Select -- </option>
-                                <option> Cash </option>
-                                <option> Cheque </option>
-                            </select>
-                            <label class="focus-label">Paid By</label>
-                        </div>
-                    </div>
+                 
                     <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
                         <div class="form-group form-focus">
                             <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
+                                <input class="form-control floating datetimepicker" type="text" name="from_date">
                             </div>
                             <label class="focus-label">From</label>
                         </div>
@@ -205,7 +187,7 @@
                     <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
                         <div class="form-group form-focus">
                             <div class="cal-icon">
-                                <input class="form-control floating datetimepicker" type="text">
+                                <input class="form-control floating datetimepicker" type="text" name="to_date">
                             </div>
                             <label class="focus-label">To</label>
                         </div>
@@ -242,7 +224,7 @@
                                     <td hidden class="id">{{ $item->id }}</td>
                                     <td class="item_name">{{ $item->item_name }}</td>
                                     <td class="purchase_from">{{ $item->purchase_from }}</td>
-                                    <td class="purchase_date">{{date('d F, Y',strtotime($item->purchase_date)) }}</td>
+                                    <td class="purchase_date">{{$item->purchase_date}}</td>
                                     <td>
                                         <h2 class="table-avatar">
                                             <a href="profile.html" class="avatar avatar-xs"><img src="{{ URL::to('/assets/images/'.$item->attachments) }}" alt=""></a>

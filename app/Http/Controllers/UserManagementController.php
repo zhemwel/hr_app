@@ -281,6 +281,7 @@ class UserManagementController extends Controller
                 
                 if($image != '')
                 {
+                    unlink('assets/images/'.$image_name);
                     $image_name = rand() . '.' . $image->getClientOriginalExtension();
                     $image->move(public_path('/assets/images/'), $image_name);
                 }

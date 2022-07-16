@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use DB;
+use App\Models\Expense;
 use App\Models\Estimates;
 use App\Models\EstimatesAdd;
-use App\Models\Expense;
+use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
-use DB;
 
 class SalesController extends Controller
 {
@@ -260,9 +260,10 @@ class SalesController extends Controller
         try{
            
             $attachments = $request->hidden_attachments;
-            $attachment = $request->file('attachments');
+            $attachment  = $request->file('attachments');
             if($attachment != '')
             {
+                unlink('assets/images/'.$attachments);
                 $attachments = time().'.'.$attachment->getClientOriginalExtension();  
                 $attachment->move(public_path('assets/images'), $attachments);
             } else {
@@ -311,5 +312,33 @@ class SalesController extends Controller
             Toastr::error('Expense deleted fail :)','Error');
             return redirect()->back();
         }
+    }
+
+    /** search record */
+    public function searchRecord(Request $request)
+    {
+        $data = DB::table('expenses')->get();
+
+        // search by item name
+        if(!empty($request->item_name) && empty($request->from_date) && empty($request->to_data))
+        {
+            $data = Expense::where('item_name','LIKE','%'.$request->item_name.'%')->get();
+        }
+
+        // search by from_date to_data
+        if(empty($request->item_name) && !empty($request->from_date) && !empty($request->to_date))
+        {
+            $data = Expense::whereBetween('purchase_date',[$request->from_date, $request->to_date])->get();
+        }
+        
+        // search by item name and from_date to_data
+        if(!empty($request->item_name) && !empty($request->from_date) && !empty($request->to_date))
+        {
+            $data = Expense::where('item_name','LIKE','%'.$request->item_name.'%')
+                            ->whereBetween('purchase_date',[$request->from_date, $request->to_date])
+                            ->get();
+        }
+
+        return view('sales.expenses',compact('data'));
     }
 }

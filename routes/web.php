@@ -268,6 +268,9 @@ Route::controller(SalesController::class)->group(function () {
     Route::post('expenses/save', 'saveRecord')->middleware('auth')->name('expenses/save');
     Route::post('expenses/update', 'updateRecord')->middleware('auth')->name('expenses/update');
     Route::post('expenses/delete', 'deleteRecord')->middleware('auth')->name('expenses/delete');
+        // ---------------------- search expenses  ---------------//
+    Route::get('expenses/search', 'searchRecord')->middleware('auth')->name('expenses/search');
+    Route::post('expenses/search', 'searchRecord')->middleware('auth')->name('expenses/search');
     
 });
 
