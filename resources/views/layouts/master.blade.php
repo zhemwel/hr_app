@@ -254,7 +254,7 @@
 		</div>
 		<!-- /Header -->
 		<!-- Sidebar -->
-		{{-- @yield('menu') --}}
+		@include('sidebar.sidebar')
 		<!-- /Sidebar -->
 		<!-- Page Wrapper -->
 		@yield('content')
