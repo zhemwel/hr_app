@@ -3,8 +3,8 @@
 @section('content')
     {{-- message --}}
     {!! Toastr::message() !!}
-   <!-- Page Wrapper -->
-   <div class="page-wrapper">
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
         <!-- Page Content -->
         <div class="content container-fluid">
             <!-- Page Header -->
@@ -74,7 +74,7 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td><a href="{{ route('form/invoice/view/page') }}">#INV-0001</a></td>
+                                    <td><a href="{{ url('form/invoice/view/page') }}">#INV-0001</a></td>
                                     <td>Global Technologies</td>
                                     <td>11 Mar 2019</td>
                                     <td>17 Mar 2019</td>
@@ -94,8 +94,8 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td><a href="{{ route('form/invoice/view/page') }}">#INV-0002</a></td>
-                                    <td> 	Delta Infotech</td>
+                                    <td><a href="{{ url('form/invoice/view/page') }}">#INV-0002</a></td>
+                                    <td>Delta Infotech</td>
                                     <td>11 Mar 2019</td>
                                     <td>17 Mar 2019</td>
                                     <td>$2099</td>
