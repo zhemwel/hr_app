@@ -1117,67 +1117,69 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('user/information/save') }}" method="POST">
+                            @csrf
+                            <input type="hidden" class="form-control" name="user_id" value="{{ Session::get('user_id') }}" readonly>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Passport No</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control @error('passport_no') is-invalid @enderror" name="passport_no" value="{{ old('passport_no') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Passport Expiry Date</label>
                                         <div class="cal-icon">
-                                            <input class="form-control datetimepicker" type="text">
+                                            <input class="form-control datetimepicker @error('passport_expiry_date') is-invalid @enderror" type="text" name="passport_expiry_date" value="{{ old('passport_expiry_date') }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control @error('tel') is-invalid @enderror" type="text" name="tel" value="{{ old('tel') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" value="{{ old('nationality') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
                                         <div class="cal-icon">
-                                            <input class="form-control" type="text">
+                                            <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion" value="{{ old('religion') }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Marital status <span class="text-danger">*</span></label>
-                                        <select class="select form-control">
-                                            <option>-</option>
-                                            <option>Single</option>
-                                            <option>Married</option>
+                                        <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status" value="{{ old('marital_status') }}">
+                                            <option selected disabled>-- Selectstatus --</option>
+                                            <option value="Single">Single</option>
+                                            <option value="Married">Married</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Employment of spouse</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse" value="{{ old('employment_of_spouse') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>No. of children </label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control @error('children') is-invalid @enderror" type="text" name="children" value="{{ old('children') }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="submit-section">
-                                <button class="btn btn-primary submit-btn">Submit</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Update</button>
                             </div>
                         </form>
                     </div>
