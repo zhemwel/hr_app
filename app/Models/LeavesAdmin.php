@@ -9,7 +9,7 @@ class LeavesAdmin extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'rec_id',
+        'user_id',
         'leave_type',
         'from_date',
         'to_date',

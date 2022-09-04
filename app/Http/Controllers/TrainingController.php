@@ -15,8 +15,8 @@ class TrainingController extends Controller
     public function index()
     {
         $training = DB::table('trainings')
-                ->join('users', 'users.rec_id', '=', 'trainings.trainer_id')
-                ->select('trainings.*', 'users.avatar','users.rec_id')
+                ->join('users', 'users.user_id', '=', 'trainings.trainer_id')
+                ->select('trainings.*', 'users.avatar','users.user_id')
                 ->get();
         $user = DB::table('users')->get();
         return view('training.traininglist',compact('user','training'));

@@ -29,7 +29,7 @@ class ExpenseReportsController extends Controller
     public function leaveReport()
     {
         $leaves = DB::table('leaves_admins')
-                    ->join('users', 'users.rec_id', '=', 'leaves_admins.rec_id')
+                    ->join('users', 'users.user_id', '=', 'leaves_admins.user_id')
                     ->select('leaves_admins.*', 'users.*')
                     ->get();
         return view('reports.leavereports',compact('leaves'));

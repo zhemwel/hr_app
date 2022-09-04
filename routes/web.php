@@ -174,7 +174,7 @@ Route::controller(EmployeeController::class)->group(function () {
 
 // ----------------------------- profile employee ------------------------------//
 Route::controller(EmployeeController::class)->group(function () {
-    Route::get('employee/profile/{rec_id}', 'profileEmployee')->middleware('auth');
+    Route::get('employee/profile/{user_id}', 'profileEmployee')->middleware('auth');
 });
 
 // ----------------------------- form holiday ------------------------------//
@@ -208,7 +208,7 @@ Route::controller(PayrollController::class)->group(function () {
     Route::post('form/salary/save','saveRecord')->middleware('auth')->name('form/salary/save');
     Route::post('form/salary/update', 'updateRecord')->middleware('auth')->name('form/salary/update');
     Route::post('form/salary/delete', 'deleteRecord')->middleware('auth')->name('form/salary/delete');
-    Route::get('form/salary/view/{rec_id}', 'salaryView')->middleware('auth');
+    Route::get('form/salary/view/{user_id}', 'salaryView')->middleware('auth');
     Route::get('form/payroll/items', 'payrollItems')->middleware('auth')->name('form/payroll/items');    
 });
 

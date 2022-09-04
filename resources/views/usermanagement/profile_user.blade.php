@@ -26,7 +26,7 @@
                                 <div class="profile-img-wrap">
                                     <div class="profile-img">
                                         <a href="#">
-                                            <img alt="" src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
+                                            <img alt="" src="{{ URL::to('/assets/images/'.Session::get('avatar') ) }}" alt="{{ Session::get('name') }}">
                                         </a>
                                     </div>
                                 </div>
@@ -34,11 +34,11 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
-                                                <h3 class="user-name m-t-0 mb-0">{{ Auth::user()->name }}</h3>
-                                                <h6 class="text-muted">{{ Auth::user()->department }}</h6>
-                                                <small class="text-muted">{{ Auth::user()->position }}</small>
-                                                <div class="staff-id">Employee ID : {{ Auth::user()->rec_id }}</div>
-                                                <div class="small doj text-muted">Date of Join : {{ Auth::user()->join_date }}</div>
+                                                <h3 class="user-name m-t-0 mb-0">{{ Session::get('name') }}</h3>
+                                                <h6 class="text-muted">{{ Session::get('department') }}</h6>
+                                                <small class="text-muted">{{ Session::get('position') }}</small>
+                                                <div class="staff-id">User ID : {{ Session::get('user_id') }}</div>
+                                                <div class="small doj text-muted">Date of Join : {{ Session::get('join_date') }}</div>
                                                 <div class="staff-msg"><a class="btn btn-custom" href="chat.html">Send Message</a></div>
                                             </div>
                                         </div>
@@ -46,15 +46,15 @@
                                             <ul class="personal-info">
                                                 <li>
                                                     <div class="title">Phone:</div>
-                                                    <div class="text"><a href="">{{ Auth::user()->phone_number }}</a></div>
+                                                    <div class="text"><a href="">{{ Session::get('phone_number') }}</a></div>
                                                 </li>
                                                 <li>
                                                     <div class="title">Email:</div>
-                                                    <div class="text"><a href="">{{ Auth::user()->email }}</a></div>
+                                                    <div class="text"><a href="">{{ Session::get('email') }}</a></div>
                                                 </li>
                                                 @if(!empty($information))
                                                     <li>
-                                                        @if(Auth::user()->rec_id == $information->rec_id)
+                                                        @if(Auth::user()->user_id == $information->user_id)
                                                         <div class="title">Birthday:</div>
                                                         <div class="text">{{date('d F, Y',strtotime($information->birth_date)) }}</div>
                                                         @else
@@ -63,7 +63,7 @@
                                                         @endif
                                                     </li>
                                                     <li>
-                                                        @if(Auth::user()->rec_id == $information->rec_id)
+                                                        @if(Auth::user()->user_id == $information->user_id)
                                                         <div class="title">Address:</div>
                                                         <div class="text">{{ $information->address }}</div>
                                                         @else
@@ -72,7 +72,7 @@
                                                         @endif
                                                     </li>
                                                     <li>
-                                                        @if(Auth::user()->rec_id == $information->rec_id)
+                                                        @if(Auth::user()->user_id == $information->user_id)
                                                         <div class="title">Gender:</div>
                                                         <div class="text">{{ $information->gender }}</div>
                                                         @else
@@ -848,8 +848,8 @@
         </div>
         <!-- /Page Content -->
         @if(!empty($information))
-         <!-- Profile Modal -->
-         <div id="profile_info" class="modal custom-modal fade" role="dialog">
+        <!-- Profile Modal -->
+        <div id="profile_info" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -876,7 +876,7 @@
                                             <div class="form-group">
                                                 <label>Full Name</label>
                                                 <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}">
-                                                <input type="hidden" class="form-control" id="rec_id" name="rec_id" value="{{ Auth::user()->rec_id }}">
+                                                <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ Auth::user()->user_id }}">
                                                 <input type="hidden" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}">
                                             </div>
                                         </div>
@@ -977,8 +977,8 @@
         </div>
         <!-- /Profile Modal -->
         @else
-         <!-- Profile Modal -->
-         <div id="profile_info" class="modal custom-modal fade" role="dialog">
+        <!-- Profile Modal -->
+        <div id="profile_info" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -1004,7 +1004,7 @@
                                             <div class="form-group">
                                                 <label>Full Name</label>
                                                 <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}">
-                                                <input type="hidden" class="form-control" id="rec_id" name="rec_id" value="{{ Auth::user()->rec_id }}">
+                                                <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ Auth::user()->user_id }}">
                                                 <input type="hidden" class="form-control" id="email" name="email" value="{{ Auth::user()->email }}">
                                             </div>
                                         </div>

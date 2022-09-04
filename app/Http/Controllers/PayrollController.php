@@ -14,7 +14,7 @@ class PayrollController extends Controller
     {
 
         $users = DB::table('users')
-                    ->join('staff_salaries', 'users.rec_id', '=', 'staff_salaries.rec_id')
+                    ->join('staff_salaries', 'users.user_id', '=', 'staff_salaries.user_id')
                     ->select('users.*', 'staff_salaries.*')
                     ->get(); 
         $userList = DB::table('users')->get();
@@ -44,9 +44,9 @@ class PayrollController extends Controller
 
         DB::beginTransaction();
         try {
-            $salary = StaffSalary::updateOrCreate(['rec_id' => $request->rec_id]);
+            $salary = StaffSalary::updateOrCreate(['user_id' => $request->user_id]);
             $salary->name              = $request->name;
-            $salary->rec_id            = $request->rec_id;
+            $salary->user_id            = $request->user_id;
             $salary->salary            = $request->salary;
             $salary->basic             = $request->basic;
             $salary->da                = $request->da;
@@ -73,13 +73,13 @@ class PayrollController extends Controller
      }
 
     // salary view detail
-    public function salaryView($rec_id)
+    public function salaryView($user_id)
     {
         $users = DB::table('users')
-                ->join('staff_salaries', 'users.rec_id', '=', 'staff_salaries.rec_id')
-                ->join('profile_information', 'users.rec_id', '=', 'profile_information.rec_id')
+                ->join('staff_salaries', 'users.user_id', '=', 'staff_salaries.user_id')
+                ->join('profile_information', 'users.user_id', '=', 'profile_information.user_id')
                 ->select('users.*', 'staff_salaries.*','profile_information.*')
-                ->where('staff_salaries.rec_id',$rec_id)
+                ->where('staff_salaries.user_id',$user_id)
                 ->first();
         return view('payroll.salaryview',compact('users'));
     }

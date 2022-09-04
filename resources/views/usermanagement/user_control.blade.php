@@ -75,12 +75,12 @@
                                     <td>
                                         <span hidden class="image">{{ $user->avatar}}</span>
                                         <h2 class="table-avatar">
-                                            <a href="{{ url('employee/profile/'.$user->rec_id) }}" class="avatar"><img src="{{ URL::to('/assets/images/'. $user->avatar) }}" alt="{{ $user->avatar }}"></a>
-                                            <a href="{{ url('employee/profile/'.$user->rec_id) }}" class="name">{{ $user->name }}</span></a>
+                                            <a href="{{ url('employee/profile/'.$user->user_id) }}" class="avatar"><img src="{{ URL::to('/assets/images/'. $user->avatar) }}" alt="{{ $user->avatar }}"></a>
+                                            <a href="{{ url('employee/profile/'.$user->user_id) }}" class="name">{{ $user->name }}</span></a>
                                         </h2>
                                     </td>
                                     <td hidden class="ids">{{ $user->id }}</td>
-                                    <td class="id">{{ $user->rec_id }}</td>
+                                    <td class="id">{{ $user->user_id }}</td>
                                     <td class="email">{{ $user->email }}</td>
                                     <td class="position">{{ $user->position }}</td>
                                     <td class="phone_number">{{ $user->phone_number }}</td>
@@ -271,7 +271,7 @@
                     <div class="modal-body">
                         <form action="{{ route('update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="rec_id" id="e_id" value="">
+                            <input type="hidden" name="user_id" id="e_id" value="">
                             <div class="row"> 
                                 <div class="col-sm-6"> 
                                     <div class="form-group">

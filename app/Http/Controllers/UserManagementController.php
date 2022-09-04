@@ -122,24 +122,20 @@ class UserManagementController extends Controller
     // profile user
     public function profile()
     {   
-        $user = Auth::User();
-        Session::put('user', $user);
-        $user=Session::get('user');
-        $profile = $user->rec_id;
-       
+        $profile = Session::get('user_id');
         $user = DB::table('users')->get();
-        $employees = DB::table('profile_information')->where('rec_id',$profile)->first();
+        $employees = DB::table('profile_information')->where('user_id',$profile)->first();
 
         if(empty($employees))
         {
-            $information = DB::table('profile_information')->where('rec_id',$profile)->first();
+            $information = DB::table('profile_information')->where('user_id',$profile)->first();
             return view('usermanagement.profile_user',compact('information','user'));
 
         }else{
-            $rec_id = $employees->rec_id;
-            if($rec_id == $profile)
+            $user_id = $employees->user_id;
+            if($user_id == $profile)
             {
-                $information = DB::table('profile_information')->where('rec_id',$profile)->first();
+                $information = DB::table('profile_information')->where('user_id',$profile)->first();
                 return view('usermanagement.profile_user',compact('information','user'));
             }else{
                 $information = ProfileInformation::all();
@@ -152,7 +148,7 @@ class UserManagementController extends Controller
     // save profile information
     public function profileInformation(Request $request)
     {
-        try{
+        try {
             if(!empty($request->images))
             {
                 $image_name = $request->hidden_image;
@@ -164,8 +160,7 @@ class UserManagementController extends Controller
                         $image_name = rand() . '.' . $image->getClientOriginalExtension();
                         $image->move(public_path('/assets/images/'), $image_name);
                     }
-                }
-                else{
+                } else {
                     if($image != '')
                     {
                         $image_name = rand() . '.' . $image->getClientOriginalExtension();
@@ -173,16 +168,16 @@ class UserManagementController extends Controller
                     }
                 }
                 $update = [
-                    'rec_id' => $request->rec_id,
+                    'user_id' => $request->user_id,
                     'name'   => $request->name,
                     'avatar' => $image_name,
                 ];
-                User::where('rec_id',$request->rec_id)->update($update);
+                User::where('user_id',$request->user_id)->update($update);
             } 
 
-            $information = ProfileInformation::updateOrCreate(['rec_id' => $request->rec_id]);
+            $information = ProfileInformation::updateOrCreate(['user_id' => $request->user_id]);
             $information->name         = $request->name;
-            $information->rec_id       = $request->rec_id;
+            $information->user_id      = $request->user_id;
             $information->email        = $request->email;
             $information->birth_date   = $request->birthDate;
             $information->gender       = $request->gender;
@@ -256,7 +251,7 @@ class UserManagementController extends Controller
     {
         DB::beginTransaction();
         try{
-            $rec_id       = $request->rec_id;
+            $user_id       = $request->user_id;
             $name         = $request->name;
             $email        = $request->email;
             $role_name    = $request->role_name;
@@ -289,7 +284,7 @@ class UserManagementController extends Controller
             
             $update = [
 
-                'rec_id'       => $rec_id,
+                'user_id'       => $user_id,
                 'name'         => $name,
                 'role_name'    => $role_name,
                 'email'        => $email,
@@ -311,7 +306,7 @@ class UserManagementController extends Controller
             ];
 
             DB::table('user_activity_logs')->insert($activityLog);
-            User::where('rec_id',$request->rec_id)->update($update);
+            User::where('user_id',$request->user_id)->update($update);
             DB::commit();
             Toastr::success('User updated successfully :)','Success');
             return redirect()->route('userManagement');

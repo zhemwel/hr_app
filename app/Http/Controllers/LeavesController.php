@@ -14,7 +14,7 @@ class LeavesController extends Controller
     public function leaves()
     {
         $leaves = DB::table('leaves_admins')
-                    ->join('users', 'users.rec_id', '=', 'leaves_admins.rec_id')
+                    ->join('users', 'users.user_id', '=', 'leaves_admins.user_id')
                     ->select('leaves_admins.*', 'users.position','users.name','users.avatar')
                     ->get();
 
@@ -39,7 +39,7 @@ class LeavesController extends Controller
             $days    = $day->d;
 
             $leaves = new LeavesAdmin;
-            $leaves->rec_id        = $request->rec_id;
+            $leaves->user_id        = $request->user_id;
             $leaves->leave_type    = $request->leave_type;
             $leaves->from_date     = $request->from_date;
             $leaves->to_date       = $request->to_date;
