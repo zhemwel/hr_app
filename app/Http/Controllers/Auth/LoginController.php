@@ -57,17 +57,18 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $request->validate([
-            'email' => 'required|string|email',
+            'email'    => 'required|string',
             'password' => 'required|string',
         ]);
 
-        $email    = $request->email;
+        $emails   = '@gmail.com';
+        $username = $request->email .$emails;
         $password = $request->password;
 
         $dt         = Carbon::now();
         $todayDate  = $dt->toDayDateTimeString();
         
-        if (Auth::attempt(['email'=>$email,'password'=>$password,'status'=>'Active'])) {
+        if (Auth::attempt(['email'=> $username,'password'=> $password,'status'=>'Active'])) {
             /** get session */
             $user = Auth::User();
             Session::put('name', $user->name);
@@ -81,7 +82,7 @@ class LoginController extends Controller
             Session::put('position', $user->position);
             Session::put('department', $user->department);
             
-            $activityLog = ['name'=> Session::get('name'),'email'=> $email,'description' => 'Has log in','date_time'=> $todayDate,];
+            $activityLog = ['name'=> Session::get('name'),'email'=> $username,'description' => 'Has log in','date_time'=> $todayDate,];
             DB::table('activity_logs')->insert($activityLog);
             
             Toastr::success('Login successfully :)','Success');
@@ -92,12 +93,12 @@ class LoginController extends Controller
         }
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         $dt         = Carbon::now();
         $todayDate  = $dt->toDayDateTimeString();
 
-        $activityLog = ['name'=> Session::get('name'),'email'=> Session::get('email'),'description' => 'Has log in','date_time'=> $todayDate,];
+        $activityLog = ['name'=> Session::get('name'),'email'=> Session::get('email'),'description' => 'Has log out','date_time'=> $todayDate,];
         DB::table('activity_logs')->insert($activityLog);
         // forget login session
         $request->session()->forget('name');
