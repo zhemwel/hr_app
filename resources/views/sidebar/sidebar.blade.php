@@ -59,14 +59,14 @@
                     </ul>
                 </li>
                 <li class="menu-title"> <span>HR</span> </li>
-                <li class="{{set_active(['form/estimates/page','payments','expenses/page'])}} submenu">
-                    <a href="#" class="{{ set_active(['form/estimates/page','payments','expenses/page']) ? 'noti-dot' : '' }}">
+                <li class="{{set_active(['create/estimate/page','form/estimates/page','payments','expenses/page'])}} submenu">
+                    <a href="#" class="{{ set_active(['create/estimate/page','form/estimates/page','payments','expenses/page']) ? 'noti-dot' : '' }}">
                         <i class="la la-files-o"></i>
                         <span> Sales </span> 
                         <span class="menu-arrow"></span>
                     </a>
                     <ul style="{{ request()->is('/*') ? 'display: block;' : 'display: none;' }}">
-                        <li><a class="{{set_active(['form/estimates/page'])}}" href="{{ route('form/estimates/page') }}">Estimates</a></li>
+                        <li><a class="{{set_active(['create/estimate/page','form/estimates/page'])}}" href="{{ route('form/estimates/page') }}">Estimates</a></li>
                         <li><a class="{{set_active(['payments'])}}" href="{{ route('payments') }}">Payments</a></li>
                         <li><a class="{{set_active(['expenses/page'])}}" href="{{ route('expenses/page') }}">Expenses</a></li>
                     </ul>
