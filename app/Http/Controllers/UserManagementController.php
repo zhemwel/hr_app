@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Employee;
 use App\Models\Form;
 use App\Models\ProfileInformation;
+use App\Models\PersonalInformation;
 use App\Rules\MatchOldPassword;
 use Carbon\Carbon;
 use Session;
@@ -122,27 +123,28 @@ class UserManagementController extends Controller
     // profile user
     public function profile()
     {   
-        $profile = Session::get('user_id');
+
+        $profile = Session::get('user_id'); // get user_id session
+        $userInformation = PersonalInformation::where('user_id',$profile)->first(); // user information
         $user = DB::table('users')->get();
         $employees = DB::table('profile_information')->where('user_id',$profile)->first();
 
         if(empty($employees))
         {
             $information = DB::table('profile_information')->where('user_id',$profile)->first();
-            return view('usermanagement.profile_user',compact('information','user'));
+            return view('usermanagement.profile_user',compact('information','user','userInformation'));
 
-        }else{
+        } else {
             $user_id = $employees->user_id;
             if($user_id == $profile)
             {
                 $information = DB::table('profile_information')->where('user_id',$profile)->first();
-                return view('usermanagement.profile_user',compact('information','user'));
-            }else{
+                return view('usermanagement.profile_user',compact('information','user','userInformation'));
+            } else {
                 $information = ProfileInformation::all();
-                return view('usermanagement.profile_user',compact('information','user'));
+                return view('usermanagement.profile_user',compact('information','user','userInformation'));
             } 
         }
-       
     }
 
     // save profile information

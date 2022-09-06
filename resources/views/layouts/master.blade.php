@@ -42,6 +42,20 @@
 	</style>
 	<!-- Main Wrapper -->
 	<div class="main-wrapper">
+		
+		<!-- Loader -->
+		<div id="loader-wrapper">
+			<div id="loader">
+				<div class="loader-ellips">
+				  <span class="loader-ellips__dot"></span>
+				  <span class="loader-ellips__dot"></span>
+				  <span class="loader-ellips__dot"></span>
+				  <span class="loader-ellips__dot"></span>
+				</div>
+			</div>
+		</div>
+		<!-- /Loader -->
+
 		<!-- Header -->
 		<div class="header">
 			<!-- Logo -->

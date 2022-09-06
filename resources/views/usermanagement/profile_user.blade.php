@@ -154,35 +154,35 @@
                                     <ul class="personal-info">
                                         <li>
                                             <div class="title">Passport No.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="text">{{ $userInformation->passport_no }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Passport Exp Date.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="text">{{ $userInformation->passport_expiry_date }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Tel</div>
-                                            <div class="text"><a href="">9876543210</a></div>
+                                            <div class="text"><a href="">{{ $userInformation->tel }}</a></div>
                                         </li>
                                         <li>
                                             <div class="title">Nationality</div>
-                                            <div class="text">Indian</div>
+                                            <div class="text">{{ $userInformation->nationality }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Religion</div>
-                                            <div class="text">Christian</div>
+                                            <div class="text">{{ $userInformation->religion }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Marital status</div>
-                                            <div class="text">Married</div>
+                                            <div class="text">{{ $userInformation->marital_status }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Employment of spouse</div>
-                                            <div class="text">No</div>
+                                            <div class="text">{{ $userInformation->employment_of_spouse }}</div>
                                         </li>
                                         <li>
                                             <div class="title">No. of children</div>
-                                            <div class="text">2</div>
+                                            <div class="text">{{ $userInformation->children }}</div>
                                         </li>
                                     </ul>
                                 </div>
@@ -1124,42 +1124,42 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Passport No</label>
-                                        <input type="text" class="form-control @error('passport_no') is-invalid @enderror" name="passport_no" value="{{ old('passport_no') }}">
+                                        <input type="text" class="form-control @error('passport_no') is-invalid @enderror" name="passport_no" value="{{ $userInformation->passport_no }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Passport Expiry Date</label>
                                         <div class="cal-icon">
-                                            <input class="form-control datetimepicker @error('passport_expiry_date') is-invalid @enderror" type="text" name="passport_expiry_date" value="{{ old('passport_expiry_date') }}">
+                                            <input class="form-control datetimepicker @error('passport_expiry_date') is-invalid @enderror" type="text" name="passport_expiry_date" value="{{ $userInformation->passport_expiry_date }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control @error('tel') is-invalid @enderror" type="text" name="tel" value="{{ old('tel') }}">
+                                        <input class="form-control @error('tel') is-invalid @enderror" type="text" name="tel" value="{{ $userInformation->tel }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" value="{{ old('nationality') }}">
+                                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" value="{{ $userInformation->nationality }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
                                         <div class="cal-icon">
-                                            <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion" value="{{ old('religion') }}">
+                                            <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion" value="{{ $userInformation->religion }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Marital status <span class="text-danger">*</span></label>
-                                        <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status" value="{{ old('marital_status') }}">
-                                            <option selected disabled>-- Selectstatus --</option>
+                                        <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status">
+                                            <option value="{{ $userInformation->marital_status }}" {{ ( $userInformation->marital_status == $userInformation->marital_status) ? 'selected' : '' }}> {{ $userInformation->marital_status }} </option>
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
                                         </select>
@@ -1168,13 +1168,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Employment of spouse</label>
-                                        <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse" value="{{ old('employment_of_spouse') }}">
+                                        <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse" value="{{ $userInformation->employment_of_spouse }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>No. of children </label>
-                                        <input class="form-control @error('children') is-invalid @enderror" type="text" name="children" value="{{ old('children') }}">
+                                        <input class="form-control @error('children') is-invalid @enderror" type="text" name="children" value="{{ $userInformation->children }}">
                                     </div>
                                 </div>
                             </div>
