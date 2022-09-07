@@ -16,4 +16,9 @@ class JobController extends Controller
     {
         return view('job.jobview');
     }
+
+    /** job dashboard index */
+    public function userDashboard() {
+        return view('job.userdashboard');
+    }
 }

@@ -117,10 +117,12 @@
                 <li> <a href="assets.html"><i class="la la-object-ungroup">
                     </i> <span>Assets</span></a>
                 </li>
-                <li class="submenu"> <a href="#"><i class="la la-briefcase"></i>
-                    <span> Jobs </span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="user-dashboard.html"> User Dasboard </a></li>
+                <li class="{{set_active(['user/dashboard/index'])}} submenu">
+                    <a href="#" class="{{ set_active(['user/dashboard/index']) ? 'noti-dot' : '' }}"><i class="la la-briefcase"></i>
+                        <span> Jobs </span> <span class="menu-arrow"></span>
+                    </a>
+                    <ul style="{{ request()->is('/*') ? 'display: block;' : 'display: none;' }}">
+                        <li><a class="{{set_active(['user/dashboard/index'])}}" href="{{ route('user/dashboard/index') }}"> User Dasboard </a></li>
                         <li><a href="jobs-dashboard.html"> Jobs Dasboard </a></li>
                         <li><a href="jobs.html"> Manage Jobs </a></li>
                         <li><a href="manage-resumes.html"> Manage Resumes </a></li>

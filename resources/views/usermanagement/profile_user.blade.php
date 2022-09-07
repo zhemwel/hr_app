@@ -1150,7 +1150,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
-                                        <div class="cal-icon">
+                                        <div class="form-group">
                                             <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion" value="{{ $userInformation->religion }}">
                                         </div>
                                     </div>

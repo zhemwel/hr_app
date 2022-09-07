@@ -139,6 +139,7 @@ Route::controller(UserManagementController::class)->group(function () {
 Route::controller(JobController::class)->group(function () {
     Route::get('form/job/list','jobList')->name('form/job/list');
     Route::get('form/job/view', 'jobView')->name('form/job/view');    
+    Route::get('user/dashboard/index', 'userDashboard')->name('user/dashboard/index');    
 });
 
 // ----------------------------- form employee ------------------------------//
