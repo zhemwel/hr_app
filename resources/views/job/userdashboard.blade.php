@@ -25,9 +25,9 @@
             <div class="card-body">
                 <!-- <h4 class="card-title">Solid justified</h4> -->
                 <ul class="nav nav-tabs nav-tabs-solid nav-justified">
-                    <li class="nav-item"><a class="nav-link active" href="user-dashboard.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="user-all-jobs.html">All </a></li>
-                    <li class="nav-item"><a class="nav-link" href="saved-jobs.html">Saved</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('user/dashboard/index') }}">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('user/dashboard/all') }}">All </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('user/dashboard/save') }}">Saved</a></li>
                     <li class="nav-item"><a class="nav-link" href="applied-jobs.html">Applied</a></li>
                     <li class="nav-item"><a class="nav-link" href="interviewing.html">Interviewing</a></li>
                     <li class="nav-item"><a class="nav-link" href="offered-jobs.html">Offered</a></li>

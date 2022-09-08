@@ -21,4 +21,16 @@ class JobController extends Controller
     public function userDashboard() {
         return view('job.userdashboard');
     }
+
+    /** user all job */
+    public function userDashboardAll() 
+    {
+        return view('job.useralljobs');
+    }
+
+    /** save job */
+    public function userDashboardSave()
+    {
+      return view('job.savedjobs');
+    }
 }

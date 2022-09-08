@@ -138,8 +138,10 @@ Route::controller(UserManagementController::class)->group(function () {
 // ----------------------------- job ------------------------------//
 Route::controller(JobController::class)->group(function () {
     Route::get('form/job/list','jobList')->name('form/job/list');
-    Route::get('form/job/view', 'jobView')->name('form/job/view');    
-    Route::get('user/dashboard/index', 'userDashboard')->name('user/dashboard/index');    
+    Route::get('form/job/view', 'jobView')->name('form/job/view');
+    Route::get('user/dashboard/index', 'userDashboard')->middleware('auth')->name('user/dashboard/index');    
+    Route::get('user/dashboard/all', 'userDashboardAll')->middleware('auth')->name('user/dashboard/all');    
+    Route::get('user/dashboard/save', 'userDashboardSave')->middleware('auth')->name('user/dashboard/save');    
 });
 
 // ----------------------------- form employee ------------------------------//
