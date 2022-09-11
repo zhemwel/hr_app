@@ -123,7 +123,6 @@ class UserManagementController extends Controller
     // profile user
     public function profile()
     {   
-
         $profile = Session::get('user_id'); // get user_id session
         $userInformation = PersonalInformation::where('user_id',$profile)->first(); // user information
         $user = DB::table('users')->get();

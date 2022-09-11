@@ -336,7 +336,7 @@ class EmployeeController extends Controller
         return view('form.employeelist',compact('users','userList','permission_lists'));
     }
 
-    // employee profile
+    // employee profile with all controller user
     public function profileEmployee($user_id)
     {
         $users = DB::table('profile_information')
