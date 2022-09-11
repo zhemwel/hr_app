@@ -24,16 +24,7 @@
         <!-- Content Starts -->
         <div class="card">
             <div class="card-body">
-                <ul class="nav nav-tabs nav-tabs-solid nav-justified">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('user/dashboard/index') }}">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('user/dashboard/all') }}">All </a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ route('user/dashboard/save') }}">Saved</a></li>
-                    <li class="nav-item"><a class="nav-link" href="applied-jobs.html">Applied</a></li>
-                    <li class="nav-item"><a class="nav-link" href="interviewing.html">Interviewing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="offered-jobs.html">Offered</a></li>
-                    <li class="nav-item"><a class="nav-link" href="visited-jobs.html">Visitied </a></li>
-                    <li class="nav-item"><a class="nav-link" href="archived-jobs.html">Archived </a></li>
-                </ul>
+                @include('sidebar.sidebarjob')
             </div>
         </div>	
         

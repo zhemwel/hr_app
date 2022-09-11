@@ -33,4 +33,34 @@ class JobController extends Controller
     {
       return view('job.savedjobs');
     }
+
+    /** applied job*/
+    public function userDashboardApplied()
+    {
+        return view('job.appliedjobs');
+    }
+
+    /** interviewing job*/
+    public function userDashboardInterviewing()
+    {
+        return view('job.interviewing');
+    }
+
+    /** interviewing job*/
+    public function userDashboardOffered()
+    {
+        return view('job.offeredjobs');
+    }
+
+    /** visited job*/
+    public function userDashboardVisited()
+    {
+        return view('job.visitedjobs');
+    }
+
+    /** archived job*/
+    public function userDashboardArchived()
+    {
+        return view('job.visitedjobs');
+    }
 }
