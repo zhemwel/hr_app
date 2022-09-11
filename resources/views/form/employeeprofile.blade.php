@@ -124,35 +124,35 @@
                                     <ul class="personal-info">
                                         <li>
                                             <div class="title">Passport No.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="text">{{ $users->passport_no }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Passport Exp Date.</div>
-                                            <div class="text">9876543210</div>
+                                            <div class="text">{{ $users->passport_expiry_date }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Tel</div>
-                                            <div class="text"><a href="">9876543210</a></div>
+                                            <div class="text"><a href="">{{ $users->tel }}</a></div>
                                         </li>
                                         <li>
                                             <div class="title">Nationality</div>
-                                            <div class="text">Indian</div>
+                                            <div class="text">{{ $users->nationality }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Religion</div>
-                                            <div class="text">Christian</div>
+                                            <div class="text">{{ $users->religion }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Marital status</div>
-                                            <div class="text">Married</div>
+                                            <div class="text">{{ $users->marital_status }}</div>
                                         </li>
                                         <li>
                                             <div class="title">Employment of spouse</div>
-                                            <div class="text">No</div>
+                                            <div class="text">{{ $users->employment_of_spouse }}</div>
                                         </li>
                                         <li>
                                             <div class="title">No. of children</div>
-                                            <div class="text">2</div>
+                                            <div class="text">{{ $users->children }}</div>
                                         </li>
                                     </ul>
                                 </div>
@@ -848,7 +848,7 @@
                                             <div class="form-group">
                                                 <label>Full Name</label>
                                                 <input type="text" class="form-control" id="name" name="name" value="{{ $user[0]->name }}">
-                                                <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ $user[0]->user_id }}">
+                                                <input type="text" class="form-control" id="user_id" name="user_id" value="{{ $user[0]->user_id }}">
                                                 <input type="hidden" class="form-control" id="email" name="email" value="{{ $user[0]->email }}">
                                             </div>
                                         </div>
@@ -1009,39 +1009,39 @@
                     <div class="modal-body">
                         <form action="{{ route('user/information/save') }}" method="POST">
                             @csrf
-                            <input type="hidden" class="form-control" name="user_id" value="" readonly>
+                            <input type="hidden" class="form-control" name="user_id" value="{{ $users->user_id }}" readonly>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Passport No</label>
-                                        <input type="text" class="form-control @error('passport_no') is-invalid @enderror" name="passport_no" value="">
+                                        <input type="text" class="form-control @error('passport_no') is-invalid @enderror" name="passport_no" value="{{ $users->passport_no }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Passport Expiry Date</label>
                                         <div class="cal-icon">
-                                            <input class="form-control datetimepicker @error('passport_expiry_date') is-invalid @enderror" type="text" name="passport_expiry_date" value="">
+                                            <input class="form-control datetimepicker @error('passport_expiry_date') is-invalid @enderror" type="text" name="passport_expiry_date" value="{{ $users->passport_expiry_date }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tel</label>
-                                        <input class="form-control @error('tel') is-invalid @enderror" type="text" name="tel" value="">
+                                        <input class="form-control @error('tel') is-invalid @enderror" type="text" name="tel" value="{{ $users->tel }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nationality <span class="text-danger">*</span></label>
-                                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" value="">
+                                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality" value="{{ $users->nationality }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Religion</label>
                                         <div class="form-group">
-                                            <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion" value="">
+                                            <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion" value="{{ $users->religion }}">
                                         </div>
                                     </div>
                                 </div>
@@ -1049,6 +1049,7 @@
                                     <div class="form-group">
                                         <label>Marital status <span class="text-danger">*</span></label>
                                         <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status">
+                                            <option value="{{ $users->marital_status }}" {{ ( $users->marital_status == $users->marital_status) ? 'selected' : '' }}> {{ $users->marital_status }} </option>
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
                                         </select>
@@ -1057,13 +1058,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Employment of spouse</label>
-                                        <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse" value="">
+                                        <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse" value="{{ $users->employment_of_spouse }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>No. of children </label>
-                                        <input class="form-control @error('children') is-invalid @enderror" type="text" name="children" value="">
+                                        <input class="form-control @error('children') is-invalid @enderror" type="text" name="children" value="{{ $users->children }}">
                                     </div>
                                 </div>
                             </div>
