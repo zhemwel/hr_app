@@ -63,4 +63,22 @@ class JobController extends Controller
     {
         return view('job.visitedjobs');
     }
+
+    /** jobs */
+    public function Jobs()
+    {
+        return view('job.jobs');
+    }
+    
+    /** job applicants */
+    public function jobApplicants()
+    {
+        return view('job.jobapplicants');
+    }
+
+    /** job details */
+    public function jobDetails()
+    {
+        return view('job.jobdetails');
+    }
 }

@@ -147,6 +147,9 @@ Route::controller(JobController::class)->group(function () {
     Route::get('user/dashboard/offered/jobs', 'userDashboardOffered')->middleware('auth')->name('user/dashboard/offered/jobs');
     Route::get('user/dashboard/visited/jobs', 'userDashboardVisited')->middleware('auth')->name('user/dashboard/visited/jobs');
     Route::get('user/dashboard/archived/jobs', 'userDashboardArchived')->middleware('auth')->name('user/dashboard/archived/jobs');
+    Route::get('jobs', 'Jobs')->middleware('auth')->name('jobs');
+    Route::get('job/applicants', 'jobApplicants')->middleware('auth')->name('job/applicants');
+    Route::get('job/details', 'jobDetails')->middleware('auth')->name('job/details');
 });
 
 // ----------------------------- form employee ------------------------------//
