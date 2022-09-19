@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class JobController extends Controller
 {
@@ -67,7 +68,9 @@ class JobController extends Controller
     /** jobs */
     public function Jobs()
     {
-        return view('job.jobs');
+        $department = DB::table('departments')->get();
+        $type_job   = DB::table('type_jobs')->get();
+        return view('job.jobs',compact('department','type_job'));
     }
     
     /** job applicants */

@@ -198,14 +198,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select">
-                                            <option>-</option>
-                                            <option>Web Development</option>
-                                            <option>Application Development</option>
-                                            <option>IT Management</option>
-                                            <option>Accounts Management</option>
-                                            <option>Support Management</option>
-                                            <option>Marketing</option>
+                                        <select class="select" name="">
+                                            <option selected disabled>--Selete--</option>
+                                            @foreach ($department as $value)
+                                            <option value="{{ $value->department }}">{{ $value->department }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -214,13 +211,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Location</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>No of Vacancies</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="">
                                     </div>
                                 </div>
                             </div>
@@ -228,13 +225,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Experience</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Age</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="">
                                     </div>
                                 </div>
                             </div>
@@ -242,13 +239,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Salary From</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Salary To</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="">
                                     </div>
                                 </div>
                             </div>
@@ -256,20 +253,18 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Type</label>
-                                        <select class="select">
-                                            <option>Full Time</option>
-                                            <option>Part Time</option>
-                                            <option>Internship</option>
-                                            <option>Temporary</option>
-                                            <option>Remote</option>
-                                            <option>Others</option>
+                                        <select class="select" name="tob_type">
+                                            <option selected disabled>--select--</option>
+                                            @foreach ($type_job as $job )
+                                            <option value="{{ $job->name_type_job }}">{{ $job->name_type_job }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select class="select">
+                                        <select class="select" name="">
                                             <option>Open</option>
                                             <option>Closed</option>
                                             <option>Cancelled</option>
@@ -281,13 +276,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Start Date</label>
-                                        <input type="text" class="form-control datetimepicker">
+                                        <input type="text" class="form-control datetimepicker" name="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Expired Date</label>
-                                        <input type="text" class="form-control datetimepicker">
+                                        <input type="text" class="form-control datetimepicker" name="">
                                     </div>
                                 </div>
                             </div>
@@ -295,12 +290,12 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea class="form-control"></textarea>
+                                        <textarea class="form-control" name=""></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="submit-section">
-                                <button class="btn btn-primary submit-btn">Submit</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                             </div>
                         </form>
                     </div>
