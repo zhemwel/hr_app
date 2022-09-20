@@ -150,6 +150,9 @@ Route::controller(JobController::class)->group(function () {
     Route::get('jobs', 'Jobs')->middleware('auth')->name('jobs');
     Route::get('job/applicants', 'jobApplicants')->middleware('auth')->name('job/applicants');
     Route::get('job/details', 'jobDetails')->middleware('auth')->name('job/details');
+
+    Route::post('form/jobs/save', 'JobsSaveRecord')->name('form/jobs/save');
+
 });
 
 // ----------------------------- form employee ------------------------------//

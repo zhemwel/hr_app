@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('content')
+    {{-- message --}}
+    {!! Toastr::message() !!}
     <!-- Page Wrapper -->
     <div class="page-wrapper">		
         <!-- Page Content -->
@@ -10,7 +12,7 @@
                     <div class="col">
                         <h3 class="page-title">Jobs</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Jobs</li>
                         </ul>
                     </div>
@@ -187,18 +189,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('form/jobs/save') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Title</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control @error('job_title') is-invalid @enderror" type="text" name="job_title" value="{{ old('job_title') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select" name="">
+                                        <select class="select @error('department') is-invalid @enderror" name="department">
                                             <option selected disabled>--Selete--</option>
                                             @foreach ($department as $value)
                                             <option value="{{ $value->department }}">{{ $value->department }}</option>
@@ -211,13 +214,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Location</label>
-                                        <input class="form-control" type="text" name="">
+                                        <input class="form-control @error('job_location') is-invalid @enderror" type="text" name="job_location" value="{{ old('job_location') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>No of Vacancies</label>
-                                        <input class="form-control" type="text" name="">
+                                        <input class="form-control @error('no_of_vacancies') is-invalid @enderror" type="text" name="no_of_vacancies" value="{{ old('no_of_vacancies') }}">
                                     </div>
                                 </div>
                             </div>
@@ -225,13 +228,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Experience</label>
-                                        <input class="form-control" type="text" name="">
+                                        <input class="form-control @error('experience') is-invalid @enderror" type="text" name="experience" value="{{ old('experience') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Age</label>
-                                        <input class="form-control" type="text" name="">
+                                        <input class="form-control @error('age') is-invalid @enderror" type="number" name="age" value="{{ old('age') }}">
                                     </div>
                                 </div>
                             </div>
@@ -239,13 +242,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Salary From</label>
-                                        <input type="text" class="form-control" name="">
+                                        <input type="text" class="form-control @error('salary_from') is-invalid @enderror" name="salary_from" value="{{ old('salary_from') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Salary To</label>
-                                        <input type="text" class="form-control" name="">
+                                        <input type="text" class="form-control @error('salary_to') is-invalid @enderror" name="salary_to" value="{{ old('salary_to') }}">
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +256,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Type</label>
-                                        <select class="select" name="tob_type">
+                                        <select class="select @error('tob_type') is-invalid @enderror" name="tob_type">
                                             <option selected disabled>--select--</option>
                                             @foreach ($type_job as $job )
                                             <option value="{{ $job->name_type_job }}">{{ $job->name_type_job }}</option>
@@ -264,10 +267,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select class="select" name="">
-                                            <option>Open</option>
-                                            <option>Closed</option>
-                                            <option>Cancelled</option>
+                                        <select class="select @error('status') is-invalid @enderror" name="status">
+                                            <option value="Open">Open</option>
+                                            <option value="Closed">Closed</option>
+                                            <option value="Cancelled">Cancelled</option>
                                         </select>
                                     </div>
                                 </div>
@@ -276,13 +279,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Start Date</label>
-                                        <input type="text" class="form-control datetimepicker" name="">
+                                        <input type="text" class="form-control datetimepicker @error('start_date') is-invalid @enderror" name="start_date" value="{{ old('start_date') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Expired Date</label>
-                                        <input type="text" class="form-control datetimepicker" name="">
+                                        <input type="text" class="form-control datetimepicker @error('expired_date') is-invalid @enderror" name="expired_date" value="{{ old('expired_date') }}">
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +293,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea class="form-control" name=""></textarea>
+                                        <textarea class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +310,6 @@
         <!-- Edit Job Modal -->
         <div id="edit_job" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Edit Job</h5>
