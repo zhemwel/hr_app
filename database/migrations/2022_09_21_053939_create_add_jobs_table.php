@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('age')->nullable();
             $table->string('salary_from')->nullable();
             $table->string('salary_to')->nullable();
-            $table->string('tob_type')->nullable();
+            $table->string('job_type')->nullable();
             $table->string('status')->nullable();
             $table->string('start_date')->nullable();
             $table->string('expired_date')->nullable();

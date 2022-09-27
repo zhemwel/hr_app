@@ -256,7 +256,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Type</label>
-                                        <select class="select @error('tob_type') is-invalid @enderror" name="tob_type">
+                                        <select class="select @error('tob_type') is-invalid @enderror" name="job_type">
                                             <option selected disabled>--select--</option>
                                             @foreach ($type_job as $job )
                                             <option value="{{ $job->name_type_job }}">{{ $job->name_type_job }}</option>

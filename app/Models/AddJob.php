@@ -17,7 +17,7 @@ class AddJob extends Model
         'age',
         'salary_from',
         'salary_to',
-        'tob_type',
+        'job_type',
         'status',
         'start_date',
         'expired_date',

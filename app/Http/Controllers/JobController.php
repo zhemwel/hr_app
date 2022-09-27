@@ -12,7 +12,8 @@ class JobController extends Controller
     // job List
     public function jobList()
     {
-        return view('job.joblist');
+        $job_list = DB::table('add_jobs')->get();
+        return view('job.joblist',compact('job_list'));
     }
     // job view
     public function jobView()
@@ -87,7 +88,7 @@ class JobController extends Controller
             'age'             => 'required',
             'salary_from'     => 'required|string|max:255',
             'salary_to'       => 'required|string|max:255',
-            'tob_type'        => 'required|string|max:255',
+            'job_type'        => 'required|string|max:255',
             'status'          => 'required|string|max:255',
             'start_date'      => 'required|string|max:255',
             'expired_date'    => 'required|string|max:255',
@@ -106,7 +107,7 @@ class JobController extends Controller
             $add_job->age          = $request->age;
             $add_job->salary_from  = $request->salary_from;
             $add_job->salary_to    = $request->salary_to;
-            $add_job->tob_type     = $request->tob_type;
+            $add_job->job_type     = $request->job_type;
             $add_job->status       = $request->status;
             $add_job->start_date   = $request->start_date;
             $add_job->expired_date = $request->expired_date;
