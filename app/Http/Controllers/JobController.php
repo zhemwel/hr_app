@@ -73,7 +73,8 @@ class JobController extends Controller
     {
         $department = DB::table('departments')->get();
         $type_job   = DB::table('type_jobs')->get();
-        return view('job.jobs',compact('department','type_job'));
+        $job_list   = DB::table('add_jobs')->get();
+        return view('job.jobs',compact('department','type_job','job_list'));
     }
 
     /** job save record */
