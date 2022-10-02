@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('start_date')->nullable();
             $table->string('expired_date')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

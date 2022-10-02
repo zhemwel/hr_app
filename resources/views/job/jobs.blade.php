@@ -45,7 +45,7 @@
                                     
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td><a href="{{ route('job/details') }}">{{ $items->job_title }}</a></td>
+                                    <td><a href="{{ url('job/details/'.$items->id) }}">{{ $items->job_title }}</a></td>
                                     <td>{{ $items->department }}</td>
                                     <td>{{ date('d F, Y',strtotime($items->start_date)) }}</td>
                                     <td>{{ date('d F, Y',strtotime($items->expired_date)) }}</td>
@@ -121,9 +121,10 @@
                                         <select class="select @error('department') is-invalid @enderror" name="department">
                                             <option selected disabled>--Selete--</option>
                                             @foreach ($department as $value)
-                                            <option value="{{ $value->department }}">{{ $value->department }}</option>
+                                            <option value="{{ $value->department }}" {{ old('department') == $value->department ? "selected" :""}}>{{ $value->department }}</option>
                                             @endforeach
                                         </select>
+                                    </select> 
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +132,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Job Location</label>
-                                        <input class="form-control @error('job_location') is-invalid @enderror" type="text" name="job_location" value="{{ old('job_location') }}">
+                                        <textarea class="form-control @error('job_location') is-invalid @enderror" name="job_location" style="height: 44px;">{{ old('job_location') }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -176,7 +177,7 @@
                                         <select class="select @error('tob_type') is-invalid @enderror" name="job_type">
                                             <option selected disabled>--select--</option>
                                             @foreach ($type_job as $job )
-                                            <option value="{{ $job->name_type_job }}">{{ $job->name_type_job }}</option>
+                                            <option value="{{ $job->name_type_job }}" {{ old('job_type') == $job->name_type_job ? "selected" :""}}>{{ $job->name_type_job }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -210,7 +211,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <textarea class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}"></textarea>
+                                        <textarea class="form-control @error('description') is-invalid @enderror" name="description">{{ old('description') }}</textarea>
                                     </div>
                                 </div>
                             </div>

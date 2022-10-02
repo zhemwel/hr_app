@@ -10,7 +10,7 @@
                     <div class="col-sm-12">
                         <h3 class="page-title">Job Details</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active">Job Details</li>
                         </ul>
                     </div>
@@ -21,11 +21,11 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="job-info job-widget">
-                        <h3 class="job-title">Android Developer</h3>
-                        <span class="job-dept">App Development</span>
+                        <h3 class="job-title">{{ $job_view_detail[0]->job_title }}</h3>
+                        <span class="job-dept">{{ $job_view_detail[0]->department }}</span>
                         <ul class="job-post-det">
-                            <li><i class="fa fa-calendar"></i> Post Date: <span class="text-blue">Feb 18, 2019</span></li>
-                            <li><i class="fa fa-calendar"></i> Last Date: <span class="text-blue">May 31, 2019</span></li>
+                            <li><i class="fa fa-calendar"></i> Post Date: <span class="text-blue">{{ date('d F, Y',strtotime($job_view_detail[0]->start_date)) }}</span></li>
+                            <li><i class="fa fa-calendar"></i> Last Date: <span class="text-blue">{{ date('d F, Y',strtotime($job_view_detail[0]->expired_date)) }}</span></li>
                             <li><i class="fa fa-user-o"></i> Applications: <span class="text-blue">4</span></li>
                             <li><i class="fa fa-eye"></i> Views: <span class="text-blue">3806</span></li>
                         </ul>
@@ -33,7 +33,7 @@
                     <div class="job-content job-widget">
                         <div class="job-desc-title"><h4>Job Description</h4></div>
                         <div class="job-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                            <p>{{ $job_view_detail[0]->description }}</p>
                         </div>
                         <div class="job-desc-title"><h4>Job Description</h4></div>
                         <div class="job-description">
@@ -54,35 +54,32 @@
                         <div class="info-list">
                             <span><i class="fa fa-bar-chart"></i></span>
                             <h5>Job Type</h5>
-                            <p> Full Time</p>
+                            <p>{{ $job_view_detail[0]->job_type }}</p>
                         </div>
                         <div class="info-list">
                             <span><i class="fa fa-money"></i></span>
                             <h5>Salary</h5>
-                            <p>$32k - $38k</p>
+                            <p>{{ $job_view_detail[0]->salary_from }}$ - {{ $job_view_detail[0]->salary_to }}$</p>
                         </div>
                         <div class="info-list">
                             <span><i class="fa fa-suitcase"></i></span>
                             <h5>Experience</h5>
-                            <p>2 Years</p>
+                            <p>{{ $job_view_detail[0]->experience }}</p>
                         </div>
                         <div class="info-list">
                             <span><i class="fa fa-ticket"></i></span>
                             <h5>Vacancy</h5>
-                            <p>5</p>
+                            <p>{{ $job_view_detail[0]->no_of_vacancies }}</p>
                         </div>
                         <div class="info-list">
                             <span><i class="fa fa-map-signs"></i></span>
                             <h5>Location</h5>
-                            <p> Dreamguy's Technologies
-                            <br> 3864 Quiet Valley Lane,
-                            <br> Sherman Oaks,
-                            <br> California, 91403</p>
+                            <p>{{ $job_view_detail[0]->job_location }}</p>
                         </div>
                         <div class="info-list">
-                            <p class="text-truncate"> 818-978-7102
-                            <br> <a href="mailto:danielporter@example.com" title="danielporter@example.com">danielporter@example.com</a>
-                            <br> <a href="../index.htm" target="_blank" title="https://www.example.com">https://www.example.com</a>
+                            <p class="text-truncate"> 096-566-666
+                            <br> <a href="https://www.souysoeng.com" title="soengsouy@example.com">soengsouy@example.com</a>
+                            <br> <a href="https://www.souysoeng.com" target="_blank" title="https://www.souysoeng.com">https://www.souysoeng.com</a>
                             </p>
                         </div>
                         <div class="info-list text-center">

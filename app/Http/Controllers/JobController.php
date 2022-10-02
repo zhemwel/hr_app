@@ -93,7 +93,7 @@ class JobController extends Controller
             'status'          => 'required|string|max:255',
             'start_date'      => 'required|string|max:255',
             'expired_date'    => 'required|string|max:255',
-            'description'     => 'required|string|max:255',
+            'description'     => 'required',
         ]);
 
         DB::beginTransaction();
@@ -133,8 +133,9 @@ class JobController extends Controller
     }
 
     /** job details */
-    public function jobDetails()
+    public function jobDetails($id)
     {
-        return view('job.jobdetails');
+        $job_view_detail = DB::table('add_jobs')->where('id',$id)->get();
+        return view('job.jobdetails',compact('job_view_detail'));
     }
 }
