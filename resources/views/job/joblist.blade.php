@@ -54,7 +54,7 @@
                 <div class="row">
                     @foreach ($job_list as $list) 
                     <div class="col-md-6">
-                        <a class="job-list" href="{{ route('form/job/view') }}">
+                        <a class="job-list" href="{{ url('form/job/view/'.$list->id) }}">
                             <div class="job-list-det">
                                 <div class="job-list-desc">
                                     <h3 class="job-list-title">{{ $list->job_title }}</h3>

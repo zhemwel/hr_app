@@ -16,9 +16,10 @@ class JobController extends Controller
         return view('job.joblist',compact('job_list'));
     }
     // job view
-    public function jobView()
+    public function jobView($id)
     {
-        return view('job.jobview');
+        $job_view = DB::table('add_jobs')->where('id',$id)->get();
+        return view('job.jobview',compact('job_view'));
     }
 
     /** job dashboard index */
