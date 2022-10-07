@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\AddJob;
+use App\Models\ApplyForJob;
 use Brian2694\Toastr\Facades\Toastr;
 
 class JobController extends Controller
@@ -138,5 +139,42 @@ class JobController extends Controller
     {
         $job_view_detail = DB::table('add_jobs')->where('id',$id)->get();
         return view('job.jobdetails',compact('job_view_detail'));
+    }
+
+    /** apply Job SaveRecord */
+    public function applyJobSaveRecord(Request $request) 
+    {
+        $request->validate([
+            'job_title' => 'required|string|max:255',
+            'name'      => 'required|string|max:255',
+            'email'     => 'required|string|email',
+            'message'   => 'required|string|max:255',
+            'cv_upload' => 'required',
+        ]);
+
+        DB::beginTransaction();
+        try {
+
+            /** upload file */
+            $cv_uploads = time().'.'.$request->cv_upload->extension();  
+            $request->cv_upload->move(public_path('assets/images'), $cv_uploads);
+            
+            $apply_job = new ApplyForJob;
+            $apply_job->job_title = $request->job_title;
+            $apply_job->name      = $request->name;
+            $apply_job->email     = $request->email;
+            $apply_job->message   = $request->message;
+            $apply_job->cv_upload = $cv_uploads;
+            $apply_job->save();
+
+            DB::commit();
+            Toastr::success('Apply job successfully :)','Success');
+            return redirect()->back();
+            
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Apply Job fail :)','Error');
+            return redirect()->back();
+        } 
     }
 }

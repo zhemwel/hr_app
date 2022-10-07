@@ -1,5 +1,7 @@
 @extends('layouts.job')
 @section('content')
+    {{-- message --}}
+    {!! Toastr::message() !!}
     <!-- Main Wrapper -->
     <div class="main-wrapper">
         <!-- Header -->
@@ -43,15 +45,6 @@
                         <a href="javascript:void(0);" class="dropdown-item">
                             <img src="{{ URL::to('assets/img/flags/kh.png') }}" alt="" height="16"> Khmer 
                         </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ URL::to('assets/img/flags/fr.png') }}" alt="" height="16"> French
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ URL::to('assets/img/flags/es.png') }}" alt="" height="16"> Spanish
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ URL::to('assets/img/flags/de.png') }}" alt="" height="16"> German
-                        </a>
                     </div>
                 </li>
                 <!-- /Flag -->
@@ -64,6 +57,7 @@
                 </li>
             </ul>
             <!-- /Header Menu -->
+
             <!-- Mobile Menu -->
             <div class="dropdown mobile-user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
@@ -73,8 +67,10 @@
                 </div>
             </div>
             <!-- /Mobile Menu -->
+
         </div>
         <!-- /Header -->
+
         <!-- Page Wrapper -->
         <div class="page-wrapper job-wrapper">
             <!-- Page Content -->
@@ -164,6 +160,7 @@
                 </div>
             </div>
             <!-- /Page Content -->
+
             <!-- Apply Job Modal -->
             <div class="modal custom-modal fade" id="apply_job" role="dialog">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -175,28 +172,30 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form action="{{ route('form/apply/job/save') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input class="form-control" type="text">
+                                    <input type="hidden" name="job_title" value="{{ $job_view[0]->job_title }}">
+                                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input class="form-control" type="text">
+                                    <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea class="form-control"></textarea>
+                                    <textarea class="form-control @error('message') is-invalid @enderror" name="message">{{ old('message') }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>Upload your CV</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="cv_upload">
+                                        <input type="file" class="custom-file-input @error('cv_upload') is-invalid @enderror" id="cv_upload" name="cv_upload">
                                         <label class="custom-file-label" for="cv_upload">Choose file</label>
                                     </div>
                                 </div>
                                 <div class="submit-section">
-                                    <button class="btn btn-primary submit-btn">Submit</button>
+                                    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -204,6 +203,7 @@
                 </div>
             </div>
             <!-- /Apply Job Modal -->
+
         </div>
         <!-- /Page Wrapper -->
     </div>
