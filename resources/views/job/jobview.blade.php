@@ -180,6 +180,10 @@
                                     <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
+                                    <label>Phone</label>
+                                    <input class="form-control @error('phone') is-invalid @enderror" type="tel" name="phone" value="{{ old('phone') }}">
+                                </div>
+                                <div class="form-group">
                                     <label>Email Address</label>
                                     <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" value="{{ old('email') }}">
                                 </div>

@@ -41,8 +41,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($job_list as $key=>$items )
-                                    
+                                @foreach ($job_list as $key=>$items )                                    
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td><a href="{{ url('job/details/'.$items->id) }}">{{ $items->job_title }}</a></td>
@@ -75,7 +74,16 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td><a href="{{ route('job/applicants') }}" class="btn btn-sm btn-primary">3 Candidates</a></td>
+                                    @php
+                                        $apply = DB::table('apply_for_jobs')->where('job_title',$items->job_title)->count();
+                                    @endphp
+                                    <td>
+                                        <a href="{{ url('job/applicants/'.$items->job_title) }}" class="btn btn-sm btn-primary">
+                                            {{ $apply }}
+                                            Candidates
+                                        </a>
+                                    </td>
+                                    
                                     <td class="text-right">
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

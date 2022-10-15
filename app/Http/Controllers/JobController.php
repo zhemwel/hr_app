@@ -76,6 +76,7 @@ class JobController extends Controller
         $department = DB::table('departments')->get();
         $type_job   = DB::table('type_jobs')->get();
         $job_list   = DB::table('add_jobs')->get();
+       
         return view('job.jobs',compact('department','type_job','job_list'));
     }
 
@@ -129,9 +130,10 @@ class JobController extends Controller
     }
     
     /** job applicants */
-    public function jobApplicants()
+    public function jobApplicants($job_title)
     {
-        return view('job.jobapplicants');
+       $apply_for_jobs = DB::table('apply_for_jobs')->where('job_title',$job_title)->get();
+        return view('job.jobapplicants',compact('apply_for_jobs'));
     }
 
     /** job details */
@@ -147,6 +149,7 @@ class JobController extends Controller
         $request->validate([
             'job_title' => 'required|string|max:255',
             'name'      => 'required|string|max:255',
+            'phone'     => 'required|string|max:255',
             'email'     => 'required|string|email',
             'message'   => 'required|string|max:255',
             'cv_upload' => 'required',
@@ -162,6 +165,7 @@ class JobController extends Controller
             $apply_job = new ApplyForJob;
             $apply_job->job_title = $request->job_title;
             $apply_job->name      = $request->name;
+            $apply_job->phone     = $request->phone;
             $apply_job->email     = $request->email;
             $apply_job->message   = $request->message;
             $apply_job->cv_upload = $cv_uploads;
