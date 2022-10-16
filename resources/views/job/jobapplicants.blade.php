@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td><a href="#" class="btn btn-sm btn-primary"><i class="fa fa-download"></i> Download</a></td>
+                                    <td><a href="{{ url('cv/download/'.$apply->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-download"></i> Download</a></td>
                                     <td class="text-right">
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

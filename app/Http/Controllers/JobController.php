@@ -136,6 +136,13 @@ class JobController extends Controller
         return view('job.jobapplicants',compact('apply_for_jobs'));
     }
 
+    /** download */
+    public function downloadCV($id) {
+        $cv_uploads = DB::table('apply_for_jobs')->where('id',$id)->first();
+        $pathToFile = public_path("assets/images/{$cv_uploads->cv_upload}");
+        return \Response::download($pathToFile);
+    }
+
     /** job details */
     public function jobDetails($id)
     {
