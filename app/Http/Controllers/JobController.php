@@ -188,4 +188,37 @@ class JobController extends Controller
             return redirect()->back();
         } 
     }
+
+    /** applyJobUpdateRecord */
+    public function applyJobUpdateRecord(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            $update = [
+                'id'              => $request->id,
+                'job_title'       => $request->job_title,
+                'department'      => $request->department,
+                'job_location'    => $request->job_location,
+                'no_of_vacancies' => $request->no_of_vacancies,
+                'experience'      => $request->experience,
+                'age'             => $request->age,
+                'salary_from'     => $request->salary_from,
+                'salary_to'       => $request->salary_to,
+                'job_type'        => $request->job_type,
+                'status'          => $request->status,
+                'start_date'      => $request->start_date,
+                'expired_date'    => $request->expired_date,
+                'description'     => $request->description,
+            ];
+
+            AddJob::where('id',$request->id)->update($update);
+            DB::commit();
+            Toastr::success('Updated Leaves successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Update Leaves fail :)','Error');
+            return redirect()->back();
+        } 
+    }
 }

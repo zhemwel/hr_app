@@ -79,8 +79,6 @@ class LeavesController extends Controller
 
             LeavesAdmin::where('id',$request->id)->update($update);
             DB::commit();
-            
-            DB::commit();
             Toastr::success('Updated Leaves successfully :)','Success');
             return redirect()->back();
         } catch(\Exception $e) {
