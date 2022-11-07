@@ -23,11 +23,15 @@ class JobController extends Controller
         return view('job.jobview',compact('job_view'));
     }
 
-    /** job dashboard index */
+    /** users dashboard index */
     public function userDashboard() {
         return view('job.userdashboard');
     }
 
+    /** jobs dashboard index */
+    public function jobsDashboard() {
+        return view('job.jobsdashboard');
+    }
     /** user all job */
     public function userDashboardAll() 
     {

@@ -140,6 +140,7 @@ Route::controller(JobController::class)->group(function () {
     Route::get('form/job/list','jobList')->name('form/job/list');
     Route::get('form/job/view/{id}', 'jobView');
     Route::get('user/dashboard/index', 'userDashboard')->middleware('auth')->name('user/dashboard/index');    
+    Route::get('jobs/dashboard/index', 'jobsDashboard')->middleware('auth')->name('jobs/dashboard/index');    
     Route::get('user/dashboard/all', 'userDashboardAll')->middleware('auth')->name('user/dashboard/all');    
     Route::get('user/dashboard/save', 'userDashboardSave')->middleware('auth')->name('user/dashboard/save');
     Route::get('user/dashboard/applied/jobs', 'userDashboardApplied')->middleware('auth')->name('user/dashboard/applied/jobs');
