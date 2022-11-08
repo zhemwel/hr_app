@@ -59,6 +59,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>User ID</th>
+                                    <th hidden></th>
                                     <th>Email</th>
                                     <th>Position</th>
                                     <th>Phone</th>

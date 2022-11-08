@@ -29,6 +29,19 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
+                                    <th hidden></th>
                                     <th>Job Title</th>
                                     <th>Department</th>
                                     <th>Start Date</th>
@@ -434,4 +447,5 @@
             });
             
         </script>
+    @endsection
 @endsection
