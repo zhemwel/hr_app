@@ -125,14 +125,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($job_list as $key => $items)
                                     <tr>
-                                        <td>1</td>
-                                        <td><a href="job-details.html">Web Developer</a></td>
-                                        <td>Development</td>
+                                        <td>{{ ++$key }}</td>
+                                        <td><a href="job-details.html">{{ $items->job_title }}</a></td>
+                                        <td>{{ $items->department }}</td>
                                         <td class="text-center">
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Full Time
+                                                    <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->job_type }}
                                                 </a>
                                             </div>
                                         </td>
@@ -140,36 +141,7 @@
                                             <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><a href="job-details.html">Web Designer</a></td>
-                                        <td>Designing</td>
-                                        <td class="text-center">
-                                            <div class="action-label">
-                                                <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-success"></i> Part Time
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><a href="job-details.html">Android Developer</a></td>
-                                        <td>Android</td>
-                                        <td class="text-center">
-                                            <div class="action-label">
-                                                <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Internship
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -200,23 +172,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($job_list as $key => $items)
                                     <tr>
-                                        <td>1</td>
-                                        <td><a href="job-details.html">Web Developer</a></td>
-                                        <td>Development</td>
-                                        <td>3 Mar 2019</td>
-                                        <td>31 May 2019</td>
+                                        <td>{{ ++$key }}</td>
+                                        <td><a href="job-details.html">{{ $items->job_title }}</a></td>
+                                        <td>{{ $items->department }}</td>
+                                        <td>{{ date('d F, Y',strtotime($items->start_date)) }}</td>
+                                        <td>{{ date('d F, Y',strtotime($items->expired_date)) }}</td>
                                         <td class="text-center">
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Full Time
+                                                    <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->job_type }}
                                                 </a>
                                             </div>
                                         </td>
                                         <td class="text-center">
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Open
+                                                    <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->status }}
                                                 </a>
                                             </div>
                                         </td>
@@ -229,64 +202,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><a href="job-details.html">Web Designer</a></td>
-                                        <td>Designing</td>
-                                        <td>3 Mar 2019</td>
-                                        <td>31 May 2019</td>
-                                        <td class="text-center">
-                                            <div class="action-label">
-                                                <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-success"></i> Part Time
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="action-label">
-                                                <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-success"></i> Closed
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><a href="job-details.html">Android Developer</a></td>
-                                        <td>Android</td>
-                                        <td>3 Mar 2019</td>
-                                        <td>31 May 2019</td>
-                                        <td class="text-center">
-                                            <div class="action-label">
-                                                <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Internship
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="action-label">
-                                                <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-dot-circle-o text-danger"></i> Cancelled
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

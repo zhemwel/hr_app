@@ -24,8 +24,10 @@ class JobController extends Controller
     }
 
     /** users dashboard index */
-    public function userDashboard() {
-        return view('job.userdashboard');
+    public function userDashboard()
+    {
+        $job_list   = DB::table('add_jobs')->get();
+        return view('job.userdashboard',compact('job_list'));
     }
 
     /** jobs dashboard index */
