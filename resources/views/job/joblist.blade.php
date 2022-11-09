@@ -52,7 +52,12 @@
                 </div>
                 <!-- /Page Header -->
                 <div class="row">
-                    @foreach ($job_list as $list) 
+                    @foreach ($job_list as $list)
+                    @php
+                        $date = $list->created_at;
+                        $date = Carbon\Carbon::parse($date);
+                        $elapsed =  $date->diffForHumans();
+                    @endphp
                     <div class="col-md-6">
                         <a class="job-list" href="{{ url('form/job/view/'.$list->id) }}">
                             <div class="job-list-det">
@@ -68,7 +73,7 @@
                                 <ul>
                                     <li><i class="fa fa-map-signs"></i>{{ $list->job_location }}</li>
                                     <li><i class="fa fa-money"></i>{{ $list->salary_from }}-{{ $list->salary_to }}</li>
-                                    <li><i class="fa fa-clock-o"></i> 2 days ago</li>
+                                    <li><i class="fa fa-clock-o"></i>{{ $elapsed }}</li>
                                 </ul>
                             </div>
                         </a>

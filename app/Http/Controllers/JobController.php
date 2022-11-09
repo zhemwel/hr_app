@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\AddJob;
 use App\Models\ApplyForJob;
+use Carbon\Carbon;
 use Brian2694\Toastr\Facades\Toastr;
 
 class JobController extends Controller
