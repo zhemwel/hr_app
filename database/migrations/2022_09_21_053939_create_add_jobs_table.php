@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('start_date')->nullable();
             $table->string('expired_date')->nullable();
             $table->longText('description')->nullable();
+            $table->longText('count')->nullable();
             $table->timestamps();
         });
     }

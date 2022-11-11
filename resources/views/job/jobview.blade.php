@@ -97,7 +97,14 @@
                                 <li><i class="fa fa-calendar"></i> Post Date: <span class="text-blue">{{ date('d F, Y',strtotime($job_view[0]->start_date)) }}</span></li>
                                 <li><i class="fa fa-calendar"></i> Last Date: <span class="text-blue">{{ date('d F, Y',strtotime($job_view[0]->expired_date)) }}</span></li>
                                 <li><i class="fa fa-user-o"></i> Applications: <span class="text-blue">4</span></li>
-                                <li><i class="fa fa-eye"></i> Views: <span class="text-blue">3806</span></li>
+                                <li><i class="fa fa-eye"></i> Views: <span class="text-blue">
+                                    @if (!empty($job_view[0]->count))
+                                        {{ $job_view[0]->count }}
+                                        @else
+                                        0
+                                    @endif
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                         <div class="job-content job-widget">

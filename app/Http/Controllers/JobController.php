@@ -13,13 +13,19 @@ class JobController extends Controller
 {
     // job List
     public function jobList()
-    {
+    {    
         $job_list = DB::table('add_jobs')->get();
         return view('job.joblist',compact('job_list'));
     }
+    
     // job view
     public function jobView($id)
-    {
+    { 
+        /** update count */
+        $post = AddJob::find($id);
+        $update = ['count' =>$post->count + 1,];
+        AddJob::where('id',$post->id)->update($update);
+
         $job_view = DB::table('add_jobs')->where('id',$id)->get();
         return view('job.jobview',compact('job_view'));
     }
