@@ -152,10 +152,12 @@ Route::controller(JobController::class)->group(function () {
     Route::get('job/applicants/{job_title}', 'jobApplicants')->middleware('auth');
     Route::get('job/details/{id}', 'jobDetails')->middleware('auth');
     Route::get('cv/download/{id}', 'downloadCV')->middleware('auth');
-
+    
     Route::post('form/jobs/save', 'JobsSaveRecord')->name('form/jobs/save');
     Route::post('form/apply/job/save', 'applyJobSaveRecord')->name('form/apply/job/save');
     Route::post('form/apply/job/update', 'applyJobUpdateRecord')->name('form/apply/job/update');
+
+    Route::get('page/manage/resumes', 'manageResumesIndex')->middleware('auth')->name('page/manage/resumes');
 
 });
 

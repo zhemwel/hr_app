@@ -234,4 +234,10 @@ class JobController extends Controller
             return redirect()->back();
         } 
     }
+
+    /** manage Resumes */
+    public function manageResumesIndex()
+    {
+        return view('job.manageresumes');
+    }
 }
