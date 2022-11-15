@@ -151,40 +151,77 @@
                             <div class="card profile-box flex-fill">
                                 <div class="card-body">
                                     <h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
+                                    @if (!empty($userInformation))
+                                        <ul class="personal-info">
+                                            <li>
+                                                <div class="title">Passport No.</div>
+                                                <div class="text">{{ $userInformation->passport_no }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Passport Exp Date.</div>
+                                                <div class="text">{{ $userInformation->passport_expiry_date }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Tel</div>
+                                                <div class="text"><a href="">{{ $userInformation->tel }}</a></div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Nationality</div>
+                                                <div class="text">{{ $userInformation->nationality }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Religion</div>
+                                                <div class="text">{{ $userInformation->religion }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Marital status</div>
+                                                <div class="text">{{ $userInformation->marital_status }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">Employment of spouse</div>
+                                                <div class="text">{{ $userInformation->employment_of_spouse }}</div>
+                                            </li>
+                                            <li>
+                                                <div class="title">No. of children</div>
+                                                <div class="text">{{ $userInformation->children }}</div>
+                                            </li>
+                                        </ul>
+                                    @else
                                     <ul class="personal-info">
                                         <li>
                                             <div class="title">Passport No.</div>
-                                            <div class="text">{{ $userInformation->passport_no }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Passport Exp Date.</div>
-                                            <div class="text">{{ $userInformation->passport_expiry_date }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Tel</div>
-                                            <div class="text"><a href="">{{ $userInformation->tel }}</a></div>
+                                            <div class="text"><a href="">N/A</a></div>
                                         </li>
                                         <li>
                                             <div class="title">Nationality</div>
-                                            <div class="text">{{ $userInformation->nationality }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Religion</div>
-                                            <div class="text">{{ $userInformation->religion }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Marital status</div>
-                                            <div class="text">{{ $userInformation->marital_status }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">Employment of spouse</div>
-                                            <div class="text">{{ $userInformation->employment_of_spouse }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                         <li>
                                             <div class="title">No. of children</div>
-                                            <div class="text">{{ $userInformation->children }}</div>
+                                            <div class="text">N/A</div>
                                         </li>
                                     </ul>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -374,7 +411,7 @@
                     </div>
                 </div>
                 <!-- /Profile Info Tab -->
-                
+                    
                 <!-- Projects Tab -->
                 <div class="tab-pane fade" id="emp_projects">
                     <div class="row">
@@ -1106,6 +1143,7 @@
         <!-- /Profile Modal -->
         @endif
     
+        @if (!empty($userInformation))
         <!-- Personal Info Modal -->
         <div id="personal_info_modal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1187,6 +1225,88 @@
             </div>
         </div>
         <!-- /Personal Info Modal -->
+        @else
+         <!-- Personal Info Modal -->
+        <div id="personal_info_modal" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Personal Information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('user/information/save') }}" method="POST">
+                            @csrf
+                            <input type="hidden" class="form-control" name="user_id" value="{{ Session::get('user_id') }}" readonly>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Passport No</label>
+                                        <input type="text" class="form-control @error('passport_no') is-invalid @enderror" name="passport_no">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Passport Expiry Date</label>
+                                        <div class="cal-icon">
+                                            <input class="form-control datetimepicker @error('passport_expiry_date') is-invalid @enderror" type="text" name="passport_expiry_date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tel</label>
+                                        <input class="form-control @error('tel') is-invalid @enderror" type="text" name="tel">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nationality <span class="text-danger">*</span></label>
+                                        <input class="form-control @error('nationality') is-invalid @enderror" type="text" name="nationality">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Religion</label>
+                                        <div class="form-group">
+                                            <input class="form-control @error('religion') is-invalid @enderror" type="text" name="religion">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Marital status <span class="text-danger">*</span></label>
+                                        <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status">
+                                            <option value="Single">Single</option>
+                                            <option value="Married">Married</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Employment of spouse</label>
+                                        <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>No. of children </label>
+                                        <input class="form-control @error('children') is-invalid @enderror" type="text" name="children">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button type="submit" class="btn btn-primary submit-btn">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Personal Info Modal -->
+        @endif
         
         <!-- Family Info Modal -->
         <div id="family_info_modal" class="modal custom-modal fade" role="dialog">
