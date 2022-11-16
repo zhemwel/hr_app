@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <!-- Page Wrapper -->
+   	<!-- Page Wrapper -->
     <div class="page-wrapper">
         <!-- Page Content -->
         <div class="content container-fluid">
@@ -8,11 +8,11 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col-12">
-                        <h3 class="page-title">Manage Resumes</h3>
+                        <h3 class="page-title">Shortlist Candidates</h3>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item">Jobs</li>
-                            <li class="breadcrumb-item active">Manage Resumes</li>
+                            <li class="breadcrumb-item active">Shortlist Candidates</li>
                         </ul>
                     </div>
                 </div>
@@ -29,12 +29,7 @@
                                     <th>Name</th>
                                     <th>Job Title</th>
                                     <th>Department</th>
-                                    <th>Start Date</th>
-                                    <th>Expire Date</th>
-                                    <th class="text-center">Job Type</th>
                                     <th class="text-center">Status</th>
-                                    <th>Resume</th>
-                                    <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,48 +37,17 @@
                                     <td>1</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-02.jpg')}}"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
                                             <a href="profile.html">John Doe <span>Web Designer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Web Developer</a></td>
                                     <td>Development</td>
-                                    <td>3 Mar 2019</td>
-                                    <td>31 May 2019</td>
                                     <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-danger"></i> Full Time
+                                        <div class="action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded" href="#">
+                                                <i class="fa fa-dot-circle-o text-danger"></i> Offered
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Full Time</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Part Time</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Internship</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-warning"></i> Temporary</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-warning"></i> Other</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-danger"></i> Open
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Open</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Closed</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Cancelled</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                    <td class="text-center">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#edit_job"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -97,42 +61,11 @@
                                     </td>
                                     <td><a href="job-details.html">Web Designer</a></td>
                                     <td>Designing</td>
-                                    <td>3 Mar 2019</td>
-                                    <td>31 May 2019</td>
                                     <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-success"></i> Part Time
+                                        <div class="action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded" href="#">
+                                                <i class="fa fa-dot-circle-o text-danger"></i> Offered
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Full Time</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Part Time</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Internship</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-warning"></i> Temporary</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-warning"></i> Other</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-success"></i> Closed
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Open</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Closed</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Cancelled</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                    <td class="text-center">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#edit_job"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -146,42 +79,11 @@
                                     </td>
                                     <td><a href="job-details.html">Android Developer</a></td>
                                     <td>Android</td>
-                                    <td>3 Mar 2019</td>
-                                    <td>31 May 2019</td>
                                     <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-danger"></i> Internship
+                                        <div class="action-label">
+                                            <a class="btn btn-white btn-sm btn-rounded" href="#">
+                                                <i class="fa fa-dot-circle-o text-danger"></i> Offered
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Full Time</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Part Time</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Internship</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-warning"></i> Temporary</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-warning"></i> Other</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="dropdown action-label">
-                                            <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa fa-dot-circle-o text-danger"></i> Cancelled
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Open</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i> Closed</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i> Cancelled</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                    <td class="text-center">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#edit_job"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -350,7 +252,7 @@
             </div>
         </div>
         <!-- /Delete Job Modal -->
-        
     </div>
     <!-- /Page Wrapper -->
+
 @endsection

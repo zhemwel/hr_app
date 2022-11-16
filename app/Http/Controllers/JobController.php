@@ -240,4 +240,10 @@ class JobController extends Controller
     {
         return view('job.manageresumes');
     }
+
+    /** shortlist candidates */
+    public function shortlistCandidatesIndex()
+    {
+        return view('job.shortlistcandidates');
+    }
 }

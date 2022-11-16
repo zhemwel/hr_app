@@ -158,6 +158,7 @@ Route::controller(JobController::class)->group(function () {
     Route::post('form/apply/job/update', 'applyJobUpdateRecord')->name('form/apply/job/update');
 
     Route::get('page/manage/resumes', 'manageResumesIndex')->middleware('auth')->name('page/manage/resumes');
+    Route::get('page/shortlist/candidates', 'shortlistCandidatesIndex')->middleware('auth')->name('page/shortlist/candidates');
 
 });
 
