@@ -61,7 +61,7 @@
 			<!-- Logo -->
 			<div class="header-left">
 				<a href="{{ route('home') }}" class="logo">
-					<img src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}" width="40" height="40" alt="">
+					<img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" width="40" height="40" alt="">
 				</a>
 			</div>
 			<!-- /Logo -->
@@ -125,7 +125,7 @@
 									<a href="activities.html">
 										<div class="media">
 											<span class="avatar">
-												<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+												<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
@@ -138,7 +138,7 @@
 									<a href="activities.html">
 										<div class="media">
 											<span class="avatar">
-												<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+												<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
@@ -151,7 +151,7 @@
 									<a href="activities.html">
 										<div class="media">
 											<span class="avatar">
-												<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+												<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
@@ -164,7 +164,7 @@
 									<a href="activities.html">
 										<div class="media">
 											<span class="avatar">
-												<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+												<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
@@ -177,7 +177,7 @@
 									<a href="activities.html">
 										<div class="media">
 											<span class="avatar">
-												<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+												<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
@@ -210,7 +210,7 @@
 										<div class="list-item">
 											<div class="list-left">
 												<span class="avatar">
-													<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+													<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 												</span>
 											</div>
 											<div class="list-body">
@@ -227,7 +227,7 @@
 										<div class="list-item">
 											<div class="list-left">
 												<span class="avatar">
-													<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+													<img alt="" src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}">
 												</span>
 											</div>
 											<div class="list-body">
@@ -244,7 +244,7 @@
 										<div class="list-item">
 											<div class="list-left">
 												<span class="avatar">
-													<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+													<img alt="" src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}">
 												</span>
 											</div>
 											<div class="list-body">
@@ -261,7 +261,7 @@
 										<div class="list-item">
 											<div class="list-left">
 												<span class="avatar">
-													<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+													<img alt="" src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}">
 													</span>
 												</div>
 											<div class="list-body">
@@ -278,7 +278,7 @@
 										<div class="list-item">
 											<div class="list-left">
 												<span class="avatar">
-													<img alt="" src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}">
+													<img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}">
 												</span>
 											</div>
 											<div class="list-body">
@@ -299,7 +299,7 @@
 				<li class="nav-item dropdown has-arrow main-drop">
 					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
 						<span class="user-img">
-						<img src="{{ URL::to('/assets/images/'. Session::get('avatar')) }}" alt="{{ Session::get('name') }}">
+						<img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
 						<span class="status online"></span></span>
 						<span>{{ Session::get('name') }}</span>
 					</a>

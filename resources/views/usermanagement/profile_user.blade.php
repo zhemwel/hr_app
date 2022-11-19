@@ -26,7 +26,7 @@
                                 <div class="profile-img-wrap">
                                     <div class="profile-img">
                                         <a href="#">
-                                            <img alt="" src="{{ URL::to('/assets/images/'.Session::get('avatar') ) }}" alt="{{ Session::get('name') }}">
+                                            <img alt="" src="{{ URL::to('/assets/images/'.Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
                                         </a>
                                     </div>
                                 </div>
