@@ -61,8 +61,7 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        $emails   = '@gmail.com';
-        $username = $request->email .$emails;
+        $username = $request->email;
         $password = $request->password;
 
         $dt         = Carbon::now();
