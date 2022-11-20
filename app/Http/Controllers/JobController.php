@@ -246,4 +246,10 @@ class JobController extends Controller
     {
         return view('job.shortlistcandidates');
     }
+
+    /** interview questions */
+    public function interviewQuestionsIndex()
+    {
+        return view('job.interviewquestions');
+    }
 }

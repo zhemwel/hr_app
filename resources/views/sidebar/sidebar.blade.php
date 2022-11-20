@@ -117,7 +117,7 @@
                 <li> <a href="assets.html"><i class="la la-object-ungroup">
                     </i> <span>Assets</span></a>
                 </li>
-                <li class="{{set_active(['user/dashboard/index','jobs/dashboard/index','user/dashboard/all','user/dashboard/applied/jobs','user/dashboard/interviewing','user/dashboard/offered/jobs','user/dashboard/visited/jobs','user/dashboard/archived/jobs','user/dashboard/save','jobs','job/applicants','job/details','page/manage/resumes','page/shortlist/candidates'])}} submenu">
+                <li class="{{set_active(['user/dashboard/index','jobs/dashboard/index','user/dashboard/all','user/dashboard/applied/jobs','user/dashboard/interviewing','user/dashboard/offered/jobs','user/dashboard/visited/jobs','user/dashboard/archived/jobs','user/dashboard/save','jobs','job/applicants','job/details','page/manage/resumes','page/shortlist/candidates','page/interview/questions'])}} submenu">
                     <a href="#" class="{{ set_active(['user/dashboard/index','jobs/dashboard/index','user/dashboard/all','user/dashboard/save','jobs','job/applicants','job/details']) ? 'noti-dot' : '' }}"><i class="la la-briefcase"></i>
                         <span> Jobs </span> <span class="menu-arrow"></span>
                     </a>
@@ -127,7 +127,7 @@
                         <li><a class="{{set_active(['jobs','job/applicants','job/details'])}}" href="{{ route('jobs') }}"> Manage Jobs </a></li>
                         <li><a class="{{set_active(['page/manage/resumes'])}}" href="{{ route('page/manage/resumes') }}"> Manage Resumes </a></li>
                         <li><a class="{{set_active(['page/shortlist/candidates'])}}" href="{{ route('page/shortlist/candidates') }}"> Shortlist Candidates </a></li>
-                        <li><a href="interview-questions.html"> Interview Questions </a></li>
+                        <li><a class="{{set_active(['page/interview/questions'])}}" href="{{ route('page/interview/questions') }}"> Interview Questions </a></li>
                         <li><a href="offer_approvals.html"> Offer Approvals </a></li>
                         <li><a href="experiance-level.html"> Experience Level </a></li>
                         <li><a href="candidates.html"> Candidates List </a></li>
