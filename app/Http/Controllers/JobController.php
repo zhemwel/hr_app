@@ -252,4 +252,10 @@ class JobController extends Controller
     {
         return view('job.interviewquestions');
     }
+
+    /** offer approvals */
+    public function offerApprovalsIndex()
+    {
+        return view('job.offerapprovals');
+    }
 }
