@@ -258,4 +258,10 @@ class JobController extends Controller
     {
         return view('job.offerapprovals');
     }
+
+    /** experience level */
+    public function experienceLevelIndex()
+    {
+        return view('job.experiencelevel');
+    }
 }

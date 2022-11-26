@@ -161,9 +161,10 @@ Route::controller(JobController::class)->group(function () {
     Route::get('page/shortlist/candidates', 'shortlistCandidatesIndex')->middleware('auth')->name('page/shortlist/candidates');
     Route::get('page/interview/questions', 'interviewQuestionsIndex')->middleware('auth')->name('page/interview/questions');
     Route::get('page/offer/approvals', 'offerApprovalsIndex')->middleware('auth')->name('page/offer/approvals');
+    Route::get('page/experience/level', 'experienceLevelIndex')->middleware('auth')->name('page/experience/level');
 
 });
-
+ 
 // ----------------------------- form employee ------------------------------//
 Route::controller(EmployeeController::class)->group(function () {
     Route::get('all/employee/card', 'cardAllEmployee')->middleware('auth')->name('all/employee/card');
