@@ -264,4 +264,10 @@ class JobController extends Controller
     {
         return view('job.experiencelevel');
     }
+
+    /** candidates */
+    public function candidatesIndex()
+    {
+        return view('job.candidates');
+    }
 }

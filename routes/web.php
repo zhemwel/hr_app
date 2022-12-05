@@ -162,6 +162,7 @@ Route::controller(JobController::class)->group(function () {
     Route::get('page/interview/questions', 'interviewQuestionsIndex')->middleware('auth')->name('page/interview/questions');
     Route::get('page/offer/approvals', 'offerApprovalsIndex')->middleware('auth')->name('page/offer/approvals');
     Route::get('page/experience/level', 'experienceLevelIndex')->middleware('auth')->name('page/experience/level');
+    Route::get('page/candidates', 'candidatesIndex')->middleware('auth')->name('page/candidates');
 
 });
  
