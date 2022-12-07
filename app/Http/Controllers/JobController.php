@@ -270,4 +270,10 @@ class JobController extends Controller
     {
         return view('job.candidates');
     }
+
+    /** schedule timing */
+    public function scheduleTimingIndex()
+    {
+        return view('job.scheduletiming');
+    }
 }
