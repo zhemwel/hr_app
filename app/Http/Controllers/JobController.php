@@ -276,4 +276,10 @@ class JobController extends Controller
     {
         return view('job.scheduletiming');
     }
+    /** aptitude result */
+
+    public function aptituderesultIndex()
+    {
+        return view('job.aptituderesult');
+    }
 }
