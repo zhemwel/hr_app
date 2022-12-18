@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('content')
+    {{-- message --}}
+    {!! Toastr::message() !!}
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <!-- Page Content -->
@@ -60,26 +62,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        Which of the following would be the BEST<br> method for ensuring that critical fields in a<br> master record have been updated properly?
-                                    </td>
-                                    <td>design facilities </td>
-                                    <td> language subsets  </td>
-                                    <td>Lack of portability  </td>
-                                    <td>Inability to perform data  </td>
-                                    <td class="text-center">A</td>
-                                    <td class="text-center">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_question"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -87,6 +69,38 @@
             </div>
         </div>
         <!-- /Page Content -->
+
+        <!-- Add Category Modal -->
+        <div id="add_category" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Category</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('save/category') }}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Add Category</label>
+                                        <input class="form-control @error('category') is-invalid @enderror" type="text" name="category">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">Cancel</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Questions Modal -->
     
         <!-- Add Questions Modal -->
         <div id="add_question" class="modal custom-modal fade" role="dialog">
@@ -126,9 +140,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Questions</label>
-                                        <textarea class="form-control">
-                                            
-                                        </textarea>
+                                        <textarea class="form-control" name="questions"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -136,25 +148,25 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option A</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="option_a">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option B</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="option_b">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option C</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="option_c">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option D</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="option_d">
                                     </div>
                                 </div>
                             </div>
@@ -163,11 +175,11 @@
                                     <div class="form-group">
                                         <label>Correct Answer</label>
                                         <select class="select">
-                                            <option>-</option>
-                                            <option>Option A</option>
-                                            <option>Option B</option>
-                                            <option>Option C</option>
-                                            <option>Option D</option>
+                                            <option selected disabled>--Select Answer--</option>
+                                            <option value="Option A">Option A</option>
+                                            <option value="Option B">Option B</option>
+                                            <option value="Option C">Option C</option>
+                                            <option value="Option D">Option D</option>
                                         </select>
                                     </div>
                                 </div>
@@ -176,17 +188,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Code Snippets</label>
-                                        <textarea class="form-control">
-                                            
-                                        </textarea>
+                                        <textarea class="form-control" name="code_snippets"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Answer Explanation</label>
-                                        <textarea class="form-control">
-                                            
-                                        </textarea>
+                                        <textarea class="form-control" name="answer_explanation"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -194,50 +202,19 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Video Link</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="video_link">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Image To Question</label>
-                                        <input class="form-control" type="file">
+                                        <input class="form-control" type="file" name="image_to_question">
                                     </div>
                                 </div>
                             </div>
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Cancel</button>
-                                <button class="btn btn-primary submit-btn">Save</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /Add Questions Modal -->
-
-        <!-- Add Category Modal -->
-        <div id="add_category" class="modal custom-modal fade" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add Category</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Add Category</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="submit-section">
-                                <button class="btn btn-primary submit-btn">Cancel</button>
-                                <button class="btn btn-primary submit-btn">Save</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Save</button>
                             </div>
                         </form>
                     </div>

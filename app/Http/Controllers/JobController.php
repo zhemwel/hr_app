@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\AddJob;
 use App\Models\ApplyForJob;
+use App\Models\Category;
 use Carbon\Carbon;
 use Brian2694\Toastr\Facades\Toastr;
 
@@ -251,6 +252,30 @@ class JobController extends Controller
     public function interviewQuestionsIndex()
     {
         return view('job.interviewquestions');
+    }
+
+    /** interviewQuestions Save */
+    public function categorySave( Request $request)
+    {
+        $request->validate([
+            'category' => 'required|string|max:255',
+        ]);
+
+        DB::beginTransaction();
+        try {
+
+            $save = new Category;
+            $save->category = $request->category;
+            $save->save();
+            
+            DB::commit();
+            Toastr::success('Create new Category successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Add Category fail :)','Error');
+            return redirect()->back();
+        }
     }
 
     /** offer approvals */
