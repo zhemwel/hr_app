@@ -113,25 +113,28 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('save/questions') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Category</label>
-                                        <input class="form-control" type="text">
+                                        <select class="select  @error('category') is-invalid @enderror" name="category">
+                                            <option selected disabled> --Select --</option>
+                                            @foreach ($category as $categorys )
+                                            <option value="{{ $categorys->category }}" {{ old('category') == $categorys->category ? "selected" :""}}>{{ $categorys->category }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select">
-                                            <option>-</option>
-                                            <option selected>Web Development</option>
-                                            <option>Application Development</option>
-                                            <option>IT Management</option>
-                                            <option>Accounts Management</option>
-                                            <option>Support Management</option>
-                                            <option>Marketing</option>
+                                        <select class="select @error('department') is-invalid @enderror" name="department" id="department">
+                                            <option selected disabled> --Select --</option>
+                                            @foreach ($department as $departments )
+                                            <option value="{{ $departments->department }}" {{ old('department') == $departments->department ? "selected" :""}}>{{ $departments->department }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -140,7 +143,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Questions</label>
-                                        <textarea class="form-control" name="questions"></textarea>
+                                        <textarea class="form-control @error('questions') is-invalid @enderror" name="questions">{{ old('questions') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -148,25 +151,25 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option A</label>
-                                        <input class="form-control" type="text" name="option_a">
+                                        <input class="form-control @error('option_a') is-invalid @enderror" type="text" name="option_a" value="{{ old('option_a') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option B</label>
-                                        <input class="form-control" type="text" name="option_b">
+                                        <input class="form-control @error('option_b') is-invalid @enderror" type="text" name="option_b" value="{{ old('option_b') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option C</label>
-                                        <input class="form-control" type="text" name="option_c">
+                                        <input class="form-control @error('option_c') is-invalid @enderror" type="text" name="option_c" value="{{ old('option_c') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option D</label>
-                                        <input class="form-control" type="text" name="option_d">
+                                        <input class="form-control @error('option_d') is-invalid @enderror" type="text" name="option_d" value="{{ old('option_d') }}">
                                     </div>
                                 </div>
                             </div>
@@ -174,12 +177,11 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Correct Answer</label>
-                                        <select class="select">
-                                            <option selected disabled>--Select Answer--</option>
-                                            <option value="Option A">Option A</option>
-                                            <option value="Option B">Option B</option>
-                                            <option value="Option C">Option C</option>
-                                            <option value="Option D">Option D</option>
+                                        <select class="select @error('answer') is-invalid @enderror" name="answer">
+                                            <option selected disabled> --Select --</option>
+                                            @foreach ($answer as $answers )
+                                            <option value="{{ $answers->answer }}" {{ old('answer') == $answers->answer ? "selected" :""}}>{{ $answers->answer }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -188,13 +190,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Code Snippets</label>
-                                        <textarea class="form-control" name="code_snippets"></textarea>
+                                        <textarea class="form-control @error('code_snippets') is-invalid @enderror" name="code_snippets">{{ old('code_snippets') }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Answer Explanation</label>
-                                        <textarea class="form-control" name="answer_explanation"></textarea>
+                                        <textarea class="form-control @error('answer_explanation') is-invalid @enderror" name="answer_explanation">{{ old('answer_explanation') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -202,13 +204,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Video Link</label>
-                                        <input class="form-control" type="text" name="video_link">
+                                        <input class="form-control @error('video_link') is-invalid @enderror" type="text" name="video_link" value="{{ old('video_link') }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Image To Question</label>
-                                        <input class="form-control" type="file" name="image_to_question">
+                                        <input class="form-control @error('image_to_question') is-invalid @enderror" type="file" name="image_to_question">
                                     </div>
                                 </div>
                             </div>

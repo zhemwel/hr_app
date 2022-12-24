@@ -7,6 +7,7 @@ use DB;
 use App\Models\AddJob;
 use App\Models\ApplyForJob;
 use App\Models\Category;
+use App\Models\Question;
 use Carbon\Carbon;
 use Brian2694\Toastr\Facades\Toastr;
 
@@ -251,7 +252,10 @@ class JobController extends Controller
     /** interview questions */
     public function interviewQuestionsIndex()
     {
-        return view('job.interviewquestions');
+        $category    = DB::table('categories')->get();
+        $department  = DB::table('departments')->get();
+        $answer      = DB::table('answers')->get();
+        return view('job.interviewquestions',compact('category','department','answer'));
     }
 
     /** interviewQuestions Save */
@@ -276,6 +280,56 @@ class JobController extends Controller
             Toastr::error('Add Category fail :)','Error');
             return redirect()->back();
         }
+    }
+
+    /** save question */
+    public function questionSave(Request $request)
+    {
+        $request->validate([
+            'category'           => 'required|string|max:255',
+            'department'         => 'required|string|max:255',
+            'questions'          => 'required|string|max:255',
+            'option_a'           => 'required|string|max:255',
+            'option_b'           => 'required|string|max:255',
+            'option_c'           => 'required|string|max:255',
+            'option_d'           => 'required|string|max:255',
+            'answer'             => 'required|string|max:255',
+            'code_snippets'      => 'required|string|max:255',
+            'answer_explanation' => 'required|string|max:255',
+            'video_link'         => 'required|url',
+            'image_to_question'  => 'required',
+        ]);
+
+        DB::beginTransaction();
+        try {
+
+            /** upload file */
+            $image_to_questions = time().'.'.$request->image_to_question->extension();  
+            $request->image_to_question->move(public_path('assets/images/question'), $image_to_questions);
+
+            $save = new Question;
+            $save->category   = $request->category;
+            $save->department = $request->department;
+            $save->questions  = $request->questions;
+            $save->option_a = $request->option_a;
+            $save->option_b = $request->option_b;
+            $save->option_c = $request->option_c;
+            $save->option_d = $request->option_d;
+            $save->answer   = $request->answer;
+            $save->code_snippets      = $request->code_snippets;
+            $save->answer_explanation = $request->answer_explanation;
+            $save->video_link         = $request->video_link;
+            $save->image_to_question  = $image_to_questions;
+            $save->save();
+            
+            DB::commit();
+            Toastr::success('Create new Question successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Add Question fail :)','Error');
+            return redirect()->back();
+        } 
     }
 
     /** offer approvals */
