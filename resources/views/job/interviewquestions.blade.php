@@ -31,7 +31,7 @@
                         <table class="table table-striped custom-table mb-0 datatable">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>No</th>
                                     <th>Questions</th>
                                     <th>Option A</th>
                                     <th>Option B</th>
@@ -42,16 +42,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($question as $key=>$questions)
                                 <tr>
-                                    <td>1</td>
-                                    <td>
-                                        IS management has decided to rewrite a legacy <br>customer relations system using fourth generation <br>languages (4GLs). Which of the following risks is<br> MOST often associated with system development using 4GLs?
-                                    </td>
-                                    <td>design facilities </td>
-                                    <td> language subsets  </td>
-                                    <td>Lack of portability  </td>
-                                    <td>Inability to perform data  </td>
-                                    <td class="text-center">A</td>
+                                    <td>{{ ++$key }}</td>
+                                    <td>{{ Str::limit($questions->questions, 20) }}</td>
+                                    <td>{{ $questions->option_a }}</td>
+                                    <td>{{ $questions->option_b }}</td>
+                                    <td>{{ $questions->option_c }}</td>
+                                    <td>{{ $questions->option_d }}</td>
+                                    <td class="text-center">{{ $questions->answer }}</td>
                                     <td class="text-center">
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -62,6 +61,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

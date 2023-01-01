@@ -252,10 +252,11 @@ class JobController extends Controller
     /** interview questions */
     public function interviewQuestionsIndex()
     {
+        $question    = DB::table('questions')->get();
         $category    = DB::table('categories')->get();
         $department  = DB::table('departments')->get();
         $answer      = DB::table('answers')->get();
-        return view('job.interviewquestions',compact('category','department','answer'));
+        return view('job.interviewquestions',compact('category','department','answer','question'));
     }
 
     /** interviewQuestions Save */
