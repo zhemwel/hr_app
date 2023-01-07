@@ -44,18 +44,24 @@
                             <tbody>
                                 @foreach ($question as $key=>$questions)
                                 <tr>
-                                    <td>{{ ++$key }}</td>
+                                    <td class="id">{{ ++$key }}</td>
                                     <td>{{ Str::limit($questions->questions, 20) }}</td>
-                                    <td>{{ $questions->option_a }}</td>
-                                    <td>{{ $questions->option_b }}</td>
-                                    <td>{{ $questions->option_c }}</td>
-                                    <td>{{ $questions->option_d }}</td>
-                                    <td class="text-center">{{ $questions->answer }}</td>
+                                    <td class="questions" hidden>{{ $questions->questions }}</td>
+                                    <td class="option_a">{{ $questions->option_a }}</td>
+                                    <td class="option_b">{{ $questions->option_b }}</td>
+                                    <td class="option_c">{{ $questions->option_c }}</td>
+                                    <td class="option_d">{{ $questions->option_d }}</td>
+                                    <td class="category" hidden>{{ $questions->category }}</td>
+                                    <td class="department" hidden>{{ $questions->department }}</td>
+                                    <td class="code_snippets" hidden>{{ $questions->code_snippets }}</td>
+                                    <td class="answer_explanation" hidden>{{ $questions->answer_explanation }}</td>
+                                    <td class="video_link" hidden>{{ $questions->video_link }}</td>
+                                    <td class="text-center answer">{{ $questions->answer }}</td>
                                     <td class="text-center">
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_question"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                <a class="dropdown-item edit_question" href="#" data-toggle="modal" data-target="#edit_question"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                             </div>
                                         </div>
@@ -130,7 +136,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select @error('department') is-invalid @enderror" name="department" id="department">
+                                        <select class="select @error('department') is-invalid @enderror" name="department">
                                             <option selected disabled> --Select --</option>
                                             @foreach ($department as $departments )
                                             <option value="{{ $departments->department }}" {{ old('department') == $departments->department ? "selected" :""}}>{{ $departments->department }}</option>
@@ -236,29 +242,29 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="{{ route('questions/update') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input class="form-control" type="hidden" id="e_id" name="id" value="">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Category</label>
-                                        <select class="select">
-                                            <option>-</option>
-                                            <option selected>HTML</option>
-                                            <option>CSS</option>
+                                        <label>Add Category</label>
+                                        <select class="select" name="category" id="e_category">
+                                            <option selected disabled> --Select --</option>
+                                            @foreach ($category as $categorys )
+                                            <option value="{{ $categorys->category }}" {{ old('category') == $categorys->category ? "selected" :""}}>{{ $categorys->category }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select">
-                                            <option>-</option>
-                                            <option selected>Web Development</option>
-                                            <option>Application Development</option>
-                                            <option>IT Management</option>
-                                            <option>Accounts Management</option>
-                                            <option>Support Management</option>
-                                            <option>Marketing</option>
+                                        <select class="select" name="department" id="e_department">
+                                            <option selected disabled> --Select --</option>
+                                            @foreach ($department as $departments )
+                                            <option value="{{ $departments->department }}" {{ old('department') == $departments->department ? "selected" :""}}>{{ $departments->department }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -267,9 +273,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Questions</label>
-                                        <textarea class="form-control">
-                                            IS management has decided to rewrite a legacy customer relations system using fourth generation languages (4GLs). Which of the following risks is MOST often associated with system development using 4GLs?
-                                        </textarea>
+                                        <textarea class="form-control" name="questions" id="e_questions"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -277,25 +281,25 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option A</label>
-                                        <input class="form-control" type="text" value="Design facilities">
+                                        <input class="form-control" type="text" name="option_a" id="e_option_a" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option B</label>
-                                        <input class="form-control" type="text" value="language subsets">
+                                        <input class="form-control" type="text" name="option_b" id="e_option_b" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option C</label>
-                                        <input class="form-control" type="text" value="Lack of portability">
+                                        <input class="form-control" type="text" name="option_c" id="e_option_c" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Option D</label>
-                                        <input class="form-control" type="text" value="Inability to perform data">
+                                        <input class="form-control" type="text" name="option_d" id="e_option_d" value="">
                                     </div>
                                 </div>
                             </div>
@@ -303,12 +307,11 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Correct Answer</label>
-                                        <select class="select">
-                                            <option>-</option>
-                                            <option selected>Option A</option>
-                                            <option>Option B</option>
-                                            <option>Option C</option>
-                                            <option>Option D</option>
+                                        <select class="select" name="answer" id="e_answer">
+                                            <option selected disabled> --Select --</option>
+                                            @foreach ($answer as $answers )
+                                            <option value="{{ $answers->answer }}" {{ old('answer') == $answers->answer ? "selected" :""}}>{{ $answers->answer }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -317,17 +320,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Code Snippets</label>
-                                        <textarea class="form-control">
-                                        
-                                        </textarea>
+                                        <textarea class="form-control" name="code_snippets" id="e_code_snippets"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Answer Explanation</label>
-                                        <textarea class="form-control">
-                                            
-                                        </textarea>
+                                        <textarea class="form-control" name="answer_explanation" id="e_answer_explanation"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -335,19 +334,19 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Video Link</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="video_link" id="e_video_link" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Add Image To Question</label>
-                                        <input class="form-control" type="file">
+                                        <input class="form-control" type="file" name="image_to_question">
                                     </div>
                                 </div>
                             </div>
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Cancel</button>
-                                <button class="btn btn-primary submit-btn">Save</button>
+                                <button type="submit" class="btn btn-primary submit-btn">Save</button>
                             </div>
                         </form>
                     </div>
@@ -382,4 +381,41 @@
         <!-- /Delete Job Modal -->
     </div>
     <!-- /Page Wrapper -->
+
+    @section('script')
+        {{-- update --}}
+        <script>
+            $(document).on('click','.edit_question',function()
+            {
+                var _this = $(this).parents('tr');
+                $('#e_id').val(_this.find('.id').text());
+                $('#e_questions').val(_this.find('.questions').text());
+                $('#e_option_a').val(_this.find('.option_a').text());
+                $('#e_option_b').val(_this.find('.option_b').text());
+                $('#e_option_c').val(_this.find('.option_c').text());
+                $('#e_option_d').val(_this.find('.option_d').text());
+                $('#e_code_snippets').val(_this.find('.code_snippets').text());
+                $('#e_answer_explanation').val(_this.find('.answer_explanation').text());
+                $('#e_video_link').val(_this.find('.video_link').text());
+                
+                // category
+                var category = (_this.find(".category").text());
+                var _option = '<option selected value="' +category+ '">' + _this.find('.category').text() + '</option>'
+                $( _option).appendTo("#e_category");
+
+                // department
+                var department = (_this.find(".department").text());
+                var _option = '<option selected value="' +department+ '">' + _this.find('.department').text() + '</option>'
+                $( _option).appendTo("#e_department");
+
+                // answer
+                var answer = (_this.find(".answer").text());
+                var _option = '<option selected value="' +answer+ '">' + _this.find('.answer').text() + '</option>'
+                $( _option).appendTo("#e_answer");
+
+            });
+            
+        </script>
+    @endsection
+
 @endsection

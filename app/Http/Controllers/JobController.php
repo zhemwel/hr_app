@@ -333,6 +333,38 @@ class JobController extends Controller
         } 
     }
 
+    /** question update */
+    public function questionsUpdate(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            
+            $update = [
+                'id'            => $request->id,
+                'category'      => $request->category,
+                'department'    => $request->department,
+                'questions'     => $request->questions,
+                'option_a'      => $request->option_a,
+                'option_b'      => $request->option_b,
+                'option_c'      => $request->option_c,
+                'option_d'      => $request->option_d,
+                'answer'        => $request->answer,
+                'code_snippets' => $request->code_snippets,
+                'answer_explanation' => $request->answer_explanation,
+                'video_link' => $request->video_link,
+            ];
+
+            Question::where('id',$request->id)->update($update);
+            DB::commit();
+            Toastr::success('Updated Questions successfully :)','Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Update Questions fail :)','Error');
+            return redirect()->back();
+        }
+    }
+
     /** offer approvals */
     public function offerApprovalsIndex()
     {

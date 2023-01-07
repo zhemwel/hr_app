@@ -162,6 +162,7 @@ Route::controller(JobController::class)->group(function () {
     Route::get('page/interview/questions', 'interviewQuestionsIndex')->middleware('auth')->name('page/interview/questions'); // view page
     Route::post('save/category', 'categorySave')->name('save/category'); // save record category
     Route::post('save/questions', 'questionSave')->name('save/questions'); // save record questions
+    Route::post('questions/update', 'questionsUpdate')->name('questions/update'); // update question
     Route::get('page/offer/approvals', 'offerApprovalsIndex')->middleware('auth')->name('page/offer/approvals');
     Route::get('page/experience/level', 'experienceLevelIndex')->middleware('auth')->name('page/experience/level');
     Route::get('page/candidates', 'candidatesIndex')->middleware('auth')->name('page/candidates');
