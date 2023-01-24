@@ -45,6 +45,7 @@
                                 @foreach ($question as $key=>$questions)
                                 <tr>
                                     <td class="id">{{ ++$key }}</td>
+                                    <td class="e_id" hidden>{{ $questions->id }}</td>
                                     <td>{{ Str::limit($questions->questions, 20) }}</td>
                                     <td class="questions" hidden>{{ $questions->questions }}</td>
                                     <td class="option_a">{{ $questions->option_a }}</td>
@@ -62,7 +63,7 @@
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item edit_question" href="#" data-toggle="modal" data-target="#edit_question"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                <a class="dropdown-item delete_question" href="#" data-toggle="modal" data-target="#delete_job"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>
@@ -365,18 +366,22 @@
                             <p>Are you sure want to delete?</p>
                         </div>
                         <div class="modal-btn delete-action">
-                            <div class="row">
-                                <div class="col-6">
-                                    <a href="javascript:void(0);" class="btn btn-primary continue-btn">Delete</a>
+                            <form action="{{ route('questions/delete') }}" method="POST">
+                                @csrf
+                                <input type="hidden" class="e_id" name="id" value="">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-primary continue-btn submit-btn">Delete</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>z
         </div>
         <!-- /Delete Job Modal -->
     </div>
@@ -416,6 +421,15 @@
             });
             
         </script>
+
+        {{-- delete --}}
+        <script>
+            $(document).on('click','.delete_question',function() {
+                var _this = $(this).parents('tr');
+                $('.e_id').val(_this.find('.e_id').text());
+            });
+        </script>
+        {{-- delete model --}}
     @endsection
 
 @endsection

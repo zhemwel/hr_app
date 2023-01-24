@@ -365,6 +365,22 @@ class JobController extends Controller
         }
     }
 
+    /** delete question */
+    public function questionsDelete(Request $request)
+    {
+        try {
+
+            Question::destroy($request->id);
+            Toastr::success('Question deleted successfully :)','Success');
+            return redirect()->back();
+        
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Question delete fail :)','Error');
+            return redirect()->back();
+        }
+    }
+
     /** offer approvals */
     public function offerApprovalsIndex()
     {

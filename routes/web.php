@@ -163,6 +163,7 @@ Route::controller(JobController::class)->group(function () {
     Route::post('save/category', 'categorySave')->name('save/category'); // save record category
     Route::post('save/questions', 'questionSave')->name('save/questions'); // save record questions
     Route::post('questions/update', 'questionsUpdate')->name('questions/update'); // update question
+    Route::post('questions/delete', 'questionsDelete')->middleware('auth')->name('questions/delete'); // delete question
     Route::get('page/offer/approvals', 'offerApprovalsIndex')->middleware('auth')->name('page/offer/approvals');
     Route::get('page/experience/level', 'experienceLevelIndex')->middleware('auth')->name('page/experience/level');
     Route::get('page/candidates', 'candidatesIndex')->middleware('auth')->name('page/candidates');
@@ -176,7 +177,7 @@ Route::controller(EmployeeController::class)->group(function () {
     Route::get('all/employee/card', 'cardAllEmployee')->middleware('auth')->name('all/employee/card');
     Route::get('all/employee/list', 'listAllEmployee')->middleware('auth')->name('all/employee/list');
     Route::post('all/employee/save', 'saveRecord')->middleware('auth')->name('all/employee/save');
-    Route::get('all/employee/view/edit/{employee_id}', 'viewRecord')->middleware('auth');
+    Route::get('all/employee/view/edit/{employee_id}', 'viewRecord');
     Route::post('all/employee/update', 'updateRecord')->middleware('auth')->name('all/employee/update');
     Route::get('all/employee/delete/{employee_id}', 'deleteRecord')->middleware('auth');
     Route::post('all/employee/search', 'employeeSearch')->name('all/employee/search');
