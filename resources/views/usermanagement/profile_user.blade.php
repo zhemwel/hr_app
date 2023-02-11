@@ -88,7 +88,7 @@
                                                                     <img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
                                                                 </div>
                                                             </div>
-                                                            <a href="profile.html">
+                                                            <a href="#">
                                                                 {{ Auth::user()->name }}
                                                             </a>
                                                         </div>
@@ -114,7 +114,7 @@
                                                                     <img src="{{ URL::to('/assets/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}">
                                                                 </div>
                                                             </div>
-                                                            <a href="profile.html">
+                                                            <a href="#">
                                                                 {{ Auth::user()->name }}
                                                             </a>
                                                         </div>
