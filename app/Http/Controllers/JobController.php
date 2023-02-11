@@ -91,7 +91,6 @@ class JobController extends Controller
         $department = DB::table('departments')->get();
         $type_job   = DB::table('type_jobs')->get();
         $job_list   = DB::table('add_jobs')->get();
-       
         return view('job.jobs',compact('department','type_job','job_list'));
     }
 
@@ -240,7 +239,12 @@ class JobController extends Controller
     /** manage Resumes */
     public function manageResumesIndex()
     {
-        return view('job.manageresumes');
+        $department = DB::table('departments')->get();
+        $type_job   = DB::table('type_jobs')->get();
+        $manageResumes = DB::table('add_jobs')
+                        ->join('apply_for_jobs', 'apply_for_jobs.job_title', 'add_jobs.job_title')
+                        ->select('add_jobs.*', 'apply_for_jobs.*')->get();
+        return view('job.manageresumes',compact('manageResumes','department','type_job'));
     }
 
     /** shortlist candidates */
