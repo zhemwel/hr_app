@@ -1,6 +1,6 @@
-# hr_ms_laravel_9
+# HR APP
 
-hr_ms_laravel_9
+hr_app
 
 ## Getting started
 
