@@ -19,19 +19,19 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Content Starts -->
             <div class="card">
                 <div class="card-body">
                     @include('sidebar.sidebarjob')
                 </div>
-            </div>	
-            
+            </div>
+
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select</option>
                             <option>Development</option>
                             <option>Designing</option>
@@ -40,9 +40,9 @@
                         <label class="focus-label">Department</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select</option>
                             <option>Full Time</option>
                             <option>Part Time</option>
@@ -51,9 +51,9 @@
                         <label class="focus-label">Job Type</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select Designation</option>
                             <option>Web Developer</option>
                             <option>Web Designer</option>
@@ -63,8 +63,8 @@
                         <label class="focus-label">Designation</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
                 </div>
             </div>
             <!-- Search Filter -->
@@ -80,10 +80,10 @@
                                     <th>Department</th>
                                     <th>Start Date</th>
                                     <th>Expire Date</th>
-                                    <th class="text-center">Job Type</th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Actions</th>
-                                    
+                                    <th>Job Type</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,21 +93,21 @@
                                     <td>Development</td>
                                     <td>3 Mar 2019</td>
                                     <td>31 May 2019</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Full Time
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Open
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -122,21 +122,21 @@
                                     <td>Designing</td>
                                     <td>3 Mar 2019</td>
                                     <td>31 May 2019</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Part Time
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Closed
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -151,21 +151,21 @@
                                     <td>Android</td>
                                     <td>3 Mar 2019</td>
                                     <td>31 May 2019</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Internship
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Cancelled
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -186,7 +186,7 @@
     <!-- /Page Wrapper -->
 </div>
 <!-- /Main Wrapper -->
-    
+
     <!-- Delete Employee Modal -->
     <div class="modal custom-modal fade" id="delete_employee" role="dialog">
         <div class="modal-dialog modal-dialog-centered">

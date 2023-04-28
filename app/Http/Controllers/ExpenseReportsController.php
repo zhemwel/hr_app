@@ -7,31 +7,32 @@ use DB;
 
 class ExpenseReportsController extends Controller
 {
-    // view page
+    // View Page
     public function index()
     {
         return view('reports.expensereport');
     }
 
-    // view page
+    // View Page
     public function invoiceReports()
     {
         return view('reports.invoicereports');
     }
-    
-    // daily report page
+
+    // Daily Report Page
     public function dailyReport()
     {
         return view('reports.dailyreports');
     }
 
-    // leave reports page
+    // Leave Reports Page
     public function leaveReport()
     {
         $leaves = DB::table('leaves_admins')
-                    ->join('users', 'users.user_id', '=', 'leaves_admins.user_id')
-                    ->select('leaves_admins.*', 'users.*')
-                    ->get();
-        return view('reports.leavereports',compact('leaves'));
+            ->join('users', 'users.user_id', '=', 'leaves_admins.user_id')
+            ->select('leaves_admins.*', 'users.*')
+            ->get();
+
+        return view('reports.leavereports', compact('leaves'));
     }
 }

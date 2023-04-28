@@ -70,7 +70,7 @@
 /* WEBPACK VAR INJECTION */(function(module) {var require;//! moment.js
 
 ;(function (global, factory) {
-     true ? module.exports = factory() :
+    true ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
     global.moment = factory()
 }(this, (function () { 'use strict';
@@ -19379,8 +19379,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -19487,8 +19487,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -19550,8 +19550,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -19659,8 +19659,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -19795,8 +19795,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -19889,8 +19889,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -19951,8 +19951,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20074,8 +20074,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20197,8 +20197,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20309,8 +20309,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20464,8 +20464,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20556,8 +20556,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20739,8 +20739,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20806,8 +20806,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20890,8 +20890,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -20954,8 +20954,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21034,8 +21034,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21114,8 +21114,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21194,8 +21194,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21297,8 +21297,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
     function isFunction(input) {
@@ -21401,8 +21401,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21472,8 +21472,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21539,8 +21539,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21610,8 +21610,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21681,8 +21681,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21747,8 +21747,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21818,8 +21818,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21893,8 +21893,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -21989,8 +21989,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -22085,8 +22085,8 @@ module.exports = Cancel;
 
 ;(function (global, factory) {
     true ? factory(__webpack_require__(0)) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
+    typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+    factory(global.moment)
 }(this, (function (moment) { 'use strict';
 
 
@@ -52720,12 +52720,12 @@ var utils = __webpack_require__(1);
  * @returns {*} The resulting transformed data
  */
 module.exports = function transformData(data, headers, fns) {
-  /*eslint no-param-reassign:0*/
-  utils.forEach(fns, function transform(fn) {
-    data = fn(data, headers);
-  });
+    /*eslint no-param-reassign:0*/
+    utils.forEach(fns, function transform(fn) {
+        data = fn(data, headers);
+    });
 
-  return data;
+    return data;
 };
 
 
@@ -52743,10 +52743,10 @@ module.exports = function transformData(data, headers, fns) {
  * @returns {boolean} True if the specified URL is absolute, otherwise false
  */
 module.exports = function isAbsoluteURL(url) {
-  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
-  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
-  // by any combination of letters, digits, plus, period, or hyphen.
-  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+    // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+    // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+    // by any combination of letters, digits, plus, period, or hyphen.
+    return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 };
 
 
@@ -70061,7 +70061,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
   }
 });
 // CONCATENATED MODULE: ./src/RenderlessLaravelVuePagination.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_RenderlessLaravelVuePaginationvue_type_script_lang_js_ = (RenderlessLaravelVuePaginationvue_type_script_lang_js_); 
+ /* harmony default export */ var src_RenderlessLaravelVuePaginationvue_type_script_lang_js_ = (RenderlessLaravelVuePaginationvue_type_script_lang_js_);
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -70173,7 +70173,7 @@ var component = normalizeComponent(
   null,
   null,
   null
-  
+
 )
 
 component.options.__file = "RenderlessLaravelVuePagination.vue"
@@ -70228,7 +70228,7 @@ component.options.__file = "RenderlessLaravelVuePagination.vue"
   }
 });
 // CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=script&lang=js&
- /* harmony default export */ var src_LaravelVuePaginationvue_type_script_lang_js_ = (LaravelVuePaginationvue_type_script_lang_js_); 
+ /* harmony default export */ var src_LaravelVuePaginationvue_type_script_lang_js_ = (LaravelVuePaginationvue_type_script_lang_js_);
 // CONCATENATED MODULE: ./src/LaravelVuePagination.vue
 
 
@@ -70245,7 +70245,7 @@ var LaravelVuePagination_component = normalizeComponent(
   null,
   null,
   null
-  
+
 )
 
 LaravelVuePagination_component.options.__file = "LaravelVuePagination.vue"
@@ -78468,94 +78468,94 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [_c("th", [_vm._v("Name")]), _vm._v(" "), _c("th")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h4", { staticClass: "modal-title" }, [
-        _vm._v("\n                        Create Token\n                    ")
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-hidden": "true"
-          }
-        },
-        [_vm._v("×")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "mb-0" }, [
-      _c("strong", [_vm._v("Whoops!")]),
-      _vm._v(" Something went wrong!")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h4", { staticClass: "modal-title" }, [
-        _vm._v(
-          "\n                        Personal Access Token\n                    "
+    function() {
+        var _vm = this
+        var _h = _vm.$createElement
+        var _c = _vm._self._c || _h
+        return _c("thead", [
+        _c("tr", [_c("th", [_vm._v("Name")]), _vm._v(" "), _c("th")])
+        ])
+    },
+    function() {
+        var _vm = this
+        var _h = _vm.$createElement
+        var _c = _vm._self._c || _h
+        return _c("div", { staticClass: "modal-header" }, [
+        _c("h4", { staticClass: "modal-title" }, [
+            _vm._v("\n                        Create Token\n                    ")
+        ]),
+        _vm._v(" "),
+        _c(
+            "button",
+            {
+            staticClass: "close",
+            attrs: {
+                type: "button",
+                "data-dismiss": "modal",
+                "aria-hidden": "true"
+            }
+            },
+            [_vm._v("×")]
         )
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-hidden": "true"
-          }
-        },
-        [_vm._v("×")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Close")]
-      )
-    ])
-  }
+        ])
+    },
+    function() {
+        var _vm = this
+        var _h = _vm.$createElement
+        var _c = _vm._self._c || _h
+        return _c("p", { staticClass: "mb-0" }, [
+        _c("strong", [_vm._v("Whoops!")]),
+        _vm._v(" Something went wrong!")
+        ])
+    },
+    function() {
+        var _vm = this
+        var _h = _vm.$createElement
+        var _c = _vm._self._c || _h
+        return _c("div", { staticClass: "modal-header" }, [
+        _c("h4", { staticClass: "modal-title" }, [
+            _vm._v(
+            "\n                        Personal Access Token\n                    "
+            )
+        ]),
+        _vm._v(" "),
+        _c(
+            "button",
+            {
+            staticClass: "close",
+            attrs: {
+                type: "button",
+                "data-dismiss": "modal",
+                "aria-hidden": "true"
+            }
+            },
+            [_vm._v("×")]
+        )
+        ])
+    },
+    function() {
+        var _vm = this
+        var _h = _vm.$createElement
+        var _c = _vm._self._c || _h
+        return _c("div", { staticClass: "modal-footer" }, [
+        _c(
+            "button",
+            {
+            staticClass: "btn btn-secondary",
+            attrs: { type: "button", "data-dismiss": "modal" }
+            },
+            [_vm._v("Close")]
+        )
+        ])
+    }
 ]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-50e40461", module.exports)
-  }
+    module.hot.accept()
+    if (module.hot.data) {
+        require("vue-hot-reload-api")      .rerender("data-v-50e40461", module.exports)
+    }
 }
 
 /***/ }),
@@ -78577,29 +78577,29 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
+    __vue_script__,
+    __vue_template__,
+    __vue_template_functional__,
+    __vue_styles__,
+    __vue_scopeId__,
+    __vue_module_identifier__
 )
 Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
-  } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
+    var hotAPI = require("vue-hot-reload-api")
+    hotAPI.install(require("vue"), false)
+    if (!hotAPI.compatible) return
+    module.hot.accept()
+    if (!module.hot.data) {
+        hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    } else {
+        hotAPI.reload("data-v-0ca92eac", Component.options)
+    }
+    module.hot.dispose(function (data) {
+        disposed = true
+    })
 })()}
 
 module.exports = Component.exports
@@ -78639,42 +78639,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+    return _vm._m(0)
+}
+var staticRenderFns = [
+    function() {
+        var _vm = this
+        var _h = _vm.$createElement
+        var _c = _vm._self._c || _h
+        return _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "card card-default" }, [
+                _c("div", { staticClass: "card-header" }, [
+                _vm._v("Example Component")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                _vm._v(
+                    "\n                    I'm an example component.\n                "
+                )
+                ])
             ])
-          ])
+            ])
         ])
-      ])
-    ])
-  }
+        ])
+    }
 ]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
-  }
+    module.hot.accept()
+    if (module.hot.data) {
+        require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    }
 }
 
 /***/ }),

@@ -3,7 +3,7 @@
 @section('content')
     {{-- message --}}
     {!! Toastr::message() !!}
-   
+
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <!-- Page Content -->
@@ -21,20 +21,20 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
-                            <option>Select buyer</option>
+                        <select class="select floating">
+                            <option>Select Buyer</option>
                             <option>Loren Gatlin</option>
                             <option>Tarah Shropshire</option>
                         </select>
                         <label class="focus-label">Purchased By</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -42,7 +42,7 @@
                         <label class="focus-label">From</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -50,12 +50,12 @@
                         <label class="focus-label">To</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- /Search Filter -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -68,8 +68,8 @@
                                     <th>Purchased By</th>
                                     <th>Amount</th>
                                     <th>Paid By</th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,7 +87,7 @@
                                     </td>
                                     <td>$ 1215</td>
                                     <td>Cash</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Pending
@@ -98,7 +98,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -122,7 +122,7 @@
                                     </td>
                                     <td>$ 1215</td>
                                     <td>Cheque</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Approved
@@ -133,7 +133,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -150,7 +150,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
     </div>
     <!-- /Page Wrapper -->
 

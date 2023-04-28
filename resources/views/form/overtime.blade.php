@@ -3,10 +3,10 @@
 @section('content')
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-                
+
         <!-- Page Content -->
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row align-items-center">
@@ -23,19 +23,19 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Overtime Statistics -->
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                     <div class="stats-info">
                         <h6>Overtime Employee</h6>
-                        <h4>12 <span>this month</span></h4>
+                        <h4>12 <span>This Month</span></h4>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                     <div class="stats-info">
                         <h6>Overtime Hours</h6>
-                        <h4>118 <span>this month</span></h4>
+                        <h4>118 <span>This Month</span></h4>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <!-- /Overtime Statistics -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -62,12 +62,12 @@
                                     <th>#</th>
                                     <th>Name</th>
                                     <th>OT Date</th>
-                                    <th class="text-center">OT Hours</th>
+                                    <th>OT Hours</th>
                                     <th>OT Type</th>
                                     <th>Description</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                     <th>Approved by</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -75,15 +75,15 @@
                                     <td>1</td>
                                     <td>
                                         <h2 class="table-avatar blue-link">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Doe</a>
                                         </h2>
                                     </td>
                                     <td>8 Mar 2019</td>
-                                    <td class="text-center">2</td>
-                                    <td>Normal day OT 1.5x</td>
-                                    <td>Lorem ipsum dollar</td>
-                                    <td class="text-center">
+                                    <td>2</td>
+                                    <td>Normal Day OT 1.5x</td>
+                                    <td>HR</td>
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-purple"></i> New
@@ -92,11 +92,11 @@
                                     </td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar avatar-xs"><img src="assets/img/profiles/avatar-09.jpg" alt=""></a>
+                                            <a href="profile.html" class="avatar avatar-xs"><img src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}" alt=""></a>
                                             <a href="#">Richard Miles</a>
                                         </h2>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -113,7 +113,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Add Overtime Modal -->
         <div id="add_overtime" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -158,7 +158,7 @@
             </div>
         </div>
         <!-- /Add Overtime Modal -->
-        
+
         <!-- Edit Overtime Modal -->
         <div id="edit_overtime" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -203,7 +203,7 @@
             </div>
         </div>
         <!-- /Edit Overtime Modal -->
-        
+
         <!-- Delete Overtime Modal -->
         <div class="modal custom-modal fade" id="delete_overtime" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -228,11 +228,11 @@
             </div>
         </div>
         <!-- /Delete Overtime Modal -->
-        
+
     </div>
     <!-- /Page Wrapper -->
-  
+
     @section('script')
-    
+
     @endsection
 @endsection

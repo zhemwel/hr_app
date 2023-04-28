@@ -79,12 +79,12 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Module Permission</th>
-                                                        <th class="text-center">Read</th>
-                                                        <th class="text-center">Write</th>
-                                                        <th class="text-center">Create</th>
-                                                        <th class="text-center">Delete</th>
-                                                        <th class="text-center">Import</th>
-                                                        <th class="text-center">Export</th>
+                                                        <th>Read</th>
+                                                        <th>Write</th>
+                                                        <th>Create</th>
+                                                        <th>Delete</th>
+                                                        <th>Import</th>
+                                                        <th>Export</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -97,27 +97,27 @@
                                                         <td>{{ $items->module_permission }}</td>
                                                         <input type="hidden" name="permission[]" value="{{ $items->module_permission }}">
                                                         <input type="hidden" name="id_permission[]" value="{{ $items->id }}">
-                                                        <td class="text-center">
+                                                        <td>
                                                             <input type="checkbox" class="read{{ ++$key }}" id="read" name="read[]" value="Y"{{ $items->read =="Y" ? 'checked' : ''}} >
                                                             <input type="checkbox" class="read{{ ++$key1 }}" id="read" name="read[]" value="N" {{ $items->read =="N" ? 'checked' : ''}}>
                                                         </td>
-                                                        <td class="text-center">
+                                                        <td>
                                                             <input type="checkbox" class="write{{ ++$key }}" id="write" name="write[]" value="Y" {{ $items->write =="Y" ? 'checked' : ''}}>
                                                             <input type="checkbox" class="write{{ ++$key1 }}" id="write" name="write[]" value="N" {{ $items->write =="N" ? 'checked' : ''}}>
                                                         </td>
-                                                        <td class="text-center">
+                                                        <td>
                                                             <input type="checkbox" class="create{{ ++$key }}" id="create" name="create[]" value="Y" {{ $items->create =="Y" ? 'checked' : ''}}>
                                                             <input type="checkbox" class="create{{ ++$key1 }}" id="create" name="create[]" value="N" {{ $items->create =="N" ? 'checked' : ''}}>
                                                         </td>
-                                                        <td class="text-center">
+                                                        <td>
                                                             <input type="checkbox" class="delete{{ ++$key }}" id="delete" name="delete[]" value="Y" {{ $items->delete =="Y" ? 'checked' : ''}}>
                                                             <input type="checkbox" class="delete{{ ++$key1 }}" id="delete" name="delete[]" value="N" {{ $items->delete =="N" ? 'checked' : ''}}>
                                                         </td>
-                                                        <td class="text-center">
+                                                        <td>
                                                             <input type="checkbox" class="import{{ ++$key }}" id="import" name="import[]" value="Y" {{ $items->import =="Y" ? 'checked' : ''}}>
                                                             <input type="checkbox" class="import{{ ++$key1 }}" id="import" name="import[]" value="N" {{ $items->import =="N" ? 'checked' : ''}}>
                                                         </td>
-                                                        <td class="text-center">
+                                                        <td>
                                                             <input type="checkbox" class="export{{ ++$key }}" id="export" name="export[]" value="Y" {{ $items->export =="Y" ? 'checked' : ''}}>
                                                             <input type="checkbox" class="export{{ ++$key1 }}" id="export" name="export[]" value="N" {{ $items->export =="N" ? 'checked' : ''}}>
                                                         </td>
@@ -141,7 +141,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
     </div>
     <!-- /Page Wrapper -->
     @section('script')

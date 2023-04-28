@@ -4,7 +4,7 @@
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -28,16 +28,16 @@
             <!-- Content Starts -->
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <input type="text" class="form-control floating">
                         <label class="focus-label">Employee</label>
                     </div>
                 </div>
-                
-                <div class="col-sm-6 col-md-3"> 
+
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>All Department</option>
                             <option value="1">Finance</option>
                             <option value="2">Finance and Management</option>
@@ -47,7 +47,7 @@
                         <label class="focus-label">Department</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-2">  
+                <div class="col-sm-6 col-md-2">
                     <div class="form-group form-focus focused">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -55,7 +55,7 @@
                         <label class="focus-label">From</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-2">  
+                <div class="col-sm-6 col-md-2">
                     <div class="form-group form-focus focused">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -63,9 +63,9 @@
                         <label class="focus-label">To</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-2">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-2">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- Search Filter -->
 
@@ -99,7 +99,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -144,7 +144,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -172,7 +172,7 @@
                                             <a href="profile.html">Richard Miles <span>Web Developer</span></a>
                                         </h2>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -184,7 +184,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -218,7 +218,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -230,7 +230,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -251,7 +251,7 @@
                                             <a href="profile.html">John Smith <span>Android Developer</span></a>
                                         </h2>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -270,7 +270,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -301,7 +301,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -329,7 +329,7 @@
                                             <a href="profile.html">Mike Litorus <span>IOS Developer</span></a>
                                         </h2>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -355,7 +355,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -375,7 +375,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -394,7 +394,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -408,7 +408,7 @@
                                             <a href="profile.html">Wilmer Deluna <span>Team Leader</span></a>
                                         </h2>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -420,7 +420,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -458,7 +458,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -486,7 +486,7 @@
                                             <a href="profile.html">Jeffrey Warden <span>Web Developer</span></a>
                                         </h2>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -512,7 +512,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -532,7 +532,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    
+
                                     <td>
                                         <div class="user-add-shedule-list">
                                             <a href="#" data-toggle="modal" data-target="#add_schedule">
@@ -544,7 +544,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -569,7 +569,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -614,7 +614,7 @@
                                         <div class="user-add-shedule-list">
                                             <h2>
                                                 <a href="#" data-toggle="modal" data-target="#edit_schedule" style="border:2px dashed #1eb53a">
-                                                <span class="username-info m-b-10">6:30 am - 9:30 pm ( 14 hrs 15 mins)</span>
+                                                <span class="username-info m-b-10">6:30 AM - 9:30 PM ( 14 Hrs 15 Mins)</span>
                                                 <span class="userrole-info">Web Designer - SMARTHR</span>
                                                 </a>
                                             </h2>
@@ -645,7 +645,7 @@
 
         </div>
         <!-- /Page Content -->
-     
+
         <!-- Add Schedule Modal -->
         <div id="add_schedule" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -695,7 +695,7 @@
                                         <label class="col-form-label">Shifts <span class="text-danger">*</span></label>
                                         <select class="select">
                                             <option value="">Select </option>
-                                            <option value="1">10'o clock Shift</option>
+                                            <option value="1">10'o Clock Shift</option>
                                             <option value="2">10:30 shift</option>
                                             <option value="3">Daily Shift </option>
                                             <option value="4">New Shift</option>
@@ -775,7 +775,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>
@@ -785,7 +785,7 @@
             </div>
         </div>
         <!-- /Add Schedule Modal -->
-        
+
         <!-- Edit Schedule Modal -->
         <div id="edit_schedule" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -835,7 +835,7 @@
                                         <label class="col-form-label">Shifts <span class="text-danger">*</span></label>
                                         <select class="select">
                                             <option value="">Select </option>
-                                            <option value="1">10'o clock Shift</option>
+                                            <option value="1">10'o Clock Shift</option>
                                             <option value="2">10:30 shift</option>
                                             <option value="3">Daily Shift </option>
                                             <option  selected value="4">New Shift</option>
@@ -845,37 +845,37 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="col-form-label">Min Start Time  <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" value="06:11 am">
+                                        <input class="form-control" type="text" value="06:11 AM">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="col-form-label">Start Time  <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" value="06:30 am">
+                                        <input class="form-control" type="text" value="06:30 AM">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="col-form-label">Max Start Time  <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" value="08:12 am">
+                                        <input class="form-control" type="text" value="08:12 AM">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="col-form-label">Min End Time  <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" value="09:12 pm">
+                                        <input class="form-control" type="text" value="09:12 PM">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="col-form-label">End Time   <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" value="09:30 pm">
+                                        <input class="form-control" type="text" value="09:30 PM">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="col-form-label">Max End Time <span class="text-danger">*</span></label>
-                                        <input class="form-control" type="text" value="09:45 pm">
+                                        <input class="form-control" type="text" value="09:45 PM">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -906,19 +906,19 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group wday-box">
-                                        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="monday" class="days recurring" checked="" onclick="return false;"><span class="checkmark">M</span></label>
-        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="tuesday" class="days recurring" checked="" onclick="return false;"><span class="checkmark">T</span></label>
-                                        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="wednesday" class="days recurring" checked="" onclick="return false;"><span class="checkmark">W</span></label>
-                                        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="thursday" class="days recurring" checked="" onclick="return false;"><span class="checkmark">T</span></label>
-                                        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="friday" class="days recurring" checked="" onclick="return false;"><span class="checkmark">F</span></label>
-                                        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="saturday" class="days recurring" onclick="return false;"><span class="checkmark">S</span></label>
-                                        
+
                                             <label class="checkbox-inline"><input type="checkbox" name="week_days[]" value="sunday" class="days recurring" onclick="return false;"><span class="checkmark">S</span></label>
                                     </div>
                                 </div>
@@ -953,7 +953,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>

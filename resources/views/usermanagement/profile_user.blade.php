@@ -119,7 +119,7 @@
                                                             </a>
                                                         </div>
                                                     </li>
-                                                @endif    
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
             </div>
-					
+
             <div class="card tab-box">
                 <div class="row user-tabs">
                     <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="tab-content">
                 <!-- Profile Info Tab -->
                 <div id="emp_profile" class="pro-overview tab-pane fade show active">
@@ -174,15 +174,15 @@
                                                 <div class="text">{{ $userInformation->religion }}</div>
                                             </li>
                                             <li>
-                                                <div class="title">Marital status</div>
+                                                <div class="title">Marital Status</div>
                                                 <div class="text">{{ $userInformation->marital_status }}</div>
                                             </li>
                                             <li>
-                                                <div class="title">Employment of spouse</div>
+                                                <div class="title">Employment Of Spouse</div>
                                                 <div class="text">{{ $userInformation->employment_of_spouse }}</div>
                                             </li>
                                             <li>
-                                                <div class="title">No. of children</div>
+                                                <div class="title">No. Of Children</div>
                                                 <div class="text">{{ $userInformation->children }}</div>
                                             </li>
                                         </ul>
@@ -209,15 +209,15 @@
                                             <div class="text">N/A</div>
                                         </li>
                                         <li>
-                                            <div class="title">Marital status</div>
+                                            <div class="title">Marital Status</div>
                                             <div class="text">N/A</div>
                                         </li>
                                         <li>
-                                            <div class="title">Employment of spouse</div>
+                                            <div class="title">Employment Of Spouse</div>
                                             <div class="text">N/A</div>
                                         </li>
                                         <li>
-                                            <div class="title">No. of children</div>
+                                            <div class="title">No. Of Children</div>
                                             <div class="text">N/A</div>
                                         </li>
                                     </ul>
@@ -271,11 +271,11 @@
                                     <h3 class="card-title">Bank information</h3>
                                     <ul class="personal-info">
                                         <li>
-                                            <div class="title">Bank name</div>
+                                            <div class="title">Bank Name</div>
                                             <div class="text">ICICI Bank</div>
                                         </li>
                                         <li>
-                                            <div class="title">Bank account No.</div>
+                                            <div class="title">Bank Account No.</div>
                                             <div class="text">159843014641</div>
                                         </li>
                                         <li>
@@ -311,7 +311,7 @@
                                                     <td>Brother</td>
                                                     <td>Feb 16th, 2019</td>
                                                     <td>9876543210</td>
-                                                    <td class="text-right">
+                                                    <td>
                                                         <div class="dropdown dropdown-action">
                                                             <a aria-expanded="false" data-toggle="dropdown" class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
                                                             <div class="dropdown-menu dropdown-menu-right">
@@ -411,7 +411,7 @@
                     </div>
                 </div>
                 <!-- /Profile Info Tab -->
-                    
+
                 <!-- Projects Tab -->
                 <div class="tab-pane fade" id="emp_projects">
                     <div class="row">
@@ -427,8 +427,8 @@
                                     </div>
                                     <h4 class="project-title"><a href="project-view.html">Office Management</a></h4>
                                     <small class="block text-ellipsis m-b-15">
-                                        <span class="text-xs">1</span> <span class="text-muted">open tasks, </span>
-                                        <span class="text-xs">9</span> <span class="text-muted">tasks completed</span>
+                                        <span class="text-xs">1</span> <span class="text-muted">Open Tasks, </span>
+                                        <span class="text-xs">9</span> <span class="text-muted">Tasks Completed</span>
                                     </small>
                                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry. When an unknown printer took a galley of type and
@@ -446,7 +446,7 @@
                                         <div>Project Leader :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="assets/img/profiles/avatar-16.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -454,16 +454,16 @@
                                         <div>Team :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="assets/img/profiles/avatar-05.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
                                                 <a href="#" class="all-users">+15</a>
@@ -477,7 +477,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
@@ -490,8 +490,8 @@
                                     </div>
                                     <h4 class="project-title"><a href="project-view.html">Project Management</a></h4>
                                     <small class="block text-ellipsis m-b-15">
-                                        <span class="text-xs">2</span> <span class="text-muted">open tasks, </span>
-                                        <span class="text-xs">5</span> <span class="text-muted">tasks completed</span>
+                                        <span class="text-xs">2</span> <span class="text-muted">Open Tasks, </span>
+                                        <span class="text-xs">5</span> <span class="text-muted">Tasks Completed</span>
                                     </small>
                                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry. When an unknown printer took a galley of type and
@@ -509,7 +509,7 @@
                                         <div>Project Leader :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="assets/img/profiles/avatar-16.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -517,16 +517,16 @@
                                         <div>Team :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="assets/img/profiles/avatar-05.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
                                                 <a href="#" class="all-users">+15</a>
@@ -540,7 +540,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
@@ -553,8 +553,8 @@
                                     </div>
                                     <h4 class="project-title"><a href="project-view.html">Video Calling App</a></h4>
                                     <small class="block text-ellipsis m-b-15">
-                                        <span class="text-xs">3</span> <span class="text-muted">open tasks, </span>
-                                        <span class="text-xs">3</span> <span class="text-muted">tasks completed</span>
+                                        <span class="text-xs">3</span> <span class="text-muted">Open Tasks, </span>
+                                        <span class="text-xs">3</span> <span class="text-muted">Tasks Completed</span>
                                     </small>
                                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry. When an unknown printer took a galley of type and
@@ -572,7 +572,7 @@
                                         <div>Project Leader :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="assets/img/profiles/avatar-16.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -580,16 +580,16 @@
                                         <div>Team :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="assets/img/profiles/avatar-05.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
                                                 <a href="#" class="all-users">+15</a>
@@ -603,7 +603,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-4 col-sm-6 col-md-4 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
@@ -616,8 +616,8 @@
                                     </div>
                                     <h4 class="project-title"><a href="project-view.html">Hospital Administration</a></h4>
                                     <small class="block text-ellipsis m-b-15">
-                                        <span class="text-xs">12</span> <span class="text-muted">open tasks, </span>
-                                        <span class="text-xs">4</span> <span class="text-muted">tasks completed</span>
+                                        <span class="text-xs">12</span> <span class="text-muted">Open Tasks, </span>
+                                        <span class="text-xs">4</span> <span class="text-muted">Tasks Completed</span>
                                     </small>
                                     <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
                                         typesetting industry. When an unknown printer took a galley of type and
@@ -635,7 +635,7 @@
                                         <div>Project Leader :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="assets/img/profiles/avatar-16.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Jeffery Lalor"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -643,16 +643,16 @@
                                         <div>Team :</div>
                                         <ul class="team-members">
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Doe"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Richard Miles"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="John Smith"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="assets/img/profiles/avatar-05.jpg"></a>
+                                                <a href="#" data-toggle="tooltip" title="Mike Litorus"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             </li>
                                             <li>
                                                 <a href="#" class="all-users">+15</a>
@@ -669,7 +669,7 @@
                     </div>
                 </div>
                 <!-- /Projects Tab -->
-                
+
                 <!-- Bank Statutory Tab -->
                 <div class="tab-pane fade" id="bank_statutory">
                     <div class="card">
@@ -679,9 +679,9 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label">Salary basis <span class="text-danger">*</span></label>
+                                            <label class="col-form-label">Salary Basis <span class="text-danger">*</span></label>
                                             <select class="select">
-                                                <option>Select salary basis type</option>
+                                                <option>Select Salary Basis Type</option>
                                                 <option>Hourly</option>
                                                 <option>Daily</option>
                                                 <option>Weekly</option>
@@ -691,20 +691,20 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label">Salary amount <small class="text-muted">per month</small></label>
+                                            <label class="col-form-label">Salary Amount <small class="text-muted">per month</small></label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">$</span>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Type your salary amount" value="0.00">
+                                                <input type="text" class="form-control" placeholder="Type your Salary Amount" value="0.00">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label">Payment type</label>
+                                            <label class="col-form-label">Payment Type</label>
                                             <select class="select">
-                                                <option>Select payment type</option>
+                                                <option>Select Payment Type</option>
                                                 <option>Bank transfer</option>
                                                 <option>Check</option>
                                                 <option>Cash</option>
@@ -717,9 +717,9 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label">PF contribution</label>
+                                            <label class="col-form-label">PF Contribution</label>
                                             <select class="select">
-                                                <option>Select PF contribution</option>
+                                                <option>Select PF Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -729,7 +729,7 @@
                                         <div class="form-group">
                                             <label class="col-form-label">PF No. <span class="text-danger">*</span></label>
                                             <select class="select">
-                                                <option>Select PF contribution</option>
+                                                <option>Select PF Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -741,7 +741,7 @@
                                         <div class="form-group">
                                             <label class="col-form-label">Employee PF rate</label>
                                             <select class="select">
-                                                <option>Select PF contribution</option>
+                                                <option>Select PF Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -778,7 +778,7 @@
                                         <div class="form-group">
                                             <label class="col-form-label">Employee PF rate</label>
                                             <select class="select">
-                                                <option>Select PF contribution</option>
+                                                <option>Select PF Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -810,15 +810,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <hr>
                                 <h3 class="card-title"> ESI Information</h3>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
-                                            <label class="col-form-label">ESI contribution</label>
+                                            <label class="col-form-label">ESI Contribution</label>
                                             <select class="select">
-                                                <option>Select ESI contribution</option>
+                                                <option>Select ESI Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -828,7 +828,7 @@
                                         <div class="form-group">
                                             <label class="col-form-label">ESI No. <span class="text-danger">*</span></label>
                                             <select class="select">
-                                                <option>Select ESI contribution</option>
+                                                <option>Select ESI Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -840,7 +840,7 @@
                                         <div class="form-group">
                                             <label class="col-form-label">Employee ESI rate</label>
                                             <select class="select">
-                                                <option>Select ESI contribution</option>
+                                                <option>Select ESI Contribution</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
                                             </select>
@@ -872,7 +872,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="submit-section">
                                     <button class="btn btn-primary submit-btn" type="submit">Save</button>
                                 </div>
@@ -1111,7 +1111,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Designation <span class="text-danger">*</span></label>
-                                        
+
                                         <select class="select" id="" name="designation">
                                             <option selected disabled>Select Designation</option>
                                             <option value="Web Designer">Web Designer</option>
@@ -1142,7 +1142,7 @@
         </div>
         <!-- /Profile Modal -->
         @endif
-    
+
         @if (!empty($userInformation))
         <!-- Personal Info Modal -->
         <div id="personal_info_modal" class="modal custom-modal fade" role="dialog">
@@ -1195,7 +1195,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Marital status <span class="text-danger">*</span></label>
+                                        <label>Marital Status <span class="text-danger">*</span></label>
                                         <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status">
                                             <option value="{{ $userInformation->marital_status }}" {{ ( $userInformation->marital_status == $userInformation->marital_status) ? 'selected' : '' }}> {{ $userInformation->marital_status }} </option>
                                             <option value="Single">Single</option>
@@ -1205,13 +1205,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Employment of spouse</label>
+                                        <label>Employment Of Spouse</label>
                                         <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse" value="{{ $userInformation->employment_of_spouse }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No. of children </label>
+                                        <label>No. Of Children </label>
                                         <input class="form-control @error('children') is-invalid @enderror" type="text" name="children" value="{{ $userInformation->children }}">
                                     </div>
                                 </div>
@@ -1277,7 +1277,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Marital status <span class="text-danger">*</span></label>
+                                        <label>Marital Status <span class="text-danger">*</span></label>
                                         <select class="select form-control @error('marital_status') is-invalid @enderror" name="marital_status">
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
@@ -1286,13 +1286,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Employment of spouse</label>
+                                        <label>Employment Of Spouse</label>
                                         <input class="form-control @error('employment_of_spouse') is-invalid @enderror" type="text" name="employment_of_spouse">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No. of children </label>
+                                        <label>No. Of Children </label>
                                         <input class="form-control @error('children') is-invalid @enderror" type="text" name="children">
                                     </div>
                                 </div>
@@ -1307,7 +1307,7 @@
         </div>
         <!-- /Personal Info Modal -->
         @endif
-        
+
         <!-- Family Info Modal -->
         <div id="family_info_modal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1352,7 +1352,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Education Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -1397,7 +1397,7 @@
             </div>
         </div>
         <!-- /Family Info Modal -->
-        
+
         <!-- Emergency Contact Modal -->
         <div id="emergency_contact_modal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1441,7 +1441,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="card-title">Primary Contact</h3>
@@ -1482,7 +1482,7 @@
             </div>
         </div>
         <!-- /Emergency Contact Modal -->
-        
+
         <!-- Education Modal -->
         <div id="education_info" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1543,7 +1543,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Education Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -1604,7 +1604,7 @@
             </div>
         </div>
         <!-- /Education Modal -->
-        
+
         <!-- Experience Modal -->
         <div id="experience_info" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1659,7 +1659,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 class="card-title">Experience Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>

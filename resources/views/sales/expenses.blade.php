@@ -23,19 +23,19 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Search Filter -->
             <form action="{{ route('expenses/search') }}" method="POST">
                 @csrf
                 <div class="row filter-row">
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                         <div class="form-group form-focus">
                             <input type="text" class="form-control floating" name="item_name">
                             <label class="focus-label">Item Name</label>
                         </div>
                     </div>
-                 
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                         <div class="form-group form-focus">
                             <div class="cal-icon">
                                 <input class="form-control floating datetimepicker" type="text" name="from_date">
@@ -43,7 +43,7 @@
                             <label class="focus-label">From</label>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                    <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                         <div class="form-group form-focus">
                             <div class="cal-icon">
                                 <input class="form-control floating datetimepicker" type="text" name="to_date">
@@ -55,10 +55,10 @@
                         <button type="submit" class="btn btn-success btn-block">Search</button>
                     </div>
                 </div>
-            </form>     
+            </form>
 
             <!-- /Search Filter -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -72,8 +72,8 @@
                                     <th class="purchased_by">Purchased By</th>
                                     <th class="amount">Amount</th>
                                     <th class="paid_by">Paid By</th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,7 +95,7 @@
                                     <td class="paid_by">{{ $item->paid_by }}</td>
                                     <td hidden class="status">{{ $item->status }}</td>
                                     <td hidden class="attachments">{{ $item->attachments }}</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             @if($item->status == 'Pending')
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -113,7 +113,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -131,7 +131,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Add Expense Modal -->
         <div id="add_expense" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -231,7 +231,7 @@
             </div>
         </div>
         <!-- /Add Expense Modal -->
-        
+
         <!-- Edit Expense Modal -->
         <div id="edit_expense" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -353,7 +353,7 @@
             </div>
         </div>
         <!-- Delete Expense Modal -->
-        
+
     </div>
     <!-- /Page Wrapper -->
 
@@ -365,8 +365,8 @@
                 var _this = $(this).parents('tr');
                 $('#e_id').val(_this.find('.id').text());
                 $('#e_item_name').val(_this.find('.item_name').text());
-                $('#e_purchase_from').val(_this.find('.purchase_from').text());  
-                $('#e_purchase_date').val(_this.find('.purchase_date').text());  
+                $('#e_purchase_from').val(_this.find('.purchase_from').text());
+                $('#e_purchase_date').val(_this.find('.purchase_date').text());
                 $('#e_amount').val(_this.find('.amount').text());
                 $('#e_attachments').val(_this.find('.attachments').text());
 

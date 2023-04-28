@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <meta name="description" content="Smarthr - Bootstrap Admin Template">
 		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
-        <meta name="author" content="Soeng Souy">
+        <meta name="author" content="Zhemwel Dev">
         <meta name="robots" content="noindex, nofollow">
         <title>Settings - HRMS</title>
 		<!-- Favicon -->
@@ -60,7 +60,7 @@
 								<i class="fa fa-search"></i>
 						   </a>
 							<form action="search.html">
-								<input class="form-control" type="text" placeholder="Search here">
+								<input class="form-control" type="text" placeholder="Search Here">
 								<button class="btn" type="submit"><i class="fa fa-search"></i></button>
 							</form>
 						</div>
@@ -73,11 +73,11 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="javascript:void(0);" class="dropdown-item"><img src="{{ URL::to('assets/img/flags/us.png') }}" alt="" height="16"> English</a>
-                            <a href="javascript:void(0);" class="dropdown-item"><img src="{{ URL::to('assets/img/flags/kh.png') }}" alt="" height="16"> Khmer</a>
+                            <a href="javascript:void(0);" class="dropdown-item"><img src="{{ URL::to('assets/img/flags/id.png') }}" alt="" height="16"> Indonesia</a>
                         </div>
                     </li>
                     <!-- /Flag -->
-				
+
 					<!-- Notifications -->
 					<li class="nav-item dropdown">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -98,7 +98,7 @@
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
-													<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+													<p class="noti-time"><span class="notification-time">4 Mins ago</span></p>
 												</div>
 											</div>
 										</a>
@@ -111,7 +111,7 @@
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
-													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+													<p class="noti-time"><span class="notification-time">6 Mins ago</span></p>
 												</div>
 											</div>
 										</a>
@@ -124,7 +124,7 @@
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
-													<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+													<p class="noti-time"><span class="notification-time">8 Mins ago</span></p>
 												</div>
 											</div>
 										</a>
@@ -137,7 +137,7 @@
 												</span>
 												<div class="media-body">
 													<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
-													<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+													<p class="noti-time"><span class="notification-time">12 Mins ago</span></p>
 												</div>
 											</div>
 										</a>
@@ -163,7 +163,7 @@
 						</div>
 					</li>
 					<!-- /Notifications -->
-					
+
 					<!-- Message Notifications -->
 					<li class="nav-item dropdown">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -290,7 +290,7 @@
                         <i class="fa fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="profile.html">My Profile</a> 
+                        <a class="dropdown-item" href="profile.html">My Profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                     </div>
                 </div>

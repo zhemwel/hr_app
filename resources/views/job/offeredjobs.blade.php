@@ -2,10 +2,10 @@
 @section('content')
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-			
+
         <!-- Page Content -->
         <div class="content container-fluid">
-            
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -21,19 +21,19 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Content Starts -->
             <div class="card">
                 <div class="card-body">
                     @include('sidebar.sidebarjob')
                 </div>
-            </div>	
-            
+            </div>
+
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select</option>
                             <option>Development</option>
                             <option>Designing</option>
@@ -42,9 +42,9 @@
                         <label class="focus-label">Department</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select</option>
                             <option>Full Time</option>
                             <option>Part Time</option>
@@ -53,9 +53,9 @@
                         <label class="focus-label">Job Type</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select Designation</option>
                             <option>Web Developer</option>
                             <option>Web Designer</option>
@@ -65,8 +65,8 @@
                         <label class="focus-label">Designation</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
                 </div>
             </div>
             <!-- Search Filter -->
@@ -80,9 +80,9 @@
                                     <th>#</th>
                                     <th>Job Title</th>
                                     <th>Department</th>
-                                    <th class="text-center">Job Type</th>
-                                    <th class="text-center">Actions</th>
-                                    
+                                    <th>Job Type</th>
+                                    <th>Actions</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,14 +90,14 @@
                                     <td>1</td>
                                     <td><a href="job-details.html">Web Developer</a></td>
                                     <td>Development</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Full Time
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
                                     </td>
                                 </tr>
@@ -105,14 +105,14 @@
                                     <td>2</td>
                                     <td><a href="job-details.html">Web Designer</a></td>
                                     <td>Designing</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Part Time
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
                                     </td>
                                 </tr>
@@ -120,14 +120,14 @@
                                     <td>3</td>
                                     <td><a href="job-details.html">Android Developer</a></td>
                                     <td>Android</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Internship
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
                                     </td>
                                 </tr>

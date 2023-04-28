@@ -18,7 +18,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -31,15 +31,15 @@
                                     <th>Department</th>
                                     <th>Start Date</th>
                                     <th>Expire Date</th>
-                                    <th class="text-center">Job Type</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Job Type</th>
+                                    <th>Status</th>
                                     <th>Resume</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($manageResumes as $key=>$items)
-                                    
+
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td hidden class="id">{{ $items->id }}</td>
@@ -65,7 +65,7 @@
                                     <td>{{ $items->department }}</td>
                                     <td>{{ date('d F, Y',strtotime($items->start_date)) }}</td>
                                     <td>{{ date('d F, Y',strtotime($items->expired_date)) }}</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Full Time
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Open
@@ -92,7 +92,7 @@
                                         </div>
                                     </td>
                                     <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -111,7 +111,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-    
+
         <!-- Edit Job Modal -->
         <div id="edit_job" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No of Vacancies</label>
+                                        <label>No Of Vacancies</label>
                                         <input class="form-control" type="text" id="e_no_of_vacancies" name="no_of_vacancies" value="">
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@
             </div>
         </div>
         <!-- /Delete Job Modal -->
-        
+
     </div>
     <!-- /Page Wrapper -->
 
@@ -284,7 +284,7 @@
             $('#e_expired_date').val(_this.find('.expired_date').text());
             $('#e_age').val(_this.find('.age').text());
             $('#e_description').val(_this.find('.description').text());
-            
+
             // department
             var department = (_this.find(".department").text());
             var _option = '<option selected value="' +department+ '">' + _this.find('.department').text() + '</option>'
@@ -300,6 +300,6 @@
             var _option = '<option selected value="' +status+ '">' + _this.find('.status').text() + '</option>'
             $( _option).appendTo("#e_status");
         });
-        
+
     </script>
 @endsection

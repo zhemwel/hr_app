@@ -5,10 +5,10 @@
     {!! Toastr::message() !!}
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-			
+
         <!-- Page Content -->
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -22,10 +22,10 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
-                    <div class="table-responsive">	
+                    <div class="table-responsive">
                         <table class="table table-striped custom-table datatable mb-0">
                             <thead>
                                 <tr>
@@ -73,7 +73,7 @@
         <!-- /Page Content -->
     </div>
     <!-- /Page Wrapper -->
- 
+
     @section('script')
     @endsection
 @endsection

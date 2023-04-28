@@ -18,7 +18,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -33,7 +33,7 @@
                                     <th>Annual IP</th>
                                     <th>Long Term IP</th>
                                     <th>Status</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,7 +41,7 @@
                                     <td>1</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Doe <span>Web Designer</span></a>
                                         </h2>
                                     </td>
@@ -51,7 +51,7 @@
                                     <td>15%</td>
                                     <td>No</td>
                                     <td><label class="badge bg-inverse-warning" style="display: inline-block;min-width: 90px;">Requested</label></td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -65,7 +65,7 @@
                                     <td>2</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">Richard Miles <span>Web Developer</span></a>
                                         </h2>
                                     </td>
@@ -75,7 +75,7 @@
                                     <td>15%</td>
                                     <td>No</td>
                                     <td><label class="badge bg-inverse-danger" style="display: inline-block;min-width: 90px;">Rejected</label></td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -89,7 +89,7 @@
                                     <td>3</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Smith <span>Android Developer</span></a>
                                         </h2>
                                     </td>
@@ -99,7 +99,7 @@
                                     <td>15%</td>
                                     <td>No</td>
                                     <td><label class="badge bg-inverse-success" style="display: inline-block;min-width: 90px;">Approved</label></td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -116,7 +116,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Edit Job Modal -->
         <div id="edit_job" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No of Vacancies</label>
+                                        <label>No Of Vacancies</label>
                                         <input class="form-control" type="text" value="5">
                                     </div>
                                 </div>
@@ -274,7 +274,7 @@
             </div>
         </div>
         <!-- /Delete Job Modal -->
-        
+
     </div>
     <!-- /Page Wrapper -->
 @endsection

@@ -6,7 +6,7 @@
             <div class="container">
                 <!-- Account Logo -->
                 <div class="account-logo">
-                    <a href="index.html"><img src="{{ URL::to('assets/img/logo2.png') }}" alt="SoengSouy"></a>
+                    <a href="index.html"><img src="{{ URL::to('assets/img/logo2.png') }}" alt="Employee"></a>
                 </div>
                 {{-- message --}}
                 {!! Toastr::message() !!}
@@ -45,7 +45,7 @@
                                 <button class="btn btn-primary account-btn" type="submit">Reset Password</button>
                             </div>
                             <div class="account-footer">
-                                <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
+                                <p>Already Have An Account? <a href="{{ route('login') }}">Login</a></p>
                             </div>
                         </form>
                         <!-- /Account Form -->

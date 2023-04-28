@@ -23,16 +23,16 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Search Filter -->
             <div class="row filter-row mb-4">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <input class="form-control floating" type="text">
                         <label class="focus-label">Employee</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -40,7 +40,7 @@
                         <label class="focus-label">From</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -48,12 +48,12 @@
                         <label class="focus-label">To</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- /Search Filter -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -82,7 +82,7 @@
                                         </td>
                                         <td>{{ $items->join_date }}</td>
                                         <td>{{ $items->department }}</td>
-                                        <td class="text-center">
+                                        <td>
                                             @if ($items->leave_type == 'Loss of Pay')
                                             <button class="btn btn-outline-info btn-sm">{{ $items->leave_type }}</button>
                                             @elseif ($items->leave_type=='Medical Leave')
@@ -91,11 +91,11 @@
                                             <button class="btn btn-outline-success btn-sm">{{ $items->leave_type }}</button>
                                             @endif
                                         </td>
-                                        <td class="text-center"><span class="btn btn-danger btn-sm">{{$items->day}} Day</span></td>
-                                        <td class="text-center"><span class="btn btn-warning btn-sm"><b>08</b></span></td>
-                                        <td class="text-center"><span class="btn btn-success btn-sm"><b>20</b></span></td>
-                                        <td class="text-center">12</td>
-                                        <td class="text-center">08</td>
+                                        <td><span class="btn btn-danger btn-sm">{{$items->day}} Day</span></td>
+                                        <td><span class="btn btn-warning btn-sm"><b>08</b></span></td>
+                                        <td><span class="btn btn-success btn-sm"><b>20</b></span></td>
+                                        <td>12</td>
+                                        <td>08</td>
                                     </tr>
                                 @endforeach
                             </tbody>

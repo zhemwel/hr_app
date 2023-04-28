@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -36,7 +36,7 @@
                                     <th>Added By</th>
                                     <th>Create At</th>
                                     <th>Status</th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,7 +81,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -121,7 +121,7 @@
                                         <select class="select" id="designation" name="designation">
                                             <option selected disabled>--Select Designation--</option>
                                             @foreach ($departments as $department )
-                                            <option value="{{ $department->department }}">{{ $department->department }}</option> 
+                                            <option value="{{ $department->department }}">{{ $department->department }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -263,7 +263,7 @@
             </div>
         </div>
         <!-- /Add Performance Indicator Modal -->
-        
+
         <!-- Edit Performance Indicator Modal -->
         <div id="edit_indicator" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -284,7 +284,7 @@
                                         <label class="col-form-label">Designation</label>
                                         <select class="select" id="e_designation" name="designation">
                                             @foreach ($departments as $department )
-                                            <option value="{{ $department->department }}">{{ $department->department }}</option> 
+                                            <option value="{{ $department->department }}">{{ $department->department }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -426,7 +426,7 @@
             </div>
         </div>
         <!-- /Edit Performance Indicator Modal -->
-        
+
         <!-- Delete Performance Indicator Modal -->
         <div class="modal custom-modal fade" id="delete_indicator" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -464,7 +464,7 @@
         {
             var _this = $(this).parents('tr');
             $('#e_id').val(_this.find('.id').text());
-        
+
             var designation = (_this.find(".designation").text());
             var _option = '<option selected value="' + designation + '">' + _this.find('.designation').text() + '</option>'
             $( _option).appendTo("#e_designation");

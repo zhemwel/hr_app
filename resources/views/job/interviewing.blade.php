@@ -19,13 +19,13 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Content Starts -->
             <div class="card">
                 <div class="card-body">
                     @include('sidebar.sidebarjob')
                 </div>
-            </div>	
+            </div>
 
             <div class="row">
                 <div class="col-md-3">
@@ -51,8 +51,8 @@
                                                     <th>#</th>
                                                     <th>Job Title</th>
                                                     <th>Department</th>
-                                                    <th class="text-center">Job Type</th>
-                                                    <th class="text-center">Aptitude Test</th>
+                                                    <th>Job Type</th>
+                                                    <th>Aptitude Test</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -60,14 +60,14 @@
                                                     <td>1</td>
                                                     <td><a href="#">Web Developer</a></td>
                                                     <td>Development</td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <div class="action-label">
                                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                             <i class="fa fa-dot-circle-o text-danger"></i> Full Time
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="job-aptitude.html" class="btn btn-primary aptitude-btn"><span>Click Here</span></a>
                                                     </td>
                                                 </tr>
@@ -75,14 +75,14 @@
                                                     <td>2</td>
                                                     <td><a href="#">Web Developer</a></td>
                                                     <td>Development</td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <div class="action-label">
                                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                             <i class="fa fa-dot-circle-o text-warning"></i> Part Time
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="job-aptitude.html" class="btn btn-primary aptitude-btn"><span>Click Here</span></a>
                                                     </td>
                                                 </tr>
@@ -90,14 +90,14 @@
                                                     <td>2</td>
                                                     <td><a href="#">Web Designing</a></td>
                                                     <td>Development</td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <div class="action-label">
                                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                             <i class="fa fa-dot-circle-o text-warning"></i> Part Time
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="job-aptitude.html" class="btn btn-primary aptitude-btn"><span>Click Here</span></a>
                                                     </td>
                                                 </tr>
@@ -115,9 +115,9 @@
                                                     <th>#</th>
                                                     <th>Job Title</th>
                                                     <th>Department</th>
-                                                    <th class="text-center">Job Type</th>
-                                                    <th class="text-center">Aptitude Test</th>
-                                                    <th class="text-center">Schedule Interview</th>
+                                                    <th>Job Type</th>
+                                                    <th>Aptitude Test</th>
+                                                    <th>Schedule Interview</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -125,17 +125,17 @@
                                                     <td>1</td>
                                                     <td><a href="#">Web Developer</a></td>
                                                     <td>Development</td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <div class="action-label">
                                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                             <i class="fa fa-dot-circle-o text-danger"></i> Full Time
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="javascript:void(0);" class="btn btn-primary disabled"><span>Selected</span></a>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="javascript:void(0);" class="btn btn-primary aptitude-btn" data-toggle="modal" data-target="#selectMyTime"><span>Select Your Time Here</span></a>
                                                     </td>
                                                 </tr>
@@ -143,17 +143,17 @@
                                                     <td>1</td>
                                                     <td><a href="#">Web Designing</a></td>
                                                     <td>Development</td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <div class="action-label">
                                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                             <i class="fa fa-dot-circle-o text-warning"></i> Part Time
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="javascript:void(0);" class="btn btn-primary disabled"><span>Selected</span></a>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="javascript:void(0);" class="btn btn-primary aptitude-btn" data-toggle="modal" data-target="#selectMyTime"><span>Select Your Time Here</span></a>
                                                     </td>
                                                 </tr>
@@ -161,17 +161,17 @@
                                                     <td>1</td>
                                                     <td><a href="#">Web Developer</a></td>
                                                     <td>Development</td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <div class="action-label">
                                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                             <i class="fa fa-dot-circle-o text-warning"></i> Part Time
                                                             </a>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="javascript:void(0);" class="btn btn-primary disabled"><span>Selected</span></a>
                                                     </td>
-                                                    <td class="text-center">
+                                                    <td>
                                                         <a href="javascript:void(0);" class="btn btn-primary aptitude-btn" data-toggle="modal" data-target="#selectMyTime"><span>Select Your Time Here</span></a>
                                                     </td>
                                                 </tr>
@@ -191,7 +191,7 @@
     <!-- /Page Wrapper -->
     </div>
     <!-- /Main Wrapper -->
-        
+
     <!-- Modal -->
     <div id="selectMyTime" class="modal  custom-modal fade" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
@@ -207,7 +207,7 @@
                             <div class="form-group">
                                 <label>Day1 <span class="text-danger">*</span></label>
                                 <select class="form-control" name="designations" id="designations">
-                                    <option value="">11.00am - 11.30am (24 Feb 2020) </option>
+                                    <option value="">11.00AM - 11.30am (24 Feb 2020) </option>
                                     <option value="">1.00pm - 1.30pm (25 Feb 2020) </option>
                                     <option value="">3.00pm - 3.30pm (26 Feb 2020) </option>
                                 </select>

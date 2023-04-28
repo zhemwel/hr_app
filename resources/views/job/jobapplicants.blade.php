@@ -29,9 +29,9 @@
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>Apply Date</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                     <th>Resume</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,7 +42,7 @@
                                     <td>{{ $apply->email }}</td>
                                     <td>{{ $apply->phone }}</td>
                                     <td>{{ date('d F, Y',strtotime($apply->created_at)) }}</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-info"></i> New
@@ -56,7 +56,7 @@
                                         </div>
                                     </td>
                                     <td><a href="{{ url('cv/download/'.$apply->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-download"></i> Download</a></td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">

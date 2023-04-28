@@ -14,7 +14,7 @@ class ForgotPasswordController extends Controller
 {
     public function getEmail()
     {
-       return view('auth.passwords.email');
+        return view('auth.passwords.email');
     }
 
     public function postEmail(Request $request)
@@ -26,15 +26,20 @@ class ForgotPasswordController extends Controller
         $token = Str::random(60);
 
         DB::table('password_resets')->insert(
-            ['email' => $request->email, 'token' => $token, 'created_at' => Carbon::now()]
+            [
+                'email' => $request->email,
+                'token' => $token,
+                'created_at' => Carbon::now()
+            ]
         );
 
-        Mail::send('auth.verify',['token' => $token], function($message) use ($request) {
-                  $message->from($request->email);
-                  $message->to('your email');
-                  $message->subject('Reset Password Notification');
-               });
-        Toastr::success('We have e-mailed your password reset link! :)','Success');
+        Mail::send('auth.verify', ['token' => $token], function($message) use ($request) {
+            $message->from($request->email);
+            $message->to('Your Email');
+            $message->subject('Reset Password Notification');
+        });
+
+        Toastr::success('We Have E-mailed Your Password Reset Link!', 'Success');
         return back();
     }
 }

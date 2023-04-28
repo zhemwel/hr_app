@@ -24,7 +24,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-        
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -37,8 +37,8 @@
                                     <th>Option B</th>
                                     <th>Option C</th>
                                     <th>Option D</th>
-                                    <th class="text-center">Correct Answer</th>
-                                    <th class="text-center">Actions</th>
+                                    <th>Correct Answer</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,7 +58,7 @@
                                     <td class="answer_explanation" hidden>{{ $questions->answer_explanation }}</td>
                                     <td class="video_link" hidden>{{ $questions->video_link }}</td>
                                     <td class="text-center answer">{{ $questions->answer }}</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -108,7 +108,7 @@
             </div>
         </div>
         <!-- /Add Questions Modal -->
-    
+
         <!-- Add Questions Modal -->
         <div id="add_question" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -402,7 +402,7 @@
                 $('#e_code_snippets').val(_this.find('.code_snippets').text());
                 $('#e_answer_explanation').val(_this.find('.answer_explanation').text());
                 $('#e_video_link').val(_this.find('.video_link').text());
-                
+
                 // category
                 var category = (_this.find(".category").text());
                 var _option = '<option selected value="' +category+ '">' + _this.find('.category').text() + '</option>'
@@ -419,7 +419,7 @@
                 $( _option).appendTo("#e_answer");
 
             });
-            
+
         </script>
 
         {{-- delete --}}

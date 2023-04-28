@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -38,7 +38,7 @@
                                     <th>Description </th>
                                     <th>Cost </th>
                                     <th>Status </th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -124,7 +124,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                            </li> 
+                                            </li>
                                         </ul>
                                     </td>
                                     <td >{{ $training->start_date }} - {{ $training->end_date }}</td>
@@ -137,7 +137,7 @@
                                         <i class="fa fa-dot-circle-o text-success"></i> {{ $training->status }}
                                     </td>
                                     <td hidden class="status">{{ $training->status }}</td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -226,7 +226,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Description <span class="text-danger">*</span></label>
@@ -252,7 +252,7 @@
             </div>
         </div>
         <!-- /Add Training List Modal -->
-        
+
         <!-- Edit Training List Modal -->
         <div id="edit_training" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -324,7 +324,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Description <span class="text-danger">*</span></label>
@@ -350,7 +350,7 @@
             </div>
         </div>
         <!-- /Edit Training List Modal -->
-        
+
         <!-- Delete Training List Modal -->
         <div class="modal custom-modal fade" id="delete_training" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -379,7 +379,7 @@
             </div>
         </div>
         <!-- /Delete Training List Modal -->
-    
+
     </div>
     <!-- /Page Wrapper -->
     @section('script')
@@ -415,8 +415,8 @@
             $('#e_trainer_id').val(_this.find('.trainer_id').text());
             $('#e_employees_id').val(_this.find('.employees_id').text());
             $('#e_training_cost').val(_this.find('.training_cost').text());
-            $('#e_start_date').val(_this.find('.start_date').text());  
-            $('#e_end_date').val(_this.find('.end_date').text());  
+            $('#e_start_date').val(_this.find('.start_date').text());
+            $('#e_end_date').val(_this.find('.end_date').text());
             $('#e_description').val(_this.find('.description').text());
 
             // training_type

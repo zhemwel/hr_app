@@ -24,7 +24,7 @@
                             <i class="fa fa-search"></i>
                     </a>
                         <form action="search.html">
-                            <input class="form-control" type="text" placeholder="Search here">
+                            <input class="form-control" type="text" placeholder="Search Here">
                             <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
@@ -34,7 +34,7 @@
             <!-- /Header Menu -->
         </div>
         <!-- /Header -->
-        
+
         <!-- Page Wrapper -->
         <div class="page-wrapper job-wrapper">
             <!-- Page Content -->

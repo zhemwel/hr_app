@@ -25,7 +25,7 @@
                     <div class="card leave-box" id="leave_annual">
                         <div class="card-body">
                             <div class="h3 card-title with-switch">
-                                Annual 											
+                                Annual
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_annual" checked>
                                     <label class="onoffswitch-label" for="switch_annual">
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                             <div class="leave-item">
-                            
+
                                 <!-- Annual Days Leave -->
                                 <div class="leave-row">
                                     <div class="leave-left">
@@ -51,12 +51,12 @@
                                     </div>
                                 </div>
                                 <!-- /Annual Days Leave -->
-                                
+
                                 <!-- Carry Forward -->
                                 <div class="leave-row">
                                     <div class="leave-left">
                                         <div class="input-box">
-                                            <label class="d-block">Carry forward</label>
+                                            <label class="d-block">Carry Forward</label>
                                             <div class="leave-inline-form">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="carry_no" value="option1" disabled>
@@ -82,12 +82,12 @@
                                     </div>
                                 </div>
                                 <!-- /Carry Forward -->
-                                
+
                                 <!-- Earned Leave -->
                                 <div class="leave-row">
                                     <div class="leave-left">
                                         <div class="input-box">
-                                            <label class="d-block">Earned leave</label>
+                                            <label class="d-block">Earned Leave</label>
                                             <div class="leave-inline-form">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="earned_no" value="option1" disabled>
@@ -108,13 +108,13 @@
                                 </div>
                                 <!-- /Earned Leave -->
                             </div>
-                            
+
                             <!-- Custom Policy -->
                             <div class="custom-policy">
                                 <div class="leave-header">
-                                    <div class="title">Custom policy</div>
+                                    <div class="title">Custom Policy</div>
                                     <div class="leave-action">
-                                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#add_custom_policy"><i class="fa fa-plus"></i> Add custom policy</button>
+                                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#add_custom_policy"><i class="fa fa-plus"></i> Add Custom Policy</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -135,7 +135,7 @@
                                                     <a href="#" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-02.jpg') }}"></a>
                                                     <a href="#">John Doe</a>
                                                 </td>
-                                                <td class="text-right">
+                                                <td>
                                                     <div class="dropdown dropdown-action">
                                                         <a aria-expanded="false" data-toggle="dropdown" class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
@@ -153,12 +153,12 @@
                         </div>
                     </div>
                     <!-- /Annual Leave -->
-                    
+
                     <!-- Sick Leave -->
                     <div class="card leave-box" id="leave_sick">
                         <div class="card-body">
                             <div class="h3 card-title with-switch">
-                                Sick 											
+                                Sick
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_sick" checked>
                                     <label class="onoffswitch-label" for="switch_sick">
@@ -187,12 +187,12 @@
                         </div>
                     </div>
                     <!-- /Sick Leave -->
-                    
+
                     <!-- Hospitalisation Leave -->
                     <div class="card leave-box" id="leave_hospitalisation">
                         <div class="card-body">
                             <div class="h3 card-title with-switch">
-                                Hospitalisation 											
+                                Hospitalisation
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_hospitalisation">
                                     <label class="onoffswitch-label" for="switch_hospitalisation">
@@ -202,7 +202,7 @@
                                 </div>
                             </div>
                             <div class="leave-item">
-                            
+
                                 <!-- Annual Days Leave -->
                                 <div class="leave-row">
                                     <div class="leave-left">
@@ -221,13 +221,13 @@
                                 </div>
                                 <!-- /Annual Days Leave -->
                             </div>
-                            
+
                             <!-- Custom Policy -->
                             <div class="custom-policy">
                                 <div class="leave-header">
-                                    <div class="title">Custom policy</div>
+                                    <div class="title">Custom Policy</div>
                                     <div class="leave-action">
-                                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#add_custom_policy"><i class="fa fa-plus"></i> Add custom policy</button>
+                                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#add_custom_policy"><i class="fa fa-plus"></i> Add Custom Policy</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -248,7 +248,7 @@
                                                     <a href="#" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-02.jpg') }}"></a>
                                                     <a href="#">John Doe</a>
                                                 </td>
-                                                <td class="text-right">
+                                                <td>
                                                     <div class="dropdown dropdown-action">
                                                         <a aria-expanded="false" data-toggle="dropdown" class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
@@ -263,16 +263,16 @@
                                 </div>
                             </div>
                             <!-- /Custom Policy -->
-                            
+
                         </div>
                     </div>
                     <!-- /Hospitalisation Leave -->
-                    
+
                     <!-- Maternity Leave -->
                     <div class="card leave-box" id="leave_maternity">
                         <div class="card-body">
                             <div class="h3 card-title with-switch">
-                                Maternity  <span class="subtitle">Assigned to female only</span>
+                                Maternity  <span class="subtitle">Assigned To Female Only</span>
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_maternity" checked>
                                     <label class="onoffswitch-label" for="switch_maternity">
@@ -301,12 +301,12 @@
                         </div>
                     </div>
                     <!-- /Maternity Leave -->
-                    
+
                     <!-- Paternity Leave -->
                     <div class="card leave-box" id="leave_paternity">
                         <div class="card-body">
                             <div class="h3 card-title with-switch">
-                                Paternity  <span class="subtitle">Assigned to male only</span>
+                                Paternity  <span class="subtitle">Assigned To Male Only</span>
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_paternity">
                                     <label class="onoffswitch-label" for="switch_paternity">
@@ -335,12 +335,12 @@
                         </div>
                     </div>
                     <!-- /Paternity Leave -->
-                    
+
                     <!-- Custom Create Leave -->
                     <div class="card leave-box mb-0" id="leave_custom01">
                         <div class="card-body">
                             <div class="h3 card-title with-switch">
-                                LOP 											
+                                LOP
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch_custom01" checked>
                                     <label class="onoffswitch-label" for="switch_custom01">
@@ -351,7 +351,7 @@
                                 <button class="btn btn-danger leave-delete-btn" type="button">Delete</button>
                             </div>
                             <div class="leave-item">
-                            
+
                                 <!-- Annual Days Leave -->
                                 <div class="leave-row">
                                     <div class="leave-left">
@@ -367,12 +367,12 @@
                                     </div>
                                 </div>
                                 <!-- /Annual Days Leave -->
-                                
+
                                 <!-- Carry Forward -->
                                 <div class="leave-row">
                                     <div class="leave-left">
                                         <div class="input-box">
-                                            <label class="d-block">Carry forward</label>
+                                            <label class="d-block">Carry Forward</label>
                                             <div class="leave-inline-form">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="carryForward" id="carry_no_01" value="option1" disabled>
@@ -398,12 +398,12 @@
                                     </div>
                                 </div>
                                 <!-- /Carry Forward -->
-                                
+
                                 <!-- Earned Leave -->
                                 <div class="leave-row">
                                     <div class="leave-left">
                                         <div class="input-box">
-                                            <label class="d-block">Earned leave</label>
+                                            <label class="d-block">Earned Leave</label>
                                             <div class="leave-inline-form">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" disabled>
@@ -424,13 +424,13 @@
                                 </div>
                                 <!-- /Earned Leave -->
                             </div>
-                            
+
                             <!-- Custom Policy -->
                             <div class="custom-policy">
                                 <div class="leave-header">
-                                    <div class="title">Custom policy</div>
+                                    <div class="title">Custom Policy</div>
                                     <div class="leave-action">
-                                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#add_custom_policy"><i class="fa fa-plus"></i> Add custom policy</button>
+                                        <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#add_custom_policy"><i class="fa fa-plus"></i> Add Custom Policy</button>
                                     </div>
                                 </div>
                                 <div class="table-responsive">
@@ -451,7 +451,7 @@
                                                     <a href="#" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-02.jpg') }}"></a>
                                                     <a href="#">John Doe</a>
                                                 </td>
-                                                <td class="text-right">
+                                                <td>
                                                     <div class="dropdown dropdown-action">
                                                         <a aria-expanded="false" data-toggle="dropdown" class="action-icon dropdown-toggle" href="#"><i class="material-icons">more_vert</i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
@@ -528,7 +528,7 @@
             </div>
         </div>
         <!-- /Add Custom Policy Modal -->
-        
+
         <!-- Edit Custom Policy Modal -->
         <div id="edit_custom_policy" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -582,7 +582,7 @@
             </div>
         </div>
         <!-- /Edit Custom Policy Modal -->
-        
+
         <!-- Delete Custom Policy Modal -->
         <div class="modal custom-modal fade" id="delete_custom_policy" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -607,7 +607,7 @@
             </div>
         </div>
         <!-- /Delete Custom Policy Modal -->
-       
+
     </div>
     <!-- /Page Wrapper -->
     @section('script')

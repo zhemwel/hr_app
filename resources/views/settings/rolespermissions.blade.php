@@ -26,7 +26,7 @@
         </div>
     </div>
     <!-- Sidebar -->
-    
+
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <!-- Page Content -->
@@ -112,102 +112,102 @@
                                 </div>
                             </li>
                         </ul>
-                    </div>      	
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-striped custom-table">
                             <thead>
                                 <tr>
                                     <th>Module Permission</th>
-                                    <th class="text-center">Read</th>
-                                    <th class="text-center">Write</th>
-                                    <th class="text-center">Create</th>
-                                    <th class="text-center">Delete</th>
-                                    <th class="text-center">Import</th>
-                                    <th class="text-center">Export</th>
+                                    <th>Read</th>
+                                    <th>Write</th>
+                                    <th>Create</th>
+                                    <th>Delete</th>
+                                    <th>Import</th>
+                                    <th>Export</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Employee</td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Holidays</td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Leaves</td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Events</td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <input type="checkbox" checked="">
                                     </td>
                                 </tr>
@@ -218,7 +218,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Add Role Modal -->
         <div id="add_role" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -245,7 +245,7 @@
             </div>
         </div>
         <!-- /Add Role Modal -->
-        
+
         <!-- Edit Role Modal -->
         <div id="edit_role" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -302,7 +302,7 @@
             </div>
         </div>
         <!-- /Delete Role Modal -->
-    </div>	
+    </div>
     <!-- /Page Wrapper -->
     @section('script')
     {{-- update js --}}

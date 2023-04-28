@@ -45,7 +45,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Email</label>
@@ -128,7 +128,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td class="text-right">Total</td>
+                                                <td>Total</td>
                                                 <td>
                                                     <input class="form-control text-right total" type="text" id="sum_total" name="total" value="0" readonly>
                                                 </td>
@@ -156,7 +156,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>                               
+                                    </table>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -179,7 +179,7 @@
         <!-- /Page Content -->
     </div>
     <!-- /Page Wrapper -->
- 
+
     @section('script')
         {{-- add multiple row --}}
         <script>
@@ -221,10 +221,10 @@
                 // Modifying row id.
                 $(this).attr("id", `R${dig - 1}`);
             });
-    
+
                 // Removing the current row.
                 $(this).closest("tr").remove();
-    
+
                 // Decreasing total number of rows by 1.
                 rowIdx--;
             });
@@ -251,10 +251,10 @@
                 sum += parseFloat($(this).val());
                 });
                 $(".subtotal").text(sum);
-                
+
                 var amounts = sum;
                 var tax     = 100;
-                $(document).on("change keyup blur", "#qty", function() 
+                $(document).on("change keyup blur", "#qty", function()
                 {
                     var qty = $("#qty").val();
                     var discount = $(".discount").val();
@@ -262,7 +262,7 @@
                     $("#sum_total").val(amounts * qty);
                     $("#tax_1").val((amounts * qty)/tax);
                     $("#grand_total").val((parseInt(amounts)) - (parseInt(discount)));
-                }); 
+                });
             }
 
         </script>

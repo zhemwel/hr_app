@@ -11,9 +11,9 @@ class ResetPasswordController extends Controller
 {
     public function getPassword($token)
     {
-
-       return view('auth.passwords.reset', ['token' => $token]);
+        return view('auth.passwords.reset', ['token' => $token]);
     }
+
     public function updatePassword(Request $request)
     {
         $request->validate([
@@ -22,19 +22,23 @@ class ResetPasswordController extends Controller
             'password_confirmation' => 'required',
         ]);
 
-        $updatePassword = DB::table('password_resets')->where(['email' => $request->email, 'token' => $request->token])->first();
-        if(!$updatePassword)
-        {
-            Toastr::error('Invalid token! :)','Error');
+        $updatePassword = DB::table('password_resets')
+            ->where(['email' => $request->email, 'token' => $request->token])
+            ->first();
+
+        if (!$updatePassword) {
+            Toastr::error('Invalid Token!', 'Error');
             return back();
-        }
-        else{
-            
-            $user = User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
-            DB::table('password_resets')->where(['email'=> $request->email])->delete();
-            Toastr::success('Your password has been changed! :)','Success');
+        } else {
+            $user = User::where('email', $request->email)
+                ->update(['password' => Hash::make($request->password)]);
+
+            DB::table('password_resets')
+                ->where(['email' => $request->email])
+                ->delete();
+
+            Toastr::success('Your Password Has Been Changed!', 'Success');
             return redirect('/login');
         }
-       
     }
 }

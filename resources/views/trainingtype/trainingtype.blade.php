@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-           
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -34,12 +34,12 @@
                                     <th>Type </th>
                                     <th>Description </th>
                                     <th>Status </th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($show as $key => $items)
-                                    
+
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td class="type">{{ $items->type }}</td>
@@ -72,7 +72,7 @@
                                         </div>
                                     </td>
                                     @endif
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <!-- /Add Training Type Modal -->
-            
+
             <!-- Edit Training Type Modal -->
             <div id="edit_type" class="modal custom-modal fade" role="dialog">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -165,7 +165,7 @@
                 </div>
             </div>
             <!-- /Edit Training Type Modal -->
-            
+
             <!-- Delete Training Type Modal -->
             <div class="modal custom-modal fade" id="delete_type" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
@@ -207,13 +207,13 @@
                 $('#e_id').val(_this.find('.e_id').text());
                 $('#e_type').val(_this.find('.type').text());
                 $('#e_description').val(_this.find('.description').text());
-                
+
                 // status
                 var status = (_this.find(".status").text());
                 var _option = '<option selected value="' +status+ '">' + _this.find('.status').text() + '</option>'
                 $( _option).appendTo("#e_status");
             });
-            
+
         </script>
         {{-- delete model --}}
         <script>

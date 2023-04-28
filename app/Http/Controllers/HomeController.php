@@ -10,7 +10,7 @@ use App\Models\User;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Create A New Controller Instance.
      *
      * @return void
      */
@@ -20,31 +20,30 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show The Application Dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // main dashboard
+    // Main Dashboard
     public function index()
     {
         return view('dashboard.dashboard');
     }
-    // employee dashboard
+
+    // Employee Dashboard
     public function emDashboard()
     {
-        $dt        = Carbon::now();
+        $dt = Carbon::now();
         $todayDate = $dt->toDayDateTimeString();
-        return view('dashboard.emdashboard',compact('todayDate'));
+
+        return view('dashboard.emdashboard', compact('todayDate'));
     }
 
     public function generatePDF(Request $request)
     {
-        // $data = ['title' => 'Welcome to ItSolutionStuff.com'];
-        // $pdf = PDF::loadView('payroll.salaryview', $data);
-        // return $pdf->download('text.pdf');
-        // selecting PDF view
         $pdf = PDF::loadView('payroll.salaryview');
-        // download pdf file
+
+        // Download PDF File
         return $pdf->download('pdfview.pdf');
     }
 }

@@ -51,15 +51,15 @@
 
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus">
                         <input type="text" class="form-control floating">
                         <label class="focus-label">Employee Name</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option> -- Select -- </option>
                             <option>Casual Leave</option>
                             <option>Medical Leave</option>
@@ -68,9 +68,9 @@
                         <label class="focus-label">Leave Type</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12"> 
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option> -- Select -- </option>
                             <option> Pending </option>
                             <option> Approved </option>
@@ -79,7 +79,7 @@
                         <label class="focus-label">Leave Status</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -87,7 +87,7 @@
                         <label class="focus-label">From</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -95,9 +95,9 @@
                         <label class="focus-label">To</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- /Search Filter -->
 
@@ -114,16 +114,16 @@
                                     <th>Leave Type</th>
                                     <th>From</th>
                                     <th>To</th>
-                                    <th>No of Days</th>
+                                    <th>No Of Days</th>
                                     <th>Reason</th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @if(!empty($leaves))
-                                    @foreach ($leaves as $items )  
+                                    @foreach ($leaves as $items )
                                         <tr>
                                             <td>
                                                 <h2 class="table-avatar">
@@ -139,7 +139,7 @@
                                             <td>{{date('d F, Y',strtotime($items->to_date)) }}</td>
                                             <td class="day">{{$items->day}} Day</td>
                                             <td class="leave_reason">{{$items->leave_reason}}</td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="dropdown action-label">
                                                     <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                         <i class="fa fa-dot-circle-o text-purple"></i> New
@@ -152,7 +152,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -171,7 +171,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-       
+
         <!-- Add Leave Modal -->
         <div id="add_leave" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -220,7 +220,7 @@
             </div>
         </div>
         <!-- /Add Leave Modal -->
-				
+
         <!-- Edit Leave Modal -->
         <div id="edit_leave" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -298,7 +298,7 @@
             </div>
         </div>
         <!-- /Approve Leave Modal -->
-        
+
         <!-- Delete Leave Modal -->
         <div class="modal custom-modal fade" id="delete_approve" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -340,8 +340,8 @@
             var _this = $(this).parents('tr');
             $('#e_id').val(_this.find('.id').text());
             $('#e_number_of_days').val(_this.find('.day').text());
-            $('#e_from_date').val(_this.find('.from_date').text());  
-            $('#e_to_date').val(_this.find('.to_date').text());  
+            $('#e_from_date').val(_this.find('.from_date').text());
+            $('#e_to_date').val(_this.find('.to_date').text());
             $('#e_leave_reason').val(_this.find('.leave_reason').text());
 
             var leave_type = (_this.find(".leave_type").text());

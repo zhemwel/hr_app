@@ -19,14 +19,14 @@
             </div>
         </div>
         <!-- /Page Header -->
-        
+
         <!-- Content Starts -->
         <div class="card">
             <div class="card-body">
                 @include('sidebar.sidebarjob')
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                 <div class="card dash-widget">
@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-                    
+
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
@@ -120,8 +120,8 @@
                                         <th>#</th>
                                         <th>Job Title</th>
                                         <th>Department</th>
-                                        <th class="text-center">Job Type</th>
-                                        <th class="text-center">Actions</th>
+                                        <th>Job Type</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -130,14 +130,14 @@
                                         <td>{{ ++$key }}</td>
                                         <td><a href="job-details.html">{{ $items->job_title }}</a></td>
                                         <td>{{ $items->department }}</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->job_type }}
                                                 </a>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <a href="#" class="btn btn-sm btn-info download-offer"><span><i class="fa fa-download mr-1"></i> Download Offer</span></a>
                                         </td>
                                     </tr>
@@ -149,7 +149,7 @@
                 </div>
             </div>
         </div>
-                                    
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-table">
@@ -166,9 +166,9 @@
                                         <th>Department</th>
                                         <th>Start Date</th>
                                         <th>Expire Date</th>
-                                        <th class="text-center">Job Type</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Actions</th>
+                                        <th>Job Type</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -179,21 +179,21 @@
                                         <td>{{ $items->department }}</td>
                                         <td>{{ date('d F, Y',strtotime($items->start_date)) }}</td>
                                         <td>{{ date('d F, Y',strtotime($items->expired_date)) }}</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->job_type }}
                                                 </a>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->status }}
                                                 </a>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -210,7 +210,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- /Content End -->
     </div>
     <!-- /Page Content -->

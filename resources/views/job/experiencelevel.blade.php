@@ -2,10 +2,10 @@
 @section('content')
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-    
+
         <!-- Page Content -->
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row align-items-center">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -32,21 +32,21 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Experiance</th>
-                                    <th>Status</th>									
-                                    <th class="text-center">Action</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>										
+                                    <td>1</td>
                                     <td>1 - 2</td>
                                     <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                             <i class="fa fa-dot-circle-o text-success"></i> Active								</a>
-                                        </div>  
+                                        </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -57,15 +57,15 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>										
+                                    <td>2</td>
                                     <td>1 - 3</td>
                                     <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                             <i class="fa fa-dot-circle-o text-success"></i> Active								</a>
-                                        </div>  
+                                        </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -76,15 +76,15 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>										
+                                    <td>3</td>
                                     <td>4 - 7</td>
                                     <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                             <i class="fa fa-dot-circle-o text-success"></i> Active								</a>
-                                        </div>  
+                                        </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -101,7 +101,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Add Employee Modal -->
         <div id="add_employee" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -131,9 +131,9 @@
                                         </select>
                                     </div>
                                 </div>
-                                
+
                             </div>
-                            
+
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>
@@ -173,7 +173,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Save</button>
@@ -209,7 +209,7 @@
             </div>
         </div>
         <!-- /Delete Job Modal -->
-        
+
     </div>
     <!-- /Page Wrapper -->
 @endsection

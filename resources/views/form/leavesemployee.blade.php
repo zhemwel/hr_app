@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Leave Statistics -->
             <div class="row">
                 <div class="col-md-3">
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <!-- /Leave Statistics -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -59,11 +59,11 @@
                                     <th>Leave Type</th>
                                     <th>From</th>
                                     <th>To</th>
-                                    <th>No of Days</th>
+                                    <th>No Of Days</th>
                                     <th>Reason</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                     <th>Approved by</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,7 +73,7 @@
                                     <td>9 Mar 2019</td>
                                     <td>2 days</td>
                                     <td>Going to Hospital</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-purple"></i> New
@@ -86,7 +86,7 @@
                                             <a href="#">Richard Miles</a>
                                         </h2>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -102,7 +102,7 @@
                                     <td>10 Jan 2019</td>
                                     <td>First Half</td>
                                     <td>Going to Hospital</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Declined
@@ -115,7 +115,7 @@
                                             <a href="#">Richard Miles</a>
                                         </h2>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -130,10 +130,10 @@
                     </div>
                 </div>
             </div>
-              
+
         </div>
         <!-- /Page Content -->
-       
+
 		<!-- Add Leave Modal -->
         <div id="add_leave" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -188,7 +188,7 @@
             </div>
         </div>
         <!-- /Add Leave Modal -->
-        
+
         <!-- Edit Leave Modal -->
         <div id="edit_leave" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -241,7 +241,7 @@
             </div>
         </div>
         <!-- /Edit Leave Modal -->
-        
+
         <!-- Delete Leave Modal -->
         <div class="modal custom-modal fade" id="delete_approve" role="dialog">
             <div class="modal-dialog modal-dialog-centered">

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <!-- Page Wrapper -->
-    <div class="page-wrapper">		
+    <div class="page-wrapper">
         <!-- Page Content -->
         <div class="content container-fluid">
             <!-- Page Header -->
@@ -46,14 +46,14 @@
                                     <th>Department</th>
                                     <th>Start Date</th>
                                     <th>Expire Date</th>
-                                    <th class="text-center">Job Type</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Job Type</th>
+                                    <th>Status</th>
                                     <th>Applicants</th>
-                                    <th class="text-right">Actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($job_list as $key=>$items )                                
+                                @foreach ($job_list as $key=>$items )
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td hidden class="id">{{ $items->id }}</td>
@@ -73,7 +73,7 @@
                                     <td class="department">{{ $items->department }}</td>
                                     <td>{{ date('d F, Y',strtotime($items->start_date)) }}</td>
                                     <td>{{ date('d F, Y',strtotime($items->expired_date)) }}</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->job_type }}
@@ -87,7 +87,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> {{ $items->status }}
@@ -108,8 +108,8 @@
                                             Candidates
                                         </a>
                                     </td>
-                                    
-                                    <td class="text-right">
+
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -127,7 +127,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Add Job Modal -->
         <div id="add_job" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -152,12 +152,12 @@
                                     <div class="form-group">
                                         <label>Department</label>
                                         <select class="select @error('department') is-invalid @enderror" name="department">
-                                            <option selected disabled>--Selete--</option>
+                                            <option selected disabled>--Select</option>
                                             @foreach ($department as $value)
                                             <option value="{{ $value->department }}" {{ old('department') == $value->department ? "selected" :""}}>{{ $value->department }}</option>
                                             @endforeach
                                         </select>
-                                    </select> 
+                                    </select>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No of Vacancies</label>
+                                        <label>No Of Vacancies</label>
                                         <input class="form-control @error('no_of_vacancies') is-invalid @enderror" type="text" name="no_of_vacancies" value="{{ old('no_of_vacancies') }}">
                                     </div>
                                 </div>
@@ -208,7 +208,7 @@
                                     <div class="form-group">
                                         <label>Job Type</label>
                                         <select class="select @error('tob_type') is-invalid @enderror" name="job_type">
-                                            <option selected disabled>--select--</option>
+                                            <option selected disabled>--Select</option>
                                             @foreach ($type_job as $job )
                                             <option value="{{ $job->name_type_job }}" {{ old('job_type') == $job->name_type_job ? "selected" :""}}>{{ $job->name_type_job }}</option>
                                             @endforeach
@@ -257,7 +257,7 @@
             </div>
         </div>
         <!-- /Add Job Modal -->
-        
+
         <!-- Edit Job Modal -->
         <div id="edit_job" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -299,7 +299,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No of Vacancies</label>
+                                        <label>No Of Vacancies</label>
                                         <input class="form-control" type="text" id="e_no_of_vacancies" name="no_of_vacancies" value="">
                                     </div>
                                 </div>
@@ -429,7 +429,7 @@
                 $('#e_expired_date').val(_this.find('.expired_date').text());
                 $('#e_age').val(_this.find('.age').text());
                 $('#e_description').val(_this.find('.description').text());
-                
+
                 // department
                 var department = (_this.find(".department").text());
                 var _option = '<option selected value="' +department+ '">' + _this.find('.department').text() + '</option>'
@@ -445,7 +445,7 @@
                 var _option = '<option selected value="' +status+ '">' + _this.find('.status').text() + '</option>'
                 $( _option).appendTo("#e_status");
             });
-            
+
         </script>
     @endsection
 @endsection

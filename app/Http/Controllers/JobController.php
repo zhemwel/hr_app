@@ -13,402 +13,434 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class JobController extends Controller
 {
-    // job List
+    // Job List
     public function jobList()
-    {    
-        $job_list = DB::table('add_jobs')->get();
-        return view('job.joblist',compact('job_list'));
+    {
+        $job_list = DB::table('add_jobs')
+            ->get();
+
+        return view('job.joblist', compact('job_list'));
     }
-    
-    // job view
+
+    // Job View
     public function jobView($id)
-    { 
-        /** update count */
+    {
+        /** Update Count */
         $post = AddJob::find($id);
         $update = ['count' =>$post->count + 1,];
-        AddJob::where('id',$post->id)->update($update);
 
-        $job_view = DB::table('add_jobs')->where('id',$id)->get();
-        return view('job.jobview',compact('job_view'));
+        AddJob::where('id',$post->id)
+            ->update($update);
+
+        $job_view = DB::table('add_jobs')
+            ->where('id',$id)
+            ->get();
+
+        return view('job.jobview', compact('job_view'));
     }
 
-    /** users dashboard index */
+    /** Users Dashboard Index */
     public function userDashboard()
     {
-        $job_list   = DB::table('add_jobs')->get();
-        return view('job.userdashboard',compact('job_list'));
+        $job_list = DB::table('add_jobs')
+            ->get();
+
+        return view('job.userdashboard', compact('job_list'));
     }
 
-    /** jobs dashboard index */
-    public function jobsDashboard() {
+    /** Jobs Dashboard Index */
+    public function jobsDashboard()
+    {
         return view('job.jobsdashboard');
     }
-    /** user all job */
-    public function userDashboardAll() 
+
+    /** User All Job */
+    public function userDashboardAll()
     {
         return view('job.useralljobs');
     }
 
-    /** save job */
+    /** Save Job */
     public function userDashboardSave()
     {
-      return view('job.savedjobs');
+        return view('job.savedjobs');
     }
 
-    /** applied job*/
+    /** Applied Job*/
     public function userDashboardApplied()
     {
         return view('job.appliedjobs');
     }
 
-    /** interviewing job*/
+    /** Interviewing Job*/
     public function userDashboardInterviewing()
     {
         return view('job.interviewing');
     }
 
-    /** interviewing job*/
+    /** Interviewing Job*/
     public function userDashboardOffered()
     {
         return view('job.offeredjobs');
     }
 
-    /** visited job*/
+    /** Visited Job*/
     public function userDashboardVisited()
     {
         return view('job.visitedjobs');
     }
 
-    /** archived job*/
+    /** Archived Job*/
     public function userDashboardArchived()
     {
         return view('job.visitedjobs');
     }
 
-    /** jobs */
+    /** Jobs */
     public function Jobs()
     {
         $department = DB::table('departments')->get();
-        $type_job   = DB::table('type_jobs')->get();
-        $job_list   = DB::table('add_jobs')->get();
-        return view('job.jobs',compact('department','type_job','job_list'));
+        $type_job = DB::table('type_jobs')->get();
+        $job_list = DB::table('add_jobs')->get();
+
+        return view('job.jobs', compact('department', 'type_job', 'job_list'));
     }
 
-    /** job save record */
+    /** Job Save Record */
     public function JobsSaveRecord(Request $request)
     {
         $request->validate([
-            'job_title'       => 'required|string|max:255',
-            'department'      => 'required|string|max:255',
-            'job_location'    => 'required|string|max:255',
+            'job_title' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
+            'job_location' => 'required|string|max:255',
             'no_of_vacancies' => 'required|string|max:255',
-            'experience'      => 'required|string|max:255',
-            'age'             => 'required',
-            'salary_from'     => 'required|string|max:255',
-            'salary_to'       => 'required|string|max:255',
-            'job_type'        => 'required|string|max:255',
-            'status'          => 'required|string|max:255',
-            'start_date'      => 'required|string|max:255',
-            'expired_date'    => 'required|string|max:255',
-            'description'     => 'required',
+            'experience' => 'required|string|max:255',
+            'age' => 'required',
+            'salary_from' => 'required|string|max:255',
+            'salary_to' => 'required|string|max:255',
+            'job_type' => 'required|string|max:255',
+            'status' => 'required|string|max:255',
+            'start_date' => 'required|string|max:255',
+            'expired_date' => 'required|string|max:255',
+            'description' => 'required',
         ]);
 
         DB::beginTransaction();
+
         try {
-            
             $add_job = new AddJob;
-            $add_job->job_title       = $request->job_title;
-            $add_job->department      = $request->department;
-            $add_job->job_location    = $request->job_location;
+            $add_job->job_title = $request->job_title;
+            $add_job->department = $request->department;
+            $add_job->job_location = $request->job_location;
             $add_job->no_of_vacancies = $request->no_of_vacancies;
-            $add_job->experience   = $request->experience;
-            $add_job->age          = $request->age;
-            $add_job->salary_from  = $request->salary_from;
-            $add_job->salary_to    = $request->salary_to;
-            $add_job->job_type     = $request->job_type;
-            $add_job->status       = $request->status;
-            $add_job->start_date   = $request->start_date;
+            $add_job->experience = $request->experience;
+            $add_job->age = $request->age;
+            $add_job->salary_from = $request->salary_from;
+            $add_job->salary_to = $request->salary_to;
+            $add_job->job_type = $request->job_type;
+            $add_job->status = $request->status;
+            $add_job->start_date = $request->start_date;
             $add_job->expired_date = $request->expired_date;
-            $add_job->description  = $request->description;
+            $add_job->description = $request->description;
             $add_job->save();
 
             DB::commit();
-            Toastr::success('Create add job successfully :)','Success');
+            Toastr::success('Create Add Job Success', 'Success');
             return redirect()->back();
-            
+
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Add Job fail :)','Error');
+            Toastr::error('Add Job Fail', 'Error');
             return redirect()->back();
-        } 
-    }
-    
-    /** job applicants */
-    public function jobApplicants($job_title)
-    {
-       $apply_for_jobs = DB::table('apply_for_jobs')->where('job_title',$job_title)->get();
-        return view('job.jobapplicants',compact('apply_for_jobs'));
+        }
     }
 
-    /** download */
-    public function downloadCV($id) {
-        $cv_uploads = DB::table('apply_for_jobs')->where('id',$id)->first();
+    /** Job Applicants */
+    public function jobApplicants($job_title)
+    {
+        $apply_for_jobs = DB::table('apply_for_jobs')
+            ->where('job_title',$job_title)
+            ->get();
+
+        return view('job.jobapplicants', compact('apply_for_jobs'));
+    }
+
+    /** Download */
+    public function downloadCV($id)
+    {
+        $cv_uploads = DB::table('apply_for_jobs')
+            ->where('id',$id)
+            ->first();
+
         $pathToFile = public_path("assets/images/{$cv_uploads->cv_upload}");
+
         return \Response::download($pathToFile);
     }
 
-    /** job details */
+    /** Job Details */
     public function jobDetails($id)
     {
-        $job_view_detail = DB::table('add_jobs')->where('id',$id)->get();
-        return view('job.jobdetails',compact('job_view_detail'));
+        $job_view_detail = DB::table('add_jobs')
+            ->where('id',$id)
+            ->get();
+
+        return view('job.jobdetails', compact('job_view_detail'));
     }
 
-    /** apply Job SaveRecord */
-    public function applyJobSaveRecord(Request $request) 
+    /** Apply Job Save Record */
+    public function applyJobSaveRecord(Request $request)
     {
         $request->validate([
             'job_title' => 'required|string|max:255',
-            'name'      => 'required|string|max:255',
-            'phone'     => 'required|string|max:255',
-            'email'     => 'required|string|email',
-            'message'   => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'email' => 'required|string|email',
+            'message' => 'required|string|max:255',
             'cv_upload' => 'required',
         ]);
 
         DB::beginTransaction();
-        try {
 
-            /** upload file */
-            $cv_uploads = time().'.'.$request->cv_upload->extension();  
+        try {
+            /** Upload File */
+            $cv_uploads = time().'.'.$request->cv_upload->extension();
             $request->cv_upload->move(public_path('assets/images'), $cv_uploads);
-            
+
             $apply_job = new ApplyForJob;
             $apply_job->job_title = $request->job_title;
-            $apply_job->name      = $request->name;
-            $apply_job->phone     = $request->phone;
-            $apply_job->email     = $request->email;
-            $apply_job->message   = $request->message;
+            $apply_job->name = $request->name;
+            $apply_job->phone = $request->phone;
+            $apply_job->email = $request->email;
+            $apply_job->message = $request->message;
             $apply_job->cv_upload = $cv_uploads;
             $apply_job->save();
 
             DB::commit();
-            Toastr::success('Apply job successfully :)','Success');
+            Toastr::success('Apply Job Success', 'Success');
             return redirect()->back();
-            
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Apply Job fail :)','Error');
+            Toastr::error('Apply Job Fail', 'Error');
             return redirect()->back();
-        } 
+        }
     }
 
-    /** applyJobUpdateRecord */
+    /** Apply Job Update Record */
     public function applyJobUpdateRecord(Request $request)
     {
         DB::beginTransaction();
         try {
             $update = [
-                'id'              => $request->id,
-                'job_title'       => $request->job_title,
-                'department'      => $request->department,
-                'job_location'    => $request->job_location,
+                'id' => $request->id,
+                'job_title' => $request->job_title,
+                'department' => $request->department,
+                'job_location' => $request->job_location,
                 'no_of_vacancies' => $request->no_of_vacancies,
-                'experience'      => $request->experience,
-                'age'             => $request->age,
-                'salary_from'     => $request->salary_from,
-                'salary_to'       => $request->salary_to,
-                'job_type'        => $request->job_type,
-                'status'          => $request->status,
-                'start_date'      => $request->start_date,
-                'expired_date'    => $request->expired_date,
-                'description'     => $request->description,
+                'experience' => $request->experience,
+                'age' => $request->age,
+                'salary_from' => $request->salary_from,
+                'salary_to' => $request->salary_to,
+                'job_type' => $request->job_type,
+                'status' => $request->status,
+                'start_date' => $request->start_date,
+                'expired_date' => $request->expired_date,
+                'description' => $request->description,
             ];
 
-            AddJob::where('id',$request->id)->update($update);
+            AddJob::where('id',$request->id)
+                ->update($update);
+
             DB::commit();
-            Toastr::success('Updated Leaves successfully :)','Success');
+            Toastr::success('Updated Leaves Success', 'Success');
             return redirect()->back();
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Update Leaves fail :)','Error');
+            Toastr::error('Update Leaves Fail', 'Error');
             return redirect()->back();
-        } 
+        }
     }
 
-    /** manage Resumes */
+    /** Manage Resumes */
     public function manageResumesIndex()
     {
-        $department = DB::table('departments')->get();
-        $type_job   = DB::table('type_jobs')->get();
+        $department = DB::table('departments')
+            ->get();
+
+        $type_job = DB::table('type_jobs')
+            ->get();
+
         $manageResumes = DB::table('add_jobs')
-                        ->join('apply_for_jobs', 'apply_for_jobs.job_title', 'add_jobs.job_title')
-                        ->select('add_jobs.*', 'apply_for_jobs.*')->get();
-        return view('job.manageresumes',compact('manageResumes','department','type_job'));
+            ->join('apply_for_jobs', 'apply_for_jobs.job_title', 'add_jobs.job_title')
+            ->select('add_jobs.*', 'apply_for_jobs.*')
+            ->get();
+
+        return view('job.manageresumes', compact('manageResumes', 'department', 'type_job'));
     }
 
-    /** shortlist candidates */
+    /** Shortlist Candidates */
     public function shortlistCandidatesIndex()
     {
         return view('job.shortlistcandidates');
     }
 
-    /** interview questions */
+    /** Interview Questions */
     public function interviewQuestionsIndex()
     {
-        $question    = DB::table('questions')->get();
-        $category    = DB::table('categories')->get();
-        $department  = DB::table('departments')->get();
-        $answer      = DB::table('answers')->get();
-        return view('job.interviewquestions',compact('category','department','answer','question'));
+        $question = DB::table('questions')->get();
+        $category = DB::table('categories')->get();
+        $department = DB::table('departments')->get();
+        $answer = DB::table('answers')->get();
+
+        return view('job.interviewquestions', compact('category', 'department', 'answer', 'question'));
     }
 
-    /** interviewQuestions Save */
-    public function categorySave( Request $request)
+    /** Interview Questions Save */
+    public function categorySave(Request $request)
     {
         $request->validate([
             'category' => 'required|string|max:255',
         ]);
 
         DB::beginTransaction();
-        try {
 
+        try {
             $save = new Category;
             $save->category = $request->category;
             $save->save();
-            
+
             DB::commit();
-            Toastr::success('Create new Category successfully :)','Success');
+            Toastr::success('Create New Category Success', 'Success');
             return redirect()->back();
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Add Category fail :)','Error');
+            Toastr::error('Add Category Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    /** save question */
+    /** Save Question */
     public function questionSave(Request $request)
     {
         $request->validate([
-            'category'           => 'required|string|max:255',
-            'department'         => 'required|string|max:255',
-            'questions'          => 'required|string|max:255',
-            'option_a'           => 'required|string|max:255',
-            'option_b'           => 'required|string|max:255',
-            'option_c'           => 'required|string|max:255',
-            'option_d'           => 'required|string|max:255',
-            'answer'             => 'required|string|max:255',
-            'code_snippets'      => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'department' => 'required|string|max:255',
+            'questions' => 'required|string|max:255',
+            'option_a' => 'required|string|max:255',
+            'option_b' => 'required|string|max:255',
+            'option_c' => 'required|string|max:255',
+            'option_d' => 'required|string|max:255',
+            'answer' => 'required|string|max:255',
+            'code_snippets' => 'required|string|max:255',
             'answer_explanation' => 'required|string|max:255',
-            'video_link'         => 'required|url',
-            'image_to_question'  => 'required',
+            'video_link' => 'required|url',
+            'image_to_question' => 'required',
         ]);
 
         DB::beginTransaction();
-        try {
 
-            /** upload file */
-            $image_to_questions = time().'.'.$request->image_to_question->extension();  
+        try {
+            /** Upload File */
+            $image_to_questions = time().'.'.$request->image_to_question->extension();
             $request->image_to_question->move(public_path('assets/images/question'), $image_to_questions);
 
             $save = new Question;
-            $save->category   = $request->category;
+            $save->category = $request->category;
             $save->department = $request->department;
-            $save->questions  = $request->questions;
+            $save->questions = $request->questions;
             $save->option_a = $request->option_a;
             $save->option_b = $request->option_b;
             $save->option_c = $request->option_c;
             $save->option_d = $request->option_d;
-            $save->answer   = $request->answer;
-            $save->code_snippets      = $request->code_snippets;
+            $save->answer = $request->answer;
+            $save->code_snippets = $request->code_snippets;
             $save->answer_explanation = $request->answer_explanation;
-            $save->video_link         = $request->video_link;
-            $save->image_to_question  = $image_to_questions;
+            $save->video_link = $request->video_link;
+            $save->image_to_question = $image_to_questions;
             $save->save();
-            
+
             DB::commit();
-            Toastr::success('Create new Question successfully :)','Success');
+            Toastr::success('Create New Question Success','Success');
             return redirect()->back();
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Add Question fail :)','Error');
+            Toastr::error('Add Question Fail', 'Error');
             return redirect()->back();
-        } 
+        }
     }
 
-    /** question update */
+    /** Question Update */
     public function questionsUpdate(Request $request)
     {
         DB::beginTransaction();
+
         try {
-            
             $update = [
-                'id'            => $request->id,
-                'category'      => $request->category,
-                'department'    => $request->department,
-                'questions'     => $request->questions,
-                'option_a'      => $request->option_a,
-                'option_b'      => $request->option_b,
-                'option_c'      => $request->option_c,
-                'option_d'      => $request->option_d,
-                'answer'        => $request->answer,
+                'id' => $request->id,
+                'category' => $request->category,
+                'department' => $request->department,
+                'questions' => $request->questions,
+                'option_a' => $request->option_a,
+                'option_b' => $request->option_b,
+                'option_c' => $request->option_c,
+                'option_d' => $request->option_d,
+                'answer' => $request->answer,
                 'code_snippets' => $request->code_snippets,
                 'answer_explanation' => $request->answer_explanation,
                 'video_link' => $request->video_link,
             ];
 
-            Question::where('id',$request->id)->update($update);
+            Question::where('id',$request->id)
+                ->update($update);
+
             DB::commit();
-            Toastr::success('Updated Questions successfully :)','Success');
+            Toastr::success('Updated Questions Success', 'Success');
             return redirect()->back();
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Update Questions fail :)','Error');
+            Toastr::error('Update Questions Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    /** delete question */
+    /** Delete Question */
     public function questionsDelete(Request $request)
     {
         try {
-
             Question::destroy($request->id);
-            Toastr::success('Question deleted successfully :)','Success');
+            Toastr::success('Question Deleted Success', 'Success');
             return redirect()->back();
-        
+
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Question delete fail :)','Error');
+            Toastr::error('Question Delete Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    /** offer approvals */
+    /** Offer Approvals */
     public function offerApprovalsIndex()
     {
         return view('job.offerapprovals');
     }
 
-    /** experience level */
+    /** Experience Level */
     public function experienceLevelIndex()
     {
         return view('job.experiencelevel');
     }
 
-    /** candidates */
+    /** Candidates */
     public function candidatesIndex()
     {
         return view('job.candidates');
     }
 
-    /** schedule timing */
+    /** Schedule Timing */
     public function scheduleTimingIndex()
     {
         return view('job.scheduletiming');
     }
-    /** aptitude result */
+    /** Aptitude Result */
 
     public function aptituderesultIndex()
     {

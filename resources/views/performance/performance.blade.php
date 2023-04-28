@@ -20,11 +20,11 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <section class="review-section information">
                 <div class="review-header text-center">
                     <h3 class="review-title">Employee Basic Information</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
@@ -67,7 +67,7 @@
                                                     <input type="text" class="form-control" id="doc">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="qualif1">Previous years of Exp</label>
+                                                    <label for="qualif1">Previous Years Of Exp</label>
                                                     <input type="text" class="form-control" id="qualif1">
                                                 </div>
                                             </form>
@@ -90,12 +90,12 @@
                         </div>
                     </div>
                 </div>
-            </section>	 
-            
+            </section>
+
             <section class="review-section professional-excellence">
                 <div class="review-header text-center">
                     <h3 class="review-title">Professional Excellence</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -107,10 +107,10 @@
                                         <th>Key Result Area</th>
                                         <th>Key Performance Indicators</th>
                                         <th>Weightage</th>
-                                        <th>Percentage achieved <br>( self Score )</th>
-                                        <th>Points Scored <br>( self )</th>
-                                        <th>Percentage achieved <br>( RO's Score )</th>
-                                        <th>Points Scored <br>( RO )</th>
+                                        <th>Percentage Achieved <br>(Self Score)</th>
+                                        <th>Points Scored <br>(Self)</th>
+                                        <th>Percentage Achieved <br>(RO's Score)</th>
+                                        <th>Points Scored <br>(RO)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -125,7 +125,7 @@
                                         <td><input type="text" class="form-control" readonly value="0"></td>
                                     </tr>
                                     <tr>
-                                        <td>TAT (turn around time)</td>
+                                        <td>TAT (Turn Around Time)</td>
                                         <td><input type="text" class="form-control" readonly value="30"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -135,7 +135,7 @@
                                     <tr>
                                         <td>2</td>
                                         <td>Process Improvement</td>
-                                        <td>PMS,New Ideas</td>
+                                        <td>PMS, New Ideas</td>
                                         <td><input type="text" class="form-control" readonly value="10"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -145,7 +145,7 @@
                                     <tr>
                                         <td>3</td>
                                         <td>Team Management</td>
-                                        <td>Team Productivity,dynaics,attendance,attrition</td>
+                                        <td>Team Productivity, Dynamics, Attendance, Attrition</td>
                                         <td><input type="text" class="form-control" readonly value="5"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -155,7 +155,7 @@
                                     <tr>
                                         <td>4</td>
                                         <td>Knowledge Sharing</td>
-                                        <td>Sharing the knowledge for team productivity </td>
+                                        <td>Sharing The Knowledge For Team Productivity </td>
                                         <td><input type="text" class="form-control" readonly value="5"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -164,8 +164,8 @@
                                     </tr>
                                     <tr>
                                         <td>5</td>
-                                        <td>Reporting and Communication</td>
-                                        <td>Emails/Calls/Reports and Other Communication</td>
+                                        <td>Reporting & Communication</td>
+                                        <td>Emails/Calls/Reports & Other Communication</td>
                                         <td><input type="text" class="form-control" readonly value="5"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -189,7 +189,7 @@
             <section class="review-section personal-excellence">
                 <div class="review-header text-center">
                     <h3 class="review-title">Personal Excellence</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -201,17 +201,17 @@
                                         <th>Personal Attributes</th>
                                         <th>Key Indicators</th>
                                         <th>Weightage</th>
-                                        <th>Percentage achieved <br>( self Score )</th>
-                                        <th>Points Scored <br>( self )</th>
-                                        <th>Percentage achieved <br>( RO's Score )</th>
-                                        <th>Points Scored <br>( RO )</th>
+                                        <th>Percentage Achieved <br>(Self Score)</th>
+                                        <th>Points Scored <br>(Self)</th>
+                                        <th>Percentage Achieved <br>(RO's Score)</th>
+                                        <th>Points Scored <br>(RO)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td rowspan="2">1</td>
                                         <td rowspan="2">Attendance</td>
-                                        <td>Planned or Unplanned Leaves</td>
+                                        <td>Planned Or Unplanned Leaves</td>
                                         <td><input type="text" class="form-control" readonly value="2"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -247,7 +247,7 @@
                                     <tr>
                                         <td>3</td>
                                         <td>Policy & Procedures </td>
-                                        <td>Adherence to policies and procedures</td>
+                                        <td>Adherence To Policies And Procedures</td>
                                         <td><input type="text" class="form-control" readonly value="2"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -257,7 +257,7 @@
                                     <tr>
                                     <td>4</td>
                                         <td>Initiatives</td>
-                                        <td>Special Efforts, Suggestions,Ideas,etc.</td>
+                                        <td>Special Efforts, Suggestions, Ideas, Etc.</td>
                                         <td><input type="text" class="form-control" readonly value="2"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -267,7 +267,7 @@
                                     <tr>
                                         <td>5</td>
                                         <td>Continuous Skill Improvement</td>
-                                        <td>Preparedness to move to next level & Training utilization</td>
+                                        <td>Preparedness To Move To Next Level & Training Utilization</td>
                                         <td><input type="text" class="form-control" readonly value="3"></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" readonly value="0"></td>
@@ -290,10 +290,10 @@
                                         <td colspan="8" class="text-center">
                                             <div class="grade-span">
                                                 <h4>Grade</h4>
-                                                <span class="badge bg-inverse-danger">Below 65 Poor</span> 
-                                                <span class="badge bg-inverse-warning">65-74 Average</span> 
-                                                <span class="badge bg-inverse-info">75-84 Satisfactory</span> 
-                                                <span class="badge bg-inverse-purple">85-92 Good</span> 
+                                                <span class="badge bg-inverse-danger">Below 65 Poor</span>
+                                                <span class="badge bg-inverse-warning">65-74 Average</span>
+                                                <span class="badge bg-inverse-info">75-84 Satisfactory</span>
+                                                <span class="badge bg-inverse-purple">85-92 Good</span>
                                                 <span class="badge bg-inverse-success">Above 92 Excellent</span>
                                             </div>
                                         </td>
@@ -307,8 +307,8 @@
 
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Special Initiatives, Achievements, contributions if any</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <h3 class="review-title">Special Initiatives, Achievements, Contributions</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -367,8 +367,8 @@
             </section>
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Comments on the role</h3>
-                    <p class="text-muted">alterations if any requirred like addition/deletion of responsibilities</p>
+                    <h3 class="review-title">Comments On The Role</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -425,11 +425,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Comments on the role</h3>
-                    <p class="text-muted">alterations if any requirred like addition/deletion of responsibilities</p>
+                    <h3 class="review-title">Comments On The Role</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -439,7 +439,7 @@
                                     <tr>
                                         <th style="width:40px;">#</th>
                                         <th>Strengths</th>
-                                        <th>Area's for Improvement</th>
+                                        <th>Area's For Improvement</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -476,8 +476,8 @@
             </section>
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Appraisee's Strengths and Areas for Improvement perceived by the Reporting officer</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <h3 class="review-title">Appraisee's Strengths & Areas For Improvement Perceived By The Reporting Officer</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -487,7 +487,7 @@
                                     <tr>
                                         <th style="width:40px;">#</th>
                                         <th>Strengths</th>
-                                        <th>Area's for Improvement</th>
+                                        <th>Area's For Improvement</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -512,11 +512,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Appraisee's Strengths and Areas for Improvement perceived by the Head of the Department</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <h3 class="review-title">Appraisee's Strengths & Areas For Improvement Perceived By The Head Of The Department</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -526,7 +526,7 @@
                                     <tr>
                                         <th style="width:40px;">#</th>
                                         <th>Strengths</th>
-                                        <th>Area's for Improvement</th>
+                                        <th>Area's For Improvement</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -551,11 +551,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
                     <h3 class="review-title">Personal Goals</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -564,8 +564,8 @@
                                 <thead>
                                     <tr>
                                         <th style="width:40px;">#</th>
-                                        <th>Goal Achieved during last year</th>
-                                        <th>Goal set for current year</th>
+                                        <th>Goal Achieved During Last Year</th>
+                                        <th>Goal Set For Current Year</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -590,11 +590,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
                     <h3 class="review-title">Personal Updates</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -614,13 +614,13 @@
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Married/Engaged?</td>
+                                        <td>Married / Engaged?</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
                                                 <option>Yes</option>
                                                 <option>No</option>
-                                            </select>	
+                                            </select>
                                         </td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td>Marriage Plans</td>
@@ -635,7 +635,7 @@
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Higher Studies/Certifications?</td>
+                                        <td>Higher Studies / Certifications?</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
@@ -702,11 +702,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Professional Goals Achieved for last year</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <h3 class="review-title">Professional Goals Achieved For Last Year</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -763,11 +763,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Professional Goals for the forthcoming year</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <h3 class="review-title">Professional Goals For The Forthcoming Year</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -824,11 +824,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
                     <h3 class="review-title">Training Requirements</h3>
-                    <p class="text-muted">if any to achieve the Performance Standard Targets completely</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -888,8 +888,8 @@
 
             <section class="review-section">
                 <div class="review-header text-center">
-                    <h3 class="review-title">Any other general comments, observations, suggestions etc.</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <h3 class="review-title">Any Other General Comments, Observations, Suggestions Etc.</h3>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -950,7 +950,7 @@
             <section class="review-section">
                 <div class="review-header text-center">
                     <h3 class="review-title">For RO's Use Only</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -965,7 +965,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>The Team member has Work related Issues</td>
+                                        <td>The Team Member Has Work Related Issues</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
@@ -976,7 +976,7 @@
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>The Team member has Leave Issues</td>
+                                        <td>The Team Member Has Leave Issues</td>
                                         <td>
                                         <select class="form-control select">
                                             <option>Select</option>
@@ -987,7 +987,7 @@
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>The team member has Stability Issues</td>
+                                        <td>The Team Member Has Stability Issues</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
@@ -998,7 +998,7 @@
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>The Team member exhibits non-supportive attitude</td>
+                                        <td>The Team Member Exhibits Non-Supportive Attitude</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
@@ -1009,7 +1009,7 @@
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>Any other points in specific to note about the team member</td>
+                                        <td>Any Other Points In Specific To Note About The Team Member</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
@@ -1020,7 +1020,7 @@
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                    <td>Overall Comment /Performance of the team member</td>
+                                    <td>Overall Comment / Performance Of The Team Member</td>
                                         <td>
                                             <select class="form-control select">
                                                 <option>Select</option>
@@ -1036,11 +1036,11 @@
                     </div>
                 </div>
             </section>
-            
+
             <section class="review-section">
                 <div class="review-header text-center">
                     <h3 class="review-title">For HRD's Use Only</h3>
-                    <p class="text-muted">Lorem ipsum dollar</p>
+                    <p class="text-muted">HR</p>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -1056,25 +1056,25 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>KRAs Target Achievement Points (will be considered from the overall score specified in this document by the Reporting officer)</td>
+                                        <td>KRAs Target Achievement Points (Will Be Considered From The Overall Score Specified In This Document By The Reporting Officer)</td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>Professional Skills Scores(RO's Points furnished in the skill & attitude assessment sheet will be considered)</td>
+                                        <td>Professional Skills Scores (RO's Points Furnished In The Skill & Attitude Assessment Sheet Will Be Considered)</td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>Personal Skills Scores(RO's Points furnished in the skill & attitude assessment sheet will be considered)</td>
+                                        <td>Personal Skills Scores (RO's Points Furnished In The Skill & Attitude Assessment Sheet Will Be Considered)</td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                     </tr>
                                     <tr>
-                                        <td>Special Achievements Score (HOD to furnish)</td>
+                                        <td>Special Achievements Score (HOD To Furnish)</td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>
                                         <td><input type="text" class="form-control" ></td>

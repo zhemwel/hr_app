@@ -2,7 +2,7 @@
 @extends('layouts.master')
 @section('content')
     <!-- Page Wrapper -->
-    <div class="page-wrapper">  
+    <div class="page-wrapper">
         <!-- Page Content -->
         <div class="content container-fluid">
             <!-- Page Header -->
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -66,7 +66,7 @@
                                         <th class="d-none d-sm-table-cell">DESCRIPTION</th>
                                         <th>UNIT COST</th>
                                         <th>QUANTITY</th>
-                                        <th class="text-right">AMOUNT</th>
+                                        <th>AMOUNT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -77,7 +77,7 @@
                                         <td class="d-none d-sm-table-cell">{{ $item->description }}</td>
                                         <td>${{ $item->unit_cost }}</td>
                                         <td>{{ $item->qty }}</td>
-                                        <td class="text-right">${{ $item->amount }}</td>
+                                        <td>${{ $item->amount }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -93,11 +93,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <th>Subtotal:</th>
-                                                            <td class="text-right">{{$estimatesJoin[0]->total }}</td>
+                                                            <td>{{$estimatesJoin[0]->total }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Tax: <span class="text-regular">(25%)</span></th>
-                                                            <td class="text-right">{{$estimatesJoin[0]->tax_1 }}</td>
+                                                            <td>{{$estimatesJoin[0]->tax_1 }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Total:</th>
@@ -122,8 +122,8 @@
         <!-- /Page Content -->
     </div>
     <!-- /Page Wrapper -->
- 
+
     @section('script')
-   
+
     @endsection
 @endsection

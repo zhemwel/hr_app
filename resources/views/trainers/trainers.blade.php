@@ -35,7 +35,7 @@
                                     <th>Email </th>
                                     <th>Description </th>
                                     <th>Status </th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,7 +84,7 @@
                                         </div>
                                     </td>
                                     @endif
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -172,7 +172,7 @@
             </div>
         </div>
         <!-- /Add Trainers List Modal -->
-        
+
         <!-- Edit Trainers List Modal -->
         <div id="edit_type" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -242,7 +242,7 @@
             </div>
         </div>
         <!-- /Edit Trainers List Modal -->
-        
+
         <!-- Delete Trainers List Modal -->
         <div class="modal custom-modal fade" id="delete_type" role="dialog">
             <div class="modal-dialog modal-dialog-centered">

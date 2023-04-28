@@ -6,14 +6,14 @@
             <div class="container">
                 <!-- Account Logo -->
                 <div class="account-logo">
-                    <a href="index.html"><img src="{{ URL::to('assets/img/logo2.png') }}" alt="SoengSouy"></a>
+                    <a href="index.html"><img src="{{ URL::to('assets/img/logo2.png') }}" alt="Employee"></a>
                 </div>
                 <!-- /Account Logo -->
                 <div class="account-box">
                     <div class="account-wrapper">
                         <h3 class="account-title">Register</h3>
-                        <p class="account-subtitle">Access to our dashboard</p>
-                        
+                        <p class="account-subtitle">Access To Our Dashboard</p>
+
                         <!-- Account Form -->
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
@@ -69,7 +69,7 @@
                                 <button class="btn btn-primary account-btn" type="submit">Register</button>
                             </div>
                             <div class="account-footer">
-                                <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
+                                <p>Already Have An Account? <a href="{{ route('login') }}">Login</a></p>
                             </div>
                         </form>
                         <!-- /Account Form -->

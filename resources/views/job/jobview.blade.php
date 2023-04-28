@@ -15,7 +15,7 @@
             <!-- /Logo -->
             <!-- Header Title -->
             <div class="page-title-box float-left">
-                <h3>Soeng Souy</h3>
+                <h3>Zhemwel Dev</h3>
             </div>
             <!-- /Header Title -->
             <!-- Header Menu -->
@@ -27,7 +27,7 @@
                             <i class="fa fa-search"></i>
                         </a>
                         <form action="search.html">
-                            <input class="form-control" type="text" placeholder="Search here">
+                            <input class="form-control" type="text" placeholder="Search Here">
                             <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
@@ -43,12 +43,12 @@
                             <img src="{{ URL::to('assets/img/flags/us.png') }}" alt="" height="16"> English
                         </a>
                         <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="{{ URL::to('assets/img/flags/kh.png') }}" alt="" height="16"> Khmer 
+                            <img src="{{ URL::to('assets/img/flags/id.png') }}" alt="" height="16"> Indonesia
                         </a>
                     </div>
                 </li>
                 <!-- /Flag -->
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
@@ -155,8 +155,8 @@
                             </div>
                             <div class="info-list">
                                 <p class="text-truncate"> 096-566-666
-                                <br> <a href="https://www.souysoeng.com" title="soengsouy@example.com">soengsouy@example.com</a>
-                                <br> <a href="https://www.souysoeng.com" target="_blank" title="https://www.souysoeng.com">https://www.souysoeng.com</a>
+                                <br> <a href="https://www.zhemwel.dev" title="zhemwel@example.com">zhemwel@example.com</a>
+                                <br> <a href="https://www.zhemwel.dev" target="_blank" title="https://www.zhemwel.dev">https://www.zhemwel.dev</a>
                                 </p>
                             </div>
                             <div class="info-list text-center">

@@ -4,7 +4,7 @@
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -40,29 +40,29 @@
                                     <th>End Time</th>
                                     <th>Max End Time</th>
                                     <th>Break Time</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                     <th class="text-right no-sort">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>10'o clock Shift</td>
-                                    <td>09:00:00 am</td>
-                                    <td>10:00:00 am</td>
-                                    <td>10:30:00 am</td>
-                                    <td>06:00:00 pm</td>
-                                    <td>06:30:00 pm</td>
-                                    <td>07:00:00 pm</td>
-                                    <td>30 mins</td>
-                                    <td class="text-center">
+                                    <td>10'o Clock Shift</td>
+                                    <td>09:00:00 AM</td>
+                                    <td>10:00:00 AM</td>
+                                    <td>10:30:00 AM</td>
+                                    <td>06:00:00 PM</td>
+                                    <td>06:30:00 PM</td>
+                                    <td>07:00:00 PM</td>
+                                    <td>30 Mins</td>
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Active
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -74,22 +74,22 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>10:30 shift</td>
-                                    <td>10:00:00 am</td>
-                                    <td>10:30:00 am	</td>
-                                    <td>11:00:00 am</td>
-                                    <td>06:30:00 pm</td>
-                                    <td>07:00:00 pm</td>
-                                    <td>07:30:00 pm	</td>
-                                    <td>45 mins</td>
-                                    <td class="text-center">
+                                    <td>10:30 Shift</td>
+                                    <td>10:00:00 AM</td>
+                                    <td>10:30:00AM	</td>
+                                    <td>11:00:00 AM</td>
+                                    <td>06:30:00 PM</td>
+                                    <td>07:00:00 PM</td>
+                                    <td>07:30:00 PM	</td>
+                                    <td>45 Mins</td>
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Active
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -102,21 +102,21 @@
                                 <tr>
                                     <td>3</td>
                                     <td>Daily Rout</td>
-                                    <td>06:00:00 am</td>
-                                    <td>06:30:00 am</td>
-                                    <td>07:00:00 am</td>
-                                    <td>03:00:00 pm</td>
-                                    <td>03:30:00 pm</td>
-                                    <td>04:00:00 pm</td>
-                                    <td>60 mins</td>
-                                    <td class="text-center">
+                                    <td>06:00:00 AM</td>
+                                    <td>06:30:00 AM</td>
+                                    <td>07:00:00 AM</td>
+                                    <td>03:00:00 PM</td>
+                                    <td>03:30:00 PM</td>
+                                    <td>04:00:00 PM</td>
+                                    <td>60 Mins</td>
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Active
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -129,21 +129,21 @@
                                 <tr>
                                     <td>4</td>
                                     <td>New Shift</td>
-                                    <td>06:11:00 am</td>
-                                    <td>06:30:00 am</td>
-                                    <td>08:12:00 am</td>
-                                    <td>09:12:00 pm	</td>
-                                    <td>09:30:00 pm</td>
-                                    <td>09:45:00 pm</td>
-                                    <td>45 mins</td>
-                                    <td class="text-center">
+                                    <td>06:11:00 AM</td>
+                                    <td>06:30:00 AM</td>
+                                    <td>08:12:00 AM</td>
+                                    <td>09:12:00 PM	</td>
+                                    <td>09:30:00 PM</td>
+                                    <td>09:45:00 PM</td>
+                                    <td>45 Mins</td>
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Active
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -156,21 +156,21 @@
                                 <tr>
                                     <td>5</td>
                                     <td>Recurring Shift</td>
-                                    <td>08:30:00 am</td>
-                                    <td>09:00:00 am</td>
-                                    <td>09:30:00 am</td>
-                                    <td>05:30:00 pm</td>
-                                    <td>06:00:00 pm</td>
-                                    <td>06:30:00 pm</td>
-                                    <td>60 mins</td>
-                                    <td class="text-center">
+                                    <td>08:30:00 AM</td>
+                                    <td>09:00:00 AM</td>
+                                    <td>09:30:00 AM</td>
+                                    <td>05:30:00 PM</td>
+                                    <td>06:00:00 PM</td>
+                                    <td>06:30:00 PM</td>
+                                    <td>60 Mins</td>
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="javascript:void(0);">
                                                 <i class="fa fa-dot-circle-o text-success"></i> Active
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -190,7 +190,7 @@
 
         </div>
         <!-- /Page Content -->
-     
+
         <!-- Add Shift Modal -->
         <div id="add_shift" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -225,7 +225,7 @@
                                         <label>Start Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>									
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -233,9 +233,9 @@
                                         <label>Max Start Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>											
+                                        </div>
                                     </div>
-                                </div>		
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group" >
                                         <label>Min End Time <span class="text-danger">*</span></label>
@@ -249,7 +249,7 @@
                                         <label>End Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>									
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -257,13 +257,13 @@
                                         <label>Max End Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>											
+                                        </div>
                                     </div>
-                                </div>	
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Break Time (In Minutes) </label>
-                                        <input type="text" class="form-control">											
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -289,17 +289,17 @@
                                 <div class="col-sm-12">
                                     <div class="form-group wday-box">
                                         <label class="checkbox-inline"><input type="checkbox" value="monday" class="days recurring" checked=""><span class="checkmark">M</span></label>
-    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="tuesday" class="days recurring" checked=""><span class="checkmark">T</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="wednesday" class="days recurring" checked=""><span class="checkmark">W</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="thursday" class="days recurring" checked=""><span class="checkmark">T</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="friday" class="days recurring" checked=""><span class="checkmark">F</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="saturday" class="days recurring"><span class="checkmark">S</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="sunday" class="days recurring"><span class="checkmark">S</span></label>
                                     </div>
                                 </div>
@@ -314,18 +314,18 @@
                                         <input type="checkbox" class="custom-control-input" id="customCheck2">
                                         <label class="custom-control-label" for="customCheck2">Indefinite</label>
                                     </div>
-                                </div>								
-                        
+                                </div>
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Tag </label>
-                                        <input type="text" class="form-control">											
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Note </label>
-                                        <textarea class="form-control"></textarea>											
+                                        <textarea class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -373,7 +373,7 @@
                                         <label>Start Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>									
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -381,9 +381,9 @@
                                         <label>Max Start Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>											
+                                        </div>
                                     </div>
-                                </div>		
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group" >
                                         <label>Min End Time <span class="text-danger">*</span></label>
@@ -397,7 +397,7 @@
                                         <label>End Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>									
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -405,13 +405,13 @@
                                         <label>Max End Time <span class="text-danger">*</span></label>
                                         <div class="input-group time timepicker">
                                             <input class="form-control"><span class="input-group-append input-group-addon"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></span>
-                                        </div>											
+                                        </div>
                                     </div>
-                                </div>	
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Break Time (In Minutes) </label>
-                                        <input type="text" class="form-control">											
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -437,17 +437,17 @@
                                 <div class="col-sm-12">
                                     <div class="form-group wday-box">
                                         <label class="checkbox-inline"><input type="checkbox" value="monday" class="days recurring" checked=""><span class="checkmark">M</span></label>
-    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="tuesday" class="days recurring" checked=""><span class="checkmark">T</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="wednesday" class="days recurring" checked=""><span class="checkmark">W</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="thursday" class="days recurring" checked=""><span class="checkmark">T</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="friday" class="days recurring" checked=""><span class="checkmark">F</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="saturday" class="days recurring"><span class="checkmark">S</span></label>
-                                    
+
                                         <label class="checkbox-inline"><input type="checkbox" value="sunday" class="days recurring"><span class="checkmark">S</span></label>
                                     </div>
                                 </div>
@@ -462,18 +462,18 @@
                                         <input type="checkbox" class="custom-control-input" id="customCheck4">
                                         <label class="custom-control-label" for="customCheck4">Indefinite</label>
                                         </div>
-                                </div>								
-                        
+                                </div>
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Tag </label>
-                                        <input type="text" class="form-control">											
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Add Note </label>
-                                        <textarea class="form-control"></textarea>											
+                                        <textarea class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -536,8 +536,8 @@
                                         <label class="col-form-label">Shifts <span class="text-danger">*</span></label>
                                         <select class="select">
                                             <option value="">Select </option>
-                                            <option value="1">10'o clock Shift</option>
-                                            <option value="2">10:30 shift</option>
+                                            <option value="1">10'o Clock Shift</option>
+                                            <option value="2">10:30 Shift</option>
                                             <option value="3">Daily Shift </option>
                                             <option value="4">New Shift</option>
                                         </select>
@@ -616,7 +616,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>
@@ -626,7 +626,7 @@
             </div>
         </div>
         <!-- /Add Schedule Modal -->
-            
+
         <!-- Delete Shift Modal -->
         <div class="modal custom-modal fade" id="delete_employee" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -651,7 +651,7 @@
             </div>
         </div>
         <!-- /Delete Employee Modal -->
-      
+
     </div>
     <!-- Page Wrapper -->
 @endsection

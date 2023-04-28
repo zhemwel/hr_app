@@ -4,7 +4,7 @@
 <div class="page-wrapper">
     <!-- Page Content -->
     <div class="content container-fluid">
-    
+
         <!-- Page Header -->
         <div class="page-header">
             <div class="row">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <!-- /Page Header -->
-    
+
         <div class="row">
             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                 <div class="card dash-widget">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
@@ -83,11 +83,11 @@
                             <div class="card-body">
                                 <h3 class="card-title text-center">Latest Jobs</h3>
                                 <ul class="list-group">
-                                      <li class="list-group-item list-group-item-action">UI Developer <span class="float-right text-sm text-muted">1 Hours ago</span></li>
-                                      <li class="list-group-item list-group-item-action">Android Developer <span class="float-right text-sm text-muted">1 Days ago</span></li>
-                                      <li class="list-group-item list-group-item-action">IOS Developer<span class="float-right text-sm text-muted">2 Days ago</span></li>
-                                      <li class="list-group-item list-group-item-action">PHP Developer<span class="float-right text-sm text-muted">3 Days ago</span></li>
-                                      <li class="list-group-item list-group-item-action">UI Developer<span class="float-right text-sm text-muted">3 Days ago</span></li>
+                                    <li class="list-group-item list-group-item-action">UI Developer <span class="float-right text-sm text-muted">1 Hours ago</span></li>
+                                    <li class="list-group-item list-group-item-action">Android Developer <span class="float-right text-sm text-muted">1 Days ago</span></li>
+                                    <li class="list-group-item list-group-item-action">IOS Developer<span class="float-right text-sm text-muted">2 Days ago</span></li>
+                                    <li class="list-group-item list-group-item-action">PHP Developer<span class="float-right text-sm text-muted">3 Days ago</span></li>
+                                    <li class="list-group-item list-group-item-action">UI Developer<span class="float-right text-sm text-muted">3 Days ago</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -103,8 +103,8 @@
                         <h3 class="card-title mb-0">Applicants List</h3>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-nowrap custom-table mb-0">
+                        <div class="table-responsive mt-3 mb-3">
+                            <table class="table table-nowrap custom-table mb-0 datatable">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -113,10 +113,10 @@
                                         <th>Departments</th>
                                         <th>Start Date</th>
                                         <th>Expire Date</th>
-                                        <th class="text-center">Job Types</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Resume</th>
-                                        <th class="text-center">Actions</th>
+                                        <th>Job Types</th>
+                                        <th>Status</th>
+                                        <th>Resume</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -124,7 +124,7 @@
                                         <td>1</td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                                <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                 <a href="profile.html">John Doe <span>Web Designer</span></a>
                                             </h2>
                                         </td>
@@ -132,7 +132,7 @@
                                         <td>Development</td>
                                         <td>3 Mar 2019</td>
                                         <td>31 May 2019</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> Full Time
@@ -146,7 +146,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> Open
@@ -158,8 +158,8 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center"><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                        <td class="text-center">
+                                        <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -173,7 +173,7 @@
                                         <td>2</td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                                <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                 <a href="profile.html">Richard Miles <span>Web Developer</span></a>
                                             </h2>
                                         </td>
@@ -181,7 +181,7 @@
                                         <td>Designing</td>
                                         <td>3 Mar 2019</td>
                                         <td>31 May 2019</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-success"></i> Part Time
@@ -195,7 +195,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-success"></i> Closed
@@ -207,8 +207,8 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center"><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                        <td class="text-center">
+                                        <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -222,7 +222,7 @@
                                         <td>3</td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                                <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                 <a href="profile.html">John Smith <span>Android Developer</span></a>
                                             </h2>
                                         </td>
@@ -230,7 +230,7 @@
                                         <td>Android</td>
                                         <td>3 Mar 2019</td>
                                         <td>31 May 2019</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> Internship
@@ -244,7 +244,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="dropdown action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-dot-circle-o text-danger"></i> Cancelled
@@ -256,8 +256,8 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-center"><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
-                                        <td class="text-center">
+                                        <td><a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="fa fa-download mr-1"></i> Download</a></td>
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -274,7 +274,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-table">
@@ -282,15 +282,15 @@
                         <h3 class="card-title mb-0">Shortlist Candidates</h3>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-nowrap custom-table mb-0">
+                        <div class="table-responsive mt-3 mb-3">
+                            <table class="table table-nowrap custom-table mb-0 datatable">
                                 <thead>
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
                                         <th>Job Title</th>
                                         <th>Departments</th>
-                                        <th class="text-center">Status</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -300,13 +300,13 @@
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                                <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                 <a href="profile.html">John Doe <span>Web Designer</span></a>
                                             </h2>
                                         </td>
                                         <td><a href="job-details.html">Web Designer</a></td>
                                         <td>Department</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                     <i class="fa fa-dot-circle-o text-danger"></i>Offered
@@ -320,13 +320,13 @@
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                                <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                 <a href="profile.html">Richard Miles <span>Web Developer</span></a>
                                             </h2>
                                         </td>
                                         <td><a href="job-details.html">Web Developer</a></td>
                                         <td>Department</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" >
                                                     <i class="fa fa-dot-circle-o text-danger"></i>Offered
@@ -340,13 +340,13 @@
                                         </td>
                                         <td>
                                             <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                                <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                 <a href="profile.html">John Smith <span>Android Developer</span></a>
                                             </h2>
                                         </td>
                                         <td><a href="job-details.html">Android Developer</a></td>
                                         <td>Department</td>
-                                        <td class="text-center">
+                                        <td>
                                             <div class="action-label">
                                                 <a class="btn btn-white btn-sm btn-rounded" href="#" >
                                                     <i class="fa fa-dot-circle-o text-danger"></i>Offered

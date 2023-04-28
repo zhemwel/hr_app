@@ -17,7 +17,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-8">
                     <div class="job-info job-widget">
@@ -78,8 +78,8 @@
                         </div>
                         <div class="info-list">
                             <p class="text-truncate"> 096-566-666
-                            <br> <a href="https://www.souysoeng.com" title="soengsouy@example.com">soengsouy@example.com</a>
-                            <br> <a href="https://www.souysoeng.com" target="_blank" title="https://www.souysoeng.com">https://www.souysoeng.com</a>
+                            <br> <a href="https://www.zhemwel.dev" title="zhemwel@example.com">zhemwel@example.com</a>
+                            <br> <a href="https://www.zhemwel.dev" target="_blank" title="https://www.zhemwel.dev">https://www.zhemwel.dev</a>
                             </p>
                         </div>
                         <div class="info-list text-center">
@@ -90,7 +90,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Edit Job Modal -->
         <div id="edit_job" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>No of Vacancies</label>
+                                        <label>No Of Vacancies</label>
                                         <input class="form-control" type="text" value="5">
                                     </div>
                                 </div>

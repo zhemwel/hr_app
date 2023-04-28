@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Content Starts -->
             <div class="row justify-content-center">
                 <div class="col-md-3 col-sm-6">
@@ -61,15 +61,15 @@
             </div>
             <!-- Search Filter -->
             <div class="row filter-row mb-4">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <input class="form-control floating" type="text">
                         <label class="focus-label">Employee</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select Department</option>
                             <option>Designing</option>
                             <option>Development</option>
@@ -79,7 +79,7 @@
                         <label class="focus-label">Department</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -87,7 +87,7 @@
                         <label class="focus-label">From</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -95,9 +95,9 @@
                         <label class="focus-label">To</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- /Search Filter -->
             <div class="row">
@@ -109,7 +109,7 @@
                                     <th>Employee</th>
                                     <th>Date</th>
                                     <th>Department</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -122,7 +122,7 @@
                                     </td>
                                     <td>20 Dec 2020</td>
                                     <td>Design</td>
-                                    <td class="text-center">
+                                    <td>
                                         <button class="btn btn-outline-info btn-sm">Week off</button>
                                     </td>
                                 </tr>
@@ -135,7 +135,7 @@
                                     </td>
                                     <td>20 Dec 2020</td>
                                     <td>Web Developer</td>
-                                    <td class="text-center">
+                                    <td>
                                         <button class="btn btn-outline-danger btn-sm">Absent</button>
                                     </td>
                                 </tr>
@@ -148,7 +148,7 @@
                                     </td>
                                     <td>20 Dec 2020</td>
                                     <td>Android Developer</td>
-                                    <td class="text-center">
+                                    <td>
                                         <button class="btn btn-outline-info btn-sm">Week off</button>
                                     </td>
                                 </tr>
@@ -161,7 +161,7 @@
                                     </td>
                                     <td>20 Dec 2020</td>
                                     <td>IOS Developer</td>
-                                    <td class="text-center">
+                                    <td>
                                         <button class="btn btn-outline-info btn-sm">Week off</button>
                                     </td>
                                 </tr>
@@ -174,7 +174,7 @@
                                     </td>
                                     <td>20 Dec 2020</td>
                                     <td>Team Leader</td>
-                                    <td class="text-center">
+                                    <td>
                                         <button class="btn btn-outline-info btn-sm">Week off</button>
                                     </td>
                                 </tr>

@@ -3,10 +3,10 @@
 @section('content')
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-                
+
         <!-- Page Content -->
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{ route('create/estimate/update') }}" method="POST">
@@ -48,7 +48,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label>Email</label>
@@ -135,9 +135,9 @@
                                             <td><a href="javascript:void(0)" class="text-success font-18" title="Add" id="addBtn"><i class="fa fa-plus"></i></a></td>
                                             @endif
                                             @if($item->id ==!null)
-                                                <td><a class="text-danger font-18 delete_estimate" href="#" data-toggle="modal" data-target="#delete_estimate" title="Remove"><i class="fa fa-trash-o"></i></a></td> 
+                                                <td><a class="text-danger font-18 delete_estimate" href="#" data-toggle="modal" data-target="#delete_estimate" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                                             @else
-                                            <td><a class="text-danger font-18 remove" href="#" title="Remove"><i class="fa fa-trash-o"></i></a></td> 
+                                            <td><a class="text-danger font-18 remove" href="#" title="Remove"><i class="fa fa-trash-o"></i></a></td>
                                             @endif
                                         </tr>
                                         @endforeach
@@ -152,7 +152,7 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td class="text-right">Total</td>
+                                                <td>Total</td>
                                                 <td>
                                                     <input class="form-control text-right" type="text" id="sum_total" name="total" value="{{$estimatesJoin[0]->total }}" readonly>
                                                 </td>
@@ -180,7 +180,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>                               
+                                    </table>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -228,7 +228,7 @@
             </div>
         </div>
         <!-- /Delete Estimate Modal -->
-        
+
     </div>
     <!-- /Page Wrapper -->
 
@@ -281,10 +281,10 @@
                 // Modifying row id.
                 $(this).attr("id", `R${dig - 1}`);
             });
-        
+
                 // Removing the current row.
                 $(this).closest("tr").remove();
-        
+
                 // Decreasing total number of rows by 1.
                 rowIdx--;
             });
@@ -311,10 +311,10 @@
                 sum += parseFloat($(this).val());
                 });
                 $(".subtotal").text(sum);
-                
+
                 var amounts = sum;
                 var tax     = 100;
-                $(document).on("change keyup blur", "#qty", function() 
+                $(document).on("change keyup blur", "#qty", function()
                 {
                     var qty = $("#qty").val();
                     var discount = $(".discount").val();
@@ -322,7 +322,7 @@
                     $("#sum_total").val(amounts * qty);
                     $("#tax_1").val((amounts * qty)/tax);
                     $("#grand_total").val((parseInt(amounts)) - (parseInt(discount)));
-                }); 
+                });
             }
         </script>
     @endsection

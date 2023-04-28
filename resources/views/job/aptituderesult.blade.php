@@ -18,7 +18,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -31,7 +31,7 @@
                                     <th>Department</th>
                                     <th>Category Wise Mark</th>
                                     <th>Total Mark</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,27 +39,27 @@
                                     <td>1</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Doe <span>Web Designer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Web Developer</a></td>
                                     <td>Development</td>
                                     <td>html - <b>1</b><br>Level1 - <b>0</b><br></td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">
+                                    <td>1</td>
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-dot-circle-o text-danger"></i> Action pending								</a>	
+                                            <i class="fa fa-dot-circle-o text-danger"></i> Action Pending								</a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Resume selected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Resume Selected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Resume Rejected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Aptitude Selected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Aptitude rejected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  video call selected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Video call rejected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Aptitude Rejected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Video Call Selected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Video Call Rejected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Offered</a>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -67,27 +67,27 @@
                                     <td>2</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">Richard Miles <span>Web Developer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Web Designer</a></td>
                                     <td>Designing</td>
                                     <td>html - <b>1</b><br>Level1 - <b>0</b><br></td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">
+                                    <td>1</td>
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-dot-circle-o text-danger"></i> Action pending								</a>	
+                                            <i class="fa fa-dot-circle-o text-danger"></i> Action Pending								</a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Resume selected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Resume Selected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Resume Rejected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Aptitude Selected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Aptitude rejected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  video call selected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Video call rejected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Aptitude Rejected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Video Call Selected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Video Call Rejected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Offered</a>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -95,27 +95,27 @@
                                     <td>3</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Smith <span>Android Developer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Android Developer</a></td>
                                     <td>Android</td>
                                     <td>html - <b>1</b><br>Level1 - <b>0</b><br></td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-center">
+                                    <td>1</td>
+                                    <td>
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-dot-circle-o text-danger"></i> Action pending								</a>	
+                                            <i class="fa fa-dot-circle-o text-danger"></i> Action Pending								</a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Resume selected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-info"></i> Resume Selected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Resume Rejected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Aptitude Selected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Aptitude rejected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  video call selected</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Video call rejected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Aptitude Rejected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Video Call Selected</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-danger"></i>  Video Call Rejected</a>
                                                 <a class="dropdown-item" href="#"><i class="fa fa-dot-circle-o text-success"></i>  Offered</a>
-                                            </div> 
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>

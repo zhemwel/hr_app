@@ -18,7 +18,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -29,7 +29,7 @@
                                     <th>Name</th>
                                     <th>Job Title</th>
                                     <th>Department</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,13 +37,13 @@
                                     <td>1</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Doe <span>Web Designer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Web Developer</a></td>
                                     <td>Development</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Offered
@@ -55,13 +55,13 @@
                                     <td>2</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-09.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">Richard Miles <span>Web Developer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Web Designer</a></td>
                                     <td>Designing</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Offered
@@ -73,13 +73,13 @@
                                     <td>3</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a href="profile.html" class="avatar"><img alt="" src="assets/img/profiles/avatar-10.jpg"></a>
+                                            <a href="profile.html" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                             <a href="profile.html">John Smith <span>Android Developer</span></a>
                                         </h2>
                                     </td>
                                     <td><a href="job-details.html">Android Developer</a></td>
                                     <td>Android</td>
-                                    <td class="text-center">
+                                    <td>
                                         <div class="action-label">
                                             <a class="btn btn-white btn-sm btn-rounded" href="#">
                                                 <i class="fa fa-dot-circle-o text-danger"></i> Offered

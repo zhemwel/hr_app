@@ -88,7 +88,7 @@
                                 <div class="progress mb-2" style="height: 5px;">
                                     <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
-                                <p class="mb-0">Overall Employees 218</p>
+                                <p class="mb-0">OverAll Employees 218</p>
                             </div>
                         </div>
                         <div class="card">
@@ -372,14 +372,14 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Status</th>
-                                            <th class="text-right">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#" class="avatar"><img alt="" src="assets/img/profiles/avatar-19.jpg"></a>
+                                                    <a href="#" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                     <a href="client-profile.html">Barry Cuda <span>CEO</span></a>
                                                 </h2>
                                             </td>
@@ -397,7 +397,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a class="dropdown-item" href="javascript:void(0)">
@@ -405,7 +405,7 @@
                                                         </a>
                                                         <a class="dropdown-item" href="javascript:void(0)">
                                                             <i class="fa fa-trash-o m-r-5"></i> Delete
-                                                        </a> 
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -413,7 +413,7 @@
                                         <tr>
                                             <td>
                                                 <h2 class="table-avatar">
-                                                    <a href="#" class="avatar"><img alt="" src="assets/img/profiles/avatar-19.jpg"></a>
+                                                    <a href="#" class="avatar"><img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}"></a>
                                                     <a href="client-profile.html">Tressa Wexler <span>Manager</span></a>
                                                 </h2>
                                             </td>
@@ -431,7 +431,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -449,11 +449,11 @@
                                             <td>
                                                 <h2 class="table-avatar">
                                                     <a href="client-profile.html" class="avatar">
-                                                        <img alt="" src="assets/img/profiles/avatar-07.jpg">
+                                                        <img alt="" src="{{ URL::to('assets/img/profiles/avatar-17.jpg') }}">
                                                     </a>
                                                     <a href="client-profile.html">Ruby Bartlett <span>CEO</span></a>
                                                 </h2>
-                                             </td>
+                                            </td>
                                             <td>rubybartlett@example.com</td>
                                             <td>
                                                 <div class="dropdown action-label">
@@ -468,7 +468,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -486,7 +486,7 @@
                                             <td>
                                                 <h2 class="table-avatar">
                                                     <a href="client-profile.html" class="avatar">
-                                                        <img alt="" src="assets/img/profiles/avatar-06.jpg">
+                                                        <img alt="" src="{{ URL::to('assets/img/profiles/avatar-06.jpg') }}">
                                                     </a>
                                                     <a href="client-profile.html"> Misty Tison <span>CEO</span></a>
                                                 </h2>
@@ -504,7 +504,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -522,7 +522,7 @@
                                             <td>
                                                 <h2 class="table-avatar">
                                                     <a href="client-profile.html" class="avatar">
-                                                        <img alt="" src="assets/img/profiles/avatar-14.jpg">
+                                                        <img alt="" src="{{ URL::to('assets/img/profiles/avatar-19.jpg') }}">
                                                     </a>
                                                     <a href="client-profile.html"> Daniel Deacon <span>CEO</span></a>
                                                 </h2>
@@ -534,14 +534,14 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a class="dropdown-item" href="#">
                                                             <i class="fa fa-dot-circle-o text-success"></i> Active
-                                                        </a> 
+                                                        </a>
                                                         <a class="dropdown-item" href="#">
                                                             <i class="fa fa-dot-circle-o text-danger"></i> Inactive
                                                         </a>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -573,7 +573,7 @@
                                         <tr>
                                             <th>Project Name </th>
                                             <th>Progress</th>
-                                            <th class="text-right">Action</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -582,9 +582,9 @@
                                                 <h2>
                                                     <a href="project-view.html">Office Management</a>
                                                 </h2>
-                                                <small class="block text-ellipsis">   
-                                                    <span>1</span> <span class="text-muted">open tasks, </span>
-                                                    <span>9</span> <span class="text-muted">tasks completed</span>
+                                                <small class="block text-ellipsis">
+                                                    <span>1</span> <span class="text-muted">Open Tasks, </span>
+                                                    <span>9</span> <span class="text-muted">Tasks Completed</span>
                                                 </small>
                                             </td>
                                             <td>
@@ -592,7 +592,7 @@
                                                     <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="65%" style="width: 65%"></div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -610,10 +610,10 @@
                                             <td>
                                                 <h2>
                                                     <a href="project-view.html">Project Management</a>
-                                                </h2> 
+                                                </h2>
                                                 <small class="block text-ellipsis">
-                                                    <span>2</span> <span class="text-muted">open tasks, </span>
-                                                    <span>5</span> <span class="text-muted">tasks completed</span>
+                                                    <span>2</span> <span class="text-muted">Open Tasks, </span>
+                                                    <span>5</span> <span class="text-muted">Tasks Completed</span>
                                                 </small>
                                             </td>
                                             <td>
@@ -621,7 +621,7 @@
                                                     <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="15%" style="width: 15%"></div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -641,8 +641,8 @@
                                                     <a href="project-view.html">Video Calling App</a>
                                                 </h2>
                                                 <small class="block text-ellipsis">
-                                                    <span>3</span> <span class="text-muted">open tasks, </span>
-                                                    <span>3</span> <span class="text-muted">tasks completed</span>
+                                                    <span>3</span> <span class="text-muted">Open Tasks, </span>
+                                                    <span>3</span> <span class="text-muted">Tasks Completed</span>
                                                 </small>
                                             </td>
                                             <td>
@@ -650,7 +650,7 @@
                                                     <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="49%" style="width: 49%"></div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -670,8 +670,8 @@
                                                     <a href="project-view.html">Hospital Administration</a>
                                                 </h2>
                                                 <small class="block text-ellipsis">
-                                                    <span>12</span> <span class="text-muted">open tasks, </span>
-                                                    <span>4</span> <span class="text-muted">tasks completed</span>
+                                                    <span>12</span> <span class="text-muted">Open Tasks, </span>
+                                                    <span>4</span> <span class="text-muted">Tasks Completed</span>
                                                 </small>
                                             </td>
                                             <td>
@@ -679,7 +679,7 @@
                                                     <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="88%" style="width: 88%"></div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
@@ -699,17 +699,17 @@
                                                     <a href="project-view.html">Digital Marketplace</a>
                                                 </h2>
                                                 <small class="block text-ellipsis">
-                                                    <span>7</span> <span class="text-muted">open tasks, </span>
-                                                    <span>14</span> <span class="text-muted">tasks completed</span>
+                                                    <span>7</span> <span class="text-muted">Open Tasks, </span>
+                                                    <span>14</span> <span class="text-muted">Tasks Completed</span>
                                                 </small>
-                                            
+
                                             </td>
                                             <td>
                                                 <div class="progress progress-xs progress-striped">
                                                     <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="100%" style="width: 100%"></div>
                                                 </div>
                                             </td>
-                                            <td class="text-right">
+                                            <td>
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">

@@ -8,7 +8,7 @@
 
         <!-- Page Content -->
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row align-items-center">
@@ -25,10 +25,10 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -36,7 +36,7 @@
                         <label class="focus-label">From</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <div class="cal-icon">
                             <input class="form-control floating datetimepicker" type="text">
@@ -44,9 +44,9 @@
                         <label class="focus-label">To</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>Select Status</option>
                             <option>Accepted</option>
                             <option>Declined</option>
@@ -55,16 +55,16 @@
                         <label class="focus-label">Status</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- /Search Filter -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table class="table table-striped custom-table mb-0">
+                        <table class="table table-striped custom-table mb-0 datatable">
                             <thead>
                                 <tr>
                                     <th>Estimate Number</th>
@@ -73,7 +73,7 @@
                                     <th>Expiry Date</th>
                                     <th>Total</th>
                                     <th>Status</th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,7 +87,7 @@
                                     <td>{{date('d F, Y',strtotime($item->expiry_date)) }}</td>
                                     <td>${{ $item->total }}</td>
                                     <td><span class="badge bg-inverse-success">Accepted</span></td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -105,7 +105,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Delete Estimate Modal -->
         <div class="modal custom-modal fade" id="delete_estimate" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -133,10 +133,10 @@
             </div>
         </div>
         <!-- /Delete Estimate Modal -->
-    
+
     </div>
     <!-- /Page Wrapper -->
- 
+
     @section('script')
          {{-- delete model --}}
          <script>

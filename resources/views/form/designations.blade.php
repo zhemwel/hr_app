@@ -1,13 +1,13 @@
 
 @extends('layouts.master')
 @section('content')
-  
+
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-    
+
         <!-- Page Content -->
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row align-items-center">
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -34,7 +34,7 @@
                                     <th style="width: 30px;">#</th>
                                     <th>Designation </th>
                                     <th>Department </th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,7 +42,7 @@
                                     <td>1</td>
                                     <td>Web Designer</td>
                                     <td>Web Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -56,7 +56,7 @@
                                     <td>2</td>
                                     <td>Web Developer</td>
                                     <td>Web Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -70,7 +70,7 @@
                                     <td>3</td>
                                     <td>Android Developer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -84,7 +84,7 @@
                                     <td>4</td>
                                     <td>IOS Developer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -98,7 +98,7 @@
                                     <td>5</td>
                                     <td>UI Designer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -112,7 +112,7 @@
                                     <td>6</td>
                                     <td>UX Designer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -126,7 +126,7 @@
                                     <td>7</td>
                                     <td>IT Technician</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -140,7 +140,7 @@
                                     <td>8</td>
                                     <td>Product Manager</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -154,7 +154,7 @@
                                     <td>9</td>
                                     <td>SEO Analyst</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -168,7 +168,7 @@
                                     <td>10</td>
                                     <td>Front End Designer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -182,7 +182,7 @@
                                     <td>11</td>
                                     <td>Front End Developer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -196,7 +196,7 @@
                                     <td>12</td>
                                     <td>Systems Engineer</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -210,7 +210,7 @@
                                     <td>13</td>
                                     <td>Systems Administrator</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -224,7 +224,7 @@
                                     <td>14</td>
                                     <td>Technical Lead</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -238,7 +238,7 @@
                                     <td>15</td>
                                     <td>Quality Assurance</td>
                                     <td>Application Development</td>
-                                    <td class="text-right">
+                                    <td>
                                     <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -290,7 +290,7 @@
             </div>
         </div>
         <!-- /Add Designation Modal -->
-        
+
         <!-- Edit Designation Modal -->
         <div id="edit_designation" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -325,7 +325,7 @@
             </div>
         </div>
         <!-- /Edit Designation Modal -->
-        
+
         <!-- Delete Designation Modal -->
         <div class="modal custom-modal fade" id="delete_designation" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -350,11 +350,11 @@
             </div>
         </div>
         <!-- /Delete Designation Modal -->
-    
+
     </div>
     <!-- /Page Wrapper -->
 
     @section('script')
-    
+
     @endsection
 @endsection

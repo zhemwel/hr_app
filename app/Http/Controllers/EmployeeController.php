@@ -12,437 +12,468 @@ use App\Models\module_permission;
 
 class EmployeeController extends Controller
 {
-    // all employee card view
+    // All Employee Card View
     public function cardAllEmployee(Request $request)
     {
         $users = DB::table('users')
-                    ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                    ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                    ->get(); 
-        $userList = DB::table('users')->get();
-        $permission_lists = DB::table('permission_lists')->get();
-        return view('form.allemployeecard',compact('users','userList','permission_lists'));
+            ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+            ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+            ->get();
+
+        $userList = DB::table('users')
+            ->get();
+
+        $permission_lists = DB::table('permission_lists')
+            ->get();
+
+        return view('form.allemployeecard', compact('users', 'userList', 'permission_lists'));
     }
-    // all employee list
+
+    // All Employee List
     public function listAllEmployee()
     {
         $users = DB::table('users')
-                    ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                    ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                    ->get();
-        $userList = DB::table('users')->get();
-        $permission_lists = DB::table('permission_lists')->get();
-        return view('form.employeelist',compact('users','userList','permission_lists'));
+            ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+            ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+            ->get();
+
+        $userList = DB::table('users')
+            ->get();
+        $permission_lists = DB::table('permission_lists')
+            ->get();
+
+        return view('form.employeelist', compact('users', 'userList', 'permission_lists'));
     }
 
-    // save data employee
+    // Save Data Employee
     public function saveRecord(Request $request)
     {
         $request->validate([
-            'name'        => 'required|string|max:255',
-            'email'       => 'required|string|email',
-            'birthDate'   => 'required|string|max:255',
-            'gender'      => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email',
+            'birthDate' => 'required|string|max:255',
+            'gender' => 'required|string|max:255',
             'employee_id' => 'required|string|max:255',
-            'company'     => 'required|string|max:255',
+            'company' => 'required|string|max:255',
         ]);
 
         DB::beginTransaction();
-        try{
+        try {
+            $employees = Employee::where('email', '=', $request->email)
+                ->first();
 
-            $employees = Employee::where('email', '=',$request->email)->first();
-            if ($employees === null)
-            {
-
+            if ($employees === null) {
                 $employee = new Employee;
-                $employee->name         = $request->name;
-                $employee->email        = $request->email;
-                $employee->birth_date   = $request->birthDate;
-                $employee->gender       = $request->gender;
-                $employee->employee_id  = $request->employee_id;
-                $employee->company      = $request->company;
+                $employee->name = $request->name;
+                $employee->email = $request->email;
+                $employee->birth_date = $request->birthDate;
+                $employee->gender = $request->gender;
+                $employee->employee_id = $request->employee_id;
+                $employee->company = $request->company;
                 $employee->save();
-    
-                for($i=0;$i<count($request->id_count);$i++)
-                {
+
+                for ($i=0; $i < count($request->id_count); $i++) {
                     $module_permissions = [
                         'employee_id' => $request->employee_id,
                         'module_permission' => $request->permission[$i],
-                        'id_count'          => $request->id_count[$i],
-                        'read'              => $request->read[$i],
-                        'write'             => $request->write[$i],
-                        'create'            => $request->create[$i],
-                        'delete'            => $request->delete[$i],
-                        'import'            => $request->import[$i],
-                        'export'            => $request->export[$i],
+                        'id_count' => $request->id_count[$i],
+                        'read' => $request->read[$i],
+                        'write' => $request->write[$i],
+                        'create' => $request->create[$i],
+                        'delete' => $request->delete[$i],
+                        'import' => $request->import[$i],
+                        'export' => $request->export[$i],
                     ];
-                    DB::table('module_permissions')->insert($module_permissions);
+
+                    DB::table('module_permissions')
+                        ->insert($module_permissions);
                 }
-                
+
                 DB::commit();
-                Toastr::success('Add new employee successfully :)','Success');
+                Toastr::success('Add New Employee Success', 'Success');
                 return redirect()->route('all/employee/card');
             } else {
                 DB::rollback();
-                Toastr::error('Add new employee exits :)','Error');
+                Toastr::error('Employee Exits', 'Error');
                 return redirect()->back();
             }
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollback();
-            Toastr::error('Add new employee fail :)','Error');
+            Toastr::error('Add New Employee Fail', 'Error');
             return redirect()->back();
         }
     }
-    // view edit record
+
+    // View Edit Record
     public function viewRecord($employee_id)
     {
         $permission = DB::table('employees')
             ->join('module_permissions', 'employees.employee_id', '=', 'module_permissions.employee_id')
             ->select('employees.*', 'module_permissions.*')
-            ->where('employees.employee_id','=',$employee_id)
+            ->where('employees.employee_id', '=', $employee_id)
             ->get();
-        $employees = DB::table('employees')->where('employee_id',$employee_id)->get();
-        return view('form.edit.editemployee',compact('employees','permission'));
+
+        $employees = DB::table('employees')
+            ->where('employee_id', $employee_id)->get();
+
+        return view('form.edit.editemployee', compact('employees', 'permission'));
     }
-    // update record employee
-    public function updateRecord( Request $request)
+
+    // Update Record Employee
+    public function updateRecord(Request $request)
     {
         DB::beginTransaction();
-        try{
-            // update table Employee
+        try {
+            // Update Table Employee
             $updateEmployee = [
-                'id'=>$request->id,
-                'name'=>$request->name,
-                'email'=>$request->email,
-                'birth_date'=>$request->birth_date,
-                'gender'=>$request->gender,
-                'employee_id'=>$request->employee_id,
-                'company'=>$request->company,
-            ];
-            // update table user
-            $updateUser = [
-                'id'=>$request->id,
-                'name'=>$request->name,
-                'email'=>$request->email,
+                'id' => $request->id,
+                'name' => $request->name,
+                'email' => $request->email,
+                'birth_date' => $request->birth_date,
+                'gender' => $request->gender,
+                'employee_id' => $request->employee_id,
+                'company' => $request->company,
             ];
 
-            // update table module_permissions
-            for($i=0;$i<count($request->id_permission);$i++)
-            {
+            // Update Table User
+            $updateUser = [
+                'id' => $request->id,
+                'name' => $request->name,
+                'email' => $request->email,
+            ];
+
+            // Update Table module_permissions
+            for ($i=0; $i < count($request->id_permission); $i++) {
                 $UpdateModule_permissions = [
                     'employee_id' => $request->employee_id,
                     'module_permission' => $request->permission[$i],
-                    'id'                => $request->id_permission[$i],
-                    'read'              => $request->read[$i],
-                    'write'             => $request->write[$i],
-                    'create'            => $request->create[$i],
-                    'delete'            => $request->delete[$i],
-                    'import'            => $request->import[$i],
-                    'export'            => $request->export[$i],
+                    'id' => $request->id_permission[$i],
+                    'read' => $request->read[$i],
+                    'write' => $request->write[$i],
+                    'create' => $request->create[$i],
+                    'delete' => $request->delete[$i],
+                    'import' => $request->import[$i],
+                    'export' => $request->export[$i],
                 ];
-                module_permission::where('id',$request->id_permission[$i])->update($UpdateModule_permissions);
+
+                module_permission::where('id',$request->id_permission[$i])
+                    ->update($UpdateModule_permissions);
             }
 
-            User::where('id',$request->id)->update($updateUser);
-            Employee::where('id',$request->id)->update($updateEmployee);
-        
+            User::where('id', $request->id)
+                ->update($updateUser);
+            Employee::where('id', $request->id)
+                ->update($updateEmployee);
+
             DB::commit();
-            Toastr::success('updated record successfully :)','Success');
+            Toastr::success('Updated Record Success', 'Success');
             return redirect()->route('all/employee/card');
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollback();
-            Toastr::error('updated record fail :)','Error');
+            Toastr::error('Updated Record Fail', 'Error');
             return redirect()->back();
         }
     }
-    // delete record
+
+    // Delete Record
     public function deleteRecord($employee_id)
     {
         DB::beginTransaction();
-        try{
-
-            Employee::where('employee_id',$employee_id)->delete();
-            module_permission::where('employee_id',$employee_id)->delete();
+        try {
+            Employee::where('employee_id', $employee_id)
+                ->delete();
+            module_permission::where('employee_id', $employee_id)
+                ->delete();
 
             DB::commit();
-            Toastr::success('Delete record successfully :)','Success');
+            Toastr::success('Delete Record Success', 'Success');
             return redirect()->route('all/employee/card');
-
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollback();
-            Toastr::error('Delete record fail :)','Error');
+            Toastr::error('Delete Record Fail', 'Error');
             return redirect()->back();
         }
     }
-    // employee search
+
+    // Employee Search
     public function employeeSearch(Request $request)
     {
         $users = DB::table('users')
-                    ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                    ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                    ->get();
-        $permission_lists = DB::table('permission_lists')->get();
-        $userList = DB::table('users')->get();
+            ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+            ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+            ->get();
 
-        // search by id
-        if($request->employee_id)
-        {
+        $permission_lists = DB::table('permission_lists')
+            ->get();
+
+        $userList = DB::table('users')
+            ->get();
+
+        // Search By Id
+        if ($request->employee_id) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->get();
-        }
-        // search by name
-        if($request->name)
-        {
-            $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->get();
-        }
-        // search by name
-        if($request->position)
-        {
-            $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->get();
         }
 
-        // search by name and id
-        if($request->employee_id && $request->name)
-        {
+        // Search By Name
+        if ($request->name) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->get();
         }
-        // search by position and id
-        if($request->employee_id && $request->position)
-        {
+
+        // Search By Name
+        if ($request->position) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
         }
-        // search by name and position
-        if($request->name && $request->position)
-        {
+
+        // Search By Name & Id
+        if ($request->employee_id && $request->name) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->get();
         }
-         // search by name and position and id
-         if($request->employee_id && $request->name && $request->position)
-         {
-             $users = DB::table('users')
-                         ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                         ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                         ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                         ->where('users.name','LIKE','%'.$request->name.'%')
-                         ->where('users.position','LIKE','%'.$request->position.'%')
-                         ->get();
-         }
-        return view('form.allemployeecard',compact('users','userList','permission_lists'));
+
+        // Search By Position & Id
+        if ($request->employee_id && $request->position) {
+            $users = DB::table('users')
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
+        }
+
+        // Search By Name & Position
+        if ($request->name && $request->position) {
+            $users = DB::table('users')
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
+        }
+
+        // Search By Name, Position & Id
+        if ($request->employee_id && $request->name && $request->position) {
+            $users = DB::table('users')
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
+        }
+        return view('form.allemployeecard', compact('users', 'userList', 'permission_lists'));
     }
+
     public function employeeListSearch(Request $request)
     {
         $users = DB::table('users')
-                    ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                    ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                    ->get(); 
-        $permission_lists = DB::table('permission_lists')->get();
-        $userList = DB::table('users')->get();
+            ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+            ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+            ->get();
 
-        // search by id
-        if($request->employee_id)
-        {
+        $permission_lists = DB::table('permission_lists')
+            ->get();
+
+        $userList = DB::table('users')
+            ->get();
+
+        // Search By Id
+        if ($request->employee_id) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->get();
-        }
-        // search by name
-        if($request->name)
-        {
-            $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->get();
-        }
-        // search by name
-        if($request->position)
-        {
-            $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->get();
         }
 
-        // search by name and id
-        if($request->employee_id && $request->name)
-        {
+        // Search By Name
+        if ($request->name) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->get();
         }
-        // search by position and id
-        if($request->employee_id && $request->position)
-        {
+
+        // Search By Position
+        if ($request->position) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
         }
-        // search by name and position
-        if($request->name && $request->position)
-        {
+
+        // Search By Name & Id
+        if ($request->employee_id && $request->name) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->get();
         }
-        // search by name and position and id
-        if($request->employee_id && $request->name && $request->position)
-        {
+
+        // Search By Position & Id
+        if ($request->employee_id && $request->position) {
             $users = DB::table('users')
-                        ->join('employees', 'users.user_id', '=', 'employees.employee_id')
-                        ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
-                        ->where('employee_id','LIKE','%'.$request->employee_id.'%')
-                        ->where('users.name','LIKE','%'.$request->name.'%')
-                        ->where('users.position','LIKE','%'.$request->position.'%')
-                        ->get();
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
         }
-        return view('form.employeelist',compact('users','userList','permission_lists'));
+
+        // Search By Name & Position
+        if ($request->name && $request->position) {
+            $users = DB::table('users')
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('users.name', 'LIKE','%'.$request->name.'%')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
+        }
+
+        // Search By Name, Position & Id
+        if ($request->employee_id && $request->name && $request->position) {
+            $users = DB::table('users')
+                ->join('employees', 'users.user_id', '=', 'employees.employee_id')
+                ->select('users.*', 'employees.birth_date', 'employees.gender', 'employees.company')
+                ->where('employee_id', 'LIKE', '%'.$request->employee_id.'%')
+                ->where('users.name', 'LIKE', '%'.$request->name.'%')
+                ->where('users.position', 'LIKE', '%'.$request->position.'%')
+                ->get();
+        }
+
+        return view('form.employeelist', compact('users', 'userList', 'permission_lists'));
     }
 
-    // employee profile with all controller user
+    // Employee Profile With All Controller User
     public function profileEmployee($user_id)
     {
         $users = DB::table('users')
-                ->leftJoin('personal_information','personal_information.user_id','users.user_id')
-                ->leftJoin('profile_information','profile_information.user_id','users.user_id')
-                ->where('users.user_id',$user_id)
-                ->first();
+            ->leftJoin('personal_information', 'personal_information.user_id', 'users.user_id')
+            ->leftJoin('profile_information', 'profile_information.user_id', 'users.user_id')
+            ->where('users.user_id', $user_id)
+            ->first();
+
         $user = DB::table('users')
-                ->leftJoin('personal_information','personal_information.user_id','users.user_id')
-                ->leftJoin('profile_information','profile_information.user_id','users.user_id')
-                ->where('users.user_id',$user_id)
-                ->get(); 
-        return view('form.employeeprofile',compact('user','users'));
+            ->leftJoin('personal_information', 'personal_information.user_id', 'users.user_id')
+            ->leftJoin('profile_information', 'profile_information.user_id', 'users.user_id')
+            ->where('users.user_id', $user_id)
+            ->get();
+
+        return view('form.employeeprofile', compact('user', 'users'));
     }
 
-    /** page departments */
+    /** Page Departments */
     public function index()
     {
-        $departments = DB::table('departments')->get();
-        return view('form.departments',compact('departments'));
+        $departments = DB::table('departments')
+            ->get();
+
+        return view('form.departments', compact('departments'));
     }
 
-    /** save record department */
+    /** Save Record Department */
     public function saveRecordDepartment(Request $request)
     {
         $request->validate([
-            'department'        => 'required|string|max:255',
+            'department'    =>  'required|string|max:255',
         ]);
 
         DB::beginTransaction();
-        try{
+        try {
+            $department = department::where('department',$request->department)
+                ->first();
 
-            $department = department::where('department',$request->department)->first();
-            if ($department === null)
-            {
+            if ($department === null) {
                 $department = new department;
                 $department->department = $request->department;
                 $department->save();
-    
+
                 DB::commit();
-                Toastr::success('Add new department successfully :)','Success');
+                Toastr::success('Add New Department Success', 'Success');
                 return redirect()->route('form/departments/page');
             } else {
                 DB::rollback();
-                Toastr::error('Add new department exits :)','Error');
+                Toastr::error('Department Exits', 'Error');
                 return redirect()->back();
             }
-        }catch(\Exception $e){
+
+        } catch (\Exception $e) {
             DB::rollback();
-            Toastr::error('Add new department fail :)','Error');
+            Toastr::error('Add New Department Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    /** update record department */
+    /** Update Record Department */
     public function updateRecordDepartment(Request $request)
     {
         DB::beginTransaction();
         try{
-            // update table departments
+            // Update Table Departments
             $department = [
                 'id'=>$request->id,
                 'department'=>$request->department,
             ];
-            department::where('id',$request->id)->update($department);
-        
+            department::where('id',$request->id)
+                ->update($department);
+
             DB::commit();
-            Toastr::success('updated record successfully :)','Success');
+            Toastr::success('Updated Record Success', 'Success');
             return redirect()->route('form/departments/page');
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('updated record fail :)','Error');
+            Toastr::error('Updated Record Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    /** delete record department */
-    public function deleteRecordDepartment(Request $request) 
+    /** Delete Record Department */
+    public function deleteRecordDepartment(Request $request)
     {
         try {
-
             department::destroy($request->id);
-            Toastr::success('Department deleted successfully :)','Success');
+            Toastr::success('Department Deleted Success', 'Success');
             return redirect()->back();
-        
-        } catch(\Exception $e) {
 
+        } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Department delete fail :)','Error');
+            Toastr::error('Department Delete Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    /** page designations */
+    /** Page Designations */
     public function designationsIndex()
     {
         return view('form.designations');
     }
 
-    /** page time sheet */
+    /** Page Time Sheet */
     public function timeSheetIndex()
     {
         return view('form.timesheet');
     }
 
-    /** page overtime */
+    /** Page Overtime */
     public function overTimeIndex()
     {
         return view('form.overtime');

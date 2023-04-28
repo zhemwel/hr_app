@@ -37,13 +37,13 @@
                 </div>
             </div>
             <!-- /Page Tab -->
-            
+
             <!-- Tab Content -->
             <div class="tab-content">
-            
+
                 <!-- Additions Tab -->
                 <div class="tab-pane show active" id="tab_additions">
-                
+
                     <!-- Add Addition Button -->
                     <div class="text-right mb-4 clearfix">
                         <button class="btn btn-primary add-btn" type="button" data-toggle="modal" data-target="#add_addition"><i class="fa fa-plus"></i> Add Addition</button>
@@ -53,21 +53,21 @@
                     <!-- Payroll Additions Table -->
                     <div class="payroll-table card">
                         <div class="table-responsive">
-                            <table class="table table-hover table-radius">
+                            <table class="table table-hover table-radius datatable">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Category</th>
                                         <th>Default/Unit Amount</th>
-                                        <th class="text-right">Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Leave balance amount</th>
-                                        <td>Monthly remuneration</td>
+                                        <th>Leave Balance Amount</th>
+                                        <td>Monthly Remuneration</td>
                                         <td>$5</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -78,10 +78,10 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Arrears of salary</th>
-                                        <td>Additional remuneration</td>
+                                        <th>Arrears Of Salary</th>
+                                        <td>Additional Remuneration</td>
                                         <td>$8</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -93,9 +93,9 @@
                                     </tr>
                                     <tr>
                                         <th>Gratuity</th>
-                                        <td>Monthly remuneration</td>
+                                        <td>Monthly Remuneration</td>
                                         <td>$20</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -110,13 +110,13 @@
                         </div>
                     </div>
                     <!-- /Payroll Additions Table -->
-                    
+
                 </div>
                 <!-- Additions Tab -->
-                
+
                 <!-- Overtime Tab -->
                 <div class="tab-pane" id="tab_overtime">
-                
+
                     <!-- Add Overtime Button -->
                     <div class="text-right mb-4 clearfix">
                         <button class="btn btn-primary add-btn" type="button" data-toggle="modal" data-target="#add_overtime"><i class="fa fa-plus"></i> Add Overtime</button>
@@ -126,19 +126,19 @@
                     <!-- Payroll Overtime Table -->
                     <div class="payroll-table card">
                         <div class="table-responsive">
-                            <table class="table table-hover table-radius">
+                            <table class="table table-hover table-radius datatable">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Rate</th>
-                                        <th class="text-right">Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Normal day OT 1.5x</th>
+                                        <th>Normal Day OT 1.5x</th>
                                         <td>Hourly 1.5</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -149,9 +149,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Public holiday OT 3.0x</th>
+                                        <th>Public Holiday OT 3.0x</th>
                                         <td>Hourly 3</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -162,9 +162,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Rest day OT 2.0x</th>
+                                        <th>Rest Day OT 2.0x</th>
                                         <td>Hourly 2</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -179,13 +179,13 @@
                         </div>
                     </div>
                     <!-- /Payroll Overtime Table -->
-                    
+
                 </div>
                 <!-- /Overtime Tab -->
-                
+
                 <!-- Deductions Tab -->
                 <div class="tab-pane" id="tab_deductions">
-                
+
                     <!-- Add Deductions Button -->
                     <div class="text-right mb-4 clearfix">
                         <button class="btn btn-primary add-btn" type="button" data-toggle="modal" data-target="#add_deduction"><i class="fa fa-plus"></i> Add Deduction</button>
@@ -195,19 +195,19 @@
                     <!-- Payroll Deduction Table -->
                     <div class="payroll-table card">
                         <div class="table-responsive">
-                            <table class="table table-hover table-radius">
+                            <table class="table table-hover table-radius datatable">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Default/Unit Amount</th>
-                                        <th class="text-right">Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Absent amount</th>
+                                        <th>Absent Amount</th>
                                         <td>$12</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -220,7 +220,7 @@
                                     <tr>
                                         <th>Advance</th>
                                         <td>$7</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -231,9 +231,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Unpaid leave</th>
+                                        <th>Unpaid Leave</th>
                                         <td>$3</td>
-                                        <td class="text-right">
+                                        <td>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                 <div class="dropdown-menu dropdown-menu-right">
@@ -248,15 +248,15 @@
                         </div>
                     </div>
                     <!-- /Payroll Deduction Table -->
-                    
+
                 </div>
                 <!-- /Deductions Tab -->
-                
+
             </div>
             <!-- Tab Content -->
         </div>
 		<!-- /Page Content -->
-				
+
         <!-- Add Addition Modal -->
         <div id="add_addition" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -276,13 +276,13 @@
                             <div class="form-group">
                                 <label>Category <span class="text-danger">*</span></label>
                                 <select class="select">
-                                    <option>Select a category</option>
-                                    <option>Monthly remuneration</option>
-                                    <option>Additional remuneration</option>
+                                    <option>Select a Category</option>
+                                    <option>Monthly Remuneration</option>
+                                    <option>Additional Remuneration</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Unit calculation</label>
+                                <label class="d-block">Unit Calculation</label>
                                 <div class="status-toggle">
                                     <input type="checkbox" id="unit_calculation" class="check">
                                     <label for="unit_calculation" class="checktoggle">checkbox</label>
@@ -305,13 +305,13 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="addition_assignee" id="addition_no_emp" value="option1" checked>
                                     <label class="form-check-label" for="addition_no_emp">
-                                    No assignee
+                                    No Assignee
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="addition_assignee" id="addition_all_emp" value="option2">
                                     <label class="form-check-label" for="addition_all_emp">
-                                    All employees
+                                    All Employees
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -338,7 +338,7 @@
             </div>
         </div>
         <!-- /Add Addition Modal -->
-        
+
         <!-- Edit Addition Modal -->
         <div id="edit_addition" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -358,13 +358,13 @@
                             <div class="form-group">
                                 <label>Category <span class="text-danger">*</span></label>
                                 <select class="select">
-                                    <option>Select a category</option>
-                                    <option>Monthly remuneration</option>
-                                    <option>Additional remuneration</option>
+                                    <option>Select a Category</option>
+                                    <option>Monthly Remuneration</option>
+                                    <option>Additional Remuneration</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Unit calculation</label>
+                                <label class="d-block">Unit Calculation</label>
                                 <div class="status-toggle">
                                     <input type="checkbox" id="edit_unit_calculation" class="check">
                                     <label for="edit_unit_calculation" class="checktoggle">checkbox</label>
@@ -387,13 +387,13 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="edit_addition_assignee" id="edit_addition_no_emp" value="option1" checked>
                                     <label class="form-check-label" for="edit_addition_no_emp">
-                                    No assignee
+                                    No Assignee
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="edit_addition_assignee" id="edit_addition_all_emp" value="option2">
                                     <label class="form-check-label" for="edit_addition_all_emp">
-                                    All employees
+                                    All Employees
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -420,7 +420,7 @@
             </div>
         </div>
         <!-- /Edit Addition Modal -->
-        
+
         <!-- Delete Addition Modal -->
         <div class="modal custom-modal fade" id="delete_addition" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -445,7 +445,7 @@
             </div>
         </div>
         <!-- /Delete Addition Modal -->
-				
+
         <!-- Add Overtime Modal -->
         <div id="add_overtime" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -483,7 +483,7 @@
             </div>
         </div>
         <!-- /Add Overtime Modal -->
-        
+
         <!-- Edit Overtime Modal -->
         <div id="edit_overtime" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -521,7 +521,7 @@
             </div>
         </div>
         <!-- /Edit Overtime Modal -->
-        
+
         <!-- Delete Overtime Modal -->
         <div class="modal custom-modal fade" id="delete_overtime" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -546,7 +546,7 @@
             </div>
         </div>
         <!-- /Delete Overtime Modal -->
-        
+
         <!-- Add Deduction Modal -->
         <div id="add_deduction" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -564,7 +564,7 @@
                                 <input class="form-control" type="text">
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Unit calculation</label>
+                                <label class="d-block">Unit Calculation</label>
                                 <div class="status-toggle">
                                     <input type="checkbox" id="unit_calculation_deduction" class="check">
                                     <label for="unit_calculation_deduction" class="checktoggle">checkbox</label>
@@ -587,13 +587,13 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="deduction_assignee" id="deduction_no_emp" value="option1" checked>
                                     <label class="form-check-label" for="deduction_no_emp">
-                                    No assignee
+                                    No Assignee
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="deduction_assignee" id="deduction_all_emp" value="option2">
                                     <label class="form-check-label" for="deduction_all_emp">
-                                    All employees
+                                    All Employees
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -620,7 +620,7 @@
             </div>
         </div>
         <!-- /Add Deduction Modal -->
-				
+
         <!-- Edit Deduction Modal -->
         <div id="edit_deduction" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -638,7 +638,7 @@
                                 <input class="form-control" type="text">
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Unit calculation</label>
+                                <label class="d-block">Unit Calculation</label>
                                 <div class="status-toggle">
                                     <input type="checkbox" id="edit_unit_calculation_deduction" class="check">
                                     <label for="edit_unit_calculation_deduction" class="checktoggle">checkbox</label>
@@ -661,13 +661,13 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="edit_deduction_assignee" id="edit_deduction_no_emp" value="option1" checked>
                                     <label class="form-check-label" for="edit_deduction_no_emp">
-                                    No assignee
+                                    No Assignee
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="edit_deduction_assignee" id="edit_deduction_all_emp" value="option2">
                                     <label class="form-check-label" for="edit_deduction_all_emp">
-                                    All employees
+                                    All Employees
                                     </label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -694,7 +694,7 @@
             </div>
         </div>
         <!-- /Edit Addition Modal -->
-        
+
         <!-- Delete Deduction Modal -->
         <div class="modal custom-modal fade" id="delete_deduction" role="dialog">
             <div class="modal-dialog modal-dialog-centered">

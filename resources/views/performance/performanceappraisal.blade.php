@@ -23,7 +23,7 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -35,7 +35,7 @@
                                     <th>Department</th>
                                     <th>Appraisal Date</th>
                                     <th>Status</th>
-                                    <th class="text-right">Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,7 +81,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-right">
+                                    <td>
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
@@ -366,7 +366,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="submit-section">
                                 <button type="submit" class="btn btn-primary submit-btn">Submit</button>
                             </div>
@@ -376,7 +376,7 @@
             </div>
         </div>
         <!-- /Add Performance Appraisal Modal -->
-        
+
         <!-- Edit Performance Appraisal Modal -->
         <div id="edit_appraisal" class="modal custom-modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -651,7 +651,7 @@
             </div>
         </div>
         <!-- /Edit Performance Appraisal Modal -->
-        
+
         <!-- Delete Performance Appraisal Modal -->
         <div class="modal custom-modal fade" id="delete_appraisal" role="dialog">
             <div class="modal-dialog modal-dialog-centered">
@@ -683,7 +683,7 @@
     </div>
     <!-- /Page Wrapper -->
     @section('script')
-    
+
     {{-- update js --}}
     <script>
         $(document).on('click','.edit_appraisal',function()
@@ -695,7 +695,7 @@
             var name = (_this.find(".name").text());
             var _option = '<option selected value="' + name + '">' + _this.find('.name').text() + '</option>'
             $( _option).appendTo("#e_name");
-        
+
             var designation = (_this.find(".designation").text());
             var _option = '<option selected value="' + designation + '">' + _this.find('.designation').text() + '</option>'
             $( _option).appendTo("#e_designation");
@@ -779,6 +779,6 @@
         });
     </script>
     @endsection
-    
+
 
 @endsection

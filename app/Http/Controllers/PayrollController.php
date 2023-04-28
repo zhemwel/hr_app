@@ -9,138 +9,144 @@ use Brian2694\Toastr\Facades\Toastr;
 
 class PayrollController extends Controller
 {
-    // view page salary
+    // View Page Salary
     public function salary()
     {
-        $users            = DB::table('users')->join('staff_salaries', 'users.user_id', '=', 'staff_salaries.user_id')->select('users.*', 'staff_salaries.*')->get(); 
-        $userList         = DB::table('users')->get();
-        $permission_lists = DB::table('permission_lists')->get();
-        return view('payroll.employeesalary',compact('users','userList','permission_lists'));
+        $users = DB::table('users')
+            ->join('staff_salaries', 'users.user_id', '=', 'staff_salaries.user_id')
+            ->select('users.*', 'staff_salaries.*')
+            ->get();
+
+        $userList = DB::table('users')
+            ->get();
+
+        $permission_lists = DB::table('permission_lists')
+            ->get();
+
+        return view('payroll.employeesalary', compact('users', 'userList', 'permission_lists'));
     }
 
-    // save record
+    // Save Record
     public function saveRecord(Request $request)
     {
-    $request->validate([
-        'name'         => 'required|string|max:255',
-        'salary'       => 'required|string|max:255',
-        'basic' => 'required|string|max:255',
-        'da'    => 'required|string|max:255',
-        'hra'    => 'required|string|max:255',
-        'conveyance' => 'required|string|max:255',
-        'allowance'  => 'required|string|max:255',
-        'medical_allowance' => 'required|string|max:255',
-        'tds' => 'required|string|max:255',
-        'esi' => 'required|string|max:255',
-        'pf'  => 'required|string|max:255',
-        'leave'    => 'required|string|max:255',
-        'prof_tax' => 'required|string|max:255',
-        'labour_welfare' => 'required|string|max:255',
-    ]);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'salary' => 'required|string|max:255',
+            'basic' => 'required|string|max:255',
+            'da' => 'required|string|max:255',
+            'hra' => 'required|string|max:255',
+            'conveyance' => 'required|string|max:255',
+            'allowance' => 'required|string|max:255',
+            'medical_allowance' => 'required|string|max:255',
+            'tds' => 'required|string|max:255',
+            'esi' => 'required|string|max:255',
+            'pf' => 'required|string|max:255',
+            'leave' => 'required|string|max:255',
+            'prof_tax' => 'required|string|max:255',
+            'labour_welfare' => 'required|string|max:255',
+        ]);
 
-    DB::beginTransaction();
-    try {
-        $salary = StaffSalary::updateOrCreate(['user_id' => $request->user_id]);
-        $salary->name              = $request->name;
-        $salary->user_id            = $request->user_id;
-        $salary->salary            = $request->salary;
-        $salary->basic             = $request->basic;
-        $salary->da                = $request->da;
-        $salary->hra               = $request->hra;
-        $salary->conveyance        = $request->conveyance;
-        $salary->allowance         = $request->allowance;
-        $salary->medical_allowance = $request->medical_allowance;
-        $salary->tds               = $request->tds;
-        $salary->esi               = $request->esi;
-        $salary->pf                = $request->pf;
-        $salary->leave             = $request->leave;
-        $salary->prof_tax          = $request->prof_tax;
-        $salary->labour_welfare    = $request->labour_welfare;
-        $salary->save();
+        DB::beginTransaction();
+        try {
+            $salary = StaffSalary::updateOrCreate(['user_id' => $request->user_id]);
+            $salary->name = $request->name;
+            $salary->user_id = $request->user_id;
+            $salary->salary = $request->salary;
+            $salary->basic = $request->basic;
+            $salary->da = $request->da;
+            $salary->hra = $request->hra;
+            $salary->conveyance = $request->conveyance;
+            $salary->allowance = $request->allowance;
+            $salary->medical_allowance = $request->medical_allowance;
+            $salary->tds = $request->tds;
+            $salary->esi = $request->esi;
+            $salary->pf = $request->pf;
+            $salary->leave = $request->leave;
+            $salary->prof_tax = $request->prof_tax;
+            $salary->labour_welfare = $request->labour_welfare;
+            $salary->save();
 
-        DB::commit();
-        Toastr::success('Create new Salary successfully :)','Success');
-        return redirect()->back();
-    } catch(\Exception $e) {
-        DB::rollback();
-        Toastr::error('Add Salary fail :)','Error');
-        return redirect()->back();
+            DB::commit();
+            Toastr::success('Create New Salary Success', 'Success');
+            return redirect()->back();
+        } catch(\Exception $e) {
+            DB::rollback();
+            Toastr::error('Add Salary Fail', 'Error');
+            return redirect()->back();
+        }
     }
-    }
 
-    // salary view detail
+    // Salary View Detail
     public function salaryView($user_id)
     {
         $users = DB::table('users')
-                ->join('staff_salaries', 'users.user_id', 'staff_salaries.user_id')
-                ->join('profile_information', 'users.user_id', 'profile_information.user_id')
-                ->select('users.*', 'staff_salaries.*','profile_information.*')
-                ->where('staff_salaries.user_id',$user_id)->first();
-        if(!empty($users)) {
-            return view('payroll.salaryview',compact('users'));
+            ->join('staff_salaries', 'users.user_id', 'staff_salaries.user_id')
+            ->join('profile_information', 'users.user_id', 'profile_information.user_id')
+            ->select('users.*', 'staff_salaries.*','profile_information.*')
+            ->where('staff_salaries.user_id',$user_id)->first();
+
+        if (!empty($users)) {
+            return view('payroll.salaryview', compact('users'));
         } else {
-            Toastr::warning('Please update information user :)','Warning');
+            Toastr::warning('Please Update Information User', 'Warning');
             return redirect()->route('profile_user');
         }
     }
 
-    // update record
+    // Update Record
     public function updateRecord(Request $request)
     {
         DB::beginTransaction();
         try{
             $update = [
-
-                'id'      => $request->id,
-                'name'    => $request->name,
-                'salary'  => $request->salary,
-                'basic'   => $request->basic,
-                'da'      => $request->da,
-                'hra'     => $request->hra,
+                'id' => $request->id,
+                'name' => $request->name,
+                'salary' => $request->salary,
+                'basic' => $request->basic,
+                'da' => $request->da,
+                'hra' => $request->hra,
                 'conveyance' => $request->conveyance,
-                'allowance'  => $request->allowance,
-                'medical_allowance'  => $request->medical_allowance,
-                'tds'  => $request->tds,
-                'esi'  => $request->esi,
-                'pf'   => $request->pf,
-                'leave'     => $request->leave,
-                'prof_tax'  => $request->prof_tax,
-                'labour_welfare'  => $request->labour_welfare,
+                'allowance' => $request->allowance,
+                'medical_allowance' => $request->medical_allowance,
+                'tds' => $request->tds,
+                'esi' => $request->esi,
+                'pf' => $request->pf,
+                'leave' => $request->leave,
+                'prof_tax' => $request->prof_tax,
+                'labour_welfare' => $request->labour_welfare,
             ];
 
+            StaffSalary::where('id',$request->id)
+                ->update($update);
 
-            StaffSalary::where('id',$request->id)->update($update);
             DB::commit();
-            Toastr::success('Salary updated successfully :)','Success');
+            Toastr::success('Salary Updated Success', 'Success');
             return redirect()->back();
-
-        }catch(\Exception $e){
+        } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Salary update fail :)','Error');
+            Toastr::error('Salary Update Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    // delete record
+    // Delete Record
     public function deleteRecord(Request $request)
     {
         DB::beginTransaction();
         try {
-
             StaffSalary::destroy($request->id);
 
             DB::commit();
-            Toastr::success('Salary deleted successfully :)','Success');
+            Toastr::success('Salary Deleted Success','Success');
             return redirect()->back();
-            
         } catch(\Exception $e) {
             DB::rollback();
-            Toastr::error('Salary deleted fail :)','Error');
+            Toastr::error('Salary Deleted Fail', 'Error');
             return redirect()->back();
         }
     }
 
-    // payroll Items
+    // Payroll Items
     public function payrollItems()
     {
         return view('payroll.payrollitems');

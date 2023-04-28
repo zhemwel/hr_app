@@ -1,11 +1,11 @@
 
 @extends('layouts.master')
 @section('content')
-  
+
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <div class="content container-fluid">
-        
+
             <!-- Page Header -->
             <div class="page-header">
                 <div class="row">
@@ -19,18 +19,18 @@
                 </div>
             </div>
             <!-- /Page Header -->
-            
+
             <!-- Search Filter -->
             <div class="row filter-row">
-                <div class="col-sm-6 col-md-3">  
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus">
                         <input type="text" class="form-control floating">
                         <label class="focus-label">Employee Name</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>-</option>
                             <option>Jan</option>
                             <option>Feb</option>
@@ -48,9 +48,9 @@
                         <label class="focus-label">Select Month</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3"> 
+                <div class="col-sm-6 col-md-3">
                     <div class="form-group form-focus select-focus">
-                        <select class="select floating"> 
+                        <select class="select floating">
                             <option>-</option>
                             <option>2019</option>
                             <option>2018</option>
@@ -61,16 +61,16 @@
                         <label class="focus-label">Select Year</label>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">  
-                    <a href="#" class="btn btn-success btn-block"> Search </a>  
-                </div>     
+                <div class="col-sm-6 col-md-3">
+                    <a href="#" class="btn btn-success btn-block"> Search </a>
+                </div>
             </div>
             <!-- /Search Filter -->
-            
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">
-                        <table class="table table-striped custom-table table-nowrap mb-0">
+                        <table class="table table-striped custom-table table-nowrap mb-0 datatable">
                             <thead>
                                 <tr>
                                     <th>Employee</th>
@@ -122,7 +122,7 @@
                                     <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
                                     <td>
                                         <div class="half-day">
-                                            <span class="first-off"><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></span> 
+                                            <span class="first-off"><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></span>
                                             <span class="first-off"><i class="fa fa-close text-danger"></i></span>
                                         </div>
                                     </td>
@@ -141,7 +141,7 @@
                                     <td><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></td>
                                     <td>
                                         <div class="half-day">
-                                            <span class="first-off"><i class="fa fa-close text-danger"></i></span> 
+                                            <span class="first-off"><i class="fa fa-close text-danger"></i></span>
                                             <span class="first-off"><a href="javascript:void(0);" data-toggle="modal" data-target="#attendance_info"><i class="fa fa-check text-success"></i></a></span>
                                         </div>
                                     </td>
@@ -504,7 +504,7 @@
             </div>
         </div>
         <!-- /Page Content -->
-        
+
         <!-- Attendance Modal -->
         <div class="modal custom-modal fade" id="attendance_info" role="dialog">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -522,16 +522,16 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Timesheet <small class="text-muted">11 Mar 2019</small></h5>
                                         <div class="punch-det">
-                                            <h6>Punch In at</h6>
+                                            <h6>Punch In At</h6>
                                             <p>Wed, 11th Mar 2019 10.00 AM</p>
                                         </div>
                                         <div class="punch-info">
                                             <div class="punch-hours">
-                                                <span>3.45 hrs</span>
+                                                <span>3.45 Hrs</span>
                                             </div>
                                         </div>
                                         <div class="punch-det">
-                                            <h6>Punch Out at</h6>
+                                            <h6>Punch Out At</h6>
                                             <p>Wed, 20th Feb 2019 9.00 PM</p>
                                         </div>
                                         <div class="statistics">
@@ -539,13 +539,13 @@
                                                 <div class="col-md-6 col-6 text-center">
                                                     <div class="stats-box">
                                                         <p>Break</p>
-                                                        <h6>1.21 hrs</h6>
+                                                        <h6>1.21 Hrs</h6>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-6 text-center">
                                                     <div class="stats-box">
                                                         <p>Overtime</p>
-                                                        <h6>3 hrs</h6>
+                                                        <h6>3 Hrs</h6>
                                                     </div>
                                                 </div>
                                             </div>
@@ -559,42 +559,42 @@
                                         <h5 class="card-title">Activity</h5>
                                         <ul class="res-activity-list">
                                             <li>
-                                                <p class="mb-0">Punch In at</p>
+                                                <p class="mb-0">Punch In At</p>
                                                 <p class="res-activity-time">
                                                     <i class="fa fa-clock-o"></i>
                                                     10.00 AM.
                                                 </p>
                                             </li>
                                             <li>
-                                                <p class="mb-0">Punch Out at</p>
+                                                <p class="mb-0">Punch Out At</p>
                                                 <p class="res-activity-time">
                                                     <i class="fa fa-clock-o"></i>
                                                     11.00 AM.
                                                 </p>
                                             </li>
                                             <li>
-                                                <p class="mb-0">Punch In at</p>
+                                                <p class="mb-0">Punch In At</p>
                                                 <p class="res-activity-time">
                                                     <i class="fa fa-clock-o"></i>
                                                     11.15 AM.
                                                 </p>
                                             </li>
                                             <li>
-                                                <p class="mb-0">Punch Out at</p>
+                                                <p class="mb-0">Punch Out At</p>
                                                 <p class="res-activity-time">
                                                     <i class="fa fa-clock-o"></i>
                                                     1.30 PM.
                                                 </p>
                                             </li>
                                             <li>
-                                                <p class="mb-0">Punch In at</p>
+                                                <p class="mb-0">Punch In At</p>
                                                 <p class="res-activity-time">
                                                     <i class="fa fa-clock-o"></i>
                                                     2.00 PM.
                                                 </p>
                                             </li>
                                             <li>
-                                                <p class="mb-0">Punch Out at</p>
+                                                <p class="mb-0">Punch Out At</p>
                                                 <p class="res-activity-time">
                                                     <i class="fa fa-clock-o"></i>
                                                     7.30 PM.
@@ -610,7 +610,7 @@
             </div>
         </div>
         <!-- /Attendance Modal -->
-        
+
     </div>
     <!-- Page Wrapper -->
 @endsection

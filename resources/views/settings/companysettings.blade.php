@@ -26,7 +26,7 @@
         </div>
     </div>
     <!-- Sidebar -->
-    
+
     <!-- Page Wrapper -->
     <div class="page-wrapper">
         <!-- Page Content -->
@@ -47,13 +47,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Company Name <span class="text-danger">*</span></label>
-                                    <input class="form-control" type="text" value="Soeng Souy">
+                                    <input class="form-control" type="text" value="Zhemwel Dev">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Contact Person</label>
-                                    <input class="form-control " value="Soeng Souy" type="text">
+                                    <input class="form-control " value="Zhemwel" type="text">
                                 </div>
                             </div>
                         </div>
@@ -61,15 +61,14 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input class="form-control " value="3864 Bld 110 PP, CA, 91403" type="text">
+                                    <input class="form-control " value="Indonesia" type="text">
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-3">
                                 <div class="form-group">
                                     <label>Country</label>
                                     <select class="form-control select">
-                                        <option>KHMER</option>
-                                        <option>USA</option>
+                                        <option>Indonesia</option>
                                         <option>United Kingdom</option>
                                     </select>
                                 </div>
@@ -77,17 +76,15 @@
                             <div class="col-sm-6 col-md-6 col-lg-3">
                                 <div class="form-group">
                                     <label>City</label>
-                                    <input class="form-control" value="Phnom Penh" type="text">
+                                    <input class="form-control" value="Bandung" type="text">
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-3">
                                 <div class="form-group">
                                     <label>State/Province</label>
                                     <select class="form-control select">
-                                        <option>Phnom Penh</option>
-                                        <option>Pursat</option>
-                                        <option>Kan dal</option>
-                                        <option>Ta Keav</option>
+                                        <option>DKI Jakarta</option>
+                                        <option>Jawa Barat</option>
                                     </select>
                                 </div>
                             </div>
@@ -130,7 +127,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Website Url</label>
-                                    <input class="form-control" value="https://www.soengsouy.com" type="text">
+                                    <input class="form-control" value="https://www.zhemwel.dev" type="text">
                                 </div>
                             </div>
                         </div>
